@@ -144,7 +144,7 @@
     "href": "index.html",
     "title": "Visual Communication and Data Story-telling",
     "section": "",
-    "text": "Developing Syllabus\n\n\n\n\n\nThis syllabus may change during the course of the semester with some additions and clarifications.\nAll substantial changes will marked here with date.",
+    "text": "MDSSB-MET-03 Visual Communication and Data Story-telling (Methods area, 5 credits)\nOffered in Master program: Data Science for Society and Business (DSSB)\nMDSSBO-203-A Visual Communication and Data Story-telling (Methods area, 7.5 credits)\nOffered in Online Master Program: Data Science for Society and Business (DSSB0), taught connected to the onsite course in the startup phase of the online program.",
     "crumbs": [
       "Syllabus"
     ]
@@ -153,8 +153,8 @@
     "objectID": "index.html#module-names",
     "href": "index.html#module-names",
     "title": "Visual Communication and Data Story-telling",
-    "section": "1 Module Names",
-    "text": "1 Module Names\n\nMDSSSB-MET-03 Visual Communication and Data Story-telling (Methods area, 5 credits)\n\nOffered in the Master program: Data Science for Society and Business (DSSB). See the module description in the DSSB Handbook.",
+    "section": "",
+    "text": "MDSSB-MET-03 Visual Communication and Data Story-telling (Methods area, 5 credits)\nOffered in Master program: Data Science for Society and Business (DSSB)\nMDSSBO-203-A Visual Communication and Data Story-telling (Methods area, 7.5 credits)\nOffered in Online Master Program: Data Science for Society and Business (DSSB0), taught connected to the onsite course in the startup phase of the online program.",
     "crumbs": [
       "Syllabus"
     ]
@@ -164,7 +164,7 @@
     "href": "index.html#module-components",
     "title": "Visual Communication and Data Story-telling",
     "section": "2 Module Components",
-    "text": "2 Module Components\nThe courses is offered in the Fall term.\nRequirements: Data Science Concepts and Data Science Tools",
+    "text": "2 Module Components\nThe courses is offered in the Fall term.",
     "crumbs": [
       "Syllabus"
     ]
@@ -174,7 +174,7 @@
     "href": "index.html#class-meeting-information",
     "title": "Visual Communication and Data Story-telling",
     "section": "3 Class Meeting Information",
-    "text": "3 Class Meeting Information\nTuesday 09:45-11:00 and 11:15-12:30\nLocation: East Hall Room 6 in-person\nVideo streaming in Teams may be provided but does not work for all class activity: Team F24_MDSSB-MET-03_Visual Communication and Data Story-telling, General Channel",
+    "text": "3 Class Meeting Information\nSession 1: Tue 9:45 - 11:00\nSession 2: Tue 11:15 - 12:30\nLocation: East Hall Room 3 in-person\nVideo streaming and recordings in Teams will be provided by the instructor. However, but does not work for all class activity: Team ?var:teams:name, General Channel",
     "crumbs": [
       "Syllabus"
     ]
@@ -184,7 +184,7 @@
     "href": "index.html#instructors",
     "title": "Visual Communication and Data Story-telling",
     "section": "4 Instructors",
-    "text": "4 Instructors\nJan Lorenz Email: jlorenz@constructor.univeristy",
+    "text": "4 Instructors\nJan Lorenz\nEmail: jlorenz@constructor.university",
     "crumbs": [
       "Syllabus"
     ]
@@ -204,7 +204,7 @@
     "href": "index.html#intended-learning-outcomes",
     "title": "Visual Communication and Data Story-telling",
     "section": "6 Intended Learning Outcomes",
-    "text": "6 Intended Learning Outcomes\nThe module descriptions can be found in the DSSB Handbook\n\n6.1 From the handbook\nBy the end of this module, students will be able\n\nvisually represent various data sources\nchoose suitable visual representations for different data sets\nevaluate visual depictions of data\nassist users in visual data analysis\ntarget visual representations to different audiences\n\n\n\n6.2 Additional remark from the instructor\nYou will build on your experience\n\nthe small Data Science Project in Data Science Tools in the the 1st semester\nyour Data Science Lab Project in the 2nd semester\n\nYou will create another Data Science Project focusing on great graphics and telling a story with data! You will write the report such that a non Data Scientist can enjoy reading it and gain some insights about the datastory you tell.",
+    "text": "6 Intended Learning Outcomes\nThe module descriptions can be found in the DSSB Handbook\n\n6.1 From the handbook\nBy the end of this module, students will be able\n\nvisually represent various data sources\nchoose suitable visual representations for different data sets\nevaluate visual depictions of data\nassist users in visual data analysis\ntarget visual representations to different audiences\n\n\n\n6.2 Additional remark from the instructor\nYou will build on your experience\n\nthe small Data Science Project in Data Science Tools in the the 1st semester\n(as an onsite student) your Data Science Lab Project in the 2nd semester\n\nYou will create another Data Science Project focusing on great graphics and telling a story with data! You will write the report such that a non Data Scientist can enjoy reading it and gain some insights about the datastory you tell.",
     "crumbs": [
       "Syllabus"
     ]
