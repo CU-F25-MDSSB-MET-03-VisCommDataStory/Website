@@ -137,7 +137,7 @@
     "href": "Slides_Ch1-5.html#data-decoration-trap",
     "title": "Data Storytelling - Operationalized for your Data Story",
     "section": "Data-Decoration Trap",
-    "text": "Data-Decoration Trap\n\n\n\n\n\n[MDSSB-MET-03: Visual Communication and Data Storytelling]"
+    "text": "Data-Decoration Trap"
   },
   {
     "objectID": "index.html",
@@ -375,7 +375,7 @@
     "href": "finalize_presentation.html#visuals-7-instill-trust-in-numbers",
     "title": "Finalize your Data Story Presentation",
     "section": "Visuals 7: Instill trust in numbers",
-    "text": "Visuals 7: Instill trust in numbers\nBe careful with:\n\nTruncated y-axis\nInconsistent date intervals\nInconsistent binning\n…\n\n\n\n\n\n[MDSSB-MET-03: Visual Communication and Data Storytelling]"
+    "text": "Visuals 7: Instill trust in numbers\nBe careful with:\n\nTruncated y-axis\nInconsistent date intervals\nInconsistent binning\n…"
   },
   {
     "objectID": "Slides_polishing_visuals.html#visual-story-points",
@@ -480,7 +480,7 @@
     "href": "Slides_polishing_visuals.html#polish-your-visuals",
     "title": "Polishing Visuals",
     "section": "4.-7. Polish your visuals",
-    "text": "4.-7. Polish your visuals\n\nRemove Unnecessary Noise\n\nExamples of Chartjunk\n\nFocus Attention on What’s Important\nMake Your Data Approachable and Engaging\n\nTips to Streamline Readability of Charts\nTips for Using Reference Lines\nTips for Formatting\nTips for Convention Adherence\n\nInstill Trust in Your Numbers\n\nDeceptive Practices to Avoid\n\n\n\n\n\n\n[MDSSB-MET-03: Visual Communication and Data Storytelling]"
+    "text": "4.-7. Polish your visuals\n\nRemove Unnecessary Noise\n\nExamples of Chartjunk\n\nFocus Attention on What’s Important\nMake Your Data Approachable and Engaging\n\nTips to Streamline Readability of Charts\nTips for Using Reference Lines\nTips for Formatting\nTips for Convention Adherence\n\nInstill Trust in Your Numbers\n\nDeceptive Practices to Avoid"
   },
   {
     "objectID": "finalchecks.html#a-mixed-version",
@@ -501,7 +501,7 @@
     "href": "finalchecks.html#data-forgeries-1-2-3",
     "title": "Data Storytelling - Final Checks",
     "section": "Data Forgeries 1, 2, 3",
-    "text": "Data Forgeries 1, 2, 3\n\n\n\n\n\n\n\n\nCU-F23-MDSSB-MET-03: Visual Communication and Data Storytelling"
+    "text": "Data Forgeries 1, 2, 3"
   },
   {
     "objectID": "Towards_Great_Visualization_Brexit.html#keep-it-simple",
@@ -690,7 +690,7 @@
     "href": "Towards_Great_Visualization_Brexit.html#adjust-the-general-text-size",
     "title": "Tips for Great Visualizations",
     "section": "Adjust the general text size",
-    "text": "Adjust the general text size\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(y = opinion, fill = opinion)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1) + \n  guides(fill = \"none\") +\n  labs(\n    title = \"Was Britain right/wrong to vote to leave EU?\",\n    subtitle = \"YouGov Survey Results, 2-3 September 2019\",\n    caption = \"Source document from YouGov: bit.ly/2lCJZVg\",\n    x = NULL, y = NULL\n  ) +\n  scale_fill_manual(values = c(\n    \"Wrong\" = \"#ef8a62\",\n    \"Right\" = \"#67a9cf\",\n    \"Don't know\" = \"gray\"\n  )) +\n  theme_minimal(base_size = 14)\n\n\n\n\n\n\n\nCU-F23-MDSSB-MET-03: Visual Communication and Data Storytelling"
+    "text": "Adjust the general text size\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(y = opinion, fill = opinion)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1) + \n  guides(fill = \"none\") +\n  labs(\n    title = \"Was Britain right/wrong to vote to leave EU?\",\n    subtitle = \"YouGov Survey Results, 2-3 September 2019\",\n    caption = \"Source document from YouGov: bit.ly/2lCJZVg\",\n    x = NULL, y = NULL\n  ) +\n  scale_fill_manual(values = c(\n    \"Wrong\" = \"#ef8a62\",\n    \"Right\" = \"#67a9cf\",\n    \"Don't know\" = \"gray\"\n  )) +\n  theme_minimal(base_size = 14)"
   },
   {
     "objectID": "milestones.html",
@@ -873,7 +873,7 @@
     "href": "datastorytelling.html#phase-b-storyboarding",
     "title": "Data Storytelling - Storyboarding Activity Guide",
     "section": "Phase B: Storyboarding!",
-    "text": "Phase B: Storyboarding!\nActivity: Realize these steps in your storyboard.\n\nStep 1: Identify your “Aha” moment (main insight)\nStep 2: Find your beginning (the setting and the “hook”)\nStep 3: Select your rising insights (narrative from the hook to the Aha moment)\nStep 4: Conclude with solutions, next steps, empowerment to action, …\n\nWhen your storyboard is fixed\n\nwrite the titles down in your slide deck and\nstart working on your final visuals such that they best support your story.\n\n\n\n\n\nMDSSB-MET-03: Visual Communication and Data Storytelling"
+    "text": "Phase B: Storyboarding!\nActivity: Realize these steps in your storyboard.\n\nStep 1: Identify your “Aha” moment (main insight)\nStep 2: Find your beginning (the setting and the “hook”)\nStep 3: Select your rising insights (narrative from the hook to the Aha moment)\nStep 4: Conclude with solutions, next steps, empowerment to action, …\n\nWhen your storyboard is fixed\n\nwrite the titles down in your slide deck and\nstart working on your final visuals such that they best support your story."
   },
   {
     "objectID": "schedule.html",
@@ -1024,7 +1024,7 @@
     "href": "Slides_drafting_visuals.html#activity",
     "title": "Drafting your Visuals",
     "section": "Activity",
-    "text": "Activity\nGroup Work: 2 Teams together, each team advises the other\nReporting to class:\nFor each team:\n\nDescribe Target Audience\nOne Sentence Summary of Main Insight\nShow Up to three visuals and how you plan to improve them\n(Optional) you need to explain some specific metrics you use?\n\nTake notes in the DataStory repository\n\n\n\n\n[MDSSB-MET-03: Visual Communication and Data Storytelling]"
+    "text": "Activity\nGroup Work: 2 Teams together, each team advises the other\nReporting to class:\nFor each team:\n\nDescribe Target Audience\nOne Sentence Summary of Main Insight\nShow Up to three visuals and how you plan to improve them\n(Optional) you need to explain some specific metrics you use?\n\nTake notes in the DataStory repository"
   },
   {
     "objectID": "student-topics.html",
