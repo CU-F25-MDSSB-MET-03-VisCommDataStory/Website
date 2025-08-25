@@ -90,12 +90,26 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link active" href="./schedule.html" aria-current="page"> 
+<span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./milestones.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./readings.html"> 
+<span class="menu-text">Readings</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
     <a class="nav-link" href="https://github.com/CU-F25-MDSSB-MET-03-VisCommDataStory"> 
-<span class="menu-text">GitHub-Organization</span></a>
+<span class="menu-text">GitHub-Organization: CU-F25-MDSSB-MET-03-VisCommDataStory</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -130,26 +144,20 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Syllabus</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./schedule.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><strong>Schedule</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./milestones.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Project: Milestones</span></a>
+  <a href="./readings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Readings</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Quarto Hints</span></a>
+  <a href="./tasks/01-week.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tasks for Week 1</span></a>
   </div>
 </li>
     </ul>
@@ -157,14 +165,8 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#r" id="toc-r" class="nav-link active" data-scroll-target="#r">Reading Remarks on Dykes</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -192,171 +194,173 @@ ul.task-list li input[type="checkbox"] {
 <table class="caption-top table">
 <colgroup>
 <col style="width: 5%">
+<col style="width: 7%">
+<col style="width: 8%">
+<col style="width: 50%">
 <col style="width: 10%">
-<col style="width: 48%">
-<col style="width: 19%">
-<col style="width: 19%">
+<col style="width: 10%">
+<col style="width: 10%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Week</th>
 <th>Dates</th>
+<th style="text-align: center;">How</th>
 <th>Topic</th>
-<th>Milestones</th>
-<th>Reading</th>
+<th>Tasks</th>
+<th style="text-align: center;">Readings</th>
+<th style="text-align: center;">Milestones</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>1</td>
-<td>09-03</td>
-<td><span style="color:darkred;"><em>Class</em></span> What is Visual Communication? What is Data Storytelling? <a href="https://docs.google.com/presentation/d/1YwFq3PRCBwH5cyRJH7IR1xfTT272VRF81o0CE2FhhpI/pub?start=false&amp;loop=false&amp;delayms=3000">Slides Week 1</a></td>
-<td></td>
-<td></td>
+<td>Sep 02</td>
+<td style="text-align: center;"><span class="red"><em>Class</em></span></td>
+<td>What is Visual Communication? What is Data Storytelling?</td>
+<td><a href="01-week.qmd">Tasks 1</a></td>
+<td style="text-align: center;"><a href="./readings.html#r">Ch 1</a></td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td>2</td>
-<td>09-10</td>
-<td><span style="color:darkred;"><em>Class</em></span> Visual Communication. Viewing and Playing. <a href="https://docs.google.com/presentation/d/1jBs0VpLjKVgmFoZsqPFw2BAbUfUpHZKZCA0C0tGEVHI/pub?start=false&amp;loop=false&amp;delayms=3000">Slides Week 2</a></td>
+<td>Sep 09</td>
+<td style="text-align: center;"><span class="red"><em>Class</em></span></td>
+<td>Visual Communication: Grammar of Graphics</td>
 <td></td>
-<td><a href="#r">Dykes Ch 1</a></td>
+<td style="text-align: center;"><a href="#r">Ch 2</a></td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
 <td>3</td>
-<td>09-17</td>
-<td><span style="color:darkred;"><em>Class</em></span> Data Storytelling. Project Ideas. <br> <a href="https://docs.google.com/presentation/d/1ZXj4zD4au02QtAlroFVlyT2asFtoMnvT-QQvscLnbNE/pub?start=false&amp;loop=false&amp;delayms=3000">Slides Week 3</a></td>
+<td>Sep 16</td>
+<td style="text-align: center;"><span class="red"><em>Class</em></span></td>
+<td>Amounts Proportions Uncertainty</td>
 <td></td>
-<td><a href="#r">Dykes Ch 2</a></td>
+<td style="text-align: center;"><a href="./readings.html#r">Ch 3</a></td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td>4</td>
-<td>09-24</td>
-<td><a href="https://forms.office.com/e/UZb7NFxLZB">Form: Student survey, fill by Fri, Sep 20</a> <br> <span style="color:darkgreen;"><em>Individual meetings</em></span> Project topics</td>
-<td><a href="./milestones.html#m0">0</a></td>
-<td><a href="#r">Dykes Ch 3</a></td>
+<td>Sep 23</td>
+<td style="text-align: center;"><span class="red"><em>Class</em></span></td>
+<td>Relationships Comparisons Annotations</td>
+<td></td>
+<td style="text-align: center;"><a href="./readings.html#r">Ch 4</a></td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
 <td>5</td>
-<td>10-01</td>
-<td><span style="color:darkred;"><em>Class</em></span> Project pitches</td>
+<td>Sep 30</td>
+<td style="text-align: center;"><span class="red"><em>Class</em></span></td>
+<td>Data Stories</td>
 <td></td>
-<td><a href="#r">Dykes Ch 4</a></td>
+<td style="text-align: center;"><a href="./readings.html#r">Ch 5</a></td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td>6</td>
-<td>10-08</td>
-<td><span style="color:darkred;"><em>Class</em></span> Project pitches (continued) / Class room activity: Wrap up Readings and Operationalize for your Project <a href="./Slides_Ch1-5.html">Slides</a></td>
-<td><a href="./milestones.html#m1">1</a></td>
-<td><a href="#r">Dykes Ch 5</a></td>
+<td>Oct 07</td>
+<td style="text-align: center;"><span class="green"><em>Team</em></span></td>
+<td>Projects Work Start!</td>
+<td></td>
+<td style="text-align: center;"><a href="./readings.html#r">Ch 6</a></td>
+<td style="text-align: center;"><a href="./milestones.html#m0">0</a></td>
 </tr>
 <tr class="odd">
 <td>7</td>
-<td>10-15</td>
-<td><span style="color:darkgreen;"><em>Individual meetings</em></span> Main insights, Data audit</td>
-<td><a href="./milestones.html#m2">2</a></td>
-<td><a href="#r">Dykes Ch 6</a></td>
+<td>Oct 14</td>
+<td style="text-align: center;"><span class="red"><em>Class</em></span></td>
+<td><em>Student Project Pitches</em></td>
+<td></td>
+<td style="text-align: center;"><a href="./readings.html#r">Ch 7</a></td>
+<td style="text-align: center;"><a href="./milestones.html#m1">1</a></td>
 </tr>
 <tr class="even">
 <td>8</td>
-<td>10-22</td>
-<td><span style="color:darkred;"><em>Class</em></span> room activity: <a href="./Slides_drafting_visuals.html">Drafting your Visuals</a></td>
-<td><a href="./milestones.html#m3">3</a></td>
-<td><a href="#r">Dykes Ch 7</a></td>
+<td>Oct 21</td>
+<td style="text-align: center;"><span class="red"><em>Class</em></span></td>
+<td>Main Insight</td>
+<td></td>
+<td style="text-align: center;"><a href="./readings.html#r">Ch 8</a></td>
+<td style="text-align: center;"><a href="./milestones.html#m2">2</a></td>
 </tr>
 <tr class="odd">
 <td>9</td>
-<td>10-29</td>
-<td><span style="color:darkred;"><em>Class</em></span> room activity: <a href="./datastorytelling.html">Storyboarding!</a></td>
-<td><a href="./milestones.html#m4">4</a></td>
-<td><a href="#r">Dykes Ch 8</a></td>
+<td>Oct 28</td>
+<td style="text-align: center;"><span class="red"><em>Class</em></span></td>
+<td>Drafting your Visuals!</td>
+<td></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><a href="./milestones.html#m3">3</a></td>
 </tr>
 <tr class="even">
 <td>10</td>
-<td>11-05</td>
-<td><span style="color:darkgreen;"><em>Individual meetings</em></span></td>
+<td>Nov 04</td>
+<td style="text-align: center;"><span class="red"><em>Class</em></span></td>
+<td>Story boarding!</td>
 <td></td>
-<td></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><a href="./milestones.html#m4">4</a></td>
 </tr>
 <tr class="odd">
 <td>11</td>
-<td>11-12</td>
-<td><span style="color:darkred;"><em>Class</em></span> room activity: <a href="./Slides_polishing_visuals.html">Polishing your Visuals</a></td>
+<td>Nov 11</td>
+<td style="text-align: center;"><span class="green"><em>Team</em></span></td>
+<td>Individual Coaching</td>
 <td></td>
-<td></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td>12</td>
-<td>11-19</td>
-<td><span style="color:darkgreen;"><em>Individual meetings</em></span> Finalizing your presentation <a href="./finalize_presentation.html">Short guide to go through and check before the meeting</a></td>
+<td>Nov 18</td>
+<td style="text-align: center;"><span class="red"><em>Class</em></span></td>
+<td>Polishing your Visuals</td>
 <td></td>
-<td></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
 <td>13</td>
-<td>11-26</td>
-<td><span style="color:darkred;"><em>Class</em></span> Student Presentations - <a href="https://github.com/CU-F25-MDSSB-MET-03-VisCommDataStory/Course-Organization-Resources/blob/main/STUDENTS.md">Schedule</a></td>
+<td>Nov 25</td>
+<td style="text-align: center;"><span class="red"><em>Class</em></span></td>
+<td><em>Student Presentations</em></td>
 <td></td>
-<td></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><a href="./milestones.html#m5">5</a></td>
 </tr>
 <tr class="even">
 <td>14</td>
-<td>12-03</td>
-<td><span style="color:darkred;"><em>Class</em></span> Student Presentations - <a href="https://github.com/CU-F25-MDSSB-MET-03-VisCommDataStory/Course-Organization-Resources/blob/main/STUDENTS.md">Schedule</a></td>
-<td><a href="./milestones.html#m5">5</a></td>
+<td>Dec 02</td>
+<td style="text-align: center;"><strong>noting</strong></td>
+<td>Instructor is unavailable</td>
 <td></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
 <td>Dec</td>
-<td>End of Term</td>
-<td>Submission of final report and slidedeck</td>
-<td><a href="./milestones.html#m6">6</a></td>
+<td>Meet</td>
+<td style="text-align: center;"><span class="green"><em>Team</em></span></td>
+<td>Feedback on presentation / Advice for Finalization</td>
 <td></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>&nbsp;</td>
+<td>End of Term</td>
+<td style="text-align: center;"><em>Submission</em></td>
+<td>Final report and slidedeck</td>
+<td></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><a href="./milestones.html#m6">6</a></td>
 </tr>
 </tbody>
 </table>
-<section id="r" class="level2">
-<h2 class="anchored" data-anchor-id="r">Reading Remarks on Dykes</h2>
-<p>The purpose of reading is to apply the knowledge for doing your Data Story Project. To that end, some parts require closer reading than others.</p>
-<ul>
-<li><strong>Chapter 1</strong>: <em>Introduction to Driving Change through Insight</em><br>
-All</li>
-<li><strong>Chapter 2</strong>: <em>Why Tell Stories with Data?</em><br>
-All</li>
-<li><strong>Chapter 3</strong>: <em>The Psychology of Data Storytelling</em><br>
-This Chapter is <em>optional</em>. Read it if you are interested in the psychology of human perception of facts. Consult the summary in Table 3.1.</li>
-<li><strong>Chapter 4</strong>: <em>The Anatomy of a Data Story</em> (21 pages intensive reading) Do an intensive reading of the Sections
-<ul>
-<li>The Chapter Introduction including Figure 4.2 <em>The Analysis Journey: From Storyframing to Storytelling</em> (pp.&nbsp;105-110)</li>
-<li><em>The Six Essential Elements of a Data Story</em> (pp.&nbsp;110-118)</li>
-<li><em>Data Stories Come in All Shapes and Sizes</em> (pp.&nbsp;118-121)</li>
-<li><em>When It Makes Sense to Craft Data Stories and When It Doesn’t</em> (pp.&nbsp;139-143)</li>
-</ul>
-You can skim <em>Every Story Needs a Storyteller</em> and <em>Know Your Audience Before Telling Your Story</em></li>
-<li><strong>Chapter 5</strong>: <em>Data, The Foundation of Your Data Story</em> (20 pages intensive reading)<br>
-Do an intensive reading of the Sections
-<ul>
-<li>The Chapter Introduction (pp.&nbsp;146-148)</li>
-<li><em>The Analysis Process: Exploration to Explanation</em> (pp.&nbsp;161-168)</li>
-<li><em>Analyzing and Communicating Data Demands Discipline</em> (pp.&nbsp;168-176)</li>
-</ul>
-You can skim <em>Examine the Building Blocks of Your Data Stories</em>, <em>Every Data Story Needs a Central Insight</em>, <em>Do You Have an Actionable Insight?</em>, and <em>When Too Much of a Good Thing Is Bad</em></li>
-<li><strong>Chapter 6</strong>: <em>Narrative, The Structure of Your Data Story</em> (14 pages intensive reading) Do an intensive reading of the Sections
-<ul>
-<li><em>Defining a Narrative Model for Data Stories</em> (pp.&nbsp;186-195)</li>
-<li><em>Fleshing Out Your Narrative with Story Points</em> (pp.&nbsp;195-199)</li>
-</ul>
-The content of <em>Storyboarding Your Data Story</em> will be the basis for the classroom story boarding activity.<br>
-You can skim faster through <em>When They Want Just the Facts</em>, <em>Uncovering the Heroes in Your Data Story</em>, and <em>Make Your Ideas More Digestible with Analogies</em>.</li>
-<li><strong>Chapter 7</strong>: <em>Visuals (Part 1): Setting the Scenes of Your Data Story</em><br>
-All</li>
-<li><strong>Chapter 8</strong>: <em>Visuals (Part 2): Polishing the Scenes of Your Data Story</em><br>
-All</li>
-<li><strong>Chapter 9</strong>: <em>Crafting Your Own Data Story</em><br>
-Optional</li>
-</ul>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
