@@ -72,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-sidebar docked nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -117,10 +117,41 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><strong>Syllabus</strong></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><strong>Syllabus</strong></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -169,29 +200,12 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Developing Syllabus
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
-<div class="callout-body-container callout-body">
-<p>This syllabus may change during the course of the semester with some additions and clarifications.<br>
-All substantial changes will marked here with date.</p>
-</div>
-</div>
-</div>
 <section id="module-names" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="module-names"><span class="header-section-number">1</span> Module Names</h2>
 <ul>
 <li>MDSSSB-MET-03 Visual Communication and Data Story-telling (Methods area, 5 credits)</li>
 </ul>
-<p>Offered in the <a href="https://constructor.university/programs/graduate-education/data-science-for-society-business">Master program: Data Science for Society and Business (DSSB)</a>. See the module description in the <a href="https://constructor.university/sites/default/files/2023-09/DSSB_MSc_Handbook_16-08-2023_Track%20changes%20.pdf">DSSB Handbook</a>.</p>
+<p>Offered in the <a href="https://constructor.university/programs/graduate-education/data-science-for-society-business">Master program: Data Science for Society and Business (DSSB)</a>. See the module description in the <a href="">DSSB Handbook</a>.</p>
 </section>
 <section id="module-components" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="module-components"><span class="header-section-number">2</span> Module Components</h2>
@@ -200,8 +214,8 @@ All substantial changes will marked here with date.</p>
 </section>
 <section id="class-meeting-information" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="class-meeting-information"><span class="header-section-number">3</span> Class Meeting Information</h2>
-<p>Tuesday <strong>09:45-11:00</strong> and <strong>11:15-12:30</strong><br>
-Location: <strong>East Hall Room 6</strong> in-person<br>
+<p>Session 1 <strong><strong>?var:sesssion1</strong></strong> and <strong><strong>?var:sesssion1</strong></strong><br>
+Location: <strong><strong>?var:East Hall 3</strong></strong> in-person<br>
 Video streaming and recording in Teams will be provided, it does not work for all class activities perfectly: Team <strong>F25_MDSSB-MET-03_Visual Communication and Data Story-telling</strong>, General Channel</p>
 </section>
 <section id="instructors" class="level2" data-number="4">
@@ -300,8 +314,9 @@ Some sessions may be streamed and recorded when some students have a valid excus
 </section>
 <section id="literature" class="level2" data-number="12">
 <h2 data-number="12" class="anchored" data-anchor-id="literature"><span class="header-section-number">12</span> Literature</h2>
-<p>During the course we will work on the side through this book:</p>
+<p>During the course we will work through this book:</p>
 <p><em>Dykes, B. (2019). Effective Data Storytelling: How to Drive Change with Data, Narrative and Visuals. John Wiley &amp; Sons.</em></p>
+<p>See <a href="./readings.html">Readings</a>.</p>
 </section>
 <section id="feedback-from-students" class="level2" data-number="13">
 <h2 data-number="13" class="anchored" data-anchor-id="feedback-from-students"><span class="header-section-number">13</span> Feedback from Students</h2>
