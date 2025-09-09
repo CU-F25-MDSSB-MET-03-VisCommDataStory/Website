@@ -140,244 +140,6 @@
     "text": "Data-Decoration Trap"
   },
   {
-    "objectID": "lectures/W02.html#truth-beauty-facts-and-data",
-    "href": "lectures/W02.html#truth-beauty-facts-and-data",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "Truth, Beauty, Facts, and Data",
-    "text": "Truth, Beauty, Facts, and Data\n· ::: {.incremental} - Professionals in data visualization often care about truth and beauty. - This may appear surprising at first glance because it should be about facts and data. - Believes behind this are\n- Facts require beauty to become true. - Beauty is necessary to see patterns. - There is no “Just show me the data!”, there is always some crafting involved in showing data. :::"
-  },
-  {
-    "objectID": "lectures/W02.html#the-data-saurus",
-    "href": "lectures/W02.html#the-data-saurus",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "The Data Saurus",
-    "text": "The Data Saurus\n\n\n\n\nCode\nlibrary(tidyverse)\n# install.packages(\"datasauRus\")\nlibrary(datasauRus)\ndatasaurus_dozen |&gt; \n  filter(dataset == \"dino\")\n\n\n# A tibble: 142 × 3\n   dataset     x     y\n   &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;\n 1 dino     55.4  97.2\n 2 dino     51.5  96.0\n 3 dino     46.2  94.5\n 4 dino     42.8  91.4\n 5 dino     40.8  88.3\n 6 dino     38.7  84.9\n 7 dino     35.6  79.9\n 8 dino     33.1  77.6\n 9 dino     29.0  74.5\n10 dino     26.2  71.4\n# ℹ 132 more rows\n\n\nCode\ndatasaurus_dozen |&gt; \n  filter(dataset == \"dino\") |&gt; \n    summarise(\n    mean_x = mean(x),\n    mean_y = mean(y),\n    sd_x = sd(x),\n    sd_y = sd(y),\n    cor_xy = cor(x, y)\n  )\n\n\n# A tibble: 1 × 5\n  mean_x mean_y  sd_x  sd_y  cor_xy\n   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;\n1   54.3   47.8  16.8  26.9 -0.0645\n\n\n\n\n\nCode\ndatasaurus_dozen |&gt; \n  filter(dataset == \"dino\") |&gt; \n  ggplot(aes(x = x, y = y)) +\n  geom_point() +\n  coord_fixed() +\n  theme_minimal(base_size = 20)"
-  },
-  {
-    "objectID": "lectures/W02.html#the-data-saurus-and-12-friends",
-    "href": "lectures/W02.html#the-data-saurus-and-12-friends",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "The Data Saurus and 12 Friends",
-    "text": "The Data Saurus and 12 Friends\n\n\nCode\ndatasaurus_dozen |&gt; \n  ggplot(aes(x = x, y = y)) +\n  geom_point() +\n  facet_wrap(~ dataset, ncol = 5) +\n  coord_fixed() +\n  theme_minimal()"
-  },
-  {
-    "objectID": "lectures/W02.html#what-do-the-summary-statistics-say",
-    "href": "lectures/W02.html#what-do-the-summary-statistics-say",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "What do the summary statistics say?",
-    "text": "What do the summary statistics say?\n\n\n\n\nCode\ndatasaurus_dozen |&gt; \n  summarise(\n    mean_x = mean(x),\n    mean_y = mean(y),\n    sd_x = sd(x),\n    sd_y = sd(y),\n    cor_xy = cor(x, y),\n    .by = dataset\n  )\n\n\n# A tibble: 13 × 6\n   dataset    mean_x mean_y  sd_x  sd_y  cor_xy\n   &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;\n 1 dino         54.3   47.8  16.8  26.9 -0.0645\n 2 away         54.3   47.8  16.8  26.9 -0.0641\n 3 h_lines      54.3   47.8  16.8  26.9 -0.0617\n 4 v_lines      54.3   47.8  16.8  26.9 -0.0694\n 5 x_shape      54.3   47.8  16.8  26.9 -0.0656\n 6 star         54.3   47.8  16.8  26.9 -0.0630\n 7 high_lines   54.3   47.8  16.8  26.9 -0.0685\n 8 dots         54.3   47.8  16.8  26.9 -0.0603\n 9 circle       54.3   47.8  16.8  26.9 -0.0683\n10 bullseye     54.3   47.8  16.8  26.9 -0.0686\n11 slant_up     54.3   47.8  16.8  26.9 -0.0686\n12 slant_down   54.3   47.8  16.8  26.9 -0.0690\n13 wide_lines   54.3   47.8  16.8  26.9 -0.0666"
-  },
-  {
-    "objectID": "lectures/W02.html#what-makes-a-good-visual",
-    "href": "lectures/W02.html#what-makes-a-good-visual",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "What makes a good visual?",
-    "text": "What makes a good visual?\n\n“Graphical excellence is the well-designed presentation of interesting data—a matter of substance, of statistics, and of design … [It] consists of complex ideas communicated with clarity, precision, and efficiency. … [It] is that which gives to the viewer the greatest number of ideas in the shortest time with the least ink in the smallest space … [It] is nearly always multivariate … And graphical excellence requires telling the truth about the data.”\n\nEdward Tufte, The Visual Display of Quantitative Information"
-  },
-  {
-    "objectID": "lectures/W02.html#what-makes-a-good-visual-1",
-    "href": "lectures/W02.html#what-makes-a-good-visual-1",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "What makes a good visual?",
-    "text": "What makes a good visual?\n\nTruthful\nFunctional\nBeautiful\nInsightful\nEnlightening\n\nAlberto Cairo, The Truthful Art\n\n\nMaybe, this is a bit too much to ask for with too big words?"
-  },
-  {
-    "objectID": "lectures/W02.html#what-makes-a-good-visual-down-to-earth-version",
-    "href": "lectures/W02.html#what-makes-a-good-visual-down-to-earth-version",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "What makes a good visual? Down to earth version",
-    "text": "What makes a good visual? Down to earth version\n\nGood aesthetics\nNo substantiv issues\nNo perceptual issues\nShows honesty and good judgment\n\nKieran Healy, Data Visualization: A Practical Introduction\nIt is a good book, available online for free: https://socviz.co/"
-  },
-  {
-    "objectID": "lectures/W02.html#basic-ideas",
-    "href": "lectures/W02.html#basic-ideas",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "Basic Ideas",
-    "text": "Basic Ideas\n\nMap data to aesthetics.\nData = Column in a data frame\nAesthetics = Visual attributes (x, y, color, size, shape, …)\nUse geometric objects to represent data points\nGeometric objects = Points, lines, bars, …"
-  },
-  {
-    "objectID": "lectures/W02.html#gapminder",
-    "href": "lectures/W02.html#gapminder",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "Gapminder",
-    "text": "Gapminder\n\n\nCode\nlibrary(gapminder)\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent, size = pop)) +\n  geom_point() + \n  scale_x_log10() +\n  scale_size_area(max_size = 15) +\n  theme_minimal()"
-  },
-  {
-    "objectID": "lectures/W02.html#gapminder-1",
-    "href": "lectures/W02.html#gapminder-1",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "Gapminder",
-    "text": "Gapminder\n\n\n\ncolumn\naesthetic aes()\ngeom\n\n\n\n\n\ngdpPercap\nx = gdpPercap\ngeom_point\n\n\n\nlifeExp\ny = lifeExp\ngeom_point\n\n\n\ncontinent\ncolor = continent\ngeom_point\n\n\n\npop\nsize = pop\ngeom_point"
-  },
-  {
-    "objectID": "lectures/W02.html#grammatical-layers",
-    "href": "lectures/W02.html#grammatical-layers",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "Grammatical Layers",
-    "text": "Grammatical Layers\n\nData\nAesthetics\nGeometric objects\nScales\nCoordinate system\nFacets\nTheme"
-  },
-  {
-    "objectID": "lectures/W02.html#data",
-    "href": "lectures/W02.html#data",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "1. Data",
-    "text": "1. Data\n\n\nCode\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot()"
-  },
-  {
-    "objectID": "lectures/W02.html#aesthetics",
-    "href": "lectures/W02.html#aesthetics",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "2. Aesthetics",
-    "text": "2. Aesthetics\n\n\nCode\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent, size = pop))"
-  },
-  {
-    "objectID": "lectures/W02.html#geometric-objects",
-    "href": "lectures/W02.html#geometric-objects",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "3. Geometric objects",
-    "text": "3. Geometric objects\n\n\nCode\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent, size = pop)) +\n  geom_point()"
-  },
-  {
-    "objectID": "lectures/W02.html#scales",
-    "href": "lectures/W02.html#scales",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "4. Scales",
-    "text": "4. Scales\n\n\nCode\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent, size = pop)) +\n  geom_point() + \n  scale_x_log10() +\n  scale_size_area(max_size = 15) +\n  scale_y_continuous(limits = c(20, 90))"
-  },
-  {
-    "objectID": "lectures/W02.html#coordinate-system",
-    "href": "lectures/W02.html#coordinate-system",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "5. Coordinate system",
-    "text": "5. Coordinate system\n\n\nCode\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent, size = pop)) +\n  geom_point() + \n  scale_x_log10() +\n  scale_size_area(max_size = 15) +\n  coord_flip()"
-  },
-  {
-    "objectID": "lectures/W02.html#facets",
-    "href": "lectures/W02.html#facets",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "6. Facets",
-    "text": "6. Facets\n\n\nCode\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent, size = pop)) +\n  geom_point() +\n  scale_x_log10() +\n  scale_size_area(max_size = 15) +\n  facet_wrap(~ continent)"
-  },
-  {
-    "objectID": "lectures/W02.html#theme-base-text-size",
-    "href": "lectures/W02.html#theme-base-text-size",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "7. Theme & Base Text Size",
-    "text": "7. Theme & Base Text Size\n\n\nCode\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent, size = pop)) +\n  geom_point() + \n  scale_x_log10() +\n  scale_size_area(max_size = 15) +\n  theme_minimal(base_size = 14)"
-  },
-  {
-    "objectID": "lectures/W02.html#more-things-labels",
-    "href": "lectures/W02.html#more-things-labels",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "More things: Labels",
-    "text": "More things: Labels\n\n\nCode\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent, size = pop)) +\n  geom_point() + \n  scale_x_log10() +\n  scale_size_area(max_size = 15) +\n  labs(\n    title = \"Gapminder 2007\",\n    subtitle = \"Life Expectancy vs. GDP per Capita\",\n    x = \"GDP per Capita (log scale)\",\n    y = \"Life Expectancy\",\n    color = \"Continent\",\n    size = \"Population\"\n  ) +\n  theme_minimal(base_size = 14)"
-  },
-  {
-    "objectID": "lectures/W02.html#more-things-labels-1",
-    "href": "lectures/W02.html#more-things-labels-1",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "More things: Labels",
-    "text": "More things: Labels\n\n\nCode\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  mutate(pop1M = pop / 1000000) |&gt;\n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent, size = pop1M)) +\n  geom_point() + \n  scale_x_log10() +\n  scale_size_area(max_size = 15) +\n  labs(\n    title = \"Gapminder 2007\",\n    subtitle = \"Life Expectancy vs. GDP per Capita\",\n    x = \"GDP per Capita (log scale)\",\n    y = \"Life Expectancy\",\n    color = \"Continent\",\n    size = \"Population\\nin Millions\"\n  ) +\n  theme_minimal(base_size = 14)"
-  },
-  {
-    "objectID": "lectures/W02.html#more-things-plot-labels",
-    "href": "lectures/W02.html#more-things-plot-labels",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "More things: Plot Labels",
-    "text": "More things: Plot Labels\nChanging the Figure width in the quarto output with #| fig-width: 10\n\n\nCode\n```{r}\n#| fig-width: 7\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  mutate(pop1M = pop / 1000000) |&gt;\n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent, size = pop1M)) +\n  geom_point() + \n  scale_x_log10() +\n  scale_size_area(max_size = 15) +\n  labs(\n    title = \"Gapminder 2007\",\n    subtitle = \"Life Expectancy vs. GDP per Capita\",\n    x = \"GDP per Capita (log scale)\",\n    y = \"Life Expectancy\",\n    color = \"Continent\",\n    size = \"Population\\nin Millions\"\n  ) +\n  theme_minimal(base_size = 14)\n```"
-  },
-  {
-    "objectID": "lectures/W02.html#more-things-geom-labels",
-    "href": "lectures/W02.html#more-things-geom-labels",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "More things: Geom Labels",
-    "text": "More things: Geom Labels\n\n\nCode\n```{r}\n#| fig-width: 7\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  mutate(pop1M = pop / 1000000) |&gt;\n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent, size = pop1M, label = country)) +\n  geom_point() + \n  geom_label(size = 2) +\n  scale_x_log10() +\n  scale_size_area(max_size = 15) +\n  labs(\n    title = \"Gapminder 2007\",\n    subtitle = \"Life Expectancy vs. GDP per Capita\",\n    x = \"GDP per Capita (log scale)\",\n    y = \"Life Expectancy\",\n    color = \"Continent\",\n    size = \"Population\\nin Millions\"\n  ) +\n  theme_minimal(base_size = 14)\n```"
-  },
-  {
-    "objectID": "lectures/W02.html#more-things-geom-selected-labels",
-    "href": "lectures/W02.html#more-things-geom-selected-labels",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "More things: Geom Selected Labels",
-    "text": "More things: Geom Selected Labels\nFirst Try: Make new column\n\n\nCode\n```{r}\n#| fig-width: 7\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  mutate(\n    pop1M = pop / 1000000,\n    selected_labels = if_else(country %in% c(\"India\", \"China\"), country, \"\")\n    ) |&gt;\n  ggplot(aes(\n    x = gdpPercap, \n    y = lifeExp, \n    color = continent, \n    size = pop1M, \n    label = selected_labels)) +\n  geom_point() + \n  geom_label(size = 4) +\n  scale_x_log10() +\n  scale_size_area(max_size = 15) +\n  labs(\n    title = \"Gapminder 2007\",\n    subtitle = \"Life Expectancy vs. GDP per Capita\",\n    x = \"GDP per Capita (log scale)\",\n    y = \"Life Expectancy\",\n    color = \"Continent\",\n    size = \"Population\\nin Millions\"\n  ) +\n  theme_minimal(base_size = 14)\n```"
-  },
-  {
-    "objectID": "lectures/W02.html#more-things-geom-selected-labels-1",
-    "href": "lectures/W02.html#more-things-geom-selected-labels-1",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "More things: Geom Selected Labels",
-    "text": "More things: Geom Selected Labels\nSecond Try: New data frame\n\n\nCode\n```{r}\n#| fig-width: 7\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  mutate(pop1M = pop / 1000000) |&gt;\n  ggplot(aes(\n    x = gdpPercap, \n    y = lifeExp, \n    color = continent, \n    size = pop1M)) +\n  geom_point() + \n  geom_label(\n    data = gapminder |&gt; \n      filter(year == 2007, (country == \"China\" | country == \"India\")) |&gt; \n      mutate(pop1M = pop / 1000000),\n    mapping = aes(x = gdpPercap, y = lifeExp, label = country),\n    size = 4) +\n  scale_x_log10() +\n  scale_size_area(max_size = 15) +\n  labs(\n    title = \"Gapminder 2007\",\n    subtitle = \"Life Expectancy vs. GDP per Capita\",\n    x = \"GDP per Capita (log scale)\",\n    y = \"Life Expectancy\",\n    color = \"Continent\",\n    size = \"Population\\nin Millions\"\n  ) +\n  theme_minimal(base_size = 14)\n```"
-  },
-  {
-    "objectID": "lectures/W02.html#more-things-facet-two-years",
-    "href": "lectures/W02.html#more-things-facet-two-years",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "More things: Facet two years",
-    "text": "More things: Facet two years\n\n\nCode\n```{r}\ngapminder |&gt;  \n  filter(year == 2007 | year == 1952) |&gt; \n  mutate(pop1M = pop / 1000000) |&gt;\n  ggplot(aes(\n    x = gdpPercap, \n    y = lifeExp, \n    color = continent, \n    size = pop1M)) +\n  geom_point() + \n  geom_label(\n    data = gapminder |&gt; \n      filter((year == 2007 | year == 1952), (country == \"China\" | country == \"India\")) |&gt; \n      mutate(pop1M = pop / 1000000),\n    mapping = aes(x = gdpPercap, y = lifeExp, label = country),\n    size = 4) +\n  scale_x_log10() +\n  scale_size_area(max_size = 15) +\n  facet_wrap(~ year) +\n  labs(\n    title = \"Gapminder 2007\",\n    subtitle = \"Life Expectancy vs. GDP per Capita\",\n    x = \"GDP per Capita (log scale)\",\n    y = \"Life Expectancy\",\n    color = \"Continent\",\n    size = \"Population\\nin Millions\"\n  ) +\n  theme_minimal(base_size = 14)\n```"
-  },
-  {
-    "objectID": "lectures/W02.html#more-things-add-a-path",
-    "href": "lectures/W02.html#more-things-add-a-path",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "More things: Add a path",
-    "text": "More things: Add a path\n\n\nCode\n```{r}\ngapminder |&gt;  \n  filter(year == 2007) |&gt; \n  mutate(pop1M = pop / 1000000) |&gt;\n  ggplot(aes(\n    x = gdpPercap, \n    y = lifeExp, \n    color = continent, \n    size = pop1M)) +\n  geom_point() + \n  geom_label(\n    data = gapminder |&gt; \n      filter((year == 2007), (country == \"China\" | country == \"India\")) |&gt; \n      mutate(pop1M = pop / 1000000),\n    mapping = aes(x = gdpPercap, y = lifeExp, label = country),\n    size = 4) +\n  geom_path(\n    data = gapminder |&gt; \n      filter(country == \"China\" | country == \"India\") |&gt; \n      mutate(pop1M = pop / 1000000),\n    mapping = aes(x = gdpPercap, y = lifeExp),\n    size = 1) +\n  scale_x_log10() +\n  scale_size_area(max_size = 15) +\n  labs(\n    title = \"Gapminder 2007\",\n    subtitle = \"Life Expectancy vs. GDP per Capita\",\n    x = \"GDP per Capita (log scale)\",\n    y = \"Life Expectancy\",\n    color = \"Continent\",\n    size = \"Population\\nin Millions\"\n  ) +\n  theme_minimal(base_size = 14)\n```"
-  },
-  {
-    "objectID": "lectures/W02.html#more-things-add-a-path-1",
-    "href": "lectures/W02.html#more-things-add-a-path-1",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "More things: Add a path",
-    "text": "More things: Add a path\nOrder layers and make groups correctly\n\n\nCode\n```{r}\ngapminder |&gt;  \n  filter(year == 2007) |&gt; \n  mutate(pop1M = pop / 1000000) |&gt;\n  ggplot(aes(\n    x = gdpPercap, \n    y = lifeExp, \n    color = continent, \n    size = pop1M)) +\n  geom_path(\n    data = gapminder |&gt; \n      filter(country == \"China\" | country == \"India\") |&gt; \n      mutate(pop1M = pop / 1000000),\n    mapping = aes(x = gdpPercap, y = lifeExp, group = country),\n    size = 1) +\n  geom_point() + \n  geom_label(\n    data = gapminder |&gt; \n      filter((year == 2007), (country == \"China\" | country == \"India\")) |&gt; \n      mutate(pop1M = pop / 1000000),\n    mapping = aes(x = gdpPercap, y = lifeExp, label = country),\n    size = 4) +\n  scale_x_log10() +\n  scale_size_area(max_size = 15) +\n  labs(\n    title = \"Gapminder 2007\",\n    subtitle = \"Life Expectancy vs. GDP per Capita\",\n    x = \"GDP per Capita (log scale)\",\n    y = \"Life Expectancy\",\n    color = \"Continent\",\n    size = \"Population\\nin Millions\"\n  ) +\n  theme_minimal(base_size = 14)\n```"
-  },
-  {
-    "objectID": "lectures/W02.html#another-example-line-plot",
-    "href": "lectures/W02.html#another-example-line-plot",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "Another Example: Line plot",
-    "text": "Another Example: Line plot\n\n\nCode\ngapminder |&gt; \n  filter(continent == \"Asia\") |&gt; \n  ggplot(aes(x = year, y = lifeExp)) +\n  geom_line() +\n  geom_point()"
-  },
-  {
-    "objectID": "lectures/W02.html#another-example-line-plot-1",
-    "href": "lectures/W02.html#another-example-line-plot-1",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "Another Example: Line plot",
-    "text": "Another Example: Line plot\n\n\nCode\ngapminder |&gt; \n  filter(continent == \"Asia\") |&gt; \n  ggplot(aes(x = year, y = lifeExp, color = country)) +\n  geom_line() +\n  geom_point()"
-  },
-  {
-    "objectID": "lectures/W02.html#another-example-line-plot-2",
-    "href": "lectures/W02.html#another-example-line-plot-2",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "Another Example: Line plot",
-    "text": "Another Example: Line plot\n\n\nCode\ngapminder |&gt; \n  filter(continent == \"Asia\") |&gt; \n  ggplot(aes(x = year, y = lifeExp, group = country)) +\n  geom_line() +\n  geom_point() +\n  theme_minimal()"
-  },
-  {
-    "objectID": "lectures/W02.html#another-example-line-plot-3",
-    "href": "lectures/W02.html#another-example-line-plot-3",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "Another Example: Line plot",
-    "text": "Another Example: Line plot\n\n\nCode\ngapminder |&gt; \n  mutate(\n    country_highlight = if_else(country %in% c(\"China\", \"India\"), country, \"Other Asia\")\n    ) |&gt;\n  filter(continent == \"Asia\") |&gt; \n  ggplot(aes(x = year, y = lifeExp, group = country, color = country_highlight)) +\n  geom_line() +\n  geom_point() +\n  scale_color_manual(values = c(\"China\" = \"red\", \"India\" = \"blue\", \"Other Asia\" = \"grey\")) +\n  labs(\n    title = \"Life Expectancy in Asia\",\n    subtitle = \"Highlighting China and India\",\n    x = \"Year\",\n    y = \"Life Expectancy\",\n    color = \"Country\"\n  ) +\n  theme_minimal()"
-  },
-  {
-    "objectID": "lectures/W02.html#another-example-line-plot-more-columns",
-    "href": "lectures/W02.html#another-example-line-plot-more-columns",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "Another Example: Line plot more columns",
-    "text": "Another Example: Line plot more columns\n\n\nCode\ngapminder |&gt; \n  mutate(\n    country_highlight = if_else(country %in% c(\"China\", \"India\"), country, \"Other Asia\"),\n    logGDP = log10(gdpPercap)\n    ) |&gt;\n  pivot_longer(cols = c(logGDP, lifeExp), names_to = \"measure\", values_to = \"value\") |&gt;\n  filter(continent == \"Asia\") |&gt; \n  ggplot(aes(x = year, y = value, group = country, color = country_highlight)) +\n  geom_line() +\n  geom_point() +\n  scale_color_manual(values = c(\"China\" = \"red\", \"India\" = \"blue\", \"Other Asia\" = \"grey\")) +\n  facet_wrap(~ measure, scales = \"free_y\", ncol = 1) +\n  theme_minimal()"
-  },
-  {
-    "objectID": "lectures/W02.html#stripes-what-is-this",
-    "href": "lectures/W02.html#stripes-what-is-this",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "Stripes: What is this?",
-    "text": "Stripes: What is this?\n\n\nCode\nwarming_stripe_colors &lt;- c(\"#67000d\", \"#a50f15\", \"#cb181d\", \"#ef3b2c\", \"#fb6a4a\", \n                           \"#fc9272\", \"#fcbba1\", \"#fee0d2\", \"#FFFFFF\", \"#deebf7\", \"#c6dbef\", \n                           \"#9ecae1\", \"#6baed6\", \"#4292c6\", \"#2171b5\", \"#08519c\", \"#08306b\")\ntemperature &lt;- read_csv(\"../data/HadCRUT.5.0.2.0.analysis.summary_series.global.annual.csv\") \ntemperature |&gt; \n  ggplot(aes(x = Time, y = 1, fill = `Anomaly (deg C)`)) +\n  geom_tile() +\n  scale_fill_gradientn(colors = warming_stripe_colors) +\n  scale_y_continuous(expand = c(0,0)) +\n  scale_x_continuous(expand = c(0,0)) +\n  theme_void() +\n  theme(legend.position = \"none\")"
-  },
-  {
-    "objectID": "lectures/W02.html#warming-stripe",
-    "href": "lectures/W02.html#warming-stripe",
-    "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "Warming Stripe",
-    "text": "Warming Stripe\nWarming Stripes\n\nData can be retrieved from https://www.metoffice.gov.uk/hadobs/hadcrut5/. HadCRUT5 is a gridded dataset of global historical surface temperature anomalies relative to a 1961-1990 reference period."
-  },
-  {
     "objectID": "student-topics.html",
     "href": "student-topics.html",
     "title": "Student Topics",
@@ -1337,185 +1099,241 @@
     ]
   },
   {
-    "objectID": "lectures/W02bu.html#truth-beauty-facts-and-data",
-    "href": "lectures/W02bu.html#truth-beauty-facts-and-data",
+    "objectID": "lectures/W02.html#truth-beauty-facts-and-data",
+    "href": "lectures/W02.html#truth-beauty-facts-and-data",
     "title": "W#02 Data Visualization: Grammar of Graphics",
     "section": "Truth, Beauty, Facts, and Data",
-    "text": "Truth, Beauty, Facts, and Data\n\nProfessionals in data visualization often care about truth and beauty.\nThis may appear surprising at first glance because it should be about facts and data.\nBelieves behind this are\n\nFacts require beauty to become true.\nBeauty is necessary to see patterns.\n\nThere is no “Just show me the data!”, there is always some crafting involved in showing data."
+    "text": "Truth, Beauty, Facts, and Data\n· ::: {.incremental} - Professionals in data visualization often care about truth and beauty. - This may appear surprising at first glance because it should be about facts and data. - Believes behind this are\n- Facts require beauty to become true. - Beauty is necessary to see patterns. - There is no “Just show me the data!”, there is always some crafting involved in showing data. :::"
   },
   {
-    "objectID": "lectures/W02bu.html#the-data-saurus",
-    "href": "lectures/W02bu.html#the-data-saurus",
+    "objectID": "lectures/W02.html#the-data-saurus",
+    "href": "lectures/W02.html#the-data-saurus",
     "title": "W#02 Data Visualization: Grammar of Graphics",
     "section": "The Data Saurus",
     "text": "The Data Saurus\n\n\n\n\nCode\nlibrary(tidyverse)\n# install.packages(\"datasauRus\")\nlibrary(datasauRus)\ndatasaurus_dozen |&gt; \n  filter(dataset == \"dino\")\n\n\n# A tibble: 142 × 3\n   dataset     x     y\n   &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;\n 1 dino     55.4  97.2\n 2 dino     51.5  96.0\n 3 dino     46.2  94.5\n 4 dino     42.8  91.4\n 5 dino     40.8  88.3\n 6 dino     38.7  84.9\n 7 dino     35.6  79.9\n 8 dino     33.1  77.6\n 9 dino     29.0  74.5\n10 dino     26.2  71.4\n# ℹ 132 more rows\n\n\nCode\ndatasaurus_dozen |&gt; \n  filter(dataset == \"dino\") |&gt; \n    summarise(\n    mean_x = mean(x),\n    mean_y = mean(y),\n    sd_x = sd(x),\n    sd_y = sd(y),\n    cor_xy = cor(x, y)\n  )\n\n\n# A tibble: 1 × 5\n  mean_x mean_y  sd_x  sd_y  cor_xy\n   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;\n1   54.3   47.8  16.8  26.9 -0.0645\n\n\n\n\n\nCode\ndatasaurus_dozen |&gt; \n  filter(dataset == \"dino\") |&gt; \n  ggplot(aes(x = x, y = y)) +\n  geom_point() +\n  coord_fixed() +\n  theme_minimal(base_size = 20)"
   },
   {
-    "objectID": "lectures/W02bu.html#the-data-saurus-and-12-friends",
-    "href": "lectures/W02bu.html#the-data-saurus-and-12-friends",
+    "objectID": "lectures/W02.html#the-data-saurus-and-12-friends",
+    "href": "lectures/W02.html#the-data-saurus-and-12-friends",
     "title": "W#02 Data Visualization: Grammar of Graphics",
     "section": "The Data Saurus and 12 Friends",
     "text": "The Data Saurus and 12 Friends\n\n\nCode\ndatasaurus_dozen |&gt; \n  ggplot(aes(x = x, y = y)) +\n  geom_point() +\n  facet_wrap(~ dataset, ncol = 5) +\n  coord_fixed() +\n  theme_minimal()"
   },
   {
-    "objectID": "lectures/W02bu.html#what-do-the-summary-statistics-say",
-    "href": "lectures/W02bu.html#what-do-the-summary-statistics-say",
+    "objectID": "lectures/W02.html#what-do-the-summary-statistics-say",
+    "href": "lectures/W02.html#what-do-the-summary-statistics-say",
     "title": "W#02 Data Visualization: Grammar of Graphics",
     "section": "What do the summary statistics say?",
     "text": "What do the summary statistics say?\n\n\n\n\nCode\ndatasaurus_dozen |&gt; \n  summarise(\n    mean_x = mean(x),\n    mean_y = mean(y),\n    sd_x = sd(x),\n    sd_y = sd(y),\n    cor_xy = cor(x, y),\n    .by = dataset\n  )\n\n\n# A tibble: 13 × 6\n   dataset    mean_x mean_y  sd_x  sd_y  cor_xy\n   &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;\n 1 dino         54.3   47.8  16.8  26.9 -0.0645\n 2 away         54.3   47.8  16.8  26.9 -0.0641\n 3 h_lines      54.3   47.8  16.8  26.9 -0.0617\n 4 v_lines      54.3   47.8  16.8  26.9 -0.0694\n 5 x_shape      54.3   47.8  16.8  26.9 -0.0656\n 6 star         54.3   47.8  16.8  26.9 -0.0630\n 7 high_lines   54.3   47.8  16.8  26.9 -0.0685\n 8 dots         54.3   47.8  16.8  26.9 -0.0603\n 9 circle       54.3   47.8  16.8  26.9 -0.0683\n10 bullseye     54.3   47.8  16.8  26.9 -0.0686\n11 slant_up     54.3   47.8  16.8  26.9 -0.0686\n12 slant_down   54.3   47.8  16.8  26.9 -0.0690\n13 wide_lines   54.3   47.8  16.8  26.9 -0.0666"
   },
   {
-    "objectID": "lectures/W02bu.html#what-makes-a-good-visual",
-    "href": "lectures/W02bu.html#what-makes-a-good-visual",
+    "objectID": "lectures/W02.html#what-makes-a-good-visual",
+    "href": "lectures/W02.html#what-makes-a-good-visual",
     "title": "W#02 Data Visualization: Grammar of Graphics",
     "section": "What makes a good visual?",
     "text": "What makes a good visual?\n\n“Graphical excellence is the well-designed presentation of interesting data—a matter of substance, of statistics, and of design … [It] consists of complex ideas communicated with clarity, precision, and efficiency. … [It] is that which gives to the viewer the greatest number of ideas in the shortest time with the least ink in the smallest space … [It] is nearly always multivariate … And graphical excellence requires telling the truth about the data.”\n\nEdward Tufte, The Visual Display of Quantitative Information"
   },
   {
-    "objectID": "lectures/W02bu.html#what-makes-a-good-visual-1",
-    "href": "lectures/W02bu.html#what-makes-a-good-visual-1",
+    "objectID": "lectures/W02.html#what-makes-a-good-visual-1",
+    "href": "lectures/W02.html#what-makes-a-good-visual-1",
     "title": "W#02 Data Visualization: Grammar of Graphics",
     "section": "What makes a good visual?",
     "text": "What makes a good visual?\n\nTruthful\nFunctional\nBeautiful\nInsightful\nEnlightening\n\nAlberto Cairo, The Truthful Art\n\n\nMaybe, this is a bit too much to ask for with too big words?"
   },
   {
-    "objectID": "lectures/W02bu.html#what-makes-a-good-visual-down-to-earth-version",
-    "href": "lectures/W02bu.html#what-makes-a-good-visual-down-to-earth-version",
+    "objectID": "lectures/W02.html#what-makes-a-good-visual-down-to-earth-version",
+    "href": "lectures/W02.html#what-makes-a-good-visual-down-to-earth-version",
     "title": "W#02 Data Visualization: Grammar of Graphics",
     "section": "What makes a good visual? Down to earth version",
     "text": "What makes a good visual? Down to earth version\n\nGood aesthetics\nNo substantiv issues\nNo perceptual issues\nShows honesty and good judgment\n\nKieran Healy, Data Visualization: A Practical Introduction\nIt is a good book, available online for free: https://socviz.co/"
   },
   {
-    "objectID": "lectures/W02bu.html#basic-ideas",
-    "href": "lectures/W02bu.html#basic-ideas",
+    "objectID": "lectures/W02.html#basic-ideas",
+    "href": "lectures/W02.html#basic-ideas",
     "title": "W#02 Data Visualization: Grammar of Graphics",
     "section": "Basic Ideas",
     "text": "Basic Ideas\n\nMap data to aesthetics.\nData = Column in a data frame\nAesthetics = Visual attributes (x, y, color, size, shape, …)\nUse geometric objects to represent data points\nGeometric objects = Points, lines, bars, …"
   },
   {
-    "objectID": "lectures/W02bu.html#gapminder",
-    "href": "lectures/W02bu.html#gapminder",
+    "objectID": "lectures/W02.html#gapminder",
+    "href": "lectures/W02.html#gapminder",
     "title": "W#02 Data Visualization: Grammar of Graphics",
     "section": "Gapminder",
     "text": "Gapminder\n\n\nCode\nlibrary(gapminder)\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent, size = pop)) +\n  geom_point() + \n  scale_x_log10() +\n  scale_size_area(max_size = 15) +\n  theme_minimal()"
   },
   {
-    "objectID": "lectures/W02bu.html#gapminder-1",
-    "href": "lectures/W02bu.html#gapminder-1",
+    "objectID": "lectures/W02.html#gapminder-1",
+    "href": "lectures/W02.html#gapminder-1",
     "title": "W#02 Data Visualization: Grammar of Graphics",
     "section": "Gapminder",
     "text": "Gapminder\n\n\n\ncolumn\naesthetic aes()\ngeom\n\n\n\n\n\ngdpPercap\nx = gdpPercap\ngeom_point\n\n\n\nlifeExp\ny = lifeExp\ngeom_point\n\n\n\ncontinent\ncolor = continent\ngeom_point\n\n\n\npop\nsize = pop\ngeom_point"
   },
   {
-    "objectID": "lectures/W02bu.html#grammatical-layers",
-    "href": "lectures/W02bu.html#grammatical-layers",
+    "objectID": "lectures/W02.html#grammatical-layers",
+    "href": "lectures/W02.html#grammatical-layers",
     "title": "W#02 Data Visualization: Grammar of Graphics",
     "section": "Grammatical Layers",
     "text": "Grammatical Layers\n\nData\nAesthetics\nGeometric objects\nScales\nCoordinate system\nFacets\nTheme"
   },
   {
-    "objectID": "lectures/W02bu.html#data",
-    "href": "lectures/W02bu.html#data",
+    "objectID": "lectures/W02.html#data",
+    "href": "lectures/W02.html#data",
     "title": "W#02 Data Visualization: Grammar of Graphics",
     "section": "1. Data",
     "text": "1. Data\n\n\nCode\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot()"
   },
   {
-    "objectID": "lectures/W02bu.html#aesthetics",
-    "href": "lectures/W02bu.html#aesthetics",
+    "objectID": "lectures/W02.html#aesthetics",
+    "href": "lectures/W02.html#aesthetics",
     "title": "W#02 Data Visualization: Grammar of Graphics",
     "section": "2. Aesthetics",
     "text": "2. Aesthetics\n\n\nCode\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent, size = pop))"
   },
   {
-    "objectID": "lectures/W02bu.html#geometric-objects",
-    "href": "lectures/W02bu.html#geometric-objects",
+    "objectID": "lectures/W02.html#geometric-objects",
+    "href": "lectures/W02.html#geometric-objects",
     "title": "W#02 Data Visualization: Grammar of Graphics",
     "section": "3. Geometric objects",
     "text": "3. Geometric objects\n\n\nCode\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent, size = pop)) +\n  geom_point()"
   },
   {
-    "objectID": "lectures/W02bu.html#scales",
-    "href": "lectures/W02bu.html#scales",
+    "objectID": "lectures/W02.html#scales",
+    "href": "lectures/W02.html#scales",
     "title": "W#02 Data Visualization: Grammar of Graphics",
     "section": "4. Scales",
     "text": "4. Scales\n\n\nCode\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent, size = pop)) +\n  geom_point() + \n  scale_x_log10() +\n  scale_size_area(max_size = 15) +\n  scale_y_continuous(limits = c(20, 90))"
   },
   {
-    "objectID": "lectures/W02bu.html#coordinate-system",
-    "href": "lectures/W02bu.html#coordinate-system",
+    "objectID": "lectures/W02.html#coordinate-system",
+    "href": "lectures/W02.html#coordinate-system",
     "title": "W#02 Data Visualization: Grammar of Graphics",
     "section": "5. Coordinate system",
     "text": "5. Coordinate system\n\n\nCode\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent, size = pop)) +\n  geom_point() + \n  scale_x_log10() +\n  scale_size_area(max_size = 15) +\n  coord_flip()"
   },
   {
-    "objectID": "lectures/W02bu.html#facets",
-    "href": "lectures/W02bu.html#facets",
+    "objectID": "lectures/W02.html#facets",
+    "href": "lectures/W02.html#facets",
     "title": "W#02 Data Visualization: Grammar of Graphics",
     "section": "6. Facets",
-    "text": "6. Facets\n\n\nCode\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent, size = pop)) +\n  geom_point() + \n  scale_x_log10() +\n  scale_size_area(max_size = 15) +\n  facet_wrap(~ continent)"
+    "text": "6. Facets\n\n\nCode\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent, size = pop)) +\n  geom_point() +\n  scale_x_log10() +\n  scale_size_area(max_size = 15) +\n  facet_wrap(~ continent)"
   },
   {
-    "objectID": "lectures/W02bu.html#theme",
-    "href": "lectures/W02bu.html#theme",
+    "objectID": "lectures/W02.html#theme-base-text-size",
+    "href": "lectures/W02.html#theme-base-text-size",
     "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "7. Theme",
-    "text": "7. Theme\n\n\nCode\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent, size = pop)) +\n  geom_point() + \n  scale_x_log10() +\n  scale_size_area(max_size = 15) +\n  facet_wrap(~ continent) +\n  theme_minimal(base_size = 20)"
+    "section": "7. Theme & Base Text Size",
+    "text": "7. Theme & Base Text Size\n\n\nCode\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent, size = pop)) +\n  geom_point() + \n  scale_x_log10() +\n  scale_size_area(max_size = 15) +\n  theme_minimal(base_size = 14)"
   },
   {
-    "objectID": "lectures/W02_bu.html#truth-beauty-facts-and-data",
-    "href": "lectures/W02_bu.html#truth-beauty-facts-and-data",
+    "objectID": "lectures/W02.html#more-things-labels",
+    "href": "lectures/W02.html#more-things-labels",
     "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "Truth, Beauty, Facts, and Data",
-    "text": "Truth, Beauty, Facts, and Data\n\nProfessionals in data visualization often care about truth and beauty.\nThis may appear surprising at first glance because it should be about facts and data.\nBelieves behind this are\n\nFacts require beauty to become true.\nBeauty is necessary to see patterns.\n\nThere is no “Just show me the data!”, there is always some crafting involved in showing data."
+    "section": "More things: Labels",
+    "text": "More things: Labels\n\n\nCode\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent, size = pop)) +\n  geom_point() + \n  scale_x_log10() +\n  scale_size_area(max_size = 15) +\n  labs(\n    title = \"Gapminder 2007\",\n    subtitle = \"Life Expectancy vs. GDP per Capita\",\n    x = \"GDP per Capita (log scale)\",\n    y = \"Life Expectancy\",\n    color = \"Continent\",\n    size = \"Population\"\n  ) +\n  theme_minimal(base_size = 14)"
   },
   {
-    "objectID": "lectures/W02_bu.html#the-data-saurus",
-    "href": "lectures/W02_bu.html#the-data-saurus",
+    "objectID": "lectures/W02.html#more-things-labels-1",
+    "href": "lectures/W02.html#more-things-labels-1",
     "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "The Data Saurus",
-    "text": "The Data Saurus\n\n\n\n\nCode\nlibrary(tidyverse)\n# install.packages(\"datasauRus\")\nlibrary(datasauRus)\ndatasaurus_dozen |&gt; \n  filter(dataset == \"dino\")\n\n\n# A tibble: 142 × 3\n   dataset     x     y\n   &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;\n 1 dino     55.4  97.2\n 2 dino     51.5  96.0\n 3 dino     46.2  94.5\n 4 dino     42.8  91.4\n 5 dino     40.8  88.3\n 6 dino     38.7  84.9\n 7 dino     35.6  79.9\n 8 dino     33.1  77.6\n 9 dino     29.0  74.5\n10 dino     26.2  71.4\n# ℹ 132 more rows"
+    "section": "More things: Labels",
+    "text": "More things: Labels\n\n\nCode\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  mutate(pop1M = pop / 1000000) |&gt;\n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent, size = pop1M)) +\n  geom_point() + \n  scale_x_log10() +\n  scale_size_area(max_size = 15) +\n  labs(\n    title = \"Gapminder 2007\",\n    subtitle = \"Life Expectancy vs. GDP per Capita\",\n    x = \"GDP per Capita (log scale)\",\n    y = \"Life Expectancy\",\n    color = \"Continent\",\n    size = \"Population\\nin Millions\"\n  ) +\n  theme_minimal(base_size = 14)"
   },
   {
-    "objectID": "lectures/W02_bu.html#the-data-saurus-and-12-friends",
-    "href": "lectures/W02_bu.html#the-data-saurus-and-12-friends",
+    "objectID": "lectures/W02.html#more-things-plot-labels",
+    "href": "lectures/W02.html#more-things-plot-labels",
     "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "The Data Saurus and 12 Friends",
-    "text": "The Data Saurus and 12 Friends\n\n\nCode\ndatasaurus_dozen |&gt; \n  ggplot(aes(x = x, y = y)) +\n  geom_point() +\n  facet_wrap(~ dataset, ncol = 5) +\n  coord_fixed() +\n  theme_minimal()"
+    "section": "More things: Plot Labels",
+    "text": "More things: Plot Labels\nChanging the Figure width in the quarto output with #| fig-width: 10\n\n\nCode\n```{r}\n#| fig-width: 7\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  mutate(pop1M = pop / 1000000) |&gt;\n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent, size = pop1M)) +\n  geom_point() + \n  scale_x_log10() +\n  scale_size_area(max_size = 15) +\n  labs(\n    title = \"Gapminder 2007\",\n    subtitle = \"Life Expectancy vs. GDP per Capita\",\n    x = \"GDP per Capita (log scale)\",\n    y = \"Life Expectancy\",\n    color = \"Continent\",\n    size = \"Population\\nin Millions\"\n  ) +\n  theme_minimal(base_size = 14)\n```"
   },
   {
-    "objectID": "lectures/W02_bu.html#what-do-the-summary-statistics-say",
-    "href": "lectures/W02_bu.html#what-do-the-summary-statistics-say",
+    "objectID": "lectures/W02.html#more-things-geom-labels",
+    "href": "lectures/W02.html#more-things-geom-labels",
     "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "What do the summary statistics say?",
-    "text": "What do the summary statistics say?\n\n\n\n\nCode\ndatasaurus_dozen |&gt; \n    group_by(dataset) |&gt;\n    summarize(mean = mean(x))\n\n\n# A tibble: 13 × 2\n   dataset     mean\n   &lt;chr&gt;      &lt;dbl&gt;\n 1 away        54.3\n 2 bullseye    54.3\n 3 circle      54.3\n 4 dino        54.3\n 5 dots        54.3\n 6 h_lines     54.3\n 7 high_lines  54.3\n 8 slant_down  54.3\n 9 slant_up    54.3\n10 star        54.3\n11 v_lines     54.3\n12 wide_lines  54.3\n13 x_shape     54.3"
+    "section": "More things: Geom Labels",
+    "text": "More things: Geom Labels\n\n\nCode\n```{r}\n#| fig-width: 7\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  mutate(pop1M = pop / 1000000) |&gt;\n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent, size = pop1M, label = country)) +\n  geom_point() + \n  geom_label(size = 2) +\n  scale_x_log10() +\n  scale_size_area(max_size = 15) +\n  labs(\n    title = \"Gapminder 2007\",\n    subtitle = \"Life Expectancy vs. GDP per Capita\",\n    x = \"GDP per Capita (log scale)\",\n    y = \"Life Expectancy\",\n    color = \"Continent\",\n    size = \"Population\\nin Millions\"\n  ) +\n  theme_minimal(base_size = 14)\n```"
   },
   {
-    "objectID": "lectures/W02_bu.html#what-makes-a-good-visual",
-    "href": "lectures/W02_bu.html#what-makes-a-good-visual",
+    "objectID": "lectures/W02.html#more-things-geom-selected-labels",
+    "href": "lectures/W02.html#more-things-geom-selected-labels",
     "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "What makes a good visual?",
-    "text": "What makes a good visual?\n\n“Graphical excellence is the well-designed presentation of interesting data—a matter of substance, of statistics, and of design … [It] consists of complex ideas communicated with clarity, precision, and efficiency. … [It] is that which gives to the viewer the greatest number of ideas in the shortest time with the least ink in the smallest space … [It] is nearly always multivariate … And graphical excellence requires telling the truth about the data.”\n\nEdward Tufte, The Visual Display of Quantitative Information"
+    "section": "More things: Geom Selected Labels",
+    "text": "More things: Geom Selected Labels\nFirst Try: Make new column\n\n\nCode\n```{r}\n#| fig-width: 7\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  mutate(\n    pop1M = pop / 1000000,\n    selected_labels = if_else(country %in% c(\"India\", \"China\"), country, \"\")\n    ) |&gt;\n  ggplot(aes(\n    x = gdpPercap, \n    y = lifeExp, \n    color = continent, \n    size = pop1M, \n    label = selected_labels)) +\n  geom_point() + \n  geom_label(size = 4) +\n  scale_x_log10() +\n  scale_size_area(max_size = 15) +\n  labs(\n    title = \"Gapminder 2007\",\n    subtitle = \"Life Expectancy vs. GDP per Capita\",\n    x = \"GDP per Capita (log scale)\",\n    y = \"Life Expectancy\",\n    color = \"Continent\",\n    size = \"Population\\nin Millions\"\n  ) +\n  theme_minimal(base_size = 14)\n```"
   },
   {
-    "objectID": "lectures/W02_bu.html#what-makes-a-good-visual-1",
-    "href": "lectures/W02_bu.html#what-makes-a-good-visual-1",
+    "objectID": "lectures/W02.html#more-things-geom-selected-labels-1",
+    "href": "lectures/W02.html#more-things-geom-selected-labels-1",
     "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "What makes a good visual?",
-    "text": "What makes a good visual?\n\nTruthful\nFunctional\nBeautiful\nInsightful\nEnlightening\n\nAlberto Cairo, The Truthful Art\n\n\nMaybe, this is a bit too much to ask for with too big words?"
+    "section": "More things: Geom Selected Labels",
+    "text": "More things: Geom Selected Labels\nSecond Try: New data frame\n\n\nCode\n```{r}\n#| fig-width: 7\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  mutate(pop1M = pop / 1000000) |&gt;\n  ggplot(aes(\n    x = gdpPercap, \n    y = lifeExp, \n    color = continent, \n    size = pop1M)) +\n  geom_point() + \n  geom_label(\n    data = gapminder |&gt; \n      filter(year == 2007, (country == \"China\" | country == \"India\")) |&gt; \n      mutate(pop1M = pop / 1000000),\n    mapping = aes(x = gdpPercap, y = lifeExp, label = country),\n    size = 4) +\n  scale_x_log10() +\n  scale_size_area(max_size = 15) +\n  labs(\n    title = \"Gapminder 2007\",\n    subtitle = \"Life Expectancy vs. GDP per Capita\",\n    x = \"GDP per Capita (log scale)\",\n    y = \"Life Expectancy\",\n    color = \"Continent\",\n    size = \"Population\\nin Millions\"\n  ) +\n  theme_minimal(base_size = 14)\n```"
   },
   {
-    "objectID": "lectures/W02_bu.html#what-makes-a-good-visual-down-to-earth-version",
-    "href": "lectures/W02_bu.html#what-makes-a-good-visual-down-to-earth-version",
+    "objectID": "lectures/W02.html#more-things-facet-two-years",
+    "href": "lectures/W02.html#more-things-facet-two-years",
     "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "What makes a good visual? Down to earth version",
-    "text": "What makes a good visual? Down to earth version\n\nGood aesthetics\nNo substantiv issues\nNo perceptual issues\nShows honesty and good judgment\n\nKieran Healy, Data Visualization: A Practical Introduction\nIt is a good book, available online for free: https://socviz.co/"
+    "section": "More things: Facet two years",
+    "text": "More things: Facet two years\n\n\nCode\n```{r}\ngapminder |&gt;  \n  filter(year == 2007 | year == 1952) |&gt; \n  mutate(pop1M = pop / 1000000) |&gt;\n  ggplot(aes(\n    x = gdpPercap, \n    y = lifeExp, \n    color = continent, \n    size = pop1M)) +\n  geom_point() + \n  geom_label(\n    data = gapminder |&gt; \n      filter((year == 2007 | year == 1952), (country == \"China\" | country == \"India\")) |&gt; \n      mutate(pop1M = pop / 1000000),\n    mapping = aes(x = gdpPercap, y = lifeExp, label = country),\n    size = 4) +\n  scale_x_log10() +\n  scale_size_area(max_size = 15) +\n  facet_wrap(~ year) +\n  labs(\n    title = \"Gapminder 2007\",\n    subtitle = \"Life Expectancy vs. GDP per Capita\",\n    x = \"GDP per Capita (log scale)\",\n    y = \"Life Expectancy\",\n    color = \"Continent\",\n    size = \"Population\\nin Millions\"\n  ) +\n  theme_minimal(base_size = 14)\n```"
   },
   {
-    "objectID": "lectures/W02_bu.html#basic-ideas",
-    "href": "lectures/W02_bu.html#basic-ideas",
+    "objectID": "lectures/W02.html#more-things-add-a-path",
+    "href": "lectures/W02.html#more-things-add-a-path",
     "title": "W#02 Data Visualization: Grammar of Graphics",
-    "section": "Basic Ideas",
-    "text": "Basic Ideas\n\nMap data to aesthetics.\nData = Column in a data frame\nAesthetics = Visual attributes (x, y, color, size, shape, …)\nUse geometric objects to represent data points\nGeometric objects = Points, lines, bars, …"
+    "section": "More things: Add a path",
+    "text": "More things: Add a path\n\n\nCode\n```{r}\ngapminder |&gt;  \n  filter(year == 2007) |&gt; \n  mutate(pop1M = pop / 1000000) |&gt;\n  ggplot(aes(\n    x = gdpPercap, \n    y = lifeExp, \n    color = continent, \n    size = pop1M)) +\n  geom_point() + \n  geom_label(\n    data = gapminder |&gt; \n      filter((year == 2007), (country == \"China\" | country == \"India\")) |&gt; \n      mutate(pop1M = pop / 1000000),\n    mapping = aes(x = gdpPercap, y = lifeExp, label = country),\n    size = 4) +\n  geom_path(\n    data = gapminder |&gt; \n      filter(country == \"China\" | country == \"India\") |&gt; \n      mutate(pop1M = pop / 1000000),\n    mapping = aes(x = gdpPercap, y = lifeExp),\n    size = 1) +\n  scale_x_log10() +\n  scale_size_area(max_size = 15) +\n  labs(\n    title = \"Gapminder 2007\",\n    subtitle = \"Life Expectancy vs. GDP per Capita\",\n    x = \"GDP per Capita (log scale)\",\n    y = \"Life Expectancy\",\n    color = \"Continent\",\n    size = \"Population\\nin Millions\"\n  ) +\n  theme_minimal(base_size = 14)\n```"
+  },
+  {
+    "objectID": "lectures/W02.html#more-things-add-a-path-1",
+    "href": "lectures/W02.html#more-things-add-a-path-1",
+    "title": "W#02 Data Visualization: Grammar of Graphics",
+    "section": "More things: Add a path",
+    "text": "More things: Add a path\nOrder layers and make groups correctly\n\n\nCode\n```{r}\ngapminder |&gt;  \n  filter(year == 2007) |&gt; \n  mutate(pop1M = pop / 1000000) |&gt;\n  ggplot(aes(\n    x = gdpPercap, \n    y = lifeExp, \n    color = continent, \n    size = pop1M)) +\n  geom_path(\n    data = gapminder |&gt; \n      filter(country == \"China\" | country == \"India\") |&gt; \n      mutate(pop1M = pop / 1000000),\n    mapping = aes(x = gdpPercap, y = lifeExp, group = country),\n    size = 1) +\n  geom_point() + \n  geom_label(\n    data = gapminder |&gt; \n      filter((year == 2007), (country == \"China\" | country == \"India\")) |&gt; \n      mutate(pop1M = pop / 1000000),\n    mapping = aes(x = gdpPercap, y = lifeExp, label = country),\n    size = 4) +\n  scale_x_log10() +\n  scale_size_area(max_size = 15) +\n  labs(\n    title = \"Gapminder 2007\",\n    subtitle = \"Life Expectancy vs. GDP per Capita\",\n    x = \"GDP per Capita (log scale)\",\n    y = \"Life Expectancy\",\n    color = \"Continent\",\n    size = \"Population\\nin Millions\"\n  ) +\n  theme_minimal(base_size = 14)\n```"
+  },
+  {
+    "objectID": "lectures/W02.html#another-example-line-plot",
+    "href": "lectures/W02.html#another-example-line-plot",
+    "title": "W#02 Data Visualization: Grammar of Graphics",
+    "section": "Another Example: Line plot",
+    "text": "Another Example: Line plot\n\n\nCode\ngapminder |&gt; \n  filter(continent == \"Asia\") |&gt; \n  ggplot(aes(x = year, y = lifeExp)) +\n  geom_line() +\n  geom_point()"
+  },
+  {
+    "objectID": "lectures/W02.html#another-example-line-plot-1",
+    "href": "lectures/W02.html#another-example-line-plot-1",
+    "title": "W#02 Data Visualization: Grammar of Graphics",
+    "section": "Another Example: Line plot",
+    "text": "Another Example: Line plot\n\n\nCode\ngapminder |&gt; \n  filter(continent == \"Asia\") |&gt; \n  ggplot(aes(x = year, y = lifeExp, color = country)) +\n  geom_line() +\n  geom_point()"
+  },
+  {
+    "objectID": "lectures/W02.html#another-example-line-plot-2",
+    "href": "lectures/W02.html#another-example-line-plot-2",
+    "title": "W#02 Data Visualization: Grammar of Graphics",
+    "section": "Another Example: Line plot",
+    "text": "Another Example: Line plot\n\n\nCode\ngapminder |&gt; \n  filter(continent == \"Asia\") |&gt; \n  ggplot(aes(x = year, y = lifeExp, group = country)) +\n  geom_line() +\n  geom_point() +\n  theme_minimal()"
+  },
+  {
+    "objectID": "lectures/W02.html#another-example-line-plot-3",
+    "href": "lectures/W02.html#another-example-line-plot-3",
+    "title": "W#02 Data Visualization: Grammar of Graphics",
+    "section": "Another Example: Line plot",
+    "text": "Another Example: Line plot\n\n\nCode\ngapminder |&gt; \n  mutate(\n    country_highlight = if_else(country %in% c(\"China\", \"India\"), country, \"Other Asia\")\n    ) |&gt;\n  filter(continent == \"Asia\") |&gt; \n  ggplot(aes(x = year, y = lifeExp, group = country, color = country_highlight)) +\n  geom_line() +\n  geom_point() +\n  scale_color_manual(values = c(\"China\" = \"red\", \"India\" = \"blue\", \"Other Asia\" = \"grey\")) +\n  labs(\n    title = \"Life Expectancy in Asia\",\n    subtitle = \"Highlighting China and India\",\n    x = \"Year\",\n    y = \"Life Expectancy\",\n    color = \"Country\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "lectures/W02.html#another-example-line-plot-more-columns",
+    "href": "lectures/W02.html#another-example-line-plot-more-columns",
+    "title": "W#02 Data Visualization: Grammar of Graphics",
+    "section": "Another Example: Line plot more columns",
+    "text": "Another Example: Line plot more columns\n\n\nCode\ngapminder |&gt; \n  mutate(\n    country_highlight = if_else(country %in% c(\"China\", \"India\"), country, \"Other Asia\"),\n    logGDP = log10(gdpPercap)\n    ) |&gt;\n  pivot_longer(cols = c(logGDP, lifeExp), names_to = \"measure\", values_to = \"value\") |&gt;\n  filter(continent == \"Asia\") |&gt; \n  ggplot(aes(x = year, y = value, group = country, color = country_highlight)) +\n  geom_line() +\n  geom_point() +\n  scale_color_manual(values = c(\"China\" = \"red\", \"India\" = \"blue\", \"Other Asia\" = \"grey\")) +\n  facet_wrap(~ measure, scales = \"free_y\", ncol = 1) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "lectures/W02.html#stripes-what-is-this",
+    "href": "lectures/W02.html#stripes-what-is-this",
+    "title": "W#02 Data Visualization: Grammar of Graphics",
+    "section": "Stripes: What is this?",
+    "text": "Stripes: What is this?\n\n\nCode\nwarming_stripe_colors &lt;- c(\"#67000d\", \"#a50f15\", \"#cb181d\", \"#ef3b2c\", \"#fb6a4a\", \n                           \"#fc9272\", \"#fcbba1\", \"#fee0d2\", \"#FFFFFF\", \"#deebf7\", \"#c6dbef\", \n                           \"#9ecae1\", \"#6baed6\", \"#4292c6\", \"#2171b5\", \"#08519c\", \"#08306b\")\ntemperature &lt;- read_csv(\"../data/HadCRUT.5.0.2.0.analysis.summary_series.global.annual.csv\") \ntemperature |&gt; \n  ggplot(aes(x = Time, y = 1, fill = `Anomaly (deg C)`)) +\n  geom_tile() +\n  scale_fill_gradientn(colors = warming_stripe_colors) +\n  scale_y_continuous(expand = c(0,0)) +\n  scale_x_continuous(expand = c(0,0)) +\n  theme_void() +\n  theme(legend.position = \"none\")"
+  },
+  {
+    "objectID": "lectures/W02.html#warming-stripe",
+    "href": "lectures/W02.html#warming-stripe",
+    "title": "W#02 Data Visualization: Grammar of Graphics",
+    "section": "Warming Stripe",
+    "text": "Warming Stripe\nWarming Stripes\n\nData can be retrieved from https://www.metoffice.gov.uk/hadobs/hadcrut5/. HadCRUT5 is a gridded dataset of global historical surface temperature anomalies relative to a 1961-1990 reference period."
   }
 ]
