@@ -1103,7 +1103,7 @@
     "href": "lectures/W02.html#truth-beauty-facts-and-data",
     "title": "W#02 Data Visualization: Grammar of Graphics",
     "section": "Truth, Beauty, Facts, and Data",
-    "text": "Truth, Beauty, Facts, and Data\n· ::: {.incremental} - Professionals in data visualization often care about truth and beauty. - This may appear surprising at first glance because it should be about facts and data. - Believes behind this are\n- Facts require beauty to become true. - Beauty is necessary to see patterns. - There is no “Just show me the data!”, there is always some crafting involved in showing data. :::"
+    "text": "Truth, Beauty, Facts, and Data\n\nProfessionals in data visualization often care about truth and beauty.\nThis may appear surprising at first glance because it should be about facts and data.\nBelieves behind this are\n\nFacts require beauty to become true.\nBeauty is necessary to see patterns.\n\nThere is no “Just show me the data!”, there is always some crafting involved in showing data."
   },
   {
     "objectID": "lectures/W02.html#the-data-saurus",
