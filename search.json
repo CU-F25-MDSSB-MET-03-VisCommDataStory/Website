@@ -140,217 +140,676 @@
     "text": "Data-Decoration Trap"
   },
   {
-    "objectID": "student-topics.html",
-    "href": "student-topics.html",
-    "title": "Student Topics",
+    "objectID": "lectures/W03.html#bar-plots",
+    "href": "lectures/W03.html#bar-plots",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Bar plots",
+    "text": "Bar plots\nGood McClellan (2018) Data Visualization: A Practical Introduction"
+  },
+  {
+    "objectID": "lectures/W03.html#bar-plots-vs.-pie-charts",
+    "href": "lectures/W03.html#bar-plots-vs.-pie-charts",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Bar plots vs. Pie Charts",
+    "text": "Bar plots vs. Pie Charts"
+  },
+  {
+    "objectID": "lectures/W03.html#bad-bar-charts",
+    "href": "lectures/W03.html#bad-bar-charts",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Bad bar charts",
+    "text": "Bad bar charts"
+  },
+  {
+    "objectID": "lectures/W03.html#bar-plots-and-summary-statistics",
+    "href": "lectures/W03.html#bar-plots-and-summary-statistics",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Bar plots and summary statistics",
+    "text": "Bar plots and summary statistics"
+  },
+  {
+    "objectID": "lectures/W03.html#alternatives",
+    "href": "lectures/W03.html#alternatives",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Alternatives",
+    "text": "Alternatives"
+  },
+  {
+    "objectID": "lectures/W03.html#pie-charts",
+    "href": "lectures/W03.html#pie-charts",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Pie charts",
+    "text": "Pie charts"
+  },
+  {
+    "objectID": "lectures/W03.html#stacked-bar-charts",
+    "href": "lectures/W03.html#stacked-bar-charts",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Stacked bar charts",
+    "text": "Stacked bar charts"
+  },
+  {
+    "objectID": "lectures/W03.html#parts-of-a-whole",
+    "href": "lectures/W03.html#parts-of-a-whole",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Parts of a whole",
+    "text": "Parts of a whole"
+  },
+  {
+    "objectID": "lectures/W03.html#compute-metrics",
+    "href": "lectures/W03.html#compute-metrics",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Compute metrics",
+    "text": "Compute metrics"
+  },
+  {
+    "objectID": "lectures/W03.html#communicating-uncertainty",
+    "href": "lectures/W03.html#communicating-uncertainty",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Communicating uncertainty",
+    "text": "Communicating uncertainty"
+  },
+  {
+    "objectID": "lectures/W03.html#visualizing-uncertainty",
+    "href": "lectures/W03.html#visualizing-uncertainty",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Visualizing uncertainty",
+    "text": "Visualizing uncertainty"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Visual Communication and Data Story-telling",
     "section": "",
-    "text": "Important\n\n\n\nSchedule for student topics and pitches updated: https://github.com/JU-F22-MDSSB-MET-03/Schedule-Organization\n\n\n\n1 To do\nThe presentation of a data visualization topic is an expected student contribution.\nPresentations should take place from Week 5 (Oct 4) to 7 (Oct 18).\nPresentations should be done in teams of two (exceptionally also three).\n\nTo do until Sep, 26:\n\nSelect a topic you want to work out from the list below and two alternatives.\nWrite your topical priorities on Teams in the course’s general channel as a reply to the respective conversation (from Tuesday Sep, 20 “DataViz Topic Distribution”).\nReply as existing team or individually and we will form teams then.\nBe prepared to be assigned to a presentation date in one of the three weeks 5, 6, or 7. Add any restriction you have in the reply on Teams.\n\n\n\n\n2 Topics\n\n\nVisualization and comparison of distributions of numerical variables (Boxplots, Violin Plots, Histograms, Density plots, Ridgeline plots) (Inspiration from the stories https://www.data-to-viz.com/story/OneNum.html, https://www.data-to-viz.com/story/OneNumOneCatSeveralObs.html, and https://www.data-to-viz.com/caveat/boxplot.html)\nVisualization of one categorical variable or nested categorical variables (Barplots and Lollipops and versions of stacking and dodging, Pie charts, Treemaps, Word Clouds) (Inspiration from the stories https://www.data-to-viz.com/story/OneNumOneCat.html, https://www.data-to-viz.com/story/SevCatOneNumNestedOneObsPerGroup.html, https://www.data-to-viz.com/caveat/multi_distribution.html, and https://www.data-to-viz.com/caveat/pie.html)\nVisualization of two or three numerical variables (Scatter plots, Scatter plots with summary statistics - regression or loess, the overplotting problem, density and contour plots, What can be used for the thrid variable – size, color, …?) (Inspiration from the stories https://www.data-to-viz.com/story/TwoNum.html and https://www.data-to-viz.com/story/ThreeNum.html)\nTwo numerical variables where one is ordered (e.g. time) and an additional categorical one (Line plots, Area plots, Focusing, the Spaghetti plot problem) (Inspiration from the stories https://www.data-to-viz.com/story/TwoNumOrdered.html, https://www.data-to-viz.com/story/OneCatSevOrderedNum.html, and https://www.data-to-viz.com/caveat/spaghetti.html)\n\nOptional topics:\n\nDendro grams (Hierarchical Clustering)\nNetworks (Inspiration from https://www.data-to-viz.com/story/AdjacencyMatrix.html)\nMaps (Inspiration from https://www.data-to-viz.com/graph/choropleth.html, https://www.data-to-viz.com/story/GPSCoordWithoutValue.html, and https://www.data-to-viz.com/story/GPSCoordWithValue.html)\nInteractive graphs (plotly, shiny, or observable)\nTableau and Power BI\n\n\nGenerally, for all specific visualization there is more information on https://datavizcatalogue.com and https://www.data-to-viz.com.\n\n\n3 Structure and Format\nStructure of the student presentation:\n\nExplain the underlying visualization task\nProvide examples of solutions using different data sources\nCompare different solutions with the same data\nFinish with a summary about good and bad uses for the visualization type, common problems, do’s and don’ts\n\nFormat:\n\nProvide a “hands-on” document where code and data is provided which produce visualizations. It can be a markdown or notebook file in which you mix text and code or a raw script where you put some descriptive text in comments. It can be in R or python. (If you want to use something else please coordinate before.) A repository in the organization https://github.com/JU-F22-MDSSB-MET-03 can be provided for distribution to others. Contact me on Teams. Students will then be enabled to clone it and play with the code.\nYou do not need presentation slides but you can. You can use revealjs in quarto to nicely present code and visualizations.\n\n\n\n4 Help\nWrite any clarification questions to me on Teams."
+    "text": "MDSSSB-MET-03 Visual Communication and Data Story-telling (Methods area, 5 credits)\n\nOffered in the Master program: Data Science for Society and Business (DSSB). See the module description in the DSSB Handbook.",
+    "crumbs": [
+      "Syllabus"
+    ]
   },
   {
-    "objectID": "Slides_drafting_visuals.html#doing-vs.-presenting",
-    "href": "Slides_drafting_visuals.html#doing-vs.-presenting",
-    "title": "Drafting your Visuals",
-    "section": "Doing vs. Presenting",
-    "text": "Doing vs. Presenting\n\nSource: https://x.com/ItaiYanai/status/1847127686612758569"
-  },
-  {
-    "objectID": "Slides_drafting_visuals.html#milestones",
-    "href": "Slides_drafting_visuals.html#milestones",
-    "title": "Drafting your Visuals",
-    "section": "Milestones",
-    "text": "Milestones\n2 Main insight 💡\nTarget Achievements:\n\nTarget audience described\nList of main insights in your report drafted (about 3-6 or more when the team is large)\nPrioritized what will be the main insights\n\n3 Visual Drafts 📊📈📉️\nTarget Achievements:\n\nFor each insight\n\na visuals drafted in the report or the presentation (a draft can be a first coded visual, or even photo of a sketch on paper)\nnotes and ideas for the final version"
-  },
-  {
-    "objectID": "Slides_drafting_visuals.html#task-1-audience",
-    "href": "Slides_drafting_visuals.html#task-1-audience",
-    "title": "Drafting your Visuals",
-    "section": "Task 1: Audience",
-    "text": "Task 1: Audience\nThink about the audience of your report:\nThe people you imagine to view your presentation or read your report.\nDescribe three different potential individuals in your audience. You are allowed to imagine a broader audience than our class. Answer for example: Who are they? Why are they interested? What is their connection to the topic?"
-  },
-  {
-    "objectID": "Slides_drafting_visuals.html#task-2-short-version-of-story",
-    "href": "Slides_drafting_visuals.html#task-2-short-version-of-story",
-    "title": "Drafting your Visuals",
-    "section": "Task 2: Short Version of Story",
-    "text": "Task 2: Short Version of Story\nAbstract\nWrite a short version of your story in the format of an abstract (6-7 sentences, 150-200 words)\nOne Sentence\nWrite a one-sentence version of the abstract which contains the main point of your report."
-  },
-  {
-    "objectID": "Slides_drafting_visuals.html#data-variations-to-consider",
-    "href": "Slides_drafting_visuals.html#data-variations-to-consider",
-    "title": "Drafting your Visuals",
-    "section": "Data Variations to Consider",
-    "text": "Data Variations to Consider"
-  },
-  {
-    "objectID": "Slides_drafting_visuals.html#creative-ideas-on-draft-visuals-1",
-    "href": "Slides_drafting_visuals.html#creative-ideas-on-draft-visuals-1",
-    "title": "Drafting your Visuals",
-    "section": "Creative Ideas on Draft Visuals (1)",
-    "text": "Creative Ideas on Draft Visuals (1)"
-  },
-  {
-    "objectID": "Slides_drafting_visuals.html#creative-ideas-on-draft-visuals-2",
-    "href": "Slides_drafting_visuals.html#creative-ideas-on-draft-visuals-2",
-    "title": "Drafting your Visuals",
-    "section": "Creative Ideas on Draft Visuals (2)",
-    "text": "Creative Ideas on Draft Visuals (2)"
-  },
-  {
-    "objectID": "Slides_drafting_visuals.html#activity",
-    "href": "Slides_drafting_visuals.html#activity",
-    "title": "Drafting your Visuals",
-    "section": "Activity",
-    "text": "Activity\nGroup Work: 2 Teams together, each team advises the other\nReporting to class:\nFor each team:\n\nDescribe Target Audience\nOne Sentence Summary of Main Insight\nShow Up to three visuals and how you plan to improve them\n(Optional) you need to explain some specific metrics you use?\n\nTake notes in the DataStory repository"
-  },
-  {
-    "objectID": "finalize_presentation.html#storyboarding",
-    "href": "finalize_presentation.html#storyboarding",
-    "title": "Finalize your Data Story Presentation",
-    "section": "Storyboarding",
-    "text": "Storyboarding\nDykes’ Storytelling Arc"
-  },
-  {
-    "objectID": "finalize_presentation.html#storyboarding-example",
-    "href": "finalize_presentation.html#storyboarding-example",
-    "title": "Finalize your Data Story Presentation",
-    "section": "Storyboarding example",
-    "text": "Storyboarding example\nStoryboard for a presentation of the datastory The summer break effects on the CoViD-19 pandemic in Germany 2020-2022"
-  },
-  {
-    "objectID": "finalize_presentation.html#checklist-datastory-essentials",
-    "href": "finalize_presentation.html#checklist-datastory-essentials",
-    "title": "Finalize your Data Story Presentation",
-    "section": "Checklist: Datastory Essentials",
-    "text": "Checklist: Datastory Essentials\nMost important:\n\nWhat is your hook?\nMake clear what the story is about. Provide context.\nWhat is your main Point?\nSelect one among all the story points you have.\n\nThen:\n\nWhat are the rising insights?\nStory points to make one after the other from the hook to the main point.\nWhat are the conclusion?\nDepending on the assumed audience."
-  },
-  {
-    "objectID": "finalize_presentation.html#visuals-1-visualize-the-right-data",
-    "href": "finalize_presentation.html#visuals-1-visualize-the-right-data",
-    "title": "Finalize your Data Story Presentation",
-    "section": "Visuals 1: Visualize the right data",
-    "text": "Visuals 1: Visualize the right data"
-  },
-  {
-    "objectID": "finalize_presentation.html#visuals-2-choose-best-visualization",
-    "href": "finalize_presentation.html#visuals-2-choose-best-visualization",
-    "title": "Finalize your Data Story Presentation",
-    "section": "Visuals 2: Choose best visualization",
-    "text": "Visuals 2: Choose best visualization"
-  },
-  {
-    "objectID": "finalize_presentation.html#visuals-2-graphical-perception",
-    "href": "finalize_presentation.html#visuals-2-graphical-perception",
-    "title": "Finalize your Data Story Presentation",
-    "section": "Visuals 2: Graphical Perception",
-    "text": "Visuals 2: Graphical Perception"
-  },
-  {
-    "objectID": "finalize_presentation.html#visuals-2-example-perception",
-    "href": "finalize_presentation.html#visuals-2-example-perception",
-    "title": "Finalize your Data Story Presentation",
-    "section": "Visuals 2: Example Perception",
-    "text": "Visuals 2: Example Perception\n\n\nThe blue category can be compared more accurate easier than the gray ones"
-  },
-  {
-    "objectID": "finalize_presentation.html#visual-2-pie-vs.-bars",
-    "href": "finalize_presentation.html#visual-2-pie-vs.-bars",
-    "title": "Finalize your Data Story Presentation",
-    "section": "Visual 2: Pie vs. Bars",
-    "text": "Visual 2: Pie vs. Bars"
-  },
-  {
-    "objectID": "finalize_presentation.html#visuals-3-calibrate-visuals-to-message",
-    "href": "finalize_presentation.html#visuals-3-calibrate-visuals-to-message",
-    "title": "Finalize your Data Story Presentation",
-    "section": "Visuals 3: Calibrate Visuals to Message",
-    "text": "Visuals 3: Calibrate Visuals to Message\n\nKeep comparisons in close proximity\nPut the things you compare close to each other\nProvide a common baseline for comparisons\nCan you provide a baseline for your comparison?\nEnsure charts are consistent for comparisons\nDo you use color consistently"
-  },
-  {
-    "objectID": "finalize_presentation.html#visuals-3-example",
-    "href": "finalize_presentation.html#visuals-3-example",
-    "title": "Finalize your Data Story Presentation",
-    "section": "Visuals 3: Example",
-    "text": "Visuals 3: Example"
-  },
-  {
-    "objectID": "finalize_presentation.html#visuals-4-remove-unneccessary-noise",
-    "href": "finalize_presentation.html#visuals-4-remove-unneccessary-noise",
-    "title": "Finalize your Data Story Presentation",
-    "section": "Visuals 4: Remove unneccessary noise",
-    "text": "Visuals 4: Remove unneccessary noise\n\nRemove surplus data\nAggregate less important data\nSeparate overlapping data\nShould you facet a graphic?\n\nRemove/reduce chartjunk"
-  },
-  {
-    "objectID": "finalize_presentation.html#visuals-5-focus-attention",
-    "href": "finalize_presentation.html#visuals-5-focus-attention",
-    "title": "Finalize your Data Story Presentation",
-    "section": "Visuals 5: Focus attention",
-    "text": "Visuals 5: Focus attention\n\nWhich color palettes?\nUse color vs. gray\nUse text (or other) annotations\nTry to find explanatory and not purely descriptive titles"
-  },
-  {
-    "objectID": "finalize_presentation.html#visuals-6-data-approachable-and-engaging",
-    "href": "finalize_presentation.html#visuals-6-data-approachable-and-engaging",
-    "title": "Finalize your Data Story Presentation",
-    "section": "Visuals 6: Data approachable and engaging",
-    "text": "Visuals 6: Data approachable and engaging\n\nMake axis labels\nConsider direct labels\nAvoid vertical or diagonal text if possible\nUse simple axis increments, avoid scientific notation of numbers (no 1e6)\nCan you use meaningful guidelines, anchorlines, trendlines, shaded regions, gridlines\nSort categories?\nUse transparency to show overplotting\n“Independent” variable on the x-axis\n…"
-  },
-  {
-    "objectID": "finalize_presentation.html#visuals-7-instill-trust-in-numbers",
-    "href": "finalize_presentation.html#visuals-7-instill-trust-in-numbers",
-    "title": "Finalize your Data Story Presentation",
-    "section": "Visuals 7: Instill trust in numbers",
-    "text": "Visuals 7: Instill trust in numbers\nBe careful with:\n\nTruncated y-axis\nInconsistent date intervals\nInconsistent binning\n…"
-  },
-  {
-    "objectID": "quarto.html",
-    "href": "quarto.html",
-    "title": "Quarto Hints",
+    "objectID": "index.html#module-names",
+    "href": "index.html#module-names",
+    "title": "Visual Communication and Data Story-telling",
     "section": "",
-    "text": "Here is advice and links to work with quarto to make beautiful and trustful Presentations and Reports with https://quarto.org/quarto.png.\nThe focus is on presentations using the revealjs framework and HTML output because they are well integrated in quarto and the default for the final report."
+    "text": "MDSSSB-MET-03 Visual Communication and Data Story-telling (Methods area, 5 credits)\n\nOffered in the Master program: Data Science for Society and Business (DSSB). See the module description in the DSSB Handbook.",
+    "crumbs": [
+      "Syllabus"
+    ]
   },
   {
-    "objectID": "quarto.html#reading-the-quarto-documentation",
-    "href": "quarto.html#reading-the-quarto-documentation",
-    "title": "Quarto Hints",
-    "section": "1 Reading the quarto Documentation",
-    "text": "1 Reading the quarto Documentation\nYou find almost everything in the quarto documentation Guide and the quarto documentation Reference. However, it is sometimes not so easy to find the right section to read for what problems.\n\nRead the Guide to understand subtopics of quarto holistically. For example:\n\nAuthoring with topics like Markdown Basics, how to embed images, make tables and other interesting sections to check out. The subsection Scholarly Writing is important for\n\nmaking an advanced front matter with more than title and author\nhow to work with citations (when you refer to references like articles in the text) and references (which appear at the end of the text)\nhow to make cross-references, e.g. links from your text to numbers figures with captions and links to other sections\n\nComputations explaining how to work with python and R code blocks\nTools for problems helping you to work within RStudio or VSCode\nDocuments for things related to the documents you want to render like your HTML-pages for project reports\nPresentations for making presentations, in particular using the revealjs framework\nMore advanced sections about making dashboards, or websites, books, and manuscripts, or other so called projects (which are multi-document directories, e.g. as stored in a GitHub repository)\n\nGo to the Reference if you need a particular option or customization for your document or code chunk. For example:\n\nWhat options are availbale to customize your HTML output or your revealjs Presentation\nWhat options are available to customize the size of figures created by code blocks. This is in the section Code Cells.\nImportant: look into Knitr (default) if you work from RStudio mainly in R, select Jupyter if you render from a Jupyter notebook\nWhat options are available about showing, fold or hide your code or other code execution output like warnings and message\nImportant: look into Knitr (default) if you work from RStudio mainly in R, select Jupyter if you render from a Jupyter notebook"
+    "objectID": "index.html#module-components",
+    "href": "index.html#module-components",
+    "title": "Visual Communication and Data Story-telling",
+    "section": "2 Module Components",
+    "text": "2 Module Components\nThe courses is offered in the Fall term.\nRequirements: Data Science Concepts and Data Science Tools",
+    "crumbs": [
+      "Syllabus"
+    ]
   },
   {
-    "objectID": "quarto.html#citation-references-literature-management",
-    "href": "quarto.html#citation-references-literature-management",
-    "title": "Quarto Hints",
-    "section": "2 Citation, References, Literature Management",
-    "text": "2 Citation, References, Literature Management\nSee above how to find guides in quarto on these topics. Additionally, it makes sense to think more about tools helping you to start a sustainable workflow for reading, archiving and citing scientific literature, for your future studies also beyond this course and beyond your studies going further in academia or industry jobs.\n\nFind a literature manager! A recommendation is zotero (free to use). You can use it to\n\nCollect literature you find browsing the internet or other literature. There are easy ways in zotero to import by just pasting in a DOI, are there a browser plugins that give you a button in your browser you can click when on the website of an article.\nRead and annotate articles. Zotero can easily also archive PDFs of articles on your local machine and a PDF viewer. You can also annotate PDF there and there are other tools to access such annotations automatically.\nOrganize your literature into collections of topics of interest. (Any item can be in more collections!)\nExport bibtex bibliographies (.bib-files) which you can use to embed them in your reports as references.bib to cite from\n\nLearn how to work with references and citations in quarto! You do not need a full workflow on it you can also start small for just one project. It will pay off to get into this!\nSearch for video tutorials on literature management. Be aware that there are several options, but many are connected through free standards like bibtex or csl."
+    "objectID": "index.html#class-meeting-information",
+    "href": "index.html#class-meeting-information",
+    "title": "Visual Communication and Data Story-telling",
+    "section": "3 Class Meeting Information",
+    "text": "3 Class Meeting Information\nClasses are no Tuesdays\nSession 1 Tue 9:45 - 11:00\nSession 2 Tue 9:45 - 11:00\nLocation: East Hall Room 3 in-person\nVideo streaming and recording in Teams will be provided, it does not work for all class activities perfectly: Team F25_MDSSB-MET-03_Visual Communication and Data Story-telling, General Channel",
+    "crumbs": [
+      "Syllabus"
+    ]
   },
   {
-    "objectID": "quarto.html#from-a-quick-report-to-a-beautiful-web-article",
-    "href": "quarto.html#from-a-quick-report-to-a-beautiful-web-article",
-    "title": "Quarto Hints",
-    "section": "3 From a quick report to a beautiful web article",
-    "text": "3 From a quick report to a beautiful web article\nQuick report: A report produced fast for internal use for yourself or a few colleagues or outsiders you need to quickly share results with. Quick reports often have:\n\njust title and author, no sophisticated front matter with date, affiliation, contact information, funding information, …\ncode based figures just in place without captions and not being cross-referenced\ncode echo and code output (like warnings) appearing directly in the text, not nicely folded or removed/suppressed (after careful checks)\n\nWeb article: A well crafted report which is prepared to be readable by any outsider, e.g. as a web site published from GitHub pages. For a beautiful web article you:\n\nHave a sensible structure for Headers (#, ##, ###) which may also provide a sensible table of content (see toc related options for HTML)\nFold in Code (code-fold: true), and suppress any warnings (e.g., warnings: false) or other messages (e.g., messages: false) which are not relevant for the reader. If there was something relevant for the reader (like removed data points or whatever), write about it in your text.\nHave well adjusted code-based figures. No cut-off labels. Large enough labels. Appropriate size (adjust fig-width and/or fig-height in quarto).\nDo not show data frames as raw console out put but use a formatted table output. In R, use for example knitr::kable() (simple option) or advance table produced witht the gt package.\nUse inline code to show numbers from your analysis in the text!\nIf not very brief introduce Figures and Table by making them referable see sections on cross-referencing. By doing that Figures and Tables also get a caption.\nCite sources you use for your report by using Links, Citations, and a final References sections (read the docs on this)"
+    "objectID": "index.html#instructors",
+    "href": "index.html#instructors",
+    "title": "Visual Communication and Data Story-telling",
+    "section": "4 Instructors",
+    "text": "4 Instructors\nJan Lorenz Email: jlorenz@constructor.univeristy",
+    "crumbs": [
+      "Syllabus"
+    ]
   },
   {
-    "objectID": "quarto.html#publish-your-project-from-github",
-    "href": "quarto.html#publish-your-project-from-github",
-    "title": "Quarto Hints",
-    "section": "4 Publish your project from GitHub",
-    "text": "4 Publish your project from GitHub\nThe quarto docs provide details and different ways to publish your report. Check the check the Publishing section in the quarto Guide.\nAs you are working from GitHub anyway, look at the section about publishing using GitHub Pages. There are three ways: (1) render to docs, (2) use the quarto publish command, (3) use GitHub actions. All are fine and documented. Just follow the steps when you do it the first time. The different ways are different. (1) has lowest “overhead” using other tools but requires more systematic manual work when updating a lot of files, it is great for one file reports which you do not need to update a lot. (2) is better if you need to update more often like in a website. (3) is the most advanced using GitHub actions provided bny GitHub."
+    "objectID": "index.html#format-and-workload",
+    "href": "index.html#format-and-workload",
+    "title": "Visual Communication and Data Story-telling",
+    "section": "5 Format and Workload",
+    "text": "5 Format and Workload\n17.5 hours Lectures (including class activities) 17.5 hours Tutorials (partly prepared by students) 90 hours Project Work outside Class",
+    "crumbs": [
+      "Syllabus"
+    ]
   },
   {
-    "objectID": "quarto.html#from-reports-to-presentions-and-vice-versa",
-    "href": "quarto.html#from-reports-to-presentions-and-vice-versa",
-    "title": "Quarto Hints",
-    "section": "5 From Reports to Presentions (and vice versa)",
-    "text": "5 From Reports to Presentions (and vice versa)\nThese are two different formats for data storytelling. However, the markdown structure has some similarity:\n\n\n\n\n\n\n\n\n\nReport\nPresentation\n\n\n\n\nOutput format\nHTML\nrevealjs (HTML)\n\n\n#\nDefines a main Section and its header\nDefines a presentation Section with a title-like extra slide\n\n\n##\nDefines a Subsection and its header\nDefine a Slide and its header\n\n\n\nSo, a common workflow Presentation to Report or Report to Presention can be to copy the file and then adjust the format in the YAML and adjust the structure. Typically:\n\nShorten text, e.g. to list for presentation, make text paragraphs from text lists\nRefine the headers (#, ##, …) for the purpose\nCheck if visuals work well in the new format"
+    "objectID": "index.html#intended-learning-outcomes",
+    "href": "index.html#intended-learning-outcomes",
+    "title": "Visual Communication and Data Story-telling",
+    "section": "6 Intended Learning Outcomes",
+    "text": "6 Intended Learning Outcomes\nThe module descriptions can be found in the DSSB Handbook\n\n6.1 From the handbook\nBy the end of this module, students will be able\n\nvisually represent various data sources\nchoose suitable visual representations for different data sets\nevaluate visual depictions of data\nassist users in visual data analysis\ntarget visual representations to different audiences\n\n\n\n6.2 Additional remark from the instructor\nYou will build on your experience\n\nthe small Data Science Project in Data Science Tools in the the 1st semester\nyour Data Science Lab Project in the 2nd semester\n\nYou will create another Data Science Project focusing on great graphics and telling a story with data! You will write the report such that a non Data Scientist can enjoy reading it and gain some insights about the datastory you tell.",
+    "crumbs": [
+      "Syllabus"
+    ]
   },
   {
-    "objectID": "schedule.html",
-    "href": "schedule.html",
+    "objectID": "index.html#examination-and-assessment",
+    "href": "index.html#examination-and-assessment",
+    "title": "Visual Communication and Data Story-telling",
+    "section": "7 Examination and Assessment",
+    "text": "7 Examination and Assessment\nFrom the Handbook:\nAssessment Type: Project Report (6000 - 8000 words)\nThis is the official word count from the handbook. However, the instructor will not count words and will not assess the report based on fulfilling the word count. Essential parts the submissions will be visual anyway.\nDetails about the project report: The project report is a website which tells a data story which is rendered with quarto.\nIt includes\n\na slide deck used to tell the story in a presentation,\na written report tells the story for readers and gives more details and more visuals, e.g. in Appendices.\n\nOptional the submission can also include a dashboard with interactive graphs which enables individual exploration by the reader.\nThe report must be reproducible. That means the source code must be provided.\nHowever, the report must be readable without reading code. The target audience is not a programmer and they should not see code while reading. Technical parts should be in the appendix. \nDelivery via GitHub.\n\n\n\n\n\n\nImportant\n\n\n\nYou can make your data story into a nice thing to show your competence to the outside world. It is not too difficult to publish the report as a website from your final repository. Make your report such that it is worth to publish and show it!",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "index.html#sec-stud-contrib",
+    "href": "index.html#sec-stud-contrib",
+    "title": "Visual Communication and Data Story-telling",
+    "section": "8 Module Policies and expected student engagement and contributions",
+    "text": "8 Module Policies and expected student engagement and contributions\nIn this course we work with different methods and most of them require student engagement such as\n\nreading a chapter before class to discuss it in class\npreparing something to show to others\npitch your project idea to the class\nengage in a class room activity, like a joint storyboarding session\ndo a final project presentation\n\nFor all activities, participation in person is best.\nSome sessions may be streamed and recorded when some students have a valid excuse to not be present in person. However, there may be activities where this does not work well.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "index.html#academic-integrity",
+    "href": "index.html#academic-integrity",
+    "title": "Visual Communication and Data Story-telling",
+    "section": "9 Academic Integrity",
+    "text": "9 Academic Integrity\nAll involved parties (professors and lecturers, instructors and students) are expected to abide by the word and spirit of the “Code of Academic Integrity”: https://constructor.university/student-life/student-services/university-policies/academic-policies/code-of-academic-integrity. Violations of the Code might be brought to the attention of the Academic Integrity Committee.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "index.html#artifical-intelligence-ai-use-policy",
+    "href": "index.html#artifical-intelligence-ai-use-policy",
+    "title": "Visual Communication and Data Story-telling",
+    "section": "10 Artifical Intelligence (AI) Use Policy",
+    "text": "10 Artifical Intelligence (AI) Use Policy\nThis policy covers any generative AI tool, such as ChatGPT, Elicit, etc. This includes text, code, slides, artwork/graphics/video/audio and other products.\nWe instructors encouraged to using and exploring AI tools for these purposes:\n\nLearning by dialog with a chatbot. AI chatbots can be very helpful to explain you concepts on your desired level and get a feeling about how certain topics are treated. You can ask for an easier or more detailed explanation or focus on certain aspects. Note: The capabilities are limited and you likely receive a lot of false information! An AI chat can be a good entry point to learn about a specific topic but the more specific it gets the more likely it is that AI will start to deliver useless or wrong answers. Using chatbots should remain a small part of your learning process. Rule of thumb: Spend not more than 25% of the learning time with chatting. There is no way around reading textbooks, reading software documentation, learning and understanding concepts, searching for help online, asking instructors or fellow students.\nHave code snippets written. Tools like GitHub Copilot can be a great help in coding! You are encouraged to have them available and try them. The GitHub Copilot is free to use for students and teachers who joined GitHub Education), they can be integrated in your programming IDE like RStudio and VSCode. Copilots can speed up writing. However, they may deliver bad code. There is no way around understanding yourself what code is doing! Do not spend endless hours asking for new code with new prompts, spend time understanding a language and the functions and objects you are using! AI chatbots and Copilots can also help you to understand code. Copilots can be a great help to get a skeleton of code and an idea how your solution might look, they rarely deliver the complete code, expect that the code does not work, expect that the code seems to works but the results are wrong. You are 100% accountable for the code you produce, with or without the help of a copilot!\nHave a draft text snippet written. Formulating and describing research questions, describing data, documenting code, interpreting results, and deriving conclusion from the results is an essential part of data science not direclty related to coding but verbal text. Chatbots are good in writing text which often appears as well readable. You can use this to inspire you and to polish and improve your texts. However, you are 100% accountable for the text you deliver. You are expected to know what your text is about and to be able to answer questions about what your text means! With text generated purely by chatbots, it is oftenn evident for us that students do not understand. We consider such cases worse than incomplete but sensible self-written text. Text written by chatbots is often very generic and not specific. In general, we value more specific text higher than generic text. Large parts of very generic text is considered worse than a shorter more specific text.\nNote: Philosophical and legal questions around the training and use of chatbots and code copilots are controversially contested and re-examined constantly! We encourage to engage with such questions and become aware of arguments and debates.\n\nIf any part of this AI policy is confusing or uncertain, please reach out to us for a conversation before submitting your work.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "index.html#schedule",
+    "href": "index.html#schedule",
+    "title": "Visual Communication and Data Story-telling",
+    "section": "11 Schedule",
+    "text": "11 Schedule\nThe Schedule is on an extra page and will be updated continuously.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "index.html#literature",
+    "href": "index.html#literature",
+    "title": "Visual Communication and Data Story-telling",
+    "section": "12 Literature",
+    "text": "12 Literature\nDuring the course we will work through this book:\nDykes, B. (2019). Effective Data Storytelling: How to Drive Change with Data, Narrative and Visuals. John Wiley & Sons.\nSee Readings.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "index.html#feedback-from-students",
+    "href": "index.html#feedback-from-students",
+    "title": "Visual Communication and Data Story-telling",
+    "section": "13 Feedback from Students",
+    "text": "13 Feedback from Students\nWe are eager to constantly improve the quality of our teaching. We would be glad to obtain your feedback at any time of the course to improve your learning experience.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "schedule_FINAL.html",
+    "href": "schedule_FINAL.html",
     "title": "Schedule",
     "section": "",
-    "text": "Student projects and student schedules: Course-Organization-Resources Repo\nClass = whole class meets together\nTeam = team sessions with the instructor in the same time (no class meeting)\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDates\nHow\nTopic\nTasks\nReadings\nMilestones\n\n\n\n\n1\nSep 02\nClass\nWhat is Visual Communication? What is Data Storytelling?\nTasks 1\nCh 1\n\n\n\n2\nSep 09\nClass\nData Visualization: Grammar of Graphics\n\nCh 2\n\n\n\n3\nSep 16\nClass\nAmounts Proportions Uncertainty\n\nCh 3\n\n\n\n4\nSep 23\nClass\nRelationships Comparisons Annotations\n\nCh 4\n\n\n\n5\nSep 30\nClass\nData Stories\n\nCh 5\n\n\n\n6\nOct 07\nTeam\nIndividual Coaching: Projects Work Start!\n\nCh 6\n0\n\n\n7\nOct 14\nClass\nStudent Project Pitches\n\nCh 7\n1\n\n\n8\nOct 21\nClass\nMain Insight\n\nCh 8\n2\n\n\n9\nOct 28\nClass\nDrafting your Visuals!\n\n\n3\n\n\n10\nNov 04\nClass\nStory boarding!\n\n\n4\n\n\n11\nNov 11\nTeam\nIndividual Coaching\n\n\n\n\n\n12\nNov 18\nClass\nPolishing your Visuals\n\n\n\n\n\n13\nNov 25\nClass\nStudent Presentations\n\n\n5\n\n\n14\nDec 02\nno class\nInstructor is unavailable\n\n\n\n\n\nDec\nMeet\nTeam\nFeedback on presentation / Advice for Finalization\n\n\n\n\n\n \nEnd of Term\nSubmission\nFinal report and slidedeck\n\n\n6",
+    "text": "Student projects and student schedules: Course-Organization-Resources Repo"
+  },
+  {
+    "objectID": "schedule_FINAL.html#r",
+    "href": "schedule_FINAL.html#r",
+    "title": "Schedule",
+    "section": "Reading Remarks on Dykes",
+    "text": "Reading Remarks on Dykes\nThe purpose of reading is to apply the knowledge for doing your Data Story Project. To that end, some parts require closer reading than others.\n\nChapter 1: Introduction to Driving Change through Insight\nAll\nChapter 2: Why Tell Stories with Data?\nAll\nChapter 3: The Psychology of Data Storytelling\nThis Chapter is optional. Read it if you are interested in the psychology of human perception of facts. Consult the summary in Table 3.1.\nChapter 4: The Anatomy of a Data Story (21 pages intensive reading) Do an intensive reading of the Sections\n\nThe Chapter Introduction including Figure 4.2 The Analysis Journey: From Storyframing to Storytelling (pp. 105-110)\nThe Six Essential Elements of a Data Story (pp. 110-118)\nData Stories Come in All Shapes and Sizes (pp. 118-121)\nWhen It Makes Sense to Craft Data Stories and When It Doesn’t (pp. 139-143)\n\nYou can skim Every Story Needs a Storyteller and Know Your Audience Before Telling Your Story\nChapter 5: Data, The Foundation of Your Data Story (20 pages intensive reading)\nDo an intensive reading of the Sections\n\nThe Chapter Introduction (pp. 146-148)\nThe Analysis Process: Exploration to Explanation (pp. 161-168)\nAnalyzing and Communicating Data Demands Discipline (pp. 168-176)\n\nYou can skim Examine the Building Blocks of Your Data Stories, Every Data Story Needs a Central Insight, Do You Have an Actionable Insight?, and When Too Much of a Good Thing Is Bad\nChapter 6: Narrative, The Structure of Your Data Story (14 pages intensive reading) Do an intensive reading of the Sections\n\nDefining a Narrative Model for Data Stories (pp. 186-195)\nFleshing Out Your Narrative with Story Points (pp. 195-199)\n\nThe content of Storyboarding Your Data Story will be the basis for the classroom story boarding activity.\nYou can skim faster through When They Want Just the Facts, Uncovering the Heroes in Your Data Story, and Make Your Ideas More Digestible with Analogies.\nChapter 7: Visuals (Part 1): Setting the Scenes of Your Data Story\nAll\nChapter 8: Visuals (Part 2): Polishing the Scenes of Your Data Story\nAll\nChapter 9: Crafting Your Own Data Story\nOptional"
+  },
+  {
+    "objectID": "Slides_polishing_visuals.html#visual-story-points",
+    "href": "Slides_polishing_visuals.html#visual-story-points",
+    "title": "Polishing Visuals",
+    "section": "Visual Story Points",
+    "text": "Visual Story Points"
+  },
+  {
+    "objectID": "Slides_polishing_visuals.html#goals-for-visual-storytelling",
+    "href": "Slides_polishing_visuals.html#goals-for-visual-storytelling",
+    "title": "Polishing Visuals",
+    "section": "Goals for Visual Storytelling",
+    "text": "Goals for Visual Storytelling\n\nAs data storyteller, you bear the burden of comprehension - not your audience.\nMake it as easy as possible for your audience to understand your visuals and follow your overall story.\n\n\nWhat is the dominant visual attribute in these graphs?"
+  },
+  {
+    "objectID": "Slides_polishing_visuals.html#principles-visual-data-storytelling",
+    "href": "Slides_polishing_visuals.html#principles-visual-data-storytelling",
+    "title": "Polishing Visuals",
+    "section": "Principles Visual Data Storytelling",
+    "text": "Principles Visual Data Storytelling"
+  },
+  {
+    "objectID": "Slides_polishing_visuals.html#visualize-right-data",
+    "href": "Slides_polishing_visuals.html#visualize-right-data",
+    "title": "Polishing Visuals",
+    "section": "1. Visualize Right Data",
+    "text": "1. Visualize Right Data\nData Variations to Consider"
+  },
+  {
+    "objectID": "Slides_polishing_visuals.html#visualize-right-data-example",
+    "href": "Slides_polishing_visuals.html#visualize-right-data-example",
+    "title": "Polishing Visuals",
+    "section": "1. Visualize Right Data: Example",
+    "text": "1. Visualize Right Data: Example"
+  },
+  {
+    "objectID": "Slides_polishing_visuals.html#visualize-right-data-example-1",
+    "href": "Slides_polishing_visuals.html#visualize-right-data-example-1",
+    "title": "Polishing Visuals",
+    "section": "1. Visualize Right Data: Example",
+    "text": "1. Visualize Right Data: Example"
+  },
+  {
+    "objectID": "Slides_polishing_visuals.html#visualize-right-data-example-2",
+    "href": "Slides_polishing_visuals.html#visualize-right-data-example-2",
+    "title": "Polishing Visuals",
+    "section": "1. Visualize Right Data: Example",
+    "text": "1. Visualize Right Data: Example"
+  },
+  {
+    "objectID": "Slides_polishing_visuals.html#right-visual",
+    "href": "Slides_polishing_visuals.html#right-visual",
+    "title": "Polishing Visuals",
+    "section": "2. Right Visual",
+    "text": "2. Right Visual"
+  },
+  {
+    "objectID": "Slides_polishing_visuals.html#right-visual-accurate-comparison",
+    "href": "Slides_polishing_visuals.html#right-visual-accurate-comparison",
+    "title": "Polishing Visuals",
+    "section": "2. Right Visual: Accurate comparison",
+    "text": "2. Right Visual: Accurate comparison"
+  },
+  {
+    "objectID": "Slides_polishing_visuals.html#right-visual-example",
+    "href": "Slides_polishing_visuals.html#right-visual-example",
+    "title": "Polishing Visuals",
+    "section": "2. Right Visual: Example",
+    "text": "2. Right Visual: Example"
+  },
+  {
+    "objectID": "Slides_polishing_visuals.html#calibrate-visual-to-message",
+    "href": "Slides_polishing_visuals.html#calibrate-visual-to-message",
+    "title": "Polishing Visuals",
+    "section": "3. Calibrate visual to message",
+    "text": "3. Calibrate visual to message"
+  },
+  {
+    "objectID": "Slides_polishing_visuals.html#calibrate-visual-to-message-1",
+    "href": "Slides_polishing_visuals.html#calibrate-visual-to-message-1",
+    "title": "Polishing Visuals",
+    "section": "3. Calibrate visual to message",
+    "text": "3. Calibrate visual to message"
+  },
+  {
+    "objectID": "Slides_polishing_visuals.html#calibrate-visual-to-message-2",
+    "href": "Slides_polishing_visuals.html#calibrate-visual-to-message-2",
+    "title": "Polishing Visuals",
+    "section": "3. Calibrate visual to message",
+    "text": "3. Calibrate visual to message"
+  },
+  {
+    "objectID": "Slides_polishing_visuals.html#calibrate-visual-to-message-3",
+    "href": "Slides_polishing_visuals.html#calibrate-visual-to-message-3",
+    "title": "Polishing Visuals",
+    "section": "3. Calibrate visual to Message",
+    "text": "3. Calibrate visual to Message"
+  },
+  {
+    "objectID": "Slides_polishing_visuals.html#polish-your-visuals",
+    "href": "Slides_polishing_visuals.html#polish-your-visuals",
+    "title": "Polishing Visuals",
+    "section": "4.-7. Polish your visuals",
+    "text": "4.-7. Polish your visuals\n\nRemove Unnecessary Noise\n\nExamples of Chartjunk\n\nFocus Attention on What’s Important\nMake Your Data Approachable and Engaging\n\nTips to Streamline Readability of Charts\nTips for Using Reference Lines\nTips for Formatting\nTips for Convention Adherence\n\nInstill Trust in Your Numbers\n\nDeceptive Practices to Avoid"
+  },
+  {
+    "objectID": "finalchecks.html#a-mixed-version",
+    "href": "finalchecks.html#a-mixed-version",
+    "title": "Data Storytelling - Final Checks",
+    "section": "A mixed version",
+    "text": "A mixed version\n\nPresent the main point at the beginning (and as the climax again).\n\n\n\nSome movies also work that way.\n\nActivity: Could such an early take-away work for your story?"
+  },
+  {
+    "objectID": "finalchecks.html#aristotles-rhetoric",
+    "href": "finalchecks.html#aristotles-rhetoric",
+    "title": "Data Storytelling - Final Checks",
+    "section": "Aristotle’s rhetoric",
+    "text": "Aristotle’s rhetoric\n\n\n\n\nActivity:\n\nReflect on your story: Do you address all these 5 rhetoric perspectives?\n\nShow credibility by not telling stories unrelated to data.\nWhat parts appeal to emotion?\nDo you have logical reasoning for your main point?\nIf there make reference to timeliness.\nDo you know the main purpose of the story?"
+  },
+  {
+    "objectID": "finalchecks.html#data-forgeries-1-2-3",
+    "href": "finalchecks.html#data-forgeries-1-2-3",
+    "title": "Data Storytelling - Final Checks",
+    "section": "Data Forgeries 1, 2, 3",
+    "text": "Data Forgeries 1, 2, 3"
+  },
+  {
+    "objectID": "readings.html",
+    "href": "readings.html",
+    "title": "Readings",
+    "section": "",
+    "text": "Tip\n\n\n\nThe Schedule lists when readings should be completed (feel free to read ahead!)\nWatch out for Tasks related to readings.",
     "crumbs": [
+      "Syllabus",
+      "Readings"
+    ]
+  },
+  {
+    "objectID": "readings.html#book",
+    "href": "readings.html#book",
+    "title": "Readings",
+    "section": "Book: Dykes (2019)",
+    "text": "Book: Dykes (2019)\nThere are several good books on Data Storytelling. I use the following book as a main reference. While my own data story telling is mostly scientific, the book is written from a business perspective which is a good complement and many principles are the same.\nDykes, C. (2019). Effective Data Storytelling: How to Drive Change with Data, Narrative and Visuals. Wiley.\nThe book is available as an eBook through the University Library:\nhttps://ebookcentral.proquest.com/lib/constructor-university/detail.action?docID=5993965\n(You need to be on campus or login with your University M365 account.)\nAfter the course you will have read most of the book.",
+    "crumbs": [
+      "Syllabus",
+      "Readings"
+    ]
+  },
+  {
+    "objectID": "readings.html#r",
+    "href": "readings.html#r",
+    "title": "Readings",
+    "section": "Reading Remarks on Dykes",
+    "text": "Reading Remarks on Dykes\nThe purpose of reading is to apply the knowledge for doing your Data Story Project. To that end, some parts require closer reading than others.\n\nChapter 1: Introduction to Driving Change through Insight\nAll.\nA central concept in this chapter is Insight. Visual communication and data storytelling is about enabling insights for the audience. For your project you need to think about what insights you want to communicate. Focus on getting an idea what an insight is.\nChapter 2: Why Tell Stories with Data?\nAll.\nChapter 3: The Psychology of Data Storytelling\nThis Chapter is optional. Read it if you are interested in the psychology of human perception of facts. Consult the summary in Table 3.1.\nChapter 4: The Anatomy of a Data Story (21 pages intensive reading) Do an intensive reading of the Sections\n\nThe Chapter Introduction including Figure 4.2 The Analysis Journey: From Storyframing to Storytelling (pp. 105-110)\nThe Six Essential Elements of a Data Story (pp. 110-118)\nData Stories Come in All Shapes and Sizes (pp. 118-121)\nWhen It Makes Sense to Craft Data Stories and When It Doesn’t (pp. 139-143)\n\nYou can skim Every Story Needs a Storyteller and Know Your Audience Before Telling Your Story\nChapter 5: Data, The Foundation of Your Data Story (20 pages intensive reading)\nDo an intensive reading of the Sections\n\nThe Chapter Introduction (pp. 146-148)\nThe Analysis Process: Exploration to Explanation (pp. 161-168)\nAnalyzing and Communicating Data Demands Discipline (pp. 168-176)\n\nYou can skim Examine the Building Blocks of Your Data Stories, Every Data Story Needs a Central Insight, Do You Have an Actionable Insight?, and When Too Much of a Good Thing Is Bad\nChapter 6: Narrative, The Structure of Your Data Story (14 pages intensive reading) Do an intensive reading of the Sections\n\nDefining a Narrative Model for Data Stories (pp. 186-195)\nFleshing Out Your Narrative with Story Points (pp. 195-199)\n\nThe content of Storyboarding Your Data Story will be the basis for the classroom story boarding activity.\nYou can skim faster through When They Want Just the Facts, Uncovering the Heroes in Your Data Story, and Make Your Ideas More Digestible with Analogies.\nChapter 7: Visuals (Part 1): Setting the Scenes of Your Data Story\nAll\nChapter 8: Visuals (Part 2): Polishing the Scenes of Your Data Story\nAll\nChapter 9: Crafting Your Own Data Story\nOptional",
+    "crumbs": [
+      "Syllabus",
+      "Readings"
+    ]
+  },
+  {
+    "objectID": "datastorytelling.html#data-visuals-narrative",
+    "href": "datastorytelling.html#data-visuals-narrative",
+    "title": "Data Storytelling - Storyboarding Activity Guide",
+    "section": "Data, Visuals, Narrative",
+    "text": "Data, Visuals, Narrative\n\n\nThe three essential elements of data stories.\n\nStoryboading is about a narrative and how it relates to data and visuals.\n\n\nExplain. Narrative coupled with data.\n\nWhat’s happening in the data?\nWhat is the context?\nGuide through the data structure!\nWhy is a particular insight important?\n\nEnlighten. Visuals applied to data.\n\nSome insights are hard with numbers only.\nShow patterns and outliers otherwise hidden.\n\nEngage. Narrative and visuals merged together.\n\nEngage (or even entertain) an audience.\nVisuals capture interest, only a story holds attention."
+  },
+  {
+    "objectID": "datastorytelling.html#data-story-continuum",
+    "href": "datastorytelling.html#data-story-continuum",
+    "title": "Data Storytelling - Storyboarding Activity Guide",
+    "section": "Data Story Continuum",
+    "text": "Data Story Continuum\n\nWhile storyboarding, make your story points with attributes from the right side."
+  },
+  {
+    "objectID": "datastorytelling.html#storyframing-before",
+    "href": "datastorytelling.html#storyframing-before",
+    "title": "Data Storytelling - Storyboarding Activity Guide",
+    "section": "Storyframing before",
+    "text": "Storyframing before\n\nBefore you communicate insight, you must find one!\nFocus on key dimensions and find key metrics\n\n\n\nWhile storyboarding, note open points for your storyframing.\nOpen points can be discussed in individual meetings next week"
+  },
+  {
+    "objectID": "datastorytelling.html#anatomy-of-a-data-story-1",
+    "href": "datastorytelling.html#anatomy-of-a-data-story-1",
+    "title": "Data Storytelling - Storyboarding Activity Guide",
+    "section": "Anatomy of a Data Story",
+    "text": "Anatomy of a Data Story\n\nDifferent structure for two parts of your report\n\nNarrative structure for your slide deck and presentation\nInverted pyramid structure for the written report"
+  },
+  {
+    "objectID": "datastorytelling.html#six-essential-elements-of-data-stories",
+    "href": "datastorytelling.html#six-essential-elements-of-data-stories",
+    "title": "Data Storytelling - Storyboarding Activity Guide",
+    "section": "Six essential elements of data stories",
+    "text": "Six essential elements of data stories\n\n\nYour project slide deck and presentation matches a Data Presentation\nYour project report matches a Curated Report (and Dashboard)"
+  },
+  {
+    "objectID": "datastorytelling.html#differences-in-communication",
+    "href": "datastorytelling.html#differences-in-communication",
+    "title": "Data Storytelling - Storyboarding Activity Guide",
+    "section": "Differences in Communication",
+    "text": "Differences in Communication\n\n\nYour project slide deck and presentation is direct communication\nYour project report is indirect communication"
+  },
+  {
+    "objectID": "datastorytelling.html#data-storytelling-arc",
+    "href": "datastorytelling.html#data-storytelling-arc",
+    "title": "Data Storytelling - Storyboarding Activity Guide",
+    "section": "Data Storytelling Arc",
+    "text": "Data Storytelling Arc"
+  },
+  {
+    "objectID": "datastorytelling.html#compared-to-other-communication-models",
+    "href": "datastorytelling.html#compared-to-other-communication-models",
+    "title": "Data Storytelling - Storyboarding Activity Guide",
+    "section": "Compared to other communication models",
+    "text": "Compared to other communication models"
+  },
+  {
+    "objectID": "datastorytelling.html#examples-of-story-points",
+    "href": "datastorytelling.html#examples-of-story-points",
+    "title": "Data Storytelling - Storyboarding Activity Guide",
+    "section": "Examples of story points",
+    "text": "Examples of story points\n\nActivity: Check if your ideas fit into one of the categories and then improve on that premise. Alternatively: Get inspired by these."
+  },
+  {
+    "objectID": "datastorytelling.html#storyboarding",
+    "href": "datastorytelling.html#storyboarding",
+    "title": "Data Storytelling - Storyboarding Activity Guide",
+    "section": "Storyboarding",
+    "text": "Storyboarding\n\nDefinition: A story is an account of causally related or connected series of events.\nA narrative always has a one-dimensional linear sequence, but we can decide\n\nwhat is in and\nin which order.\n\nStoryboarding is a technique from the movie industry (invented at Disney’s in the 30’s, now part of pre-visualization) which can also be used for data presentations.\nMain purpose: Build the story, not the exact visualizations (rough ideas are enough)!\n\nActivity: Make a story board for your presentation. Follow the steps on the next slides."
+  },
+  {
+    "objectID": "datastorytelling.html#phase-a-story-points",
+    "href": "datastorytelling.html#phase-a-story-points",
+    "title": "Data Storytelling - Storyboarding Activity Guide",
+    "section": "Phase A: Story points!",
+    "text": "Phase A: Story points!\nActivity\n\nWrite down story points and/or brief visual sketches on sticky notes or cards.\n\nThere is no limit on the initial number of story-point card to generate!\nSelect the best 6 to 10 ones\nKeep all, maybe you want to replace one\nYou can always create or refine one later\n\nAlready now you can play with your story points to search for a compelling story.\n\n\nArrange them in order\nReplace, combine, refine, and reshuffle them\nUse them to tell the story\nScrutinize and iterate your story"
+  },
+  {
+    "objectID": "datastorytelling.html#phase-b-storyboarding",
+    "href": "datastorytelling.html#phase-b-storyboarding",
+    "title": "Data Storytelling - Storyboarding Activity Guide",
+    "section": "Phase B: Storyboarding!",
+    "text": "Phase B: Storyboarding!\nActivity: Realize these steps in your storyboard.\n\nStep 1: Identify your “Aha” moment (main insight)\nStep 2: Find your beginning (the setting and the “hook”)\nStep 3: Select your rising insights (narrative from the hook to the Aha moment)\nStep 4: Conclude with solutions, next steps, empowerment to action, …\n\nWhen your storyboard is fixed\n\nwrite the titles down in your slide deck and\nstart working on your final visuals such that they best support your story."
+  },
+  {
+    "objectID": "tasks/03-week.html",
+    "href": "tasks/03-week.html",
+    "title": "Week 2: Preparations for Week 3",
+    "section": "",
+    "text": "Check the boxes when done. I provide some good feeling of having it done 🙂.\nAdditional readings:\nChapter 6 in Fundamentals of Data Visualization: Visualizing amounts (Wilke 2018) Chapter 7 in Fundamentals of Data Visualization: Visualizing distributions: Histograms and density plots (Wilke 2018) Chapter 10 in Fundamentals of Data Visualization: Visualising proportions (Wilke 2018)"
+  },
+  {
+    "objectID": "tasks/10-week.html",
+    "href": "tasks/10-week.html",
+    "title": "Task for Week 10: Preparations for Week 11",
+    "section": "",
+    "text": "Check the boxes when done. I provide some good feeling of having it done 🙂.\nShort guide before the meeting"
+  },
+  {
+    "objectID": "tasks/01-week.html",
+    "href": "tasks/01-week.html",
+    "title": "Week 01",
+    "section": "",
+    "text": "Slides Direct Link\n\nFind the live recording in the Course’s Team’s Recording Folder.\n\n\n\nRead Chapter 1 in Dykes (2019), consult the Reading Remarks for the Chapter.\n\nComplete the corresponding reading assignment on Teams: Click the Assignments Tab and write your engagement comments in your personal class notebook there.",
+    "crumbs": [
+      "Syllabus",
       "Schedule",
-      "**Schedule**"
+      "Week 01"
+    ]
+  },
+  {
+    "objectID": "tasks/01-week.html#material",
+    "href": "tasks/01-week.html#material",
+    "title": "Week 01",
+    "section": "",
+    "text": "Slides Direct Link\n\nFind the live recording in the Course’s Team’s Recording Folder.\n\n\n\nRead Chapter 1 in Dykes (2019), consult the Reading Remarks for the Chapter.\n\nComplete the corresponding reading assignment on Teams: Click the Assignments Tab and write your engagement comments in your personal class notebook there.",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 01"
+    ]
+  },
+  {
+    "objectID": "tasks/01-week.html#checklist",
+    "href": "tasks/01-week.html#checklist",
+    "title": "Week 01",
+    "section": "Checklist",
+    "text": "Checklist\nCheck the boxes when done, and feel the “done” 🙂.\n\nGet ready for your Playground repository\n\nAccept the invitation to join the GitHub-Organization CU-F25-MDSSB-MET-03-VisCommDataStory. Check your emails for the invitation, or go to the page while logged in and find the acceptance button.\nMake your tool ready for work with R, tidyverse, and quarto.\n\nRecommendation: Switch to Positron as a replacement for RStudio.\nCheck that you have R 4.5.1 and the tidyverse package installed.\n\n\nRead the syllabus, come up with clarification question.\nReadings and Assignment done.",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 01"
+    ]
+  },
+  {
+    "objectID": "tasks/05-week.html",
+    "href": "tasks/05-week.html",
+    "title": "Task for Week 5: Preparations for Week 6",
+    "section": "",
+    "text": "Check the boxes when done. I provide some good feeling of having it done 🙂.\nForm: Project and Teams Check-In"
+  },
+  {
+    "objectID": "tasks/02-week.html",
+    "href": "tasks/02-week.html",
+    "title": "Week 02",
+    "section": "",
+    "text": "Slides Direct Link\n\nFind the live recording in the Course’s Team’s Recording Folder.\n\n\n\nRead Chapter 2 in Dykes (2019), consult the Reading Remarks for the Chapter.\n\nComplete the corresponding reading assignment on Teams: Click the Assignments Tab and write your engagement comments in your personal class notebook there.\n\n\nMake one visual based on the data you find in the VisCom_Playground in the CU-F25-MDSSB-MET-03-VisCommDataStory Repositories\n\nComplete the corresponding assignment on Teams\n\nSearch the internet for a visual you find great. It can be anything which shows some insight through data visualization. Hopefully we receive a lot of different graphs to discuss what is great about them!\n\nComplete the corresponding assignment on Teams (same as above). Have it ready to be shared and discussed in class.",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 02"
+    ]
+  },
+  {
+    "objectID": "tasks/02-week.html#material",
+    "href": "tasks/02-week.html#material",
+    "title": "Week 02",
+    "section": "",
+    "text": "Slides Direct Link\n\nFind the live recording in the Course’s Team’s Recording Folder.\n\n\n\nRead Chapter 2 in Dykes (2019), consult the Reading Remarks for the Chapter.\n\nComplete the corresponding reading assignment on Teams: Click the Assignments Tab and write your engagement comments in your personal class notebook there.\n\n\nMake one visual based on the data you find in the VisCom_Playground in the CU-F25-MDSSB-MET-03-VisCommDataStory Repositories\n\nComplete the corresponding assignment on Teams\n\nSearch the internet for a visual you find great. It can be anything which shows some insight through data visualization. Hopefully we receive a lot of different graphs to discuss what is great about them!\n\nComplete the corresponding assignment on Teams (same as above). Have it ready to be shared and discussed in class.",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 02"
+    ]
+  },
+  {
+    "objectID": "tasks/02-week.html#checklist",
+    "href": "tasks/02-week.html#checklist",
+    "title": "Week 02",
+    "section": "Checklist",
+    "text": "Checklist\nCheck the boxes when done, and feel the “done” 🙂.\n\nHave the repository VisCom_Playground cloned to your computer.",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 02"
+    ]
+  },
+  {
+    "objectID": "tasks/04-week.html",
+    "href": "tasks/04-week.html",
+    "title": "Task for Week 4: Preparations for Week 5",
+    "section": "",
+    "text": "Check the boxes when done. I provide some good feeling of having it done 🙂."
+  },
+  {
+    "objectID": "milestones.html",
+    "href": "milestones.html",
+    "title": "Project Milestones",
+    "section": "",
+    "text": "The student project report is the central assessment item of the module for Examination and Grading.\nProjects can be done in teams or individually.\nThis list of milestones guides through the preparation, presentation and delivery of your report during the semester.\nGo through the checklists of the Milestones repeatedly. Of course, you can also go back to earlier Milestones past the planned week and improve your report material.",
+    "crumbs": [
+      "Syllabus",
+      "Project Milestones"
+    ]
+  },
+  {
+    "objectID": "milestones.html#m0",
+    "href": "milestones.html#m0",
+    "title": "Project Milestones",
+    "section": "Milestone 0: Project teams and project topic fixed",
+    "text": "Milestone 0: Project teams and project topic fixed\n\nTeams can be one 🙎 or more persons 🙎‍♂️🙍‍♀️🙎. Teams with more members should have more story points and at the final presentation each member should present at least one story point.\nForm: Student survey for project ideas filled.\nProject discussed in individual meeting with instructor.",
+    "crumbs": [
+      "Syllabus",
+      "Project Milestones"
+    ]
+  },
+  {
+    "objectID": "milestones.html#m1",
+    "href": "milestones.html#m1",
+    "title": "Project Milestones",
+    "section": "Milestone 1: Project pitch",
+    "text": "Milestone 1: Project pitch\nFor each project: ~5 min presentation answering:\n\n🗃️ What is the data?\n💬 At least one story points/insights (max. 3 story points)\n📊 At least one visual created with the data (max. 2 visuals)\n\nFormat: Use the quarto/revealjs slide deck in your sandbox\nPresentation over MS Teams in class.\nTarget Achievements:\n\nData and topic chosen\nTeams formed\nProject repository cloned, rendering of report and presentation tested\nProject pitch done",
+    "crumbs": [
+      "Syllabus",
+      "Project Milestones"
+    ]
+  },
+  {
+    "objectID": "milestones.html#m2",
+    "href": "milestones.html#m2",
+    "title": "Project Milestones",
+    "section": "Milestone 2: Main insight 💡",
+    "text": "Milestone 2: Main insight 💡\nTarget Achievements:\n\nTarget audience described\nList of main insights in your report drafted (about 3-6 or more when the team is large)\nPrioritized what will be the main insights",
+    "crumbs": [
+      "Syllabus",
+      "Project Milestones"
+    ]
+  },
+  {
+    "objectID": "milestones.html#m3",
+    "href": "milestones.html#m3",
+    "title": "Project Milestones",
+    "section": "Milestone 3: Visual Drafts 📊📈📉️",
+    "text": "Milestone 3: Visual Drafts 📊📈📉️\nTarget Achievements:\n\nFor each insight\n\na visuals drafted in the report or the presentation (a draft can be a first coded visual, or even photo of a sketch on paper)\nnotes and ideas for the final version",
+    "crumbs": [
+      "Syllabus",
+      "Project Milestones"
+    ]
+  },
+  {
+    "objectID": "milestones.html#m4",
+    "href": "milestones.html#m4",
+    "title": "Project Milestones",
+    "section": "Milestone: Data story and storyboard 📖",
+    "text": "Milestone: Data story and storyboard 📖\n\nDescribed the audience you want to address\nHave all your story points (e.g. as post its) drafted as a story board on paper (or in a digital tool).\nDraft all slide titles in the presentaton slidedeck.",
+    "crumbs": [
+      "Syllabus",
+      "Project Milestones"
+    ]
+  },
+  {
+    "objectID": "milestones.html#m5",
+    "href": "milestones.html#m5",
+    "title": "Project Milestones",
+    "section": "Milestone: Presentation 💬",
+    "text": "Milestone: Presentation 💬\n\nFinalized your slidedeck as part of the project delivery. (Additional minor graphical improvements are allowed afterwards.)\nTold your data story with the help of your slidedeck in class!",
+    "crumbs": [
+      "Syllabus",
+      "Project Milestones"
+    ]
+  },
+  {
+    "objectID": "milestones.html#m6",
+    "href": "milestones.html#m6",
+    "title": "Project Milestones",
+    "section": "Milestone: Final report 📄",
+    "text": "Milestone: Final report 📄\n\nFinalized your written report.\nChecked if the rendering works and the html-files opened and a appear as they should in a local browser.\nCleaned repository (removed unnecessary files etc.) and pushed a final commit by Dec 22, 2023 as the deadline is set in the Academic Calendar.\nDecided if you want to publish your report on the web.",
+    "crumbs": [
+      "Syllabus",
+      "Project Milestones"
+    ]
+  },
+  {
+    "objectID": "milestones.html#delivery",
+    "href": "milestones.html#delivery",
+    "title": "Project Milestones",
+    "section": "Delivery",
+    "text": "Delivery\nFor details about the project report the Examination and Grading in the Syllabus\nEssential parts of your delivery:\n\nReport\nSlidedeck\n\nOptional:\n\nDashboard if not included in website.\nReproduction code if not folded in the report or report appendix.",
+    "crumbs": [
+      "Syllabus",
+      "Project Milestones"
     ]
   },
   {
@@ -543,560 +1002,218 @@
     "text": "Adjust the general text size\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(y = opinion, fill = opinion)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1) + \n  guides(fill = \"none\") +\n  labs(\n    title = \"Was Britain right/wrong to vote to leave EU?\",\n    subtitle = \"YouGov Survey Results, 2-3 September 2019\",\n    caption = \"Source document from YouGov: bit.ly/2lCJZVg\",\n    x = NULL, y = NULL\n  ) +\n  scale_fill_manual(values = c(\n    \"Wrong\" = \"#ef8a62\",\n    \"Right\" = \"#67a9cf\",\n    \"Don't know\" = \"gray\"\n  )) +\n  theme_minimal(base_size = 14)"
   },
   {
-    "objectID": "milestones.html",
-    "href": "milestones.html",
-    "title": "Project Milestones",
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Schedule",
     "section": "",
-    "text": "The student project report is the central assessment item of the module for Examination and Grading.\nProjects can be done in teams or individually.\nThis list of milestones guides through the preparation, presentation and delivery of your report during the semester.\nGo through the checklists of the Milestones repeatedly. Of course, you can also go back to earlier Milestones past the planned week and improve your report material.",
+    "text": "Student projects and student schedules: Course-Organization-Resources Repo\nClass = whole class meets together\nTeam = team sessions with the instructor in the same time (no class meeting)\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDates\nHow\nTopic\nTasks\nReadings\nMilestones\n\n\n\n\n1\nSep 02\nClass\nWhat is Visual Communication? What is Data Storytelling?\nTasks 1\nCh 1\n\n\n\n2\nSep 09\nClass\nData Visualization: Grammar of Graphics\n\nCh 2\n\n\n\n3\nSep 16\nClass\nAmounts Proportions Uncertainty\n\nCh 3\n\n\n\n4\nSep 23\nClass\nRelationships Comparisons Annotations\n\nCh 4\n\n\n\n5\nSep 30\nClass\nData Stories\n\nCh 5\n\n\n\n6\nOct 07\nTeam\nIndividual Coaching: Projects Work Start!\n\nCh 6\n0\n\n\n7\nOct 14\nClass\nStudent Project Pitches\n\nCh 7\n1\n\n\n8\nOct 21\nClass\nMain Insight\n\nCh 8\n2\n\n\n9\nOct 28\nClass\nDrafting your Visuals!\n\n\n3\n\n\n10\nNov 04\nClass\nStory boarding!\n\n\n4\n\n\n11\nNov 11\nTeam\nIndividual Coaching\n\n\n\n\n\n12\nNov 18\nClass\nPolishing your Visuals\n\n\n\n\n\n13\nNov 25\nClass\nStudent Presentations\n\n\n5\n\n\n14\nDec 02\nno class\nInstructor is unavailable\n\n\n\n\n\nDec\nMeet\nTeam\nFeedback on presentation / Advice for Finalization\n\n\n\n\n\n \nEnd of Term\nSubmission\nFinal report and slidedeck\n\n\n6",
     "crumbs": [
-      "Projects",
-      "Project Milestones"
+      "Syllabus",
+      "Schedule"
     ]
   },
   {
-    "objectID": "milestones.html#m0",
-    "href": "milestones.html#m0",
-    "title": "Project Milestones",
-    "section": "Milestone 0: Project teams and project topic fixed",
-    "text": "Milestone 0: Project teams and project topic fixed\n\nTeams can be one 🙎 or more persons 🙎‍♂️🙍‍♀️🙎. Teams with more members should have more story points and at the final presentation each member should present at least one story point.\nForm: Student survey for project ideas filled.\nProject discussed in individual meeting with instructor.",
-    "crumbs": [
-      "Projects",
-      "Project Milestones"
-    ]
-  },
-  {
-    "objectID": "milestones.html#m1",
-    "href": "milestones.html#m1",
-    "title": "Project Milestones",
-    "section": "Milestone 1: Project pitch",
-    "text": "Milestone 1: Project pitch\nFor each project: ~5 min presentation answering:\n\n🗃️ What is the data?\n💬 At least one story points/insights (max. 3 story points)\n📊 At least one visual created with the data (max. 2 visuals)\n\nFormat: Use the quarto/revealjs slide deck in your sandbox\nPresentation over MS Teams in class.\nTarget Achievements:\n\nData and topic chosen\nTeams formed\nProject repository cloned, rendering of report and presentation tested\nProject pitch done",
-    "crumbs": [
-      "Projects",
-      "Project Milestones"
-    ]
-  },
-  {
-    "objectID": "milestones.html#m2",
-    "href": "milestones.html#m2",
-    "title": "Project Milestones",
-    "section": "Milestone 2: Main insight 💡",
-    "text": "Milestone 2: Main insight 💡\nTarget Achievements:\n\nTarget audience described\nList of main insights in your report drafted (about 3-6 or more when the team is large)\nPrioritized what will be the main insights",
-    "crumbs": [
-      "Projects",
-      "Project Milestones"
-    ]
-  },
-  {
-    "objectID": "milestones.html#m3",
-    "href": "milestones.html#m3",
-    "title": "Project Milestones",
-    "section": "Milestone 3: Visual Drafts 📊📈📉️",
-    "text": "Milestone 3: Visual Drafts 📊📈📉️\nTarget Achievements:\n\nFor each insight\n\na visuals drafted in the report or the presentation (a draft can be a first coded visual, or even photo of a sketch on paper)\nnotes and ideas for the final version",
-    "crumbs": [
-      "Projects",
-      "Project Milestones"
-    ]
-  },
-  {
-    "objectID": "milestones.html#m4",
-    "href": "milestones.html#m4",
-    "title": "Project Milestones",
-    "section": "Milestone: Data story and storyboard 📖",
-    "text": "Milestone: Data story and storyboard 📖\n\nDescribed the audience you want to address\nHave all your story points (e.g. as post its) drafted as a story board on paper (or in a digital tool).\nDraft all slide titles in the presentaton slidedeck.",
-    "crumbs": [
-      "Projects",
-      "Project Milestones"
-    ]
-  },
-  {
-    "objectID": "milestones.html#m5",
-    "href": "milestones.html#m5",
-    "title": "Project Milestones",
-    "section": "Milestone: Presentation 💬",
-    "text": "Milestone: Presentation 💬\n\nFinalized your slidedeck as part of the project delivery. (Additional minor graphical improvements are allowed afterwards.)\nTold your data story with the help of your slidedeck in class!",
-    "crumbs": [
-      "Projects",
-      "Project Milestones"
-    ]
-  },
-  {
-    "objectID": "milestones.html#m6",
-    "href": "milestones.html#m6",
-    "title": "Project Milestones",
-    "section": "Milestone: Final report 📄",
-    "text": "Milestone: Final report 📄\n\nFinalized your written report.\nChecked if the rendering works and the html-files opened and a appear as they should in a local browser.\nCleaned repository (removed unnecessary files etc.) and pushed a final commit by Dec 22, 2023 as the deadline is set in the Academic Calendar.\nDecided if you want to publish your report on the web.",
-    "crumbs": [
-      "Projects",
-      "Project Milestones"
-    ]
-  },
-  {
-    "objectID": "milestones.html#delivery",
-    "href": "milestones.html#delivery",
-    "title": "Project Milestones",
-    "section": "Delivery",
-    "text": "Delivery\nFor details about the project report the Examination and Grading in the Syllabus\nEssential parts of your delivery:\n\nReport\nSlidedeck\n\nOptional:\n\nDashboard if not included in website.\nReproduction code if not folded in the report or report appendix.",
-    "crumbs": [
-      "Projects",
-      "Project Milestones"
-    ]
-  },
-  {
-    "objectID": "tasks/04-week.html",
-    "href": "tasks/04-week.html",
-    "title": "Task for Week 4: Preparations for Week 5",
+    "objectID": "quarto.html",
+    "href": "quarto.html",
+    "title": "Quarto Hints",
     "section": "",
-    "text": "Check the boxes when done. I provide some good feeling of having it done 🙂."
+    "text": "Here is advice and links to work with quarto to make beautiful and trustful Presentations and Reports with https://quarto.org/quarto.png.\nThe focus is on presentations using the revealjs framework and HTML output because they are well integrated in quarto and the default for the final report."
   },
   {
-    "objectID": "tasks/02-week.html",
-    "href": "tasks/02-week.html",
-    "title": "Tasks for Week 1: Preparations for Week 2",
-    "section": "",
-    "text": "Check the boxes when done. I provide some good feeling of having it done 🙂.\n\nCreate your project repository from the template VisCom_Playground provided in the organization. Follow the instructions in the README of the template repository."
+    "objectID": "quarto.html#reading-the-quarto-documentation",
+    "href": "quarto.html#reading-the-quarto-documentation",
+    "title": "Quarto Hints",
+    "section": "1 Reading the quarto Documentation",
+    "text": "1 Reading the quarto Documentation\nYou find almost everything in the quarto documentation Guide and the quarto documentation Reference. However, it is sometimes not so easy to find the right section to read for what problems.\n\nRead the Guide to understand subtopics of quarto holistically. For example:\n\nAuthoring with topics like Markdown Basics, how to embed images, make tables and other interesting sections to check out. The subsection Scholarly Writing is important for\n\nmaking an advanced front matter with more than title and author\nhow to work with citations (when you refer to references like articles in the text) and references (which appear at the end of the text)\nhow to make cross-references, e.g. links from your text to numbers figures with captions and links to other sections\n\nComputations explaining how to work with python and R code blocks\nTools for problems helping you to work within RStudio or VSCode\nDocuments for things related to the documents you want to render like your HTML-pages for project reports\nPresentations for making presentations, in particular using the revealjs framework\nMore advanced sections about making dashboards, or websites, books, and manuscripts, or other so called projects (which are multi-document directories, e.g. as stored in a GitHub repository)\n\nGo to the Reference if you need a particular option or customization for your document or code chunk. For example:\n\nWhat options are availbale to customize your HTML output or your revealjs Presentation\nWhat options are available to customize the size of figures created by code blocks. This is in the section Code Cells.\nImportant: look into Knitr (default) if you work from RStudio mainly in R, select Jupyter if you render from a Jupyter notebook\nWhat options are available about showing, fold or hide your code or other code execution output like warnings and message\nImportant: look into Knitr (default) if you work from RStudio mainly in R, select Jupyter if you render from a Jupyter notebook"
   },
   {
-    "objectID": "tasks/05-week.html",
-    "href": "tasks/05-week.html",
-    "title": "Task for Week 5: Preparations for Week 6",
-    "section": "",
-    "text": "Check the boxes when done. I provide some good feeling of having it done 🙂.\nForm: Project and Teams Check-In"
+    "objectID": "quarto.html#citation-references-literature-management",
+    "href": "quarto.html#citation-references-literature-management",
+    "title": "Quarto Hints",
+    "section": "2 Citation, References, Literature Management",
+    "text": "2 Citation, References, Literature Management\nSee above how to find guides in quarto on these topics. Additionally, it makes sense to think more about tools helping you to start a sustainable workflow for reading, archiving and citing scientific literature, for your future studies also beyond this course and beyond your studies going further in academia or industry jobs.\n\nFind a literature manager! A recommendation is zotero (free to use). You can use it to\n\nCollect literature you find browsing the internet or other literature. There are easy ways in zotero to import by just pasting in a DOI, are there a browser plugins that give you a button in your browser you can click when on the website of an article.\nRead and annotate articles. Zotero can easily also archive PDFs of articles on your local machine and a PDF viewer. You can also annotate PDF there and there are other tools to access such annotations automatically.\nOrganize your literature into collections of topics of interest. (Any item can be in more collections!)\nExport bibtex bibliographies (.bib-files) which you can use to embed them in your reports as references.bib to cite from\n\nLearn how to work with references and citations in quarto! You do not need a full workflow on it you can also start small for just one project. It will pay off to get into this!\nSearch for video tutorials on literature management. Be aware that there are several options, but many are connected through free standards like bibtex or csl."
   },
   {
-    "objectID": "tasks/01-week.html",
-    "href": "tasks/01-week.html",
-    "title": "Tasks for Week 1",
-    "section": "",
-    "text": "Check the boxes when done. I provide some good feeling of having it done 🙂.\n\nGet ready with your Playground repository\n\nAccept the invitation to join the GitHub-Organization CU-F25-MDSSB-MET-03-VisCommDataStory. Check your emails for the invitation, or go to the page while logged in and find the acceptance button.\nMake your tool ready for work with R, tidyverse, and quarto.\n\nRecommendation: Switch to Positron as a replacement for RStudio.\nCheck that you have R 4.5.1 and the tidyverse package installed.\n\n\nRead the syllabus, come up with clarification question.\nRead Chapter 1 in Dykes (2019), consult the Reading Remarks for the Chapter.",
-    "crumbs": [
-      "Schedule",
-      "Tasks for Week 1"
-    ]
+    "objectID": "quarto.html#from-a-quick-report-to-a-beautiful-web-article",
+    "href": "quarto.html#from-a-quick-report-to-a-beautiful-web-article",
+    "title": "Quarto Hints",
+    "section": "3 From a quick report to a beautiful web article",
+    "text": "3 From a quick report to a beautiful web article\nQuick report: A report produced fast for internal use for yourself or a few colleagues or outsiders you need to quickly share results with. Quick reports often have:\n\njust title and author, no sophisticated front matter with date, affiliation, contact information, funding information, …\ncode based figures just in place without captions and not being cross-referenced\ncode echo and code output (like warnings) appearing directly in the text, not nicely folded or removed/suppressed (after careful checks)\n\nWeb article: A well crafted report which is prepared to be readable by any outsider, e.g. as a web site published from GitHub pages. For a beautiful web article you:\n\nHave a sensible structure for Headers (#, ##, ###) which may also provide a sensible table of content (see toc related options for HTML)\nFold in Code (code-fold: true), and suppress any warnings (e.g., warnings: false) or other messages (e.g., messages: false) which are not relevant for the reader. If there was something relevant for the reader (like removed data points or whatever), write about it in your text.\nHave well adjusted code-based figures. No cut-off labels. Large enough labels. Appropriate size (adjust fig-width and/or fig-height in quarto).\nDo not show data frames as raw console out put but use a formatted table output. In R, use for example knitr::kable() (simple option) or advance table produced witht the gt package.\nUse inline code to show numbers from your analysis in the text!\nIf not very brief introduce Figures and Table by making them referable see sections on cross-referencing. By doing that Figures and Tables also get a caption.\nCite sources you use for your report by using Links, Citations, and a final References sections (read the docs on this)"
   },
   {
-    "objectID": "tasks/10-week.html",
-    "href": "tasks/10-week.html",
-    "title": "Task for Week 10: Preparations for Week 11",
-    "section": "",
-    "text": "Check the boxes when done. I provide some good feeling of having it done 🙂.\nShort guide before the meeting"
+    "objectID": "quarto.html#publish-your-project-from-github",
+    "href": "quarto.html#publish-your-project-from-github",
+    "title": "Quarto Hints",
+    "section": "4 Publish your project from GitHub",
+    "text": "4 Publish your project from GitHub\nThe quarto docs provide details and different ways to publish your report. Check the check the Publishing section in the quarto Guide.\nAs you are working from GitHub anyway, look at the section about publishing using GitHub Pages. There are three ways: (1) render to docs, (2) use the quarto publish command, (3) use GitHub actions. All are fine and documented. Just follow the steps when you do it the first time. The different ways are different. (1) has lowest “overhead” using other tools but requires more systematic manual work when updating a lot of files, it is great for one file reports which you do not need to update a lot. (2) is better if you need to update more often like in a website. (3) is the most advanced using GitHub actions provided bny GitHub."
   },
   {
-    "objectID": "tasks/03-week.html",
-    "href": "tasks/03-week.html",
-    "title": "Week 2: Preparations for Week 3",
-    "section": "",
-    "text": "Check the boxes when done. I provide some good feeling of having it done 🙂."
+    "objectID": "quarto.html#from-reports-to-presentions-and-vice-versa",
+    "href": "quarto.html#from-reports-to-presentions-and-vice-versa",
+    "title": "Quarto Hints",
+    "section": "5 From Reports to Presentions (and vice versa)",
+    "text": "5 From Reports to Presentions (and vice versa)\nThese are two different formats for data storytelling. However, the markdown structure has some similarity:\n\n\n\n\n\n\n\n\n\nReport\nPresentation\n\n\n\n\nOutput format\nHTML\nrevealjs (HTML)\n\n\n#\nDefines a main Section and its header\nDefines a presentation Section with a title-like extra slide\n\n\n##\nDefines a Subsection and its header\nDefine a Slide and its header\n\n\n\nSo, a common workflow Presentation to Report or Report to Presention can be to copy the file and then adjust the format in the YAML and adjust the structure. Typically:\n\nShorten text, e.g. to list for presentation, make text paragraphs from text lists\nRefine the headers (#, ##, …) for the purpose\nCheck if visuals work well in the new format"
   },
   {
-    "objectID": "datastorytelling.html#data-visuals-narrative",
-    "href": "datastorytelling.html#data-visuals-narrative",
-    "title": "Data Storytelling - Storyboarding Activity Guide",
-    "section": "Data, Visuals, Narrative",
-    "text": "Data, Visuals, Narrative\n\n\nThe three essential elements of data stories.\n\nStoryboading is about a narrative and how it relates to data and visuals.\n\n\nExplain. Narrative coupled with data.\n\nWhat’s happening in the data?\nWhat is the context?\nGuide through the data structure!\nWhy is a particular insight important?\n\nEnlighten. Visuals applied to data.\n\nSome insights are hard with numbers only.\nShow patterns and outliers otherwise hidden.\n\nEngage. Narrative and visuals merged together.\n\nEngage (or even entertain) an audience.\nVisuals capture interest, only a story holds attention."
-  },
-  {
-    "objectID": "datastorytelling.html#data-story-continuum",
-    "href": "datastorytelling.html#data-story-continuum",
-    "title": "Data Storytelling - Storyboarding Activity Guide",
-    "section": "Data Story Continuum",
-    "text": "Data Story Continuum\n\nWhile storyboarding, make your story points with attributes from the right side."
-  },
-  {
-    "objectID": "datastorytelling.html#storyframing-before",
-    "href": "datastorytelling.html#storyframing-before",
-    "title": "Data Storytelling - Storyboarding Activity Guide",
-    "section": "Storyframing before",
-    "text": "Storyframing before\n\nBefore you communicate insight, you must find one!\nFocus on key dimensions and find key metrics\n\n\n\nWhile storyboarding, note open points for your storyframing.\nOpen points can be discussed in individual meetings next week"
-  },
-  {
-    "objectID": "datastorytelling.html#anatomy-of-a-data-story-1",
-    "href": "datastorytelling.html#anatomy-of-a-data-story-1",
-    "title": "Data Storytelling - Storyboarding Activity Guide",
-    "section": "Anatomy of a Data Story",
-    "text": "Anatomy of a Data Story\n\nDifferent structure for two parts of your report\n\nNarrative structure for your slide deck and presentation\nInverted pyramid structure for the written report"
-  },
-  {
-    "objectID": "datastorytelling.html#six-essential-elements-of-data-stories",
-    "href": "datastorytelling.html#six-essential-elements-of-data-stories",
-    "title": "Data Storytelling - Storyboarding Activity Guide",
-    "section": "Six essential elements of data stories",
-    "text": "Six essential elements of data stories\n\n\nYour project slide deck and presentation matches a Data Presentation\nYour project report matches a Curated Report (and Dashboard)"
-  },
-  {
-    "objectID": "datastorytelling.html#differences-in-communication",
-    "href": "datastorytelling.html#differences-in-communication",
-    "title": "Data Storytelling - Storyboarding Activity Guide",
-    "section": "Differences in Communication",
-    "text": "Differences in Communication\n\n\nYour project slide deck and presentation is direct communication\nYour project report is indirect communication"
-  },
-  {
-    "objectID": "datastorytelling.html#data-storytelling-arc",
-    "href": "datastorytelling.html#data-storytelling-arc",
-    "title": "Data Storytelling - Storyboarding Activity Guide",
-    "section": "Data Storytelling Arc",
-    "text": "Data Storytelling Arc"
-  },
-  {
-    "objectID": "datastorytelling.html#compared-to-other-communication-models",
-    "href": "datastorytelling.html#compared-to-other-communication-models",
-    "title": "Data Storytelling - Storyboarding Activity Guide",
-    "section": "Compared to other communication models",
-    "text": "Compared to other communication models"
-  },
-  {
-    "objectID": "datastorytelling.html#examples-of-story-points",
-    "href": "datastorytelling.html#examples-of-story-points",
-    "title": "Data Storytelling - Storyboarding Activity Guide",
-    "section": "Examples of story points",
-    "text": "Examples of story points\n\nActivity: Check if your ideas fit into one of the categories and then improve on that premise. Alternatively: Get inspired by these."
-  },
-  {
-    "objectID": "datastorytelling.html#storyboarding",
-    "href": "datastorytelling.html#storyboarding",
-    "title": "Data Storytelling - Storyboarding Activity Guide",
+    "objectID": "finalize_presentation.html#storyboarding",
+    "href": "finalize_presentation.html#storyboarding",
+    "title": "Finalize your Data Story Presentation",
     "section": "Storyboarding",
-    "text": "Storyboarding\n\nDefinition: A story is an account of causally related or connected series of events.\nA narrative always has a one-dimensional linear sequence, but we can decide\n\nwhat is in and\nin which order.\n\nStoryboarding is a technique from the movie industry (invented at Disney’s in the 30’s, now part of pre-visualization) which can also be used for data presentations.\nMain purpose: Build the story, not the exact visualizations (rough ideas are enough)!\n\nActivity: Make a story board for your presentation. Follow the steps on the next slides."
+    "text": "Storyboarding\nDykes’ Storytelling Arc"
   },
   {
-    "objectID": "datastorytelling.html#phase-a-story-points",
-    "href": "datastorytelling.html#phase-a-story-points",
-    "title": "Data Storytelling - Storyboarding Activity Guide",
-    "section": "Phase A: Story points!",
-    "text": "Phase A: Story points!\nActivity\n\nWrite down story points and/or brief visual sketches on sticky notes or cards.\n\nThere is no limit on the initial number of story-point card to generate!\nSelect the best 6 to 10 ones\nKeep all, maybe you want to replace one\nYou can always create or refine one later\n\nAlready now you can play with your story points to search for a compelling story.\n\n\nArrange them in order\nReplace, combine, refine, and reshuffle them\nUse them to tell the story\nScrutinize and iterate your story"
+    "objectID": "finalize_presentation.html#storyboarding-example",
+    "href": "finalize_presentation.html#storyboarding-example",
+    "title": "Finalize your Data Story Presentation",
+    "section": "Storyboarding example",
+    "text": "Storyboarding example\nStoryboard for a presentation of the datastory The summer break effects on the CoViD-19 pandemic in Germany 2020-2022"
   },
   {
-    "objectID": "datastorytelling.html#phase-b-storyboarding",
-    "href": "datastorytelling.html#phase-b-storyboarding",
-    "title": "Data Storytelling - Storyboarding Activity Guide",
-    "section": "Phase B: Storyboarding!",
-    "text": "Phase B: Storyboarding!\nActivity: Realize these steps in your storyboard.\n\nStep 1: Identify your “Aha” moment (main insight)\nStep 2: Find your beginning (the setting and the “hook”)\nStep 3: Select your rising insights (narrative from the hook to the Aha moment)\nStep 4: Conclude with solutions, next steps, empowerment to action, …\n\nWhen your storyboard is fixed\n\nwrite the titles down in your slide deck and\nstart working on your final visuals such that they best support your story."
+    "objectID": "finalize_presentation.html#checklist-datastory-essentials",
+    "href": "finalize_presentation.html#checklist-datastory-essentials",
+    "title": "Finalize your Data Story Presentation",
+    "section": "Checklist: Datastory Essentials",
+    "text": "Checklist: Datastory Essentials\nMost important:\n\nWhat is your hook?\nMake clear what the story is about. Provide context.\nWhat is your main Point?\nSelect one among all the story points you have.\n\nThen:\n\nWhat are the rising insights?\nStory points to make one after the other from the hook to the main point.\nWhat are the conclusion?\nDepending on the assumed audience."
   },
   {
-    "objectID": "readings.html",
-    "href": "readings.html",
-    "title": "Readings",
+    "objectID": "finalize_presentation.html#visuals-1-visualize-the-right-data",
+    "href": "finalize_presentation.html#visuals-1-visualize-the-right-data",
+    "title": "Finalize your Data Story Presentation",
+    "section": "Visuals 1: Visualize the right data",
+    "text": "Visuals 1: Visualize the right data"
+  },
+  {
+    "objectID": "finalize_presentation.html#visuals-2-choose-best-visualization",
+    "href": "finalize_presentation.html#visuals-2-choose-best-visualization",
+    "title": "Finalize your Data Story Presentation",
+    "section": "Visuals 2: Choose best visualization",
+    "text": "Visuals 2: Choose best visualization"
+  },
+  {
+    "objectID": "finalize_presentation.html#visuals-2-graphical-perception",
+    "href": "finalize_presentation.html#visuals-2-graphical-perception",
+    "title": "Finalize your Data Story Presentation",
+    "section": "Visuals 2: Graphical Perception",
+    "text": "Visuals 2: Graphical Perception"
+  },
+  {
+    "objectID": "finalize_presentation.html#visuals-2-example-perception",
+    "href": "finalize_presentation.html#visuals-2-example-perception",
+    "title": "Finalize your Data Story Presentation",
+    "section": "Visuals 2: Example Perception",
+    "text": "Visuals 2: Example Perception\n\n\nThe blue category can be compared more accurate easier than the gray ones"
+  },
+  {
+    "objectID": "finalize_presentation.html#visual-2-pie-vs.-bars",
+    "href": "finalize_presentation.html#visual-2-pie-vs.-bars",
+    "title": "Finalize your Data Story Presentation",
+    "section": "Visual 2: Pie vs. Bars",
+    "text": "Visual 2: Pie vs. Bars"
+  },
+  {
+    "objectID": "finalize_presentation.html#visuals-3-calibrate-visuals-to-message",
+    "href": "finalize_presentation.html#visuals-3-calibrate-visuals-to-message",
+    "title": "Finalize your Data Story Presentation",
+    "section": "Visuals 3: Calibrate Visuals to Message",
+    "text": "Visuals 3: Calibrate Visuals to Message\n\nKeep comparisons in close proximity\nPut the things you compare close to each other\nProvide a common baseline for comparisons\nCan you provide a baseline for your comparison?\nEnsure charts are consistent for comparisons\nDo you use color consistently"
+  },
+  {
+    "objectID": "finalize_presentation.html#visuals-3-example",
+    "href": "finalize_presentation.html#visuals-3-example",
+    "title": "Finalize your Data Story Presentation",
+    "section": "Visuals 3: Example",
+    "text": "Visuals 3: Example"
+  },
+  {
+    "objectID": "finalize_presentation.html#visuals-4-remove-unneccessary-noise",
+    "href": "finalize_presentation.html#visuals-4-remove-unneccessary-noise",
+    "title": "Finalize your Data Story Presentation",
+    "section": "Visuals 4: Remove unneccessary noise",
+    "text": "Visuals 4: Remove unneccessary noise\n\nRemove surplus data\nAggregate less important data\nSeparate overlapping data\nShould you facet a graphic?\n\nRemove/reduce chartjunk"
+  },
+  {
+    "objectID": "finalize_presentation.html#visuals-5-focus-attention",
+    "href": "finalize_presentation.html#visuals-5-focus-attention",
+    "title": "Finalize your Data Story Presentation",
+    "section": "Visuals 5: Focus attention",
+    "text": "Visuals 5: Focus attention\n\nWhich color palettes?\nUse color vs. gray\nUse text (or other) annotations\nTry to find explanatory and not purely descriptive titles"
+  },
+  {
+    "objectID": "finalize_presentation.html#visuals-6-data-approachable-and-engaging",
+    "href": "finalize_presentation.html#visuals-6-data-approachable-and-engaging",
+    "title": "Finalize your Data Story Presentation",
+    "section": "Visuals 6: Data approachable and engaging",
+    "text": "Visuals 6: Data approachable and engaging\n\nMake axis labels\nConsider direct labels\nAvoid vertical or diagonal text if possible\nUse simple axis increments, avoid scientific notation of numbers (no 1e6)\nCan you use meaningful guidelines, anchorlines, trendlines, shaded regions, gridlines\nSort categories?\nUse transparency to show overplotting\n“Independent” variable on the x-axis\n…"
+  },
+  {
+    "objectID": "finalize_presentation.html#visuals-7-instill-trust-in-numbers",
+    "href": "finalize_presentation.html#visuals-7-instill-trust-in-numbers",
+    "title": "Finalize your Data Story Presentation",
+    "section": "Visuals 7: Instill trust in numbers",
+    "text": "Visuals 7: Instill trust in numbers\nBe careful with:\n\nTruncated y-axis\nInconsistent date intervals\nInconsistent binning\n…"
+  },
+  {
+    "objectID": "Slides_drafting_visuals.html#doing-vs.-presenting",
+    "href": "Slides_drafting_visuals.html#doing-vs.-presenting",
+    "title": "Drafting your Visuals",
+    "section": "Doing vs. Presenting",
+    "text": "Doing vs. Presenting\n\nSource: https://x.com/ItaiYanai/status/1847127686612758569"
+  },
+  {
+    "objectID": "Slides_drafting_visuals.html#milestones",
+    "href": "Slides_drafting_visuals.html#milestones",
+    "title": "Drafting your Visuals",
+    "section": "Milestones",
+    "text": "Milestones\n2 Main insight 💡\nTarget Achievements:\n\nTarget audience described\nList of main insights in your report drafted (about 3-6 or more when the team is large)\nPrioritized what will be the main insights\n\n3 Visual Drafts 📊📈📉️\nTarget Achievements:\n\nFor each insight\n\na visuals drafted in the report or the presentation (a draft can be a first coded visual, or even photo of a sketch on paper)\nnotes and ideas for the final version"
+  },
+  {
+    "objectID": "Slides_drafting_visuals.html#task-1-audience",
+    "href": "Slides_drafting_visuals.html#task-1-audience",
+    "title": "Drafting your Visuals",
+    "section": "Task 1: Audience",
+    "text": "Task 1: Audience\nThink about the audience of your report:\nThe people you imagine to view your presentation or read your report.\nDescribe three different potential individuals in your audience. You are allowed to imagine a broader audience than our class. Answer for example: Who are they? Why are they interested? What is their connection to the topic?"
+  },
+  {
+    "objectID": "Slides_drafting_visuals.html#task-2-short-version-of-story",
+    "href": "Slides_drafting_visuals.html#task-2-short-version-of-story",
+    "title": "Drafting your Visuals",
+    "section": "Task 2: Short Version of Story",
+    "text": "Task 2: Short Version of Story\nAbstract\nWrite a short version of your story in the format of an abstract (6-7 sentences, 150-200 words)\nOne Sentence\nWrite a one-sentence version of the abstract which contains the main point of your report."
+  },
+  {
+    "objectID": "Slides_drafting_visuals.html#data-variations-to-consider",
+    "href": "Slides_drafting_visuals.html#data-variations-to-consider",
+    "title": "Drafting your Visuals",
+    "section": "Data Variations to Consider",
+    "text": "Data Variations to Consider"
+  },
+  {
+    "objectID": "Slides_drafting_visuals.html#creative-ideas-on-draft-visuals-1",
+    "href": "Slides_drafting_visuals.html#creative-ideas-on-draft-visuals-1",
+    "title": "Drafting your Visuals",
+    "section": "Creative Ideas on Draft Visuals (1)",
+    "text": "Creative Ideas on Draft Visuals (1)"
+  },
+  {
+    "objectID": "Slides_drafting_visuals.html#creative-ideas-on-draft-visuals-2",
+    "href": "Slides_drafting_visuals.html#creative-ideas-on-draft-visuals-2",
+    "title": "Drafting your Visuals",
+    "section": "Creative Ideas on Draft Visuals (2)",
+    "text": "Creative Ideas on Draft Visuals (2)"
+  },
+  {
+    "objectID": "Slides_drafting_visuals.html#activity",
+    "href": "Slides_drafting_visuals.html#activity",
+    "title": "Drafting your Visuals",
+    "section": "Activity",
+    "text": "Activity\nGroup Work: 2 Teams together, each team advises the other\nReporting to class:\nFor each team:\n\nDescribe Target Audience\nOne Sentence Summary of Main Insight\nShow Up to three visuals and how you plan to improve them\n(Optional) you need to explain some specific metrics you use?\n\nTake notes in the DataStory repository"
+  },
+  {
+    "objectID": "student-topics.html",
+    "href": "student-topics.html",
+    "title": "Student Topics",
     "section": "",
-    "text": "Tip\n\n\n\nThe Schedule lists when readings should be completed (feel free to read ahead!)\nWatch out for Tasks related to readings.",
-    "crumbs": [
-      "Schedule",
-      "Readings"
-    ]
-  },
-  {
-    "objectID": "readings.html#book",
-    "href": "readings.html#book",
-    "title": "Readings",
-    "section": "Book: Dykes (2019)",
-    "text": "Book: Dykes (2019)\nThere are several good books on Data Storytelling. I use the following book as a main reference. While my own data story telling is mostly scientific, the book is written from a business perspective which is a good complement and many principles are the same.\nDykes, C. (2019). Effective Data Storytelling: How to Drive Change with Data, Narrative and Visuals. Wiley.\nThe book is available as an eBook through the University Library:\nhttps://ebookcentral.proquest.com/lib/constructor-university/detail.action?docID=5993965\n(You need to be on campus or login with your University M365 account.)\nAfter the course you will have read most of the book.",
-    "crumbs": [
-      "Schedule",
-      "Readings"
-    ]
-  },
-  {
-    "objectID": "readings.html#r",
-    "href": "readings.html#r",
-    "title": "Readings",
-    "section": "Reading Remarks on Dykes",
-    "text": "Reading Remarks on Dykes\nThe purpose of reading is to apply the knowledge for doing your Data Story Project. To that end, some parts require closer reading than others.\n\nChapter 1: Introduction to Driving Change through Insight\nAll.\nA central concept in this chapter is Insight. Visual communication and data storytelling is about enabling insights for the audience. For your project you need to think about what insights you want to communicate. Focus on getting an idea what an insight is.\nChapter 2: Why Tell Stories with Data?\nAll.\nChapter 3: The Psychology of Data Storytelling\nThis Chapter is optional. Read it if you are interested in the psychology of human perception of facts. Consult the summary in Table 3.1.\nChapter 4: The Anatomy of a Data Story (21 pages intensive reading) Do an intensive reading of the Sections\n\nThe Chapter Introduction including Figure 4.2 The Analysis Journey: From Storyframing to Storytelling (pp. 105-110)\nThe Six Essential Elements of a Data Story (pp. 110-118)\nData Stories Come in All Shapes and Sizes (pp. 118-121)\nWhen It Makes Sense to Craft Data Stories and When It Doesn’t (pp. 139-143)\n\nYou can skim Every Story Needs a Storyteller and Know Your Audience Before Telling Your Story\nChapter 5: Data, The Foundation of Your Data Story (20 pages intensive reading)\nDo an intensive reading of the Sections\n\nThe Chapter Introduction (pp. 146-148)\nThe Analysis Process: Exploration to Explanation (pp. 161-168)\nAnalyzing and Communicating Data Demands Discipline (pp. 168-176)\n\nYou can skim Examine the Building Blocks of Your Data Stories, Every Data Story Needs a Central Insight, Do You Have an Actionable Insight?, and When Too Much of a Good Thing Is Bad\nChapter 6: Narrative, The Structure of Your Data Story (14 pages intensive reading) Do an intensive reading of the Sections\n\nDefining a Narrative Model for Data Stories (pp. 186-195)\nFleshing Out Your Narrative with Story Points (pp. 195-199)\n\nThe content of Storyboarding Your Data Story will be the basis for the classroom story boarding activity.\nYou can skim faster through When They Want Just the Facts, Uncovering the Heroes in Your Data Story, and Make Your Ideas More Digestible with Analogies.\nChapter 7: Visuals (Part 1): Setting the Scenes of Your Data Story\nAll\nChapter 8: Visuals (Part 2): Polishing the Scenes of Your Data Story\nAll\nChapter 9: Crafting Your Own Data Story\nOptional",
-    "crumbs": [
-      "Schedule",
-      "Readings"
-    ]
-  },
-  {
-    "objectID": "finalchecks.html#a-mixed-version",
-    "href": "finalchecks.html#a-mixed-version",
-    "title": "Data Storytelling - Final Checks",
-    "section": "A mixed version",
-    "text": "A mixed version\n\nPresent the main point at the beginning (and as the climax again).\n\n\n\nSome movies also work that way.\n\nActivity: Could such an early take-away work for your story?"
-  },
-  {
-    "objectID": "finalchecks.html#aristotles-rhetoric",
-    "href": "finalchecks.html#aristotles-rhetoric",
-    "title": "Data Storytelling - Final Checks",
-    "section": "Aristotle’s rhetoric",
-    "text": "Aristotle’s rhetoric\n\n\n\n\nActivity:\n\nReflect on your story: Do you address all these 5 rhetoric perspectives?\n\nShow credibility by not telling stories unrelated to data.\nWhat parts appeal to emotion?\nDo you have logical reasoning for your main point?\nIf there make reference to timeliness.\nDo you know the main purpose of the story?"
-  },
-  {
-    "objectID": "finalchecks.html#data-forgeries-1-2-3",
-    "href": "finalchecks.html#data-forgeries-1-2-3",
-    "title": "Data Storytelling - Final Checks",
-    "section": "Data Forgeries 1, 2, 3",
-    "text": "Data Forgeries 1, 2, 3"
-  },
-  {
-    "objectID": "Slides_polishing_visuals.html#visual-story-points",
-    "href": "Slides_polishing_visuals.html#visual-story-points",
-    "title": "Polishing Visuals",
-    "section": "Visual Story Points",
-    "text": "Visual Story Points"
-  },
-  {
-    "objectID": "Slides_polishing_visuals.html#goals-for-visual-storytelling",
-    "href": "Slides_polishing_visuals.html#goals-for-visual-storytelling",
-    "title": "Polishing Visuals",
-    "section": "Goals for Visual Storytelling",
-    "text": "Goals for Visual Storytelling\n\nAs data storyteller, you bear the burden of comprehension - not your audience.\nMake it as easy as possible for your audience to understand your visuals and follow your overall story.\n\n\nWhat is the dominant visual attribute in these graphs?"
-  },
-  {
-    "objectID": "Slides_polishing_visuals.html#principles-visual-data-storytelling",
-    "href": "Slides_polishing_visuals.html#principles-visual-data-storytelling",
-    "title": "Polishing Visuals",
-    "section": "Principles Visual Data Storytelling",
-    "text": "Principles Visual Data Storytelling"
-  },
-  {
-    "objectID": "Slides_polishing_visuals.html#visualize-right-data",
-    "href": "Slides_polishing_visuals.html#visualize-right-data",
-    "title": "Polishing Visuals",
-    "section": "1. Visualize Right Data",
-    "text": "1. Visualize Right Data\nData Variations to Consider"
-  },
-  {
-    "objectID": "Slides_polishing_visuals.html#visualize-right-data-example",
-    "href": "Slides_polishing_visuals.html#visualize-right-data-example",
-    "title": "Polishing Visuals",
-    "section": "1. Visualize Right Data: Example",
-    "text": "1. Visualize Right Data: Example"
-  },
-  {
-    "objectID": "Slides_polishing_visuals.html#visualize-right-data-example-1",
-    "href": "Slides_polishing_visuals.html#visualize-right-data-example-1",
-    "title": "Polishing Visuals",
-    "section": "1. Visualize Right Data: Example",
-    "text": "1. Visualize Right Data: Example"
-  },
-  {
-    "objectID": "Slides_polishing_visuals.html#visualize-right-data-example-2",
-    "href": "Slides_polishing_visuals.html#visualize-right-data-example-2",
-    "title": "Polishing Visuals",
-    "section": "1. Visualize Right Data: Example",
-    "text": "1. Visualize Right Data: Example"
-  },
-  {
-    "objectID": "Slides_polishing_visuals.html#right-visual",
-    "href": "Slides_polishing_visuals.html#right-visual",
-    "title": "Polishing Visuals",
-    "section": "2. Right Visual",
-    "text": "2. Right Visual"
-  },
-  {
-    "objectID": "Slides_polishing_visuals.html#right-visual-accurate-comparison",
-    "href": "Slides_polishing_visuals.html#right-visual-accurate-comparison",
-    "title": "Polishing Visuals",
-    "section": "2. Right Visual: Accurate comparison",
-    "text": "2. Right Visual: Accurate comparison"
-  },
-  {
-    "objectID": "Slides_polishing_visuals.html#right-visual-example",
-    "href": "Slides_polishing_visuals.html#right-visual-example",
-    "title": "Polishing Visuals",
-    "section": "2. Right Visual: Example",
-    "text": "2. Right Visual: Example"
-  },
-  {
-    "objectID": "Slides_polishing_visuals.html#calibrate-visual-to-message",
-    "href": "Slides_polishing_visuals.html#calibrate-visual-to-message",
-    "title": "Polishing Visuals",
-    "section": "3. Calibrate visual to message",
-    "text": "3. Calibrate visual to message"
-  },
-  {
-    "objectID": "Slides_polishing_visuals.html#calibrate-visual-to-message-1",
-    "href": "Slides_polishing_visuals.html#calibrate-visual-to-message-1",
-    "title": "Polishing Visuals",
-    "section": "3. Calibrate visual to message",
-    "text": "3. Calibrate visual to message"
-  },
-  {
-    "objectID": "Slides_polishing_visuals.html#calibrate-visual-to-message-2",
-    "href": "Slides_polishing_visuals.html#calibrate-visual-to-message-2",
-    "title": "Polishing Visuals",
-    "section": "3. Calibrate visual to message",
-    "text": "3. Calibrate visual to message"
-  },
-  {
-    "objectID": "Slides_polishing_visuals.html#calibrate-visual-to-message-3",
-    "href": "Slides_polishing_visuals.html#calibrate-visual-to-message-3",
-    "title": "Polishing Visuals",
-    "section": "3. Calibrate visual to Message",
-    "text": "3. Calibrate visual to Message"
-  },
-  {
-    "objectID": "Slides_polishing_visuals.html#polish-your-visuals",
-    "href": "Slides_polishing_visuals.html#polish-your-visuals",
-    "title": "Polishing Visuals",
-    "section": "4.-7. Polish your visuals",
-    "text": "4.-7. Polish your visuals\n\nRemove Unnecessary Noise\n\nExamples of Chartjunk\n\nFocus Attention on What’s Important\nMake Your Data Approachable and Engaging\n\nTips to Streamline Readability of Charts\nTips for Using Reference Lines\nTips for Formatting\nTips for Convention Adherence\n\nInstill Trust in Your Numbers\n\nDeceptive Practices to Avoid"
-  },
-  {
-    "objectID": "schedule_FINAL.html",
-    "href": "schedule_FINAL.html",
-    "title": "Schedule",
-    "section": "",
-    "text": "Student projects and student schedules: Course-Organization-Resources Repo"
-  },
-  {
-    "objectID": "schedule_FINAL.html#r",
-    "href": "schedule_FINAL.html#r",
-    "title": "Schedule",
-    "section": "Reading Remarks on Dykes",
-    "text": "Reading Remarks on Dykes\nThe purpose of reading is to apply the knowledge for doing your Data Story Project. To that end, some parts require closer reading than others.\n\nChapter 1: Introduction to Driving Change through Insight\nAll\nChapter 2: Why Tell Stories with Data?\nAll\nChapter 3: The Psychology of Data Storytelling\nThis Chapter is optional. Read it if you are interested in the psychology of human perception of facts. Consult the summary in Table 3.1.\nChapter 4: The Anatomy of a Data Story (21 pages intensive reading) Do an intensive reading of the Sections\n\nThe Chapter Introduction including Figure 4.2 The Analysis Journey: From Storyframing to Storytelling (pp. 105-110)\nThe Six Essential Elements of a Data Story (pp. 110-118)\nData Stories Come in All Shapes and Sizes (pp. 118-121)\nWhen It Makes Sense to Craft Data Stories and When It Doesn’t (pp. 139-143)\n\nYou can skim Every Story Needs a Storyteller and Know Your Audience Before Telling Your Story\nChapter 5: Data, The Foundation of Your Data Story (20 pages intensive reading)\nDo an intensive reading of the Sections\n\nThe Chapter Introduction (pp. 146-148)\nThe Analysis Process: Exploration to Explanation (pp. 161-168)\nAnalyzing and Communicating Data Demands Discipline (pp. 168-176)\n\nYou can skim Examine the Building Blocks of Your Data Stories, Every Data Story Needs a Central Insight, Do You Have an Actionable Insight?, and When Too Much of a Good Thing Is Bad\nChapter 6: Narrative, The Structure of Your Data Story (14 pages intensive reading) Do an intensive reading of the Sections\n\nDefining a Narrative Model for Data Stories (pp. 186-195)\nFleshing Out Your Narrative with Story Points (pp. 195-199)\n\nThe content of Storyboarding Your Data Story will be the basis for the classroom story boarding activity.\nYou can skim faster through When They Want Just the Facts, Uncovering the Heroes in Your Data Story, and Make Your Ideas More Digestible with Analogies.\nChapter 7: Visuals (Part 1): Setting the Scenes of Your Data Story\nAll\nChapter 8: Visuals (Part 2): Polishing the Scenes of Your Data Story\nAll\nChapter 9: Crafting Your Own Data Story\nOptional"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Visual Communication and Data Story-telling",
-    "section": "",
-    "text": "MDSSSB-MET-03 Visual Communication and Data Story-telling (Methods area, 5 credits)\n\nOffered in the Master program: Data Science for Society and Business (DSSB). See the module description in the DSSB Handbook.",
-    "crumbs": [
-      "Syllabus",
-      "**Syllabus**"
-    ]
-  },
-  {
-    "objectID": "index.html#module-names",
-    "href": "index.html#module-names",
-    "title": "Visual Communication and Data Story-telling",
-    "section": "",
-    "text": "MDSSSB-MET-03 Visual Communication and Data Story-telling (Methods area, 5 credits)\n\nOffered in the Master program: Data Science for Society and Business (DSSB). See the module description in the DSSB Handbook.",
-    "crumbs": [
-      "Syllabus",
-      "**Syllabus**"
-    ]
-  },
-  {
-    "objectID": "index.html#module-components",
-    "href": "index.html#module-components",
-    "title": "Visual Communication and Data Story-telling",
-    "section": "2 Module Components",
-    "text": "2 Module Components\nThe courses is offered in the Fall term.\nRequirements: Data Science Concepts and Data Science Tools",
-    "crumbs": [
-      "Syllabus",
-      "**Syllabus**"
-    ]
-  },
-  {
-    "objectID": "index.html#class-meeting-information",
-    "href": "index.html#class-meeting-information",
-    "title": "Visual Communication and Data Story-telling",
-    "section": "3 Class Meeting Information",
-    "text": "3 Class Meeting Information\nClasses are no Tuesdays\nSession 1 Tue 9:45 - 11:00\nSession 2 Tue 9:45 - 11:00\nLocation: East Hall Room 3 in-person\nVideo streaming and recording in Teams will be provided, it does not work for all class activities perfectly: Team F25_MDSSB-MET-03_Visual Communication and Data Story-telling, General Channel",
-    "crumbs": [
-      "Syllabus",
-      "**Syllabus**"
-    ]
-  },
-  {
-    "objectID": "index.html#instructors",
-    "href": "index.html#instructors",
-    "title": "Visual Communication and Data Story-telling",
-    "section": "4 Instructors",
-    "text": "4 Instructors\nJan Lorenz Email: jlorenz@constructor.univeristy",
-    "crumbs": [
-      "Syllabus",
-      "**Syllabus**"
-    ]
-  },
-  {
-    "objectID": "index.html#format-and-workload",
-    "href": "index.html#format-and-workload",
-    "title": "Visual Communication and Data Story-telling",
-    "section": "5 Format and Workload",
-    "text": "5 Format and Workload\n17.5 hours Lectures (including class activities) 17.5 hours Tutorials (partly prepared by students) 90 hours Project Work outside Class",
-    "crumbs": [
-      "Syllabus",
-      "**Syllabus**"
-    ]
-  },
-  {
-    "objectID": "index.html#intended-learning-outcomes",
-    "href": "index.html#intended-learning-outcomes",
-    "title": "Visual Communication and Data Story-telling",
-    "section": "6 Intended Learning Outcomes",
-    "text": "6 Intended Learning Outcomes\nThe module descriptions can be found in the DSSB Handbook\n\n6.1 From the handbook\nBy the end of this module, students will be able\n\nvisually represent various data sources\nchoose suitable visual representations for different data sets\nevaluate visual depictions of data\nassist users in visual data analysis\ntarget visual representations to different audiences\n\n\n\n6.2 Additional remark from the instructor\nYou will build on your experience\n\nthe small Data Science Project in Data Science Tools in the the 1st semester\nyour Data Science Lab Project in the 2nd semester\n\nYou will create another Data Science Project focusing on great graphics and telling a story with data! You will write the report such that a non Data Scientist can enjoy reading it and gain some insights about the datastory you tell.",
-    "crumbs": [
-      "Syllabus",
-      "**Syllabus**"
-    ]
-  },
-  {
-    "objectID": "index.html#examination-and-assessment",
-    "href": "index.html#examination-and-assessment",
-    "title": "Visual Communication and Data Story-telling",
-    "section": "7 Examination and Assessment",
-    "text": "7 Examination and Assessment\nFrom the Handbook:\nAssessment Type: Project Report (6000 - 8000 words)\nThis is the official word count from the handbook. However, the instructor will not count words and will not assess the report based on fulfilling the word count. Essential parts the submissions will be visual anyway.\nDetails about the project report: The project report is a website which tells a data story which is rendered with quarto.\nIt includes\n\na slide deck used to tell the story in a presentation,\na written report tells the story for readers and gives more details and more visuals, e.g. in Appendices.\n\nOptional the submission can also include a dashboard with interactive graphs which enables individual exploration by the reader.\nThe report must be reproducible. That means the source code must be provided.\nHowever, the report must be readable without reading code. The target audience is not a programmer and they should not see code while reading. Technical parts should be in the appendix. \nDelivery via GitHub.\n\n\n\n\n\n\nImportant\n\n\n\nYou can make your data story into a nice thing to show your competence to the outside world. It is not too difficult to publish the report as a website from your final repository. Make your report such that it is worth to publish and show it!",
-    "crumbs": [
-      "Syllabus",
-      "**Syllabus**"
-    ]
-  },
-  {
-    "objectID": "index.html#sec-stud-contrib",
-    "href": "index.html#sec-stud-contrib",
-    "title": "Visual Communication and Data Story-telling",
-    "section": "8 Module Policies and expected student engagement and contributions",
-    "text": "8 Module Policies and expected student engagement and contributions\nIn this course we work with different methods and most of them require student engagement such as\n\nreading a chapter before class to discuss it in class\npreparing something to show to others\npitch your project idea to the class\nengage in a class room activity, like a joint storyboarding session\ndo a final project presentation\n\nFor all activities, participation in person is best.\nSome sessions may be streamed and recorded when some students have a valid excuse to not be present in person. However, there may be activities where this does not work well.",
-    "crumbs": [
-      "Syllabus",
-      "**Syllabus**"
-    ]
-  },
-  {
-    "objectID": "index.html#academic-integrity",
-    "href": "index.html#academic-integrity",
-    "title": "Visual Communication and Data Story-telling",
-    "section": "9 Academic Integrity",
-    "text": "9 Academic Integrity\nAll involved parties (professors and lecturers, instructors and students) are expected to abide by the word and spirit of the “Code of Academic Integrity”: https://constructor.university/student-life/student-services/university-policies/academic-policies/code-of-academic-integrity. Violations of the Code might be brought to the attention of the Academic Integrity Committee.",
-    "crumbs": [
-      "Syllabus",
-      "**Syllabus**"
-    ]
-  },
-  {
-    "objectID": "index.html#artifical-intelligence-ai-use-policy",
-    "href": "index.html#artifical-intelligence-ai-use-policy",
-    "title": "Visual Communication and Data Story-telling",
-    "section": "10 Artifical Intelligence (AI) Use Policy",
-    "text": "10 Artifical Intelligence (AI) Use Policy\nThis policy covers any generative AI tool, such as ChatGPT, Elicit, etc. This includes text, code, slides, artwork/graphics/video/audio and other products.\nWe instructors encouraged to using and exploring AI tools for these purposes:\n\nLearning by dialog with a chatbot. AI chatbots can be very helpful to explain you concepts on your desired level and get a feeling about how certain topics are treated. You can ask for an easier or more detailed explanation or focus on certain aspects. Note: The capabilities are limited and you likely receive a lot of false information! An AI chat can be a good entry point to learn about a specific topic but the more specific it gets the more likely it is that AI will start to deliver useless or wrong answers. Using chatbots should remain a small part of your learning process. Rule of thumb: Spend not more than 25% of the learning time with chatting. There is no way around reading textbooks, reading software documentation, learning and understanding concepts, searching for help online, asking instructors or fellow students.\nHave code snippets written. Tools like GitHub Copilot can be a great help in coding! You are encouraged to have them available and try them. The GitHub Copilot is free to use for students and teachers who joined GitHub Education), they can be integrated in your programming IDE like RStudio and VSCode. Copilots can speed up writing. However, they may deliver bad code. There is no way around understanding yourself what code is doing! Do not spend endless hours asking for new code with new prompts, spend time understanding a language and the functions and objects you are using! AI chatbots and Copilots can also help you to understand code. Copilots can be a great help to get a skeleton of code and an idea how your solution might look, they rarely deliver the complete code, expect that the code does not work, expect that the code seems to works but the results are wrong. You are 100% accountable for the code you produce, with or without the help of a copilot!\nHave a draft text snippet written. Formulating and describing research questions, describing data, documenting code, interpreting results, and deriving conclusion from the results is an essential part of data science not direclty related to coding but verbal text. Chatbots are good in writing text which often appears as well readable. You can use this to inspire you and to polish and improve your texts. However, you are 100% accountable for the text you deliver. You are expected to know what your text is about and to be able to answer questions about what your text means! With text generated purely by chatbots, it is oftenn evident for us that students do not understand. We consider such cases worse than incomplete but sensible self-written text. Text written by chatbots is often very generic and not specific. In general, we value more specific text higher than generic text. Large parts of very generic text is considered worse than a shorter more specific text.\nNote: Philosophical and legal questions around the training and use of chatbots and code copilots are controversially contested and re-examined constantly! We encourage to engage with such questions and become aware of arguments and debates.\n\nIf any part of this AI policy is confusing or uncertain, please reach out to us for a conversation before submitting your work.",
-    "crumbs": [
-      "Syllabus",
-      "**Syllabus**"
-    ]
-  },
-  {
-    "objectID": "index.html#schedule",
-    "href": "index.html#schedule",
-    "title": "Visual Communication and Data Story-telling",
-    "section": "11 Schedule",
-    "text": "11 Schedule\nThe Schedule is on an extra page and will be updated continuously.",
-    "crumbs": [
-      "Syllabus",
-      "**Syllabus**"
-    ]
-  },
-  {
-    "objectID": "index.html#literature",
-    "href": "index.html#literature",
-    "title": "Visual Communication and Data Story-telling",
-    "section": "12 Literature",
-    "text": "12 Literature\nDuring the course we will work through this book:\nDykes, B. (2019). Effective Data Storytelling: How to Drive Change with Data, Narrative and Visuals. John Wiley & Sons.\nSee Readings.",
-    "crumbs": [
-      "Syllabus",
-      "**Syllabus**"
-    ]
-  },
-  {
-    "objectID": "index.html#feedback-from-students",
-    "href": "index.html#feedback-from-students",
-    "title": "Visual Communication and Data Story-telling",
-    "section": "13 Feedback from Students",
-    "text": "13 Feedback from Students\nWe are eager to constantly improve the quality of our teaching. We would be glad to obtain your feedback at any time of the course to improve your learning experience.",
-    "crumbs": [
-      "Syllabus",
-      "**Syllabus**"
-    ]
+    "text": "Important\n\n\n\nSchedule for student topics and pitches updated: https://github.com/JU-F22-MDSSB-MET-03/Schedule-Organization\n\n\n\n1 To do\nThe presentation of a data visualization topic is an expected student contribution.\nPresentations should take place from Week 5 (Oct 4) to 7 (Oct 18).\nPresentations should be done in teams of two (exceptionally also three).\n\nTo do until Sep, 26:\n\nSelect a topic you want to work out from the list below and two alternatives.\nWrite your topical priorities on Teams in the course’s general channel as a reply to the respective conversation (from Tuesday Sep, 20 “DataViz Topic Distribution”).\nReply as existing team or individually and we will form teams then.\nBe prepared to be assigned to a presentation date in one of the three weeks 5, 6, or 7. Add any restriction you have in the reply on Teams.\n\n\n\n\n2 Topics\n\n\nVisualization and comparison of distributions of numerical variables (Boxplots, Violin Plots, Histograms, Density plots, Ridgeline plots) (Inspiration from the stories https://www.data-to-viz.com/story/OneNum.html, https://www.data-to-viz.com/story/OneNumOneCatSeveralObs.html, and https://www.data-to-viz.com/caveat/boxplot.html)\nVisualization of one categorical variable or nested categorical variables (Barplots and Lollipops and versions of stacking and dodging, Pie charts, Treemaps, Word Clouds) (Inspiration from the stories https://www.data-to-viz.com/story/OneNumOneCat.html, https://www.data-to-viz.com/story/SevCatOneNumNestedOneObsPerGroup.html, https://www.data-to-viz.com/caveat/multi_distribution.html, and https://www.data-to-viz.com/caveat/pie.html)\nVisualization of two or three numerical variables (Scatter plots, Scatter plots with summary statistics - regression or loess, the overplotting problem, density and contour plots, What can be used for the thrid variable – size, color, …?) (Inspiration from the stories https://www.data-to-viz.com/story/TwoNum.html and https://www.data-to-viz.com/story/ThreeNum.html)\nTwo numerical variables where one is ordered (e.g. time) and an additional categorical one (Line plots, Area plots, Focusing, the Spaghetti plot problem) (Inspiration from the stories https://www.data-to-viz.com/story/TwoNumOrdered.html, https://www.data-to-viz.com/story/OneCatSevOrderedNum.html, and https://www.data-to-viz.com/caveat/spaghetti.html)\n\nOptional topics:\n\nDendro grams (Hierarchical Clustering)\nNetworks (Inspiration from https://www.data-to-viz.com/story/AdjacencyMatrix.html)\nMaps (Inspiration from https://www.data-to-viz.com/graph/choropleth.html, https://www.data-to-viz.com/story/GPSCoordWithoutValue.html, and https://www.data-to-viz.com/story/GPSCoordWithValue.html)\nInteractive graphs (plotly, shiny, or observable)\nTableau and Power BI\n\n\nGenerally, for all specific visualization there is more information on https://datavizcatalogue.com and https://www.data-to-viz.com.\n\n\n3 Structure and Format\nStructure of the student presentation:\n\nExplain the underlying visualization task\nProvide examples of solutions using different data sources\nCompare different solutions with the same data\nFinish with a summary about good and bad uses for the visualization type, common problems, do’s and don’ts\n\nFormat:\n\nProvide a “hands-on” document where code and data is provided which produce visualizations. It can be a markdown or notebook file in which you mix text and code or a raw script where you put some descriptive text in comments. It can be in R or python. (If you want to use something else please coordinate before.) A repository in the organization https://github.com/JU-F22-MDSSB-MET-03 can be provided for distribution to others. Contact me on Teams. Students will then be enabled to clone it and play with the code.\nYou do not need presentation slides but you can. You can use revealjs in quarto to nicely present code and visualizations.\n\n\n\n4 Help\nWrite any clarification questions to me on Teams."
   },
   {
     "objectID": "lectures/W02.html#truth-beauty-facts-and-data",
