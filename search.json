@@ -140,11 +140,200 @@
     "text": "Data-Decoration Trap"
   },
   {
+    "objectID": "lectures/W03.html#keep-it-simple",
+    "href": "lectures/W03.html#keep-it-simple",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Keep it simple",
+    "text": "Keep it simple\n\n\n\n\n\n\nCode\nlibrary(tidyverse)\nlibrary(scales)\nd &lt;- tribble(\n  ~category, ~value,\n  \"Cutting tools\", 0.03,\n  \"Buildings and administration\", 0.22,\n  \"Labor\", 0.31,\n  \"Machinery\", 0.27,\n  \"Workplace materials\", 0.17\n)\nggplot(d, aes(x = fct_reorder(category, value), y = value)) +\n  geom_col() +\n  theme_minimal(base_size = 24) +\n  coord_flip() +\n  labs(x = \"\", y = \"\")"
+  },
+  {
+    "objectID": "lectures/W03.html#use-color-to-draw-attention",
+    "href": "lectures/W03.html#use-color-to-draw-attention",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Use color to draw attention",
+    "text": "Use color to draw attention\n\n\nCode\nlibrary(patchwork)\ng1 &lt;- d |&gt; mutate(category = str_replace(category, \" \", \"\\n\")) %&gt;%\n  ggplot(aes(x = category, y = value, fill = category)) +\n  geom_col() +\n  theme_minimal() +\n  labs(x = \"\", y = \"\") +\n  theme(legend.position = \"none\")\ng2 &lt;- d |&gt; ggplot(aes(x = fct_reorder(category, value), y = value, fill = category)) +\n  geom_col() +\n  theme_minimal(base_size =  18) +\n  coord_flip() +\n  labs(x = \"\", y = \"\") +\n  scale_fill_manual(values = c(\"red\", rep(\"gray\", 4))) +\n  theme(legend.position = \"none\")\ng1 + g2"
+  },
+  {
+    "objectID": "lectures/W03.html#tell-a-story",
+    "href": "lectures/W03.html#tell-a-story",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Tell a story",
+    "text": "Tell a story\nWhat is the (main) purpose of the visualization?\n\n\nCredit: Angela Zoss and Eric Monson, Duke DVS"
+  },
+  {
+    "objectID": "lectures/W03.html#principles-for-effective-visualizations",
+    "href": "lectures/W03.html#principles-for-effective-visualizations",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Principles for effective visualizations",
+    "text": "Principles for effective visualizations\n\nOrder matters\nPut long categories on the y-axis\nUse meaningful labels\nPick a purpose\nSelect meaningful colors"
+  },
+  {
+    "objectID": "lectures/W03.html#data",
+    "href": "lectures/W03.html#data",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Data",
+    "text": "Data\nIn September 2019, YouGov survey asked 1,639 adults in the UK the following question:\n\nIn hindsight, do you think Britain was right/wrong to vote to leave EU?\n🔲 Right to leave | 🔲 Wrong to leave | 🔲 Don’t know\n\n\n\nCode\nbrexit &lt;- tibble(\n  opinion = c(rep(\"Right\", 664), rep(\"Wrong\", 787), rep(\"Don't know\", 188)),\n  region = c(\n    rep(\"london\", 63), rep(\"rest_of_south\", 241), rep(\"midlands_wales\", 145), \n    rep(\"north\", 176), rep(\"scot\", 39),\n    rep(\"london\", 110), rep(\"rest_of_south\", 257), rep(\"midlands_wales\", 152), \n    rep(\"north\", 176), rep(\"scot\", 92),\n    rep(\"london\", 24), rep(\"rest_of_south\", 49), rep(\"midlands_wales\", 57), \n    rep(\"north\", 48), rep(\"scot\", 10)\n  )\n)\nggplot(brexit, aes(x = opinion)) +\n  geom_bar()"
+  },
+  {
+    "objectID": "lectures/W03.html#order-matters",
+    "href": "lectures/W03.html#order-matters",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Order Matters",
+    "text": "Order Matters\nAlphabetical order is rarely what you want!\n\nPlotCode\n\n\n\n\nCode\nggplot(brexit, aes(x = opinion)) +\n  geom_bar()\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(x = opinion)) +\n  geom_bar()"
+  },
+  {
+    "objectID": "lectures/W03.html#order-matters-1",
+    "href": "lectures/W03.html#order-matters-1",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Order Matters",
+    "text": "Order Matters\nOften good: Order by frequency\n\nPlotCode\n\n\n\n\nCode\nggplot(brexit, aes(x = fct_infreq(opinion))) +\n  geom_bar()\n\n\n\n\n\n\n\n\n\n\n\nfct_infreq: (Creates and) reorders a factor by the frequency.\nggplot(brexit, aes(x = fct_infreq(opinion))) +\n  geom_bar()"
+  },
+  {
+    "objectID": "lectures/W03.html#clean-up-labels",
+    "href": "lectures/W03.html#clean-up-labels",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Clean up labels",
+    "text": "Clean up labels\n\nPlotCode\n\n\n\n\nCode\nggplot(brexit, aes(x = fct_infreq(opinion))) +\n  geom_bar() +\n  labs(\n    x = \"Opinion\",\n    y = \"Count\"\n  )\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(x = fct_infreq(opinion))) +\n  geom_bar() +\n  labs(\n    x = \"Opinion\",\n    y = \"Count\"\n  )"
+  },
+  {
+    "objectID": "lectures/W03.html#order-matters-2",
+    "href": "lectures/W03.html#order-matters-2",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Order Matters",
+    "text": "Order Matters\nAlphabetical order is rarely what you want!\n\nPlotCode\n\n\n\n\nCode\nggplot(brexit, aes(x = region)) +\n  geom_bar()\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(x = region)) +\n  geom_bar()"
+  },
+  {
+    "objectID": "lectures/W03.html#use-inherent-level-order",
+    "href": "lectures/W03.html#use-inherent-level-order",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Use inherent level order",
+    "text": "Use inherent level order\nReorder manually with a custom order\n\nRelevelPlot\n\n\nfct_relevel: Reorders the levels of a factor as specified\n\n\nCode\nbrexit &lt;- brexit |&gt; \n  mutate(region = fct_relevel(\n    region,\n    \"london\", \"rest_of_south\", \"midlands_wales\", \"north\", \"scot\"\n  ))\n\n\n\n\n\n\nCode\nggplot(brexit, aes(x = region)) +\n  geom_bar()"
+  },
+  {
+    "objectID": "lectures/W03.html#clean-factor-labels",
+    "href": "lectures/W03.html#clean-factor-labels",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Clean factor labels",
+    "text": "Clean factor labels\nReorder manually with a custom order\n\nRecodePlot\n\n\nfct_recode: Change factor levels by hand\n\n\nCode\nbrexit &lt;- brexit |&gt; \n  mutate(\n    region = fct_recode(\n      region,\n      London = \"london\",\n      `Rest of South` = \"rest_of_south\",\n      `Midlands / Wales` = \"midlands_wales\",\n      North = \"north\",\n      Scotland = \"scot\"\n    )\n  )\n\n\n\n\n\n\nCode\nggplot(brexit, aes(x = region)) +\n  geom_bar()"
+  },
+  {
+    "objectID": "lectures/W03.html#long-categories-are-better-readable-on-the-y-axis",
+    "href": "lectures/W03.html#long-categories-are-better-readable-on-the-y-axis",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Long categories are better readable on the y-axis",
+    "text": "Long categories are better readable on the y-axis\n\nPlotCode\n\n\n\n\nCode\nggplot(brexit, aes(y = region)) +\n  geom_bar()\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(y = region)) +\n  geom_bar()"
+  },
+  {
+    "objectID": "lectures/W03.html#reverse-the-order-of-levels",
+    "href": "lectures/W03.html#reverse-the-order-of-levels",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Reverse the order of levels",
+    "text": "Reverse the order of levels\n\nPlotCode\n\n\n\n\nCode\nggplot(brexit, aes(y = fct_rev(region))) +\n  geom_bar()\n\n\n\n\n\n\n\n\n\n\n\nfct_rev: Reverse order of factor levels\nggplot(brexit, aes(y = fct_rev(region))) +\n  geom_bar()"
+  },
+  {
+    "objectID": "lectures/W03.html#clean-up-axis-lables",
+    "href": "lectures/W03.html#clean-up-axis-lables",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Clean up axis lables",
+    "text": "Clean up axis lables\n\nPlotCode\n\n\n\n\nCode\nggplot(brexit, aes(y = fct_rev(region))) +\n  geom_bar() +\n  labs(\n    x = \"Count\",\n    y = \"Region\"\n  )\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(y = fct_rev(region))) +\n  geom_bar() +\n  labs(\n    x = \"Count\",\n    y = \"Region\"\n  )"
+  },
+  {
+    "objectID": "lectures/W03.html#pick-a-purpose",
+    "href": "lectures/W03.html#pick-a-purpose",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Pick a purpose",
+    "text": "Pick a purpose\nWhat is the (main) purpose of the visualization?\nPurpose: Show how support for Brexit differs regionally"
+  },
+  {
+    "objectID": "lectures/W03.html#first-try-segmented-stacked-barplot",
+    "href": "lectures/W03.html#first-try-segmented-stacked-barplot",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "First try: Segmented stacked barplot",
+    "text": "First try: Segmented stacked barplot\n\nPlot 1Code 1Plot 2Code 2\n\n\n\n\nCode\nggplot(brexit, aes(y = opinion, fill = region)) +\n  geom_bar()\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(y = opinion, fill = region)) +\n  geom_bar()\n\n\n\n\nCode\nggplot(brexit, aes(y = region, fill = opinion)) +\n  geom_bar()\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(y = region, fill = opinion))) +\n  geom_bar()\n\n\n\n\nThey are both hard to read."
+  },
+  {
+    "objectID": "lectures/W03.html#use-facets",
+    "href": "lectures/W03.html#use-facets",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Use facets",
+    "text": "Use facets\n\nPlotCode\n\n\n\n\nCode\nggplot(brexit, aes(y = opinion, fill = region)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1)\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(y = opinion, fill = region)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1)"
+  },
+  {
+    "objectID": "lectures/W03.html#avoid-redundancy",
+    "href": "lectures/W03.html#avoid-redundancy",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Avoid redundancy?",
+    "text": "Avoid redundancy?\nRedundancy can help to tell a story.\n\nPlot 1Plot 2Code\n\n\n\n\nCode\nggplot(brexit, aes(y = opinion)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1)\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nggplot(brexit, aes(y = opinion, fill = opinion)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1)\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(y = opinion, fill = opinion)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1)"
+  },
+  {
+    "objectID": "lectures/W03.html#be-selective-with-redundancy",
+    "href": "lectures/W03.html#be-selective-with-redundancy",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Be selective with redundancy",
+    "text": "Be selective with redundancy\n\nPlotCode\n\n\n\n\nCode\nggplot(brexit, aes(y = opinion, fill = opinion)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1) + \n  guides(fill = \"none\")\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(y = opinion, fill = opinion)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1) + \n  guides(color = \"none\")"
+  },
+  {
+    "objectID": "lectures/W03.html#use-informative-labels",
+    "href": "lectures/W03.html#use-informative-labels",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Use informative labels",
+    "text": "Use informative labels\n\nPlot 1Code\n\n\n\n\nCode\nggplot(brexit, aes(y = opinion, fill = opinion)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1) + \n  guides(fill = \"none\") +\n  labs(\n    title = \"Was Britain right/wrong to vote to leave EU?\",\n    x = NULL, y = NULL\n  )\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(y = opinion, fill = opinion)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1) + \n  guides(fill = \"none\") +\n  labs(\n    title = \"Was Britain right/wrong to vote to leave EU?\",\n    x = NULL, y = NULL\n  )"
+  },
+  {
+    "objectID": "lectures/W03.html#more-information-survey-and-source",
+    "href": "lectures/W03.html#more-information-survey-and-source",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "More information (Survey and Source)",
+    "text": "More information (Survey and Source)\n\nPlot 1Plot 2Code\n\n\n\n\nCode\nggplot(brexit, aes(y = opinion, fill = opinion)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1) + \n  guides(fill = \"none\") +\n  labs(\n    title = \"Was Britain right/wrong to vote to leave EU?\",\n    subtitle = \"YouGov Survey Results, 2-3 September 2019\",\n    caption = \"Source: https://d25d2506sfb94s.cloudfront.net/cumulus_uploads/document/x0msmggx08/YouGov%20-%20Brexit%20and%202019%20election.pdf\",\n    x = NULL, y = NULL\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nggplot(brexit, aes(y = opinion, fill = opinion)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1) + \n  guides(fill = \"none\") +\n  labs(\n    title = \"Was Britain right/wrong to vote to leave EU?\",\n    subtitle = \"YouGov Survey Results, 2-3 September 2019\",\n    caption = \"Source document from YouGov: bit.ly/2lCJZVg\",\n    x = NULL, y = NULL\n  )\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(y = opinion, fill = opinion)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1) + \n  guides(fill = \"none\") +\n  labs(\n    title = \"Was Britain right/wrong to vote to leave EU?\",\n    subtitle = \"YouGov Survey Results, 2-3 September 2019\",\n    caption = \"Source document from YouGov: bit.ly/2lCJZVg\",\n    x = NULL, y = NULL\n  )"
+  },
+  {
+    "objectID": "lectures/W03.html#select-meaningful-colors",
+    "href": "lectures/W03.html#select-meaningful-colors",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Select meaningful colors",
+    "text": "Select meaningful colors\nAre the default rainbow colors meaningful?\n\n\nCode\nggplot(brexit, aes(y = opinion, fill = opinion)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1) + \n  guides(fill = \"none\") +\n  labs(\n    title = \"Was Britain right/wrong to vote to leave EU?\",\n    subtitle = \"YouGov Survey Results, 2-3 September 2019\",\n    caption = \"Source document from YouGov: bit.ly/2lCJZVg\",\n    x = NULL, y = NULL\n  )"
+  },
+  {
+    "objectID": "lectures/W03.html#pick-colors-manually",
+    "href": "lectures/W03.html#pick-colors-manually",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Pick colors manually",
+    "text": "Pick colors manually\n\nPlotCode\n\n\n\n\nCode\nggplot(brexit, aes(y = opinion, fill = opinion)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1) + \n  guides(fill = \"none\") +\n  labs(\n    title = \"Was Britain right/wrong to vote to leave EU?\",\n    subtitle = \"YouGov Survey Results, 2-3 September 2019\",\n    caption = \"Source document from YouGov: bit.ly/2lCJZVg\",\n    x = NULL, y = NULL\n  ) +\n  scale_fill_manual(values = c(\n    \"Wrong\" = \"red\",\n    \"Right\" = \"green\",\n    \"Don't know\" = \"gray\"\n  ))\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(y = opinion, fill = opinion)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1) + \n  guides(fill = \"none\") +\n  labs(\n    title = \"Was Britain right/wrong to vote to leave EU?\",\n    subtitle = \"YouGov Survey Results, 2-3 September 2019\",\n    caption = \"Source document from YouGov: bit.ly/2lCJZVg\",\n    x = NULL, y = NULL\n  ) +\n  scale_fill_manual(values = c(\n    \"Wrong\" = \"red\",\n    \"Right\" = \"green\",\n    \"Don't know\" = \"gray\"\n  ))"
+  },
+  {
+    "objectID": "lectures/W03.html#choose-better-colors",
+    "href": "lectures/W03.html#choose-better-colors",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Choose better colors",
+    "text": "Choose better colors\ncolorbrewer2.org"
+  },
+  {
+    "objectID": "lectures/W03.html#use-better-colors",
+    "href": "lectures/W03.html#use-better-colors",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Use better colors",
+    "text": "Use better colors\n\nPlotCode\n\n\n\n\nCode\nggplot(brexit, aes(y = opinion, fill = opinion)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1) + \n  guides(fill = \"none\") +\n  labs(\n    title = \"Was Britain right/wrong to vote to leave EU?\",\n    subtitle = \"YouGov Survey Results, 2-3 September 2019\",\n    caption = \"Source document from YouGov: bit.ly/2lCJZVg\",\n    x = NULL, y = NULL\n  ) +\n  scale_fill_manual(values = c(\n    \"Wrong\" = \"#ef8a62\",\n    \"Right\" = \"#67a9cf\",\n    \"Don't know\" = \"gray\"\n  ))\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(y = opinion, fill = opinion)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1) + \n  guides(fill = \"none\") +\n  labs(\n    title = \"Was Britain right/wrong to vote to leave EU?\",\n    subtitle = \"YouGov Survey Results, 2-3 September 2019\",\n    caption = \"Source document from YouGov: bit.ly/2lCJZVg\",\n    x = NULL, y = NULL\n  ) +\n  scale_fill_manual(values = c(\n    \"Wrong\" = \"#ef8a62\",\n    \"Right\" = \"#67a9cf\",\n    \"Don't know\" = \"gray\"\n  ))"
+  },
+  {
+    "objectID": "lectures/W03.html#choose-a-theme",
+    "href": "lectures/W03.html#choose-a-theme",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Choose a theme",
+    "text": "Choose a theme\n\nPlotCode\n\n\n\n\nCode\nggplot(brexit, aes(y = opinion, fill = opinion)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1) + \n  guides(fill = \"none\") +\n  labs(\n    title = \"Was Britain right/wrong to vote to leave EU?\",\n    subtitle = \"YouGov Survey Results, 2-3 September 2019\",\n    caption = \"Source document from YouGov: bit.ly/2lCJZVg\",\n    x = NULL, y = NULL\n  ) +\n  scale_fill_manual(values = c(\n    \"Wrong\" = \"#ef8a62\",\n    \"Right\" = \"#67a9cf\",\n    \"Don't know\" = \"gray\"\n  )) +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(y = opinion, fill = opinion)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1) + \n  guides(fill = \"none\") +\n  labs(\n    title = \"Was Britain right/wrong to vote to leave EU?\",\n    subtitle = \"YouGov Survey Results, 2-3 September 2019\",\n    caption = \"Source document from YouGov: bit.ly/2lCJZVg\",\n    x = NULL, y = NULL\n  ) +\n  scale_fill_manual(values = c(\n    \"Wrong\" = \"#ef8a62\",\n    \"Right\" = \"#67a9cf\",\n    \"Don't know\" = \"#f7f7f7\"\n  )) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "lectures/W03.html#adjust-the-general-text-size",
+    "href": "lectures/W03.html#adjust-the-general-text-size",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Adjust the general text size",
+    "text": "Adjust the general text size\n\nPlotCode\n\n\n\n\nCode\nggplot(brexit, aes(y = opinion, fill = opinion)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1) + \n  guides(fill = \"none\") +\n  labs(\n    title = \"Was Britain right/wrong to vote to leave EU?\",\n    subtitle = \"YouGov Survey Results, 2-3 September 2019\",\n    caption = \"Source document from YouGov: bit.ly/2lCJZVg\",\n    x = NULL, y = NULL\n  ) +\n  scale_fill_manual(values = c(\n    \"Wrong\" = \"#ef8a62\",\n    \"Right\" = \"#67a9cf\",\n    \"Don't know\" = \"gray\"\n  )) +\n  theme_minimal(base_size = 14)\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(y = opinion, fill = opinion)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1) + \n  guides(fill = \"none\") +\n  labs(\n    title = \"Was Britain right/wrong to vote to leave EU?\",\n    subtitle = \"YouGov Survey Results, 2-3 September 2019\",\n    caption = \"Source document from YouGov: bit.ly/2lCJZVg\",\n    x = NULL, y = NULL\n  ) +\n  scale_fill_manual(values = c(\n    \"Wrong\" = \"#ef8a62\",\n    \"Right\" = \"#67a9cf\",\n    \"Don't know\" = \"gray\"\n  )) +\n  theme_minimal(base_size = 14)"
+  },
+  {
     "objectID": "lectures/W03.html#bar-plots",
     "href": "lectures/W03.html#bar-plots",
     "title": "W#03 Amounts Proportions Uncertainty",
     "section": "Bar plots",
-    "text": "Bar plots\nGood McClellan (2018) Data Visualization: A Practical Introduction"
+    "text": "Bar plots\nMcClelland"
   },
   {
     "objectID": "lectures/W03.html#bar-plots-vs.-pie-charts",
@@ -251,7 +440,7 @@
     "href": "index.html#class-meeting-information",
     "title": "Visual Communication and Data Story-telling",
     "section": "3 Class Meeting Information",
-    "text": "3 Class Meeting Information\nClasses are no Tuesdays\nSession 1 Tue 9:45 - 11:00\nSession 2 Tue 9:45 - 11:00\nLocation: East Hall Room 3 in-person\nVideo streaming and recording in Teams will be provided, it does not work for all class activities perfectly: Team F25_MDSSB-MET-03_Visual Communication and Data Story-telling, General Channel",
+    "text": "3 Class Meeting Information\nClasses are on Tuesdays\nSession 1 Tue 9:45 - 11:00\nSession 2 Tue 9:45 - 11:00\nLocation: East Hall Room 3 in-person\nVideo streaming and recording in Teams will be provided, it does not work for all class activities perfectly: Team F25_MDSSB-MET-03_Visual Communication and Data Story-telling, General Channel",
     "crumbs": [
       "Syllabus"
     ]
@@ -530,190 +719,6 @@
     ]
   },
   {
-    "objectID": "datastorytelling.html#data-visuals-narrative",
-    "href": "datastorytelling.html#data-visuals-narrative",
-    "title": "Data Storytelling - Storyboarding Activity Guide",
-    "section": "Data, Visuals, Narrative",
-    "text": "Data, Visuals, Narrative\n\n\nThe three essential elements of data stories.\n\nStoryboading is about a narrative and how it relates to data and visuals.\n\n\nExplain. Narrative coupled with data.\n\nWhat’s happening in the data?\nWhat is the context?\nGuide through the data structure!\nWhy is a particular insight important?\n\nEnlighten. Visuals applied to data.\n\nSome insights are hard with numbers only.\nShow patterns and outliers otherwise hidden.\n\nEngage. Narrative and visuals merged together.\n\nEngage (or even entertain) an audience.\nVisuals capture interest, only a story holds attention."
-  },
-  {
-    "objectID": "datastorytelling.html#data-story-continuum",
-    "href": "datastorytelling.html#data-story-continuum",
-    "title": "Data Storytelling - Storyboarding Activity Guide",
-    "section": "Data Story Continuum",
-    "text": "Data Story Continuum\n\nWhile storyboarding, make your story points with attributes from the right side."
-  },
-  {
-    "objectID": "datastorytelling.html#storyframing-before",
-    "href": "datastorytelling.html#storyframing-before",
-    "title": "Data Storytelling - Storyboarding Activity Guide",
-    "section": "Storyframing before",
-    "text": "Storyframing before\n\nBefore you communicate insight, you must find one!\nFocus on key dimensions and find key metrics\n\n\n\nWhile storyboarding, note open points for your storyframing.\nOpen points can be discussed in individual meetings next week"
-  },
-  {
-    "objectID": "datastorytelling.html#anatomy-of-a-data-story-1",
-    "href": "datastorytelling.html#anatomy-of-a-data-story-1",
-    "title": "Data Storytelling - Storyboarding Activity Guide",
-    "section": "Anatomy of a Data Story",
-    "text": "Anatomy of a Data Story\n\nDifferent structure for two parts of your report\n\nNarrative structure for your slide deck and presentation\nInverted pyramid structure for the written report"
-  },
-  {
-    "objectID": "datastorytelling.html#six-essential-elements-of-data-stories",
-    "href": "datastorytelling.html#six-essential-elements-of-data-stories",
-    "title": "Data Storytelling - Storyboarding Activity Guide",
-    "section": "Six essential elements of data stories",
-    "text": "Six essential elements of data stories\n\n\nYour project slide deck and presentation matches a Data Presentation\nYour project report matches a Curated Report (and Dashboard)"
-  },
-  {
-    "objectID": "datastorytelling.html#differences-in-communication",
-    "href": "datastorytelling.html#differences-in-communication",
-    "title": "Data Storytelling - Storyboarding Activity Guide",
-    "section": "Differences in Communication",
-    "text": "Differences in Communication\n\n\nYour project slide deck and presentation is direct communication\nYour project report is indirect communication"
-  },
-  {
-    "objectID": "datastorytelling.html#data-storytelling-arc",
-    "href": "datastorytelling.html#data-storytelling-arc",
-    "title": "Data Storytelling - Storyboarding Activity Guide",
-    "section": "Data Storytelling Arc",
-    "text": "Data Storytelling Arc"
-  },
-  {
-    "objectID": "datastorytelling.html#compared-to-other-communication-models",
-    "href": "datastorytelling.html#compared-to-other-communication-models",
-    "title": "Data Storytelling - Storyboarding Activity Guide",
-    "section": "Compared to other communication models",
-    "text": "Compared to other communication models"
-  },
-  {
-    "objectID": "datastorytelling.html#examples-of-story-points",
-    "href": "datastorytelling.html#examples-of-story-points",
-    "title": "Data Storytelling - Storyboarding Activity Guide",
-    "section": "Examples of story points",
-    "text": "Examples of story points\n\nActivity: Check if your ideas fit into one of the categories and then improve on that premise. Alternatively: Get inspired by these."
-  },
-  {
-    "objectID": "datastorytelling.html#storyboarding",
-    "href": "datastorytelling.html#storyboarding",
-    "title": "Data Storytelling - Storyboarding Activity Guide",
-    "section": "Storyboarding",
-    "text": "Storyboarding\n\nDefinition: A story is an account of causally related or connected series of events.\nA narrative always has a one-dimensional linear sequence, but we can decide\n\nwhat is in and\nin which order.\n\nStoryboarding is a technique from the movie industry (invented at Disney’s in the 30’s, now part of pre-visualization) which can also be used for data presentations.\nMain purpose: Build the story, not the exact visualizations (rough ideas are enough)!\n\nActivity: Make a story board for your presentation. Follow the steps on the next slides."
-  },
-  {
-    "objectID": "datastorytelling.html#phase-a-story-points",
-    "href": "datastorytelling.html#phase-a-story-points",
-    "title": "Data Storytelling - Storyboarding Activity Guide",
-    "section": "Phase A: Story points!",
-    "text": "Phase A: Story points!\nActivity\n\nWrite down story points and/or brief visual sketches on sticky notes or cards.\n\nThere is no limit on the initial number of story-point card to generate!\nSelect the best 6 to 10 ones\nKeep all, maybe you want to replace one\nYou can always create or refine one later\n\nAlready now you can play with your story points to search for a compelling story.\n\n\nArrange them in order\nReplace, combine, refine, and reshuffle them\nUse them to tell the story\nScrutinize and iterate your story"
-  },
-  {
-    "objectID": "datastorytelling.html#phase-b-storyboarding",
-    "href": "datastorytelling.html#phase-b-storyboarding",
-    "title": "Data Storytelling - Storyboarding Activity Guide",
-    "section": "Phase B: Storyboarding!",
-    "text": "Phase B: Storyboarding!\nActivity: Realize these steps in your storyboard.\n\nStep 1: Identify your “Aha” moment (main insight)\nStep 2: Find your beginning (the setting and the “hook”)\nStep 3: Select your rising insights (narrative from the hook to the Aha moment)\nStep 4: Conclude with solutions, next steps, empowerment to action, …\n\nWhen your storyboard is fixed\n\nwrite the titles down in your slide deck and\nstart working on your final visuals such that they best support your story."
-  },
-  {
-    "objectID": "tasks/03-week.html",
-    "href": "tasks/03-week.html",
-    "title": "Week 2: Preparations for Week 3",
-    "section": "",
-    "text": "Check the boxes when done. I provide some good feeling of having it done 🙂.\nAdditional readings:\nChapter 6 in Fundamentals of Data Visualization: Visualizing amounts (Wilke 2018) Chapter 7 in Fundamentals of Data Visualization: Visualizing distributions: Histograms and density plots (Wilke 2018) Chapter 10 in Fundamentals of Data Visualization: Visualising proportions (Wilke 2018)"
-  },
-  {
-    "objectID": "tasks/10-week.html",
-    "href": "tasks/10-week.html",
-    "title": "Task for Week 10: Preparations for Week 11",
-    "section": "",
-    "text": "Check the boxes when done. I provide some good feeling of having it done 🙂.\nShort guide before the meeting"
-  },
-  {
-    "objectID": "tasks/01-week.html",
-    "href": "tasks/01-week.html",
-    "title": "Week 01",
-    "section": "",
-    "text": "Slides Direct Link\n\nFind the live recording in the Course’s Team’s Recording Folder.\n\n\n\nRead Chapter 1 in Dykes (2019), consult the Reading Remarks for the Chapter.\n\nComplete the corresponding reading assignment on Teams: Click the Assignments Tab and write your engagement comments in your personal class notebook there.",
-    "crumbs": [
-      "Syllabus",
-      "Schedule",
-      "Week 01"
-    ]
-  },
-  {
-    "objectID": "tasks/01-week.html#material",
-    "href": "tasks/01-week.html#material",
-    "title": "Week 01",
-    "section": "",
-    "text": "Slides Direct Link\n\nFind the live recording in the Course’s Team’s Recording Folder.\n\n\n\nRead Chapter 1 in Dykes (2019), consult the Reading Remarks for the Chapter.\n\nComplete the corresponding reading assignment on Teams: Click the Assignments Tab and write your engagement comments in your personal class notebook there.",
-    "crumbs": [
-      "Syllabus",
-      "Schedule",
-      "Week 01"
-    ]
-  },
-  {
-    "objectID": "tasks/01-week.html#checklist",
-    "href": "tasks/01-week.html#checklist",
-    "title": "Week 01",
-    "section": "Checklist",
-    "text": "Checklist\nCheck the boxes when done, and feel the “done” 🙂.\n\nGet ready for your Playground repository\n\nAccept the invitation to join the GitHub-Organization CU-F25-MDSSB-MET-03-VisCommDataStory. Check your emails for the invitation, or go to the page while logged in and find the acceptance button.\nMake your tool ready for work with R, tidyverse, and quarto.\n\nRecommendation: Switch to Positron as a replacement for RStudio.\nCheck that you have R 4.5.1 and the tidyverse package installed.\n\n\nRead the syllabus, come up with clarification question.\nReadings and Assignment done.",
-    "crumbs": [
-      "Syllabus",
-      "Schedule",
-      "Week 01"
-    ]
-  },
-  {
-    "objectID": "tasks/05-week.html",
-    "href": "tasks/05-week.html",
-    "title": "Task for Week 5: Preparations for Week 6",
-    "section": "",
-    "text": "Check the boxes when done. I provide some good feeling of having it done 🙂.\nForm: Project and Teams Check-In"
-  },
-  {
-    "objectID": "tasks/02-week.html",
-    "href": "tasks/02-week.html",
-    "title": "Week 02",
-    "section": "",
-    "text": "Slides Direct Link\n\nFind the live recording in the Course’s Team’s Recording Folder.\n\n\n\nRead Chapter 2 in Dykes (2019), consult the Reading Remarks for the Chapter.\n\nComplete the corresponding reading assignment on Teams: Click the Assignments Tab and write your engagement comments in your personal class notebook there.\n\n\nMake one visual based on the data you find in the VisCom_Playground in the CU-F25-MDSSB-MET-03-VisCommDataStory Repositories\n\nComplete the corresponding assignment on Teams\n\nSearch the internet for a visual you find great. It can be anything which shows some insight through data visualization. Hopefully we receive a lot of different graphs to discuss what is great about them!\n\nComplete the corresponding assignment on Teams (same as above). Have it ready to be shared and discussed in class.",
-    "crumbs": [
-      "Syllabus",
-      "Schedule",
-      "Week 02"
-    ]
-  },
-  {
-    "objectID": "tasks/02-week.html#material",
-    "href": "tasks/02-week.html#material",
-    "title": "Week 02",
-    "section": "",
-    "text": "Slides Direct Link\n\nFind the live recording in the Course’s Team’s Recording Folder.\n\n\n\nRead Chapter 2 in Dykes (2019), consult the Reading Remarks for the Chapter.\n\nComplete the corresponding reading assignment on Teams: Click the Assignments Tab and write your engagement comments in your personal class notebook there.\n\n\nMake one visual based on the data you find in the VisCom_Playground in the CU-F25-MDSSB-MET-03-VisCommDataStory Repositories\n\nComplete the corresponding assignment on Teams\n\nSearch the internet for a visual you find great. It can be anything which shows some insight through data visualization. Hopefully we receive a lot of different graphs to discuss what is great about them!\n\nComplete the corresponding assignment on Teams (same as above). Have it ready to be shared and discussed in class.",
-    "crumbs": [
-      "Syllabus",
-      "Schedule",
-      "Week 02"
-    ]
-  },
-  {
-    "objectID": "tasks/02-week.html#checklist",
-    "href": "tasks/02-week.html#checklist",
-    "title": "Week 02",
-    "section": "Checklist",
-    "text": "Checklist\nCheck the boxes when done, and feel the “done” 🙂.\n\nHave the repository VisCom_Playground cloned to your computer.",
-    "crumbs": [
-      "Syllabus",
-      "Schedule",
-      "Week 02"
-    ]
-  },
-  {
-    "objectID": "tasks/04-week.html",
-    "href": "tasks/04-week.html",
-    "title": "Task for Week 4: Preparations for Week 5",
-    "section": "",
-    "text": "Check the boxes when done. I provide some good feeling of having it done 🙂."
-  },
-  {
     "objectID": "milestones.html",
     "href": "milestones.html",
     "title": "Project Milestones",
@@ -813,200 +818,195 @@
     ]
   },
   {
-    "objectID": "Towards_Great_Visualization_Brexit.html#keep-it-simple",
-    "href": "Towards_Great_Visualization_Brexit.html#keep-it-simple",
-    "title": "Tips for Great Visualizations",
-    "section": "Keep it simple",
-    "text": "Keep it simple"
+    "objectID": "tasks/04-week.html",
+    "href": "tasks/04-week.html",
+    "title": "Task for Week 4: Preparations for Week 5",
+    "section": "",
+    "text": "Check the boxes when done. I provide some good feeling of having it done 🙂."
   },
   {
-    "objectID": "Towards_Great_Visualization_Brexit.html#use-color-to-draw-attention",
-    "href": "Towards_Great_Visualization_Brexit.html#use-color-to-draw-attention",
-    "title": "Tips for Great Visualizations",
-    "section": "Use color to draw attention",
-    "text": "Use color to draw attention"
+    "objectID": "tasks/02-week.html",
+    "href": "tasks/02-week.html",
+    "title": "Week 02",
+    "section": "",
+    "text": "Slides Direct Link\n\nFind the live recording in the Course’s Team’s Recording Folder.\n\n\n\nRead Chapter 2 in Dykes (2019), consult the Reading Remarks for the Chapter.\n\nComplete the corresponding reading assignment on Teams: Click the Assignments Tab and write your engagement comments in your personal class notebook there.\n\n\nMake one visual based on the data you find in the VisCom_Playground in the CU-F25-MDSSB-MET-03-VisCommDataStory Repositories\n\nComplete the corresponding assignment on Teams\n\nSearch the internet for a visual you find great. It can be anything which shows some insight through data visualization. Hopefully we receive a lot of different graphs to discuss what is great about them!\n\nComplete the corresponding assignment on Teams (same as above). Have it ready to be shared and discussed in class.",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 02"
+    ]
   },
   {
-    "objectID": "Towards_Great_Visualization_Brexit.html#tell-a-story",
-    "href": "Towards_Great_Visualization_Brexit.html#tell-a-story",
-    "title": "Tips for Great Visualizations",
-    "section": "Tell a story",
-    "text": "Tell a story\nWhat is the (main) purpose of the visualization?\n\n\nCredit: Angela Zoss and Eric Monson, Duke DVS"
+    "objectID": "tasks/02-week.html#material",
+    "href": "tasks/02-week.html#material",
+    "title": "Week 02",
+    "section": "",
+    "text": "Slides Direct Link\n\nFind the live recording in the Course’s Team’s Recording Folder.\n\n\n\nRead Chapter 2 in Dykes (2019), consult the Reading Remarks for the Chapter.\n\nComplete the corresponding reading assignment on Teams: Click the Assignments Tab and write your engagement comments in your personal class notebook there.\n\n\nMake one visual based on the data you find in the VisCom_Playground in the CU-F25-MDSSB-MET-03-VisCommDataStory Repositories\n\nComplete the corresponding assignment on Teams\n\nSearch the internet for a visual you find great. It can be anything which shows some insight through data visualization. Hopefully we receive a lot of different graphs to discuss what is great about them!\n\nComplete the corresponding assignment on Teams (same as above). Have it ready to be shared and discussed in class.",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 02"
+    ]
   },
   {
-    "objectID": "Towards_Great_Visualization_Brexit.html#principles-for-effective-visualizations",
-    "href": "Towards_Great_Visualization_Brexit.html#principles-for-effective-visualizations",
-    "title": "Tips for Great Visualizations",
-    "section": "Principles for effective visualizations",
-    "text": "Principles for effective visualizations\n\nOrder matters\nPut long categories on the y-axis\nUse meaningful labels\nPick a purpose\nSelect meaningful colors"
+    "objectID": "tasks/02-week.html#checklist",
+    "href": "tasks/02-week.html#checklist",
+    "title": "Week 02",
+    "section": "Checklist",
+    "text": "Checklist\nCheck the boxes when done, and feel the “done” 🙂.\n\nHave the repository VisCom_Playground cloned to your computer.",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 02"
+    ]
   },
   {
-    "objectID": "Towards_Great_Visualization_Brexit.html#data",
-    "href": "Towards_Great_Visualization_Brexit.html#data",
-    "title": "Tips for Great Visualizations",
-    "section": "Data",
-    "text": "Data\nIn September 2019, YouGov survey asked 1,639 adults in the UK the following question:\n\nIn hindsight, do you think Britain was right/wrong to vote to leave EU?\n🔲 Right to leave | 🔲 Wrong to leave | 🔲 Don’t know"
+    "objectID": "tasks/05-week.html",
+    "href": "tasks/05-week.html",
+    "title": "Task for Week 5: Preparations for Week 6",
+    "section": "",
+    "text": "Check the boxes when done. I provide some good feeling of having it done 🙂.\nForm: Project and Teams Check-In"
   },
   {
-    "objectID": "Towards_Great_Visualization_Brexit.html#order-matters",
-    "href": "Towards_Great_Visualization_Brexit.html#order-matters",
-    "title": "Tips for Great Visualizations",
-    "section": "Order Matters",
-    "text": "Order Matters\nAlphabetical order is rarely what you want!\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(x = opinion)) +\n  geom_bar()"
+    "objectID": "tasks/01-week.html",
+    "href": "tasks/01-week.html",
+    "title": "Week 01",
+    "section": "",
+    "text": "Slides Direct Link\n\nFind the live recording in the Course’s Team’s Recording Folder.\n\n\n\nRead Chapter 1 in Dykes (2019), consult the Reading Remarks for the Chapter.\n\nComplete the corresponding reading assignment on Teams: Click the Assignments Tab and write your engagement comments in your personal class notebook there.\n\n\nMake a visual with the data in the Playground repository found in the Repository of the Course",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 01"
+    ]
   },
   {
-    "objectID": "Towards_Great_Visualization_Brexit.html#order-matters-1",
-    "href": "Towards_Great_Visualization_Brexit.html#order-matters-1",
-    "title": "Tips for Great Visualizations",
-    "section": "Order Matters",
-    "text": "Order Matters\nOften good: Order by frequency\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\nfct_infreq: (Creates and) reorders a factor by the frequency.\nggplot(brexit, aes(x = fct_infreq(opinion))) +\n  geom_bar()"
+    "objectID": "tasks/01-week.html#material",
+    "href": "tasks/01-week.html#material",
+    "title": "Week 01",
+    "section": "",
+    "text": "Slides Direct Link\n\nFind the live recording in the Course’s Team’s Recording Folder.\n\n\n\nRead Chapter 1 in Dykes (2019), consult the Reading Remarks for the Chapter.\n\nComplete the corresponding reading assignment on Teams: Click the Assignments Tab and write your engagement comments in your personal class notebook there.\n\n\nMake a visual with the data in the Playground repository found in the Repository of the Course",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 01"
+    ]
   },
   {
-    "objectID": "Towards_Great_Visualization_Brexit.html#clean-up-labels",
-    "href": "Towards_Great_Visualization_Brexit.html#clean-up-labels",
-    "title": "Tips for Great Visualizations",
-    "section": "Clean up labels",
-    "text": "Clean up labels\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(x = fct_infreq(opinion))) +\n  geom_bar() +\n  labs(\n    x = \"Opinion\",\n    y = \"Count\"\n  )"
+    "objectID": "tasks/01-week.html#checklist",
+    "href": "tasks/01-week.html#checklist",
+    "title": "Week 01",
+    "section": "Checklist",
+    "text": "Checklist\nCheck the boxes when done, and feel the “done” 🙂.\n\nGet ready for your Playground repository\n\nAccept the invitation to join the GitHub-Organization CU-F25-MDSSB-MET-03-VisCommDataStory. Check your emails for the invitation, or go to the page while logged in and find the acceptance button.\nMake your tool ready for work with R, tidyverse, and quarto.\n\nRecommendation: Switch to Positron as a replacement for RStudio.\nCheck that you have R 4.5.1 and the tidyverse package installed.\n\n\nRead the syllabus, come up with clarification question.\nReadings and Assignment done.",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 01"
+    ]
   },
   {
-    "objectID": "Towards_Great_Visualization_Brexit.html#order-matters-2",
-    "href": "Towards_Great_Visualization_Brexit.html#order-matters-2",
-    "title": "Tips for Great Visualizations",
-    "section": "Order Matters",
-    "text": "Order Matters\nAlphabetical order is rarely what you want!\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(x = region)) +\n  geom_bar()"
+    "objectID": "tasks/10-week.html",
+    "href": "tasks/10-week.html",
+    "title": "Task for Week 10: Preparations for Week 11",
+    "section": "",
+    "text": "Check the boxes when done. I provide some good feeling of having it done 🙂.\nShort guide before the meeting"
   },
   {
-    "objectID": "Towards_Great_Visualization_Brexit.html#use-inherent-level-order",
-    "href": "Towards_Great_Visualization_Brexit.html#use-inherent-level-order",
-    "title": "Tips for Great Visualizations",
-    "section": "Use inherent level order",
-    "text": "Use inherent level order\nReorder manually with a custom order\n\nRelevelPlot\n\n\nfct_relevel: Reorders the levels of a factor as specified\n\nbrexit &lt;- brexit |&gt; \n  mutate(region = fct_relevel(\n    region,\n    \"london\", \"rest_of_south\", \"midlands_wales\", \"north\", \"scot\"\n  ))"
+    "objectID": "tasks/03-week.html",
+    "href": "tasks/03-week.html",
+    "title": "Week 2: Preparations for Week 3",
+    "section": "",
+    "text": "Check the boxes when done. I provide some good feeling of having it done 🙂.\nAdditional readings:\nChapter 6 in Fundamentals of Data Visualization: Visualizing amounts (Wilke 2018) Chapter 7 in Fundamentals of Data Visualization: Visualizing distributions: Histograms and density plots (Wilke 2018) Chapter 10 in Fundamentals of Data Visualization: Visualising proportions (Wilke 2018)"
   },
   {
-    "objectID": "Towards_Great_Visualization_Brexit.html#clean-factor-labels",
-    "href": "Towards_Great_Visualization_Brexit.html#clean-factor-labels",
-    "title": "Tips for Great Visualizations",
-    "section": "Clean factor labels",
-    "text": "Clean factor labels\nReorder manually with a custom order\n\nRecodePlot\n\n\nfct_recode: Change factor levels by hand\n\nbrexit &lt;- brexit |&gt; \n  mutate(\n    region = fct_recode(\n      region,\n      London = \"london\",\n      `Rest of South` = \"rest_of_south\",\n      `Midlands / Wales` = \"midlands_wales\",\n      North = \"north\",\n      Scotland = \"scot\"\n    )\n  )"
+    "objectID": "datastorytelling.html#data-visuals-narrative",
+    "href": "datastorytelling.html#data-visuals-narrative",
+    "title": "Data Storytelling - Storyboarding Activity Guide",
+    "section": "Data, Visuals, Narrative",
+    "text": "Data, Visuals, Narrative\n\n\nThe three essential elements of data stories.\n\nStoryboading is about a narrative and how it relates to data and visuals.\n\n\nExplain. Narrative coupled with data.\n\nWhat’s happening in the data?\nWhat is the context?\nGuide through the data structure!\nWhy is a particular insight important?\n\nEnlighten. Visuals applied to data.\n\nSome insights are hard with numbers only.\nShow patterns and outliers otherwise hidden.\n\nEngage. Narrative and visuals merged together.\n\nEngage (or even entertain) an audience.\nVisuals capture interest, only a story holds attention."
   },
   {
-    "objectID": "Towards_Great_Visualization_Brexit.html#long-categories-are-better-readable-on-the-y-axis",
-    "href": "Towards_Great_Visualization_Brexit.html#long-categories-are-better-readable-on-the-y-axis",
-    "title": "Tips for Great Visualizations",
-    "section": "Long categories are better readable on the y-axis",
-    "text": "Long categories are better readable on the y-axis\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(y = region)) +\n  geom_bar()"
+    "objectID": "datastorytelling.html#data-story-continuum",
+    "href": "datastorytelling.html#data-story-continuum",
+    "title": "Data Storytelling - Storyboarding Activity Guide",
+    "section": "Data Story Continuum",
+    "text": "Data Story Continuum\n\nWhile storyboarding, make your story points with attributes from the right side."
   },
   {
-    "objectID": "Towards_Great_Visualization_Brexit.html#reverse-the-order-of-levels",
-    "href": "Towards_Great_Visualization_Brexit.html#reverse-the-order-of-levels",
-    "title": "Tips for Great Visualizations",
-    "section": "Reverse the order of levels",
-    "text": "Reverse the order of levels\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\nfct_rev: Reverse order of factor levels\nggplot(brexit, aes(y = fct_rev(region))) +\n  geom_bar()"
+    "objectID": "datastorytelling.html#storyframing-before",
+    "href": "datastorytelling.html#storyframing-before",
+    "title": "Data Storytelling - Storyboarding Activity Guide",
+    "section": "Storyframing before",
+    "text": "Storyframing before\n\nBefore you communicate insight, you must find one!\nFocus on key dimensions and find key metrics\n\n\n\nWhile storyboarding, note open points for your storyframing.\nOpen points can be discussed in individual meetings next week"
   },
   {
-    "objectID": "Towards_Great_Visualization_Brexit.html#clean-up-axis-lables",
-    "href": "Towards_Great_Visualization_Brexit.html#clean-up-axis-lables",
-    "title": "Tips for Great Visualizations",
-    "section": "Clean up axis lables",
-    "text": "Clean up axis lables\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(y = fct_rev(region))) +\n  geom_bar() +\n  labs(\n    x = \"Count\",\n    y = \"Region\"\n  )"
+    "objectID": "datastorytelling.html#anatomy-of-a-data-story-1",
+    "href": "datastorytelling.html#anatomy-of-a-data-story-1",
+    "title": "Data Storytelling - Storyboarding Activity Guide",
+    "section": "Anatomy of a Data Story",
+    "text": "Anatomy of a Data Story\n\nDifferent structure for two parts of your report\n\nNarrative structure for your slide deck and presentation\nInverted pyramid structure for the written report"
   },
   {
-    "objectID": "Towards_Great_Visualization_Brexit.html#pick-a-purpose",
-    "href": "Towards_Great_Visualization_Brexit.html#pick-a-purpose",
-    "title": "Tips for Great Visualizations",
-    "section": "Pick a purpose",
-    "text": "Pick a purpose\nWhat is the (main) purpose of the visualization?\nPurpose: Show how support for Brexit differs regionally"
+    "objectID": "datastorytelling.html#six-essential-elements-of-data-stories",
+    "href": "datastorytelling.html#six-essential-elements-of-data-stories",
+    "title": "Data Storytelling - Storyboarding Activity Guide",
+    "section": "Six essential elements of data stories",
+    "text": "Six essential elements of data stories\n\n\nYour project slide deck and presentation matches a Data Presentation\nYour project report matches a Curated Report (and Dashboard)"
   },
   {
-    "objectID": "Towards_Great_Visualization_Brexit.html#first-try-segmented-stacked-barplot",
-    "href": "Towards_Great_Visualization_Brexit.html#first-try-segmented-stacked-barplot",
-    "title": "Tips for Great Visualizations",
-    "section": "First try: Segmented stacked barplot",
-    "text": "First try: Segmented stacked barplot\n\nPlot 1Code 1Plot 2Code 2\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(y = opinion, fill = region)) +\n  geom_bar()\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(y = region, fill = opinion))) +\n  geom_bar()\n\n\n\n\nThey are both hard to read."
+    "objectID": "datastorytelling.html#differences-in-communication",
+    "href": "datastorytelling.html#differences-in-communication",
+    "title": "Data Storytelling - Storyboarding Activity Guide",
+    "section": "Differences in Communication",
+    "text": "Differences in Communication\n\n\nYour project slide deck and presentation is direct communication\nYour project report is indirect communication"
   },
   {
-    "objectID": "Towards_Great_Visualization_Brexit.html#use-facets",
-    "href": "Towards_Great_Visualization_Brexit.html#use-facets",
-    "title": "Tips for Great Visualizations",
-    "section": "Use facets",
-    "text": "Use facets\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(y = opinion, fill = region)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1)"
+    "objectID": "datastorytelling.html#data-storytelling-arc",
+    "href": "datastorytelling.html#data-storytelling-arc",
+    "title": "Data Storytelling - Storyboarding Activity Guide",
+    "section": "Data Storytelling Arc",
+    "text": "Data Storytelling Arc"
   },
   {
-    "objectID": "Towards_Great_Visualization_Brexit.html#avoid-redundancy",
-    "href": "Towards_Great_Visualization_Brexit.html#avoid-redundancy",
-    "title": "Tips for Great Visualizations",
-    "section": "Avoid redundancy?",
-    "text": "Avoid redundancy?\nRedundancy can help to tell a story.\n\nPlot 1Plot 2Code\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(y = opinion, fill = opinion)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1)"
+    "objectID": "datastorytelling.html#compared-to-other-communication-models",
+    "href": "datastorytelling.html#compared-to-other-communication-models",
+    "title": "Data Storytelling - Storyboarding Activity Guide",
+    "section": "Compared to other communication models",
+    "text": "Compared to other communication models"
   },
   {
-    "objectID": "Towards_Great_Visualization_Brexit.html#be-selective-with-redundancy",
-    "href": "Towards_Great_Visualization_Brexit.html#be-selective-with-redundancy",
-    "title": "Tips for Great Visualizations",
-    "section": "Be selective with redundancy",
-    "text": "Be selective with redundancy\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(y = opinion, fill = opinion)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1) + \n  guides(color = \"none\")"
+    "objectID": "datastorytelling.html#examples-of-story-points",
+    "href": "datastorytelling.html#examples-of-story-points",
+    "title": "Data Storytelling - Storyboarding Activity Guide",
+    "section": "Examples of story points",
+    "text": "Examples of story points\n\nActivity: Check if your ideas fit into one of the categories and then improve on that premise. Alternatively: Get inspired by these."
   },
   {
-    "objectID": "Towards_Great_Visualization_Brexit.html#use-informative-labels",
-    "href": "Towards_Great_Visualization_Brexit.html#use-informative-labels",
-    "title": "Tips for Great Visualizations",
-    "section": "Use informative labels",
-    "text": "Use informative labels\n\nPlot 1Code\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(y = opinion, fill = opinion)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1) + \n  guides(fill = \"none\") +\n  labs(\n    title = \"Was Britain right/wrong to vote to leave EU?\",\n    x = NULL, y = NULL\n  )"
+    "objectID": "datastorytelling.html#storyboarding",
+    "href": "datastorytelling.html#storyboarding",
+    "title": "Data Storytelling - Storyboarding Activity Guide",
+    "section": "Storyboarding",
+    "text": "Storyboarding\n\nDefinition: A story is an account of causally related or connected series of events.\nA narrative always has a one-dimensional linear sequence, but we can decide\n\nwhat is in and\nin which order.\n\nStoryboarding is a technique from the movie industry (invented at Disney’s in the 30’s, now part of pre-visualization) which can also be used for data presentations.\nMain purpose: Build the story, not the exact visualizations (rough ideas are enough)!\n\nActivity: Make a story board for your presentation. Follow the steps on the next slides."
   },
   {
-    "objectID": "Towards_Great_Visualization_Brexit.html#more-information-survey-and-source",
-    "href": "Towards_Great_Visualization_Brexit.html#more-information-survey-and-source",
-    "title": "Tips for Great Visualizations",
-    "section": "More information (Survey and Source)",
-    "text": "More information (Survey and Source)\n\nPlot 1Plot 2Code\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(y = opinion, fill = opinion)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1) + \n  guides(fill = \"none\") +\n  labs(\n    title = \"Was Britain right/wrong to vote to leave EU?\",\n    subtitle = \"YouGov Survey Results, 2-3 September 2019\",\n    caption = \"Source document from YouGov: bit.ly/2lCJZVg\",\n    x = NULL, y = NULL\n  )"
+    "objectID": "datastorytelling.html#phase-a-story-points",
+    "href": "datastorytelling.html#phase-a-story-points",
+    "title": "Data Storytelling - Storyboarding Activity Guide",
+    "section": "Phase A: Story points!",
+    "text": "Phase A: Story points!\nActivity\n\nWrite down story points and/or brief visual sketches on sticky notes or cards.\n\nThere is no limit on the initial number of story-point card to generate!\nSelect the best 6 to 10 ones\nKeep all, maybe you want to replace one\nYou can always create or refine one later\n\nAlready now you can play with your story points to search for a compelling story.\n\n\nArrange them in order\nReplace, combine, refine, and reshuffle them\nUse them to tell the story\nScrutinize and iterate your story"
   },
   {
-    "objectID": "Towards_Great_Visualization_Brexit.html#select-meaningful-colors",
-    "href": "Towards_Great_Visualization_Brexit.html#select-meaningful-colors",
-    "title": "Tips for Great Visualizations",
-    "section": "Select meaningful colors",
-    "text": "Select meaningful colors\nAre the default rainbow colors meaningful?"
-  },
-  {
-    "objectID": "Towards_Great_Visualization_Brexit.html#pick-colors-manually",
-    "href": "Towards_Great_Visualization_Brexit.html#pick-colors-manually",
-    "title": "Tips for Great Visualizations",
-    "section": "Pick colors manually",
-    "text": "Pick colors manually\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(y = opinion, fill = opinion)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1) + \n  guides(fill = \"none\") +\n  labs(\n    title = \"Was Britain right/wrong to vote to leave EU?\",\n    subtitle = \"YouGov Survey Results, 2-3 September 2019\",\n    caption = \"Source document from YouGov: bit.ly/2lCJZVg\",\n    x = NULL, y = NULL\n  ) +\n  scale_fill_manual(values = c(\n    \"Wrong\" = \"red\",\n    \"Right\" = \"green\",\n    \"Don't know\" = \"gray\"\n  ))"
-  },
-  {
-    "objectID": "Towards_Great_Visualization_Brexit.html#choose-better-colors",
-    "href": "Towards_Great_Visualization_Brexit.html#choose-better-colors",
-    "title": "Tips for Great Visualizations",
-    "section": "Choose better colors",
-    "text": "Choose better colors\ncolorbrewer2.org"
-  },
-  {
-    "objectID": "Towards_Great_Visualization_Brexit.html#use-better-colors",
-    "href": "Towards_Great_Visualization_Brexit.html#use-better-colors",
-    "title": "Tips for Great Visualizations",
-    "section": "Use better colors",
-    "text": "Use better colors\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(y = opinion, fill = opinion)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1) + \n  guides(fill = \"none\") +\n  labs(\n    title = \"Was Britain right/wrong to vote to leave EU?\",\n    subtitle = \"YouGov Survey Results, 2-3 September 2019\",\n    caption = \"Source document from YouGov: bit.ly/2lCJZVg\",\n    x = NULL, y = NULL\n  ) +\n  scale_fill_manual(values = c(\n    \"Wrong\" = \"#ef8a62\",\n    \"Right\" = \"#67a9cf\",\n    \"Don't know\" = \"gray\"\n  ))"
-  },
-  {
-    "objectID": "Towards_Great_Visualization_Brexit.html#choose-a-theme",
-    "href": "Towards_Great_Visualization_Brexit.html#choose-a-theme",
-    "title": "Tips for Great Visualizations",
-    "section": "Choose a theme",
-    "text": "Choose a theme\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(y = opinion, fill = opinion)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1) + \n  guides(fill = \"none\") +\n  labs(\n    title = \"Was Britain right/wrong to vote to leave EU?\",\n    subtitle = \"YouGov Survey Results, 2-3 September 2019\",\n    caption = \"Source document from YouGov: bit.ly/2lCJZVg\",\n    x = NULL, y = NULL\n  ) +\n  scale_fill_manual(values = c(\n    \"Wrong\" = \"#ef8a62\",\n    \"Right\" = \"#67a9cf\",\n    \"Don't know\" = \"#f7f7f7\"\n  )) +\n  theme_minimal()"
-  },
-  {
-    "objectID": "Towards_Great_Visualization_Brexit.html#adjust-the-general-text-size",
-    "href": "Towards_Great_Visualization_Brexit.html#adjust-the-general-text-size",
-    "title": "Tips for Great Visualizations",
-    "section": "Adjust the general text size",
-    "text": "Adjust the general text size\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(brexit, aes(y = opinion, fill = opinion)) +\n  geom_bar() + \n  facet_wrap(\"region\", nrow = 1) + \n  guides(fill = \"none\") +\n  labs(\n    title = \"Was Britain right/wrong to vote to leave EU?\",\n    subtitle = \"YouGov Survey Results, 2-3 September 2019\",\n    caption = \"Source document from YouGov: bit.ly/2lCJZVg\",\n    x = NULL, y = NULL\n  ) +\n  scale_fill_manual(values = c(\n    \"Wrong\" = \"#ef8a62\",\n    \"Right\" = \"#67a9cf\",\n    \"Don't know\" = \"gray\"\n  )) +\n  theme_minimal(base_size = 14)"
+    "objectID": "datastorytelling.html#phase-b-storyboarding",
+    "href": "datastorytelling.html#phase-b-storyboarding",
+    "title": "Data Storytelling - Storyboarding Activity Guide",
+    "section": "Phase B: Storyboarding!",
+    "text": "Phase B: Storyboarding!\nActivity: Realize these steps in your storyboard.\n\nStep 1: Identify your “Aha” moment (main insight)\nStep 2: Find your beginning (the setting and the “hook”)\nStep 3: Select your rising insights (narrative from the hook to the Aha moment)\nStep 4: Conclude with solutions, next steps, empowerment to action, …\n\nWhen your storyboard is fixed\n\nwrite the titles down in your slide deck and\nstart working on your final visuals such that they best support your story."
   },
   {
     "objectID": "schedule.html",
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Student projects and student schedules: Course-Organization-Resources Repo\nClass = whole class meets together\nTeam = team sessions with the instructor in the same time (no class meeting)\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDates\nHow\nTopic\nTasks\nReadings\nMilestones\n\n\n\n\n1\nSep 02\nClass\nWhat is Visual Communication? What is Data Storytelling?\nTasks 1\nCh 1\n\n\n\n2\nSep 09\nClass\nData Visualization: Grammar of Graphics\n\nCh 2\n\n\n\n3\nSep 16\nClass\nAmounts Proportions Uncertainty\n\nCh 3\n\n\n\n4\nSep 23\nClass\nRelationships Comparisons Annotations\n\nCh 4\n\n\n\n5\nSep 30\nClass\nData Stories\n\nCh 5\n\n\n\n6\nOct 07\nTeam\nIndividual Coaching: Projects Work Start!\n\nCh 6\n0\n\n\n7\nOct 14\nClass\nStudent Project Pitches\n\nCh 7\n1\n\n\n8\nOct 21\nClass\nMain Insight\n\nCh 8\n2\n\n\n9\nOct 28\nClass\nDrafting your Visuals!\n\n\n3\n\n\n10\nNov 04\nClass\nStory boarding!\n\n\n4\n\n\n11\nNov 11\nTeam\nIndividual Coaching\n\n\n\n\n\n12\nNov 18\nClass\nPolishing your Visuals\n\n\n\n\n\n13\nNov 25\nClass\nStudent Presentations\n\n\n5\n\n\n14\nDec 02\nno class\nInstructor is unavailable\n\n\n\n\n\nDec\nMeet\nTeam\nFeedback on presentation / Advice for Finalization\n\n\n\n\n\n \nEnd of Term\nSubmission\nFinal report and slidedeck\n\n\n6",
+    "text": "Student projects and student schedules: Course-Organization-Resources Repo\nClass = whole class meets together\nTeam = team sessions with the instructor in the same time (no class meeting)\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDates\nHow\nTopic\nTasks\nReadings\nMilestones\n\n\n\n\n1\nSep 02\nClass\nWhat is Visual Communication? What is Data Storytelling?\n\nCh 1\n\n\n\n2\nSep 09\nClass\nData Visualization: Grammar of Graphics\nCh 2\n\n\n\n\n3\nSep 16\nClass\nAmounts Proportions Uncertainty\nCh 3\n\n\n\n\n4\nSep 23\nClass\nRelationships Comparisons Annotations\nCh 4\n\n\n\n\n5\nSep 30\nClass\nData Stories\nCh 5\n\n\n\n\n6\nOct 07\nTeam\nIndividual Coaching: Projects Work Start!\nCh 6\n0\n\n\n\n7\nOct 14\nClass\nStudent Project Pitches\nCh 7\n1\n\n\n\n8\nOct 21\nClass\nMain Insight\nCh 8\n2\n\n\n\n9\nOct 28\nClass\nDrafting your Visuals!\n\n3\n\n\n\n10\nNov 04\nClass\nStory boarding!\n\n4\n\n\n\n11\nNov 11\nTeam\nIndividual Coaching\n\n\n\n\n\n12\nNov 18\nClass\nPolishing your Visuals\n\n\n\n\n\n13\nNov 25\nClass\nStudent Presentations\n\n5\n\n\n\n14\nDec 02\nno class\nInstructor is unavailable\n\n\n\n\n\nDec\nMeet\nTeam\nFeedback on presentation / Advice for Finalization\n\n\n\n\n\n \nEnd of Term\nSubmission\nFinal report and slidedeck\n\n6",
     "crumbs": [
       "Syllabus",
       "Schedule"
