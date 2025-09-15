@@ -194,7 +194,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">W#03 Amounts Proportions Uncertainty</h1>
-  <p class="subtitle">With inspiration from the Data Visualization Courses of Andrew Heiss</p>
+  <p class="subtitle">With inspiration from the Data Visualization Courses of Andrew Heiss and Data Science Box from Mine Cetinkaya-Rundel</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -205,75 +205,548 @@ Jan Lorenz
 </div>
 
 </section>
-<section id="keep-it-simple" class="slide level2">
-<h2>Keep it simple</h2>
+<section>
+<section id="visualize-amounts-and-proportions-by-example" class="title-slide slide level1 center">
+<h1>Visualize Amounts and Proportions by Example</h1>
+
+</section>
+<section id="brexit-opinions-in-the-uk" class="slide level2">
+<h2>Brexit Opinions in the UK</h2>
+<p>History:</p>
+<ul>
+<li><p>In 2016, the UK voted to leave the EU in a <a href="https://en.wikipedia.org/wiki/2016_United_Kingdom_European_Union_membership_referendum">referendum</a> with 51.8% for leaving and 48.1% for remaining.</p></li>
+<li><p>In 2020, the UK formally left the EU after long negotiations about the exact condition.</p></li>
+<li><p>Inbetween, there were elections, changes in government and a heated debate.</p></li>
+<li><p>In 2019, a YouGov survey asked people whether they think leaving the EU was the right or wrong decision.</p></li>
+</ul>
+<p>Let us work with this data to illustrate principles of effective visualizations.</p>
+</section>
+<section id="brexit-survey-data" class="slide level2">
+<h2>Brexit Survey Data</h2>
+<p>In September 2019, YouGov survey asked 1,639 adults in the UK the following question:</p>
+<div style="font-size:80%;">
+<p><em>In hindsight, do you think Britain was right/wrong to vote to leave EU?</em><br>
+🔲 Right to leave | 🔲 Wrong to leave | 🔲 Don’t know</p>
+</div>
+<p>The file <code>brexit_opinions.csv</code> in the dataset in the repository <a href="https://github.com/CU-F25-MDSSB-MET-03-VisCommDataStory/VisCom_Playground">VisCom_Playground</a>.</p>
 <div class="columns">
-<div class="column" style="width:40%;">
-<p><img data-src="img/pie-3d.jpg"></p>
-</div><div class="column" style="width:60%;">
+<div class="column">
+<p>Look at the first 10 rows</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a></a><span class="fu">library</span>(scales)</span>
-<span id="cb1-3"><a></a>d <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
-<span id="cb1-4"><a></a>  <span class="sc">~</span>category, <span class="sc">~</span>value,</span>
-<span id="cb1-5"><a></a>  <span class="st">"Cutting tools"</span>, <span class="fl">0.03</span>,</span>
-<span id="cb1-6"><a></a>  <span class="st">"Buildings and administration"</span>, <span class="fl">0.22</span>,</span>
-<span id="cb1-7"><a></a>  <span class="st">"Labor"</span>, <span class="fl">0.31</span>,</span>
-<span id="cb1-8"><a></a>  <span class="st">"Machinery"</span>, <span class="fl">0.27</span>,</span>
-<span id="cb1-9"><a></a>  <span class="st">"Workplace materials"</span>, <span class="fl">0.17</span></span>
-<span id="cb1-10"><a></a>)</span>
-<span id="cb1-11"><a></a><span class="fu">ggplot</span>(d, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_reorder</span>(category, value), <span class="at">y =</span> value)) <span class="sc">+</span></span>
-<span id="cb1-12"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb1-13"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">24</span>) <span class="sc">+</span></span>
-<span id="cb1-14"><a></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb1-15"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a></a>brexit <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"../data/brexit_opinions.csv"</span>)</span>
+<span id="cb1-3"><a></a>brexit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,639 × 2
+   opinion region
+   &lt;chr&gt;   &lt;chr&gt; 
+ 1 Right   london
+ 2 Right   london
+ 3 Right   london
+ 4 Right   london
+ 5 Right   london
+ 6 Right   london
+ 7 Right   london
+ 8 Right   london
+ 9 Right   london
+10 Right   london
+# ℹ 1,629 more rows</code></pre>
+</div>
+</div>
+</div><div class="column fragment">
+<p>Look at 10 random rows</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>brexit <span class="sc">|&gt;</span> <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 2
+   opinion    region        
+   &lt;chr&gt;      &lt;chr&gt;         
+ 1 Wrong      midlands_wales
+ 2 Wrong      london        
+ 3 Right      rest_of_south 
+ 4 Right      london        
+ 5 Wrong      london        
+ 6 Right      rest_of_south 
+ 7 Don't know rest_of_south 
+ 8 Wrong      midlands_wales
+ 9 Wrong      midlands_wales
+10 Wrong      midlands_wales</code></pre>
+</div>
+</div>
+</div></div>
+</section>
+<section id="first-basic-visuals-with-geom_bar" class="slide level2">
+<h2>First basic visuals with <code>geom_bar</code></h2>
+<div class="columns">
+<div class="column">
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">x =</span> opinion)) <span class="sc">+</span></span>
+<span id="cb5-2"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="W03_files/figure-revealjs/unnamed-chunk-1-1.png" width="960"></p>
+<p><img data-src="W03_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column">
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">x =</span> region)) <span class="sc">+</span></span>
+<span id="cb6-2"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="W03_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
 </div></div>
 </section>
-<section id="use-color-to-draw-attention" class="slide level2">
-<h2>Use color to draw attention</h2>
+<section id="geom_bar-vs.-geom_col" class="slide level2">
+<h2><code>geom_bar</code> vs.&nbsp;<code>geom_col</code></h2>
+<ul>
+<li><code>geom_bar()</code> counts the number of occurrences of each category in the data and creates bars based on these counts.
+<ul>
+<li>It is a geom which also does some data transformation! (Here counting)</li>
+</ul></li>
+<li><code>geom_col()</code> requires you to provide the heights of the bars explicitly. It uses the values in the data to determine the height of each bar.
+<ul>
+<li>It is the basic building block for bar plots</li>
+</ul></li>
+</ul>
+</section>
+<section id="geom_bar-vs.-geom_col-1" class="slide level2">
+<h2><code>geom_bar</code> vs.&nbsp;<code>geom_col</code></h2>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p>With <code>geom_bar</code></p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">library</span>(patchwork)</span>
-<span id="cb2-2"><a></a>g1 <span class="ot">&lt;-</span> d <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">category =</span> <span class="fu">str_replace</span>(category, <span class="st">" "</span>, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb2-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> category, <span class="at">y =</span> value, <span class="at">fill =</span> category)) <span class="sc">+</span></span>
-<span id="cb2-4"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb2-5"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb2-6"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> <span class="st">""</span>) <span class="sc">+</span></span>
-<span id="cb2-7"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
-<span id="cb2-8"><a></a>g2 <span class="ot">&lt;-</span> d <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_reorder</span>(category, value), <span class="at">y =</span> value, <span class="at">fill =</span> category)) <span class="sc">+</span></span>
-<span id="cb2-9"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb2-10"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span>  <span class="dv">18</span>) <span class="sc">+</span></span>
-<span id="cb2-11"><a></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb2-12"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> <span class="st">""</span>) <span class="sc">+</span></span>
-<span id="cb2-13"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"red"</span>, <span class="fu">rep</span>(<span class="st">"gray"</span>, <span class="dv">4</span>))) <span class="sc">+</span></span>
-<span id="cb2-14"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
-<span id="cb2-15"><a></a>g1 <span class="sc">+</span> g2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>brexit <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> opinion)) <span class="sc">+</span></span>
+<span id="cb7-3"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="W03_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:33%;">
+<p>For <code>geom_col</code> we need to count first</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>brexit <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a></a>  <span class="fu">count</span>(opinion)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  opinion        n
+  &lt;chr&gt;      &lt;int&gt;
+1 Don't know   188
+2 Right        664
+3 Wrong        787</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:33%;">
+<p>With <code>geom_col</code> we must specify <code>x</code> and <code>y</code></p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>brexit <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a></a>  <span class="fu">count</span>(opinion) <span class="sc">|&gt;</span></span>
+<span id="cb10-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> opinion, <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb10-4"><a></a>  <span class="fu">geom_col</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="W03_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<div class="fragment">
+<p>Alphabetical order is rarely what you want! Do we really want “Don’t know” first?</p>
+</div>
+</section>
+<section id="order-matters" class="slide level2">
+<h2>Order Matters</h2>
+<p>Often good: Order by frequency</p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_infreq</span>(opinion))) <span class="sc">+</span></span>
+<span id="cb11-2"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
-<img data-src="W03_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
-<section id="tell-a-story" class="slide level2">
-<h2>Tell a story</h2>
-<p>What is the (main) purpose of the visualization?</p>
-
-<img data-src="img/time-series-story.png" class="r-stretch"><div style="font-size:50%;">
-<p>Credit: Angela Zoss and Eric Monson, Duke DVS</p>
+<img data-src="W03_files/figure-revealjs/unnamed-chunk-8-1.png" class="quarto-figure quarto-figure-center r-stretch" width="480"><div class="fragment">
+<p><code>fct_infreq</code>: (Creates and) reorders a factor by the frequency.</p>
 </div>
 </section>
-<section id="principles-for-effective-visualizations" class="slide level2">
-<h2>Principles for effective visualizations</h2>
+<section id="clean-up-labels" class="slide level2">
+<h2>Clean up labels</h2>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_infreq</span>(opinion))) <span class="sc">+</span></span>
+<span id="cb12-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb12-3"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb12-4"><a></a>    <span class="at">x =</span> <span class="st">"Opinion"</span>,</span>
+<span id="cb12-5"><a></a>    <span class="at">y =</span> <span class="st">"Count"</span></span>
+<span id="cb12-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="W03_files/figure-revealjs/unnamed-chunk-9-1.png" class="quarto-figure quarto-figure-center r-stretch" width="480"></section>
+<section id="order-matters-inherent-levels" class="slide level2">
+<h2>Order Matters: Inherent levels</h2>
+<p>Reorder <strong>manually</strong> with a custom order</p>
+<p><code>fct_relevel</code>: Reorders the levels of a factor as specified</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>brexit <span class="ot">&lt;-</span> brexit <span class="sc">|&gt;</span></span>
+<span id="cb13-2"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb13-3"><a></a>    <span class="at">region =</span> <span class="fu">fct_relevel</span>(</span>
+<span id="cb13-4"><a></a>      region,</span>
+<span id="cb13-5"><a></a>      <span class="st">"london"</span>,</span>
+<span id="cb13-6"><a></a>      <span class="st">"rest_of_south"</span>,</span>
+<span id="cb13-7"><a></a>      <span class="st">"midlands_wales"</span>,</span>
+<span id="cb13-8"><a></a>      <span class="st">"north"</span>,</span>
+<span id="cb13-9"><a></a>      <span class="st">"scot"</span></span>
+<span id="cb13-10"><a></a>    )</span>
+<span id="cb13-11"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">x =</span> region)) <span class="sc">+</span></span>
+<span id="cb14-2"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="W03_files/figure-revealjs/unnamed-chunk-11-1.png" class="quarto-figure quarto-figure-center r-stretch" width="480"></section>
+<section id="clean-factor-labels" class="slide level2">
+<h2>Clean factor labels</h2>
+<p>Reorder manually with a custom order</p>
+<p><code>fct_recode</code>: Change factor levels by hand</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>brexit <span class="ot">&lt;-</span> brexit <span class="sc">|&gt;</span></span>
+<span id="cb15-2"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb15-3"><a></a>    <span class="at">region =</span> <span class="fu">fct_recode</span>(</span>
+<span id="cb15-4"><a></a>      region,</span>
+<span id="cb15-5"><a></a>      <span class="at">London =</span> <span class="st">"london"</span>,</span>
+<span id="cb15-6"><a></a>      <span class="st">`</span><span class="at">Rest of South</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"rest_of_south"</span>,</span>
+<span id="cb15-7"><a></a>      <span class="st">`</span><span class="at">Midlands / Wales</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"midlands_wales"</span>,</span>
+<span id="cb15-8"><a></a>      <span class="at">North =</span> <span class="st">"north"</span>,</span>
+<span id="cb15-9"><a></a>      <span class="at">Scotland =</span> <span class="st">"scot"</span></span>
+<span id="cb15-10"><a></a>    )</span>
+<span id="cb15-11"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">x =</span> region)) <span class="sc">+</span></span>
+<span id="cb16-2"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="W03_files/figure-revealjs/unnamed-chunk-13-1.png" class="quarto-figure quarto-figure-center r-stretch" width="480"></section>
+<section id="long-categories-names-on-the-y-axis" class="slide level2">
+<h2>Long categories names on the y-axis!</h2>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> region)) <span class="sc">+</span></span>
+<span id="cb17-2"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="W03_files/figure-revealjs/unnamed-chunk-14-1.png" class="quarto-figure quarto-figure-center r-stretch" width="480"></section>
+<section id="reverse-the-order-of-levels-to-start-with-the-top" class="slide level2">
+<h2>Reverse the order of levels to start with the top</h2>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">fct_rev</span>(region))) <span class="sc">+</span></span>
+<span id="cb18-2"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="W03_files/figure-revealjs/unnamed-chunk-15-1.png" class="quarto-figure quarto-figure-center r-stretch" width="480"></section>
+<section id="clean-up-axis-lables" class="slide level2">
+<h2>Clean up axis lables</h2>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">fct_rev</span>(region))) <span class="sc">+</span></span>
+<span id="cb19-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb19-3"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb19-4"><a></a>    <span class="at">x =</span> <span class="st">"Count"</span>,</span>
+<span id="cb19-5"><a></a>    <span class="at">y =</span> <span class="st">""</span></span>
+<span id="cb19-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="W03_files/figure-revealjs/unnamed-chunk-16-1.png" class="quarto-figure quarto-figure-center r-stretch" width="480"><p>Do we really need “Region” on the y-axis?</p>
+</section>
+<section id="pick-a-purpose" class="slide level2">
+<h2>Pick a purpose!</h2>
+<p>What is the (main) purpose of the visualization?</p>
+<div class="fragment">
+<p>Purpose: <strong>Show how support for Brexit differs regionally</strong></p>
+</div>
+</section>
+<section id="first-try-segmented-stacked-barplot" class="slide level2">
+<h2>First try: Segmented stacked barplot</h2>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion, <span class="at">fill =</span> region)) <span class="sc">+</span></span>
+<span id="cb20-2"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="W03_files/figure-revealjs/unnamed-chunk-17-1.png" class="quarto-figure quarto-figure-center r-stretch" width="480"></section>
+<section id="or-the-other-way-round" class="slide level2">
+<h2>Or “the other way round”?</h2>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> region, <span class="at">fill =</span> opinion)) <span class="sc">+</span></span>
+<span id="cb21-2"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="W03_files/figure-revealjs/unnamed-chunk-18-1.png" class="quarto-figure quarto-figure-center r-stretch" width="480"><div class="fragment">
+<p>They are both hard to read.</p>
+</div>
+</section>
+<section id="use-facets" class="slide level2">
+<h2>Use facets</h2>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion, <span class="at">fill =</span> region)) <span class="sc">+</span></span>
+<span id="cb22-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb22-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="st">"region"</span>, <span class="at">nrow =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="W03_files/figure-revealjs/unnamed-chunk-19-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
+<section id="avoid-redundancy" class="slide level2">
+<h2>Avoid redundancy?</h2>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion)) <span class="sc">+</span></span>
+<span id="cb23-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb23-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="st">"region"</span>, <span class="at">nrow =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="W03_files/figure-revealjs/unnamed-chunk-20-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
+<section id="redundancy-can-help-to-tell-a-story." class="slide level2">
+<h2>Redundancy can help to tell a story.</h2>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion, <span class="at">fill =</span> opinion)) <span class="sc">+</span></span>
+<span id="cb24-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb24-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="st">"region"</span>, <span class="at">nrow =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="W03_files/figure-revealjs/unnamed-chunk-21-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
+<section id="be-selective-with-redundancy" class="slide level2">
+<h2>Be selective with redundancy</h2>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion, <span class="at">fill =</span> opinion)) <span class="sc">+</span></span>
+<span id="cb25-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb25-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="st">"region"</span>, <span class="at">nrow =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb25-4"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="W03_files/figure-revealjs/unnamed-chunk-22-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"><p>We do not need a legend when the colors are also <code>y</code>-labels.</p>
+</section>
+<section id="use-informative-labels" class="slide level2">
+<h2>Use informative labels</h2>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion, <span class="at">fill =</span> opinion)) <span class="sc">+</span></span>
+<span id="cb26-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb26-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="st">"region"</span>, <span class="at">nrow =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb26-4"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb26-5"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb26-6"><a></a>    <span class="at">title =</span> <span class="st">"Was Britain right/wrong to vote to leave EU?"</span>,</span>
+<span id="cb26-7"><a></a>    <span class="at">x =</span> <span class="cn">NULL</span>,</span>
+<span id="cb26-8"><a></a>    <span class="at">y =</span> <span class="cn">NULL</span></span>
+<span id="cb26-9"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="W03_files/figure-revealjs/unnamed-chunk-23-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
+<section id="more-information-survey-and-source" class="slide level2">
+<h2>More information (Survey and Source)</h2>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion, <span class="at">fill =</span> opinion)) <span class="sc">+</span></span>
+<span id="cb27-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb27-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="st">"region"</span>, <span class="at">nrow =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb27-4"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb27-5"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb27-6"><a></a>    <span class="at">title =</span> <span class="st">"Was Britain right/wrong to vote to leave EU?"</span>,</span>
+<span id="cb27-7"><a></a>    <span class="at">subtitle =</span> <span class="st">"YouGov Survey Results, 2-3 September 2019"</span>,</span>
+<span id="cb27-8"><a></a>    <span class="at">x =</span> <span class="cn">NULL</span>,</span>
+<span id="cb27-9"><a></a>    <span class="at">y =</span> <span class="cn">NULL</span></span>
+<span id="cb27-10"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="W03_files/figure-revealjs/unnamed-chunk-24-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
+<section id="select-meaningful-colors" class="slide level2">
+<h2>Select meaningful colors</h2>
+<p>Are the default rainbow colors meaningful? Another option: Pick colors manually</p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion, <span class="at">fill =</span> opinion)) <span class="sc">+</span></span>
+<span id="cb28-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb28-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="st">"region"</span>, <span class="at">nrow =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb28-4"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb28-5"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb28-6"><a></a>    <span class="at">title =</span> <span class="st">"Was Britain right/wrong to vote to leave EU?"</span>,</span>
+<span id="cb28-7"><a></a>    <span class="at">subtitle =</span> <span class="st">"YouGov Survey Results, 2-3 September 2019"</span>,</span>
+<span id="cb28-8"><a></a>    <span class="at">x =</span> <span class="cn">NULL</span>,</span>
+<span id="cb28-9"><a></a>    <span class="at">y =</span> <span class="cn">NULL</span></span>
+<span id="cb28-10"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb28-11"><a></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb28-12"><a></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
+<span id="cb28-13"><a></a>      <span class="st">"Wrong"</span> <span class="ot">=</span> <span class="st">"red"</span>,</span>
+<span id="cb28-14"><a></a>      <span class="st">"Right"</span> <span class="ot">=</span> <span class="st">"green"</span>,</span>
+<span id="cb28-15"><a></a>      <span class="st">"Don't know"</span> <span class="ot">=</span> <span class="st">"gray"</span></span>
+<span id="cb28-16"><a></a>    )</span>
+<span id="cb28-17"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="W03_files/figure-revealjs/unnamed-chunk-25-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
+<section id="choose-better-colors" class="slide level2">
+<h2>Choose better colors</h2>
+<p><a href="https://colorbrewer2.org" data-preview-link="true">colorbrewer2.org</a></p>
+</section>
+<section id="use-better-colors" class="slide level2">
+<h2>Use better colors</h2>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion, <span class="at">fill =</span> opinion)) <span class="sc">+</span></span>
+<span id="cb29-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb29-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="st">"region"</span>, <span class="at">nrow =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb29-4"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb29-5"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb29-6"><a></a>    <span class="at">title =</span> <span class="st">"Was Britain right/wrong to vote to leave EU?"</span>,</span>
+<span id="cb29-7"><a></a>    <span class="at">subtitle =</span> <span class="st">"YouGov Survey Results, 2-3 September 2019"</span>,</span>
+<span id="cb29-8"><a></a>    <span class="at">x =</span> <span class="cn">NULL</span>,</span>
+<span id="cb29-9"><a></a>    <span class="at">y =</span> <span class="cn">NULL</span></span>
+<span id="cb29-10"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb29-11"><a></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb29-12"><a></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
+<span id="cb29-13"><a></a>      <span class="st">"Wrong"</span> <span class="ot">=</span> <span class="st">"#ef8a62"</span>,</span>
+<span id="cb29-14"><a></a>      <span class="st">"Right"</span> <span class="ot">=</span> <span class="st">"#67a9cf"</span>,</span>
+<span id="cb29-15"><a></a>      <span class="st">"Don't know"</span> <span class="ot">=</span> <span class="st">"gray"</span></span>
+<span id="cb29-16"><a></a>    )</span>
+<span id="cb29-17"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="W03_files/figure-revealjs/unnamed-chunk-26-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
+<section id="choose-a-theme" class="slide level2">
+<h2>Choose a theme</h2>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion, <span class="at">fill =</span> opinion)) <span class="sc">+</span></span>
+<span id="cb30-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb30-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="st">"region"</span>, <span class="at">nrow =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb30-4"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb30-5"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb30-6"><a></a>    <span class="at">title =</span> <span class="st">"Was Britain right/wrong to vote to leave EU?"</span>,</span>
+<span id="cb30-7"><a></a>    <span class="at">subtitle =</span> <span class="st">"YouGov Survey Results, 2-3 September 2019"</span>,</span>
+<span id="cb30-8"><a></a>    <span class="at">x =</span> <span class="cn">NULL</span>,</span>
+<span id="cb30-9"><a></a>    <span class="at">y =</span> <span class="cn">NULL</span></span>
+<span id="cb30-10"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb30-11"><a></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb30-12"><a></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
+<span id="cb30-13"><a></a>      <span class="st">"Wrong"</span> <span class="ot">=</span> <span class="st">"#ef8a62"</span>,</span>
+<span id="cb30-14"><a></a>      <span class="st">"Right"</span> <span class="ot">=</span> <span class="st">"#67a9cf"</span>,</span>
+<span id="cb30-15"><a></a>      <span class="st">"Don't know"</span> <span class="ot">=</span> <span class="st">"gray"</span></span>
+<span id="cb30-16"><a></a>    )</span>
+<span id="cb30-17"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb30-18"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="W03_files/figure-revealjs/unnamed-chunk-27-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
+<section id="adjust-the-general-text-size" class="slide level2">
+<h2>Adjust the general text size</h2>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion, <span class="at">fill =</span> opinion)) <span class="sc">+</span></span>
+<span id="cb31-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb31-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="st">"region"</span>, <span class="at">nrow =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb31-4"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb31-5"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb31-6"><a></a>    <span class="at">title =</span> <span class="st">"Was Britain right/wrong to vote to leave EU?"</span>,</span>
+<span id="cb31-7"><a></a>    <span class="at">subtitle =</span> <span class="st">"YouGov Survey Results, 2-3 September 2019"</span>,</span>
+<span id="cb31-8"><a></a>    <span class="at">x =</span> <span class="cn">NULL</span>,</span>
+<span id="cb31-9"><a></a>    <span class="at">y =</span> <span class="cn">NULL</span></span>
+<span id="cb31-10"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb31-11"><a></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb31-12"><a></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
+<span id="cb31-13"><a></a>      <span class="st">"Wrong"</span> <span class="ot">=</span> <span class="st">"#ef8a62"</span>,</span>
+<span id="cb31-14"><a></a>      <span class="st">"Right"</span> <span class="ot">=</span> <span class="st">"#67a9cf"</span>,</span>
+<span id="cb31-15"><a></a>      <span class="st">"Don't know"</span> <span class="ot">=</span> <span class="st">"gray"</span></span>
+<span id="cb31-16"><a></a>    )</span>
+<span id="cb31-17"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb31-18"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="W03_files/figure-revealjs/unnamed-chunk-28-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
+<section id="general-principles-applied-before" class="slide level2">
+<h2>General principles applied before</h2>
 <ul>
 <li>Order matters</li>
 <li>Put long categories on the y-axis</li>
@@ -282,861 +755,254 @@ Jan Lorenz
 <li>Select meaningful colors</li>
 </ul>
 </section>
-<section id="data" class="slide level2">
-<h2>Data</h2>
-<p>In September 2019, YouGov survey asked 1,639 adults in the UK the following question:</p>
-<div style="font-size:80%;">
-<p><em>In hindsight, do you think Britain was right/wrong to vote to leave EU?</em><br>
-🔲 Right to leave | 🔲 Wrong to leave | 🔲 Don’t know</p>
-</div>
-<div class="cell" data-layout-align="center">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>brexit <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb3-2"><a></a>  <span class="at">opinion =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">"Right"</span>, <span class="dv">664</span>), <span class="fu">rep</span>(<span class="st">"Wrong"</span>, <span class="dv">787</span>), <span class="fu">rep</span>(<span class="st">"Don't know"</span>, <span class="dv">188</span>)),</span>
-<span id="cb3-3"><a></a>  <span class="at">region =</span> <span class="fu">c</span>(</span>
-<span id="cb3-4"><a></a>    <span class="fu">rep</span>(<span class="st">"london"</span>, <span class="dv">63</span>), <span class="fu">rep</span>(<span class="st">"rest_of_south"</span>, <span class="dv">241</span>), <span class="fu">rep</span>(<span class="st">"midlands_wales"</span>, <span class="dv">145</span>), </span>
-<span id="cb3-5"><a></a>    <span class="fu">rep</span>(<span class="st">"north"</span>, <span class="dv">176</span>), <span class="fu">rep</span>(<span class="st">"scot"</span>, <span class="dv">39</span>),</span>
-<span id="cb3-6"><a></a>    <span class="fu">rep</span>(<span class="st">"london"</span>, <span class="dv">110</span>), <span class="fu">rep</span>(<span class="st">"rest_of_south"</span>, <span class="dv">257</span>), <span class="fu">rep</span>(<span class="st">"midlands_wales"</span>, <span class="dv">152</span>), </span>
-<span id="cb3-7"><a></a>    <span class="fu">rep</span>(<span class="st">"north"</span>, <span class="dv">176</span>), <span class="fu">rep</span>(<span class="st">"scot"</span>, <span class="dv">92</span>),</span>
-<span id="cb3-8"><a></a>    <span class="fu">rep</span>(<span class="st">"london"</span>, <span class="dv">24</span>), <span class="fu">rep</span>(<span class="st">"rest_of_south"</span>, <span class="dv">49</span>), <span class="fu">rep</span>(<span class="st">"midlands_wales"</span>, <span class="dv">57</span>), </span>
-<span id="cb3-9"><a></a>    <span class="fu">rep</span>(<span class="st">"north"</span>, <span class="dv">48</span>), <span class="fu">rep</span>(<span class="st">"scot"</span>, <span class="dv">10</span>)</span>
-<span id="cb3-10"><a></a>  )</span>
-<span id="cb3-11"><a></a>)</span>
-<span id="cb3-12"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">x =</span> opinion)) <span class="sc">+</span></span>
-<span id="cb3-13"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-
-</div>
-<img data-src="W03_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" width="480"></section>
-<section id="order-matters" class="slide level2">
-<h2>Order Matters</h2>
-<p>Alphabetical order is rarely what you want!</p>
-<div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Plot</a></li><li><a href="#tabset-1-2">Code</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1">
-<div class="cell" data-layout-align="center">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">x =</span> opinion)) <span class="sc">+</span></span>
-<span id="cb4-2"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="W03_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center" width="480"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-1-2">
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">x =</span> opinion)) <span class="sc">+</span></span>
-<span id="cb5-2"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="order-matters-1" class="slide level2">
-<h2>Order Matters</h2>
-<p>Often good: Order by frequency</p>
-<div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Plot</a></li><li><a href="#tabset-2-2">Code</a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1">
-<div class="cell" data-layout-align="center">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_infreq</span>(opinion))) <span class="sc">+</span></span>
-<span id="cb6-2"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="W03_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center" width="480"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-2-2">
-<p><code>fct_infreq</code>: (Creates and) reorders a factor by the frequency.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_infreq</span>(opinion))) <span class="sc">+</span></span>
-<span id="cb7-2"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="clean-up-labels" class="slide level2">
-<h2>Clean up labels</h2>
-<div class="panel-tabset">
-<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Plot</a></li><li><a href="#tabset-3-2">Code</a></li></ul>
-<div class="tab-content">
-<div id="tabset-3-1">
-<div class="cell" data-layout-align="center">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_infreq</span>(opinion))) <span class="sc">+</span></span>
-<span id="cb8-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
-<span id="cb8-3"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb8-4"><a></a>    <span class="at">x =</span> <span class="st">"Opinion"</span>,</span>
-<span id="cb8-5"><a></a>    <span class="at">y =</span> <span class="st">"Count"</span></span>
-<span id="cb8-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="W03_files/figure-revealjs/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center" width="480"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-3-2">
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_infreq</span>(opinion))) <span class="sc">+</span></span>
-<span id="cb9-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
-<span id="cb9-3"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb9-4"><a></a>    <span class="at">x =</span> <span class="st">"Opinion"</span>,</span>
-<span id="cb9-5"><a></a>    <span class="at">y =</span> <span class="st">"Count"</span></span>
-<span id="cb9-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="order-matters-2" class="slide level2">
-<h2>Order Matters</h2>
-<p>Alphabetical order is rarely what you want!</p>
-<div class="panel-tabset">
-<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Plot</a></li><li><a href="#tabset-4-2">Code</a></li></ul>
-<div class="tab-content">
-<div id="tabset-4-1">
-<div class="cell" data-layout-align="center">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">x =</span> region)) <span class="sc">+</span></span>
-<span id="cb10-2"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="W03_files/figure-revealjs/unnamed-chunk-7-1.png" class="quarto-figure quarto-figure-center" width="480"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-4-2">
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">x =</span> region)) <span class="sc">+</span></span>
-<span id="cb11-2"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="use-inherent-level-order" class="slide level2">
-<h2>Use inherent level order</h2>
-<p>Reorder manually with a custom order</p>
-<div class="panel-tabset">
-<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Relevel</a></li><li><a href="#tabset-5-2">Plot</a></li></ul>
-<div class="tab-content">
-<div id="tabset-5-1">
-<p><code>fct_relevel</code>: Reorders the levels of a factor as specified</p>
+<section id="what-about-percentages" class="slide level2">
+<h2>What about percentages?</h2>
+<p>Let us first compute percentages. But what percentages?</p>
+<div class="columns">
+<div class="column">
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>brexit <span class="ot">&lt;-</span> brexit <span class="sc">|&gt;</span> </span>
-<span id="cb12-2"><a></a>  <span class="fu">mutate</span>(<span class="at">region =</span> <span class="fu">fct_relevel</span>(</span>
-<span id="cb12-3"><a></a>    region,</span>
-<span id="cb12-4"><a></a>    <span class="st">"london"</span>, <span class="st">"rest_of_south"</span>, <span class="st">"midlands_wales"</span>, <span class="st">"north"</span>, <span class="st">"scot"</span></span>
-<span id="cb12-5"><a></a>  ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a>brexit <span class="sc">|&gt;</span></span>
+<span id="cb32-2"><a></a>  <span class="fu">count</span>(opinion, region)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 15 × 3
+   opinion    region               n
+   &lt;chr&gt;      &lt;fct&gt;            &lt;int&gt;
+ 1 Don't know London              24
+ 2 Don't know Rest of South       49
+ 3 Don't know Midlands / Wales    57
+ 4 Don't know North               48
+ 5 Don't know Scotland            10
+ 6 Right      London              63
+ 7 Right      Rest of South      241
+ 8 Right      Midlands / Wales   145
+ 9 Right      North              176
+10 Right      Scotland            39
+11 Wrong      London             110
+12 Wrong      Rest of South      257
+13 Wrong      Midlands / Wales   152
+14 Wrong      North              176
+15 Wrong      Scotland            92</code></pre>
 </div>
 </div>
-<div id="tabset-5-2">
-<div class="cell" data-layout-align="center">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">x =</span> region)) <span class="sc">+</span></span>
-<span id="cb13-2"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="W03_files/figure-revealjs/unnamed-chunk-9-1.png" class="quarto-figure quarto-figure-center" width="480"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="clean-factor-labels" class="slide level2">
-<h2>Clean factor labels</h2>
-<p>Reorder manually with a custom order</p>
-<div class="panel-tabset">
-<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Recode</a></li><li><a href="#tabset-6-2">Plot</a></li></ul>
-<div class="tab-content">
-<div id="tabset-6-1">
-<p><code>fct_recode</code>: Change factor levels by hand</p>
+</div><div class="column">
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>brexit <span class="ot">&lt;-</span> brexit <span class="sc">|&gt;</span> </span>
-<span id="cb14-2"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb14-3"><a></a>    <span class="at">region =</span> <span class="fu">fct_recode</span>(</span>
-<span id="cb14-4"><a></a>      region,</span>
-<span id="cb14-5"><a></a>      <span class="at">London =</span> <span class="st">"london"</span>,</span>
-<span id="cb14-6"><a></a>      <span class="st">`</span><span class="at">Rest of South</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"rest_of_south"</span>,</span>
-<span id="cb14-7"><a></a>      <span class="st">`</span><span class="at">Midlands / Wales</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"midlands_wales"</span>,</span>
-<span id="cb14-8"><a></a>      <span class="at">North =</span> <span class="st">"north"</span>,</span>
-<span id="cb14-9"><a></a>      <span class="at">Scotland =</span> <span class="st">"scot"</span></span>
-<span id="cb14-10"><a></a>    )</span>
-<span id="cb14-11"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a>brexit <span class="sc">|&gt;</span></span>
+<span id="cb34-2"><a></a>  <span class="fu">count</span>(region, opinion)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 15 × 3
+   region           opinion        n
+   &lt;fct&gt;            &lt;chr&gt;      &lt;int&gt;
+ 1 London           Don't know    24
+ 2 London           Right         63
+ 3 London           Wrong        110
+ 4 Rest of South    Don't know    49
+ 5 Rest of South    Right        241
+ 6 Rest of South    Wrong        257
+ 7 Midlands / Wales Don't know    57
+ 8 Midlands / Wales Right        145
+ 9 Midlands / Wales Wrong        152
+10 North            Don't know    48
+11 North            Right        176
+12 North            Wrong        176
+13 Scotland         Don't know    10
+14 Scotland         Right         39
+15 Scotland         Wrong         92</code></pre>
 </div>
 </div>
-<div id="tabset-6-2">
-<div class="cell" data-layout-align="center">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">x =</span> region)) <span class="sc">+</span></span>
-<span id="cb15-2"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="W03_files/figure-revealjs/unnamed-chunk-11-1.png" class="quarto-figure quarto-figure-center" width="480"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="long-categories-are-better-readable-on-the-y-axis" class="slide level2">
-<h2>Long categories are better readable on the y-axis</h2>
-<div class="panel-tabset">
-<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">Plot</a></li><li><a href="#tabset-7-2">Code</a></li></ul>
-<div class="tab-content">
-<div id="tabset-7-1">
-<div class="cell" data-layout-align="center">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> region)) <span class="sc">+</span></span>
-<span id="cb16-2"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="W03_files/figure-revealjs/unnamed-chunk-12-1.png" class="quarto-figure quarto-figure-center" width="480"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-7-2">
-<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> region)) <span class="sc">+</span></span>
-<span id="cb17-2"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="reverse-the-order-of-levels" class="slide level2">
-<h2>Reverse the order of levels</h2>
-<div class="panel-tabset">
-<ul id="tabset-8" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-8-1">Plot</a></li><li><a href="#tabset-8-2">Code</a></li></ul>
-<div class="tab-content">
-<div id="tabset-8-1">
-<div class="cell" data-layout-align="center">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">fct_rev</span>(region))) <span class="sc">+</span></span>
-<span id="cb18-2"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="W03_files/figure-revealjs/unnamed-chunk-13-1.png" class="quarto-figure quarto-figure-center" width="480"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-8-2">
-<p><code>fct_rev</code>: Reverse order of factor levels</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">fct_rev</span>(region))) <span class="sc">+</span></span>
-<span id="cb19-2"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="clean-up-axis-lables" class="slide level2">
-<h2>Clean up axis lables</h2>
-<div class="panel-tabset">
-<ul id="tabset-9" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-9-1">Plot</a></li><li><a href="#tabset-9-2">Code</a></li></ul>
-<div class="tab-content">
-<div id="tabset-9-1">
-<div class="cell" data-layout-align="center">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">fct_rev</span>(region))) <span class="sc">+</span></span>
-<span id="cb20-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
-<span id="cb20-3"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb20-4"><a></a>    <span class="at">x =</span> <span class="st">"Count"</span>,</span>
-<span id="cb20-5"><a></a>    <span class="at">y =</span> <span class="st">"Region"</span></span>
-<span id="cb20-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="W03_files/figure-revealjs/unnamed-chunk-14-1.png" class="quarto-figure quarto-figure-center" width="480"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-9-2">
-<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">fct_rev</span>(region))) <span class="sc">+</span></span>
-<span id="cb21-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
-<span id="cb21-3"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb21-4"><a></a>    <span class="at">x =</span> <span class="st">"Count"</span>,</span>
-<span id="cb21-5"><a></a>    <span class="at">y =</span> <span class="st">"Region"</span></span>
-<span id="cb21-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="pick-a-purpose" class="slide level2">
-<h2>Pick a purpose</h2>
-<p>What is the (main) purpose of the visualization?</p>
-<p>Purpose: <strong>Show how support for Brexit differs regionally</strong></p>
-</section>
-<section id="first-try-segmented-stacked-barplot" class="slide level2">
-<h2>First try: Segmented stacked barplot</h2>
-<div class="panel-tabset">
-<ul id="tabset-10" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-10-1">Plot 1</a></li><li><a href="#tabset-10-2">Code 1</a></li><li><a href="#tabset-10-3">Plot 2</a></li><li><a href="#tabset-10-4">Code 2</a></li></ul>
-<div class="tab-content">
-<div id="tabset-10-1">
-<div class="cell" data-layout-align="center">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion, <span class="at">fill =</span> region)) <span class="sc">+</span></span>
-<span id="cb22-2"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="W03_files/figure-revealjs/unnamed-chunk-15-1.png" class="quarto-figure quarto-figure-center" width="480"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-10-2">
-<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion, <span class="at">fill =</span> region)) <span class="sc">+</span></span>
-<span id="cb23-2"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="tabset-10-3">
-<div class="cell" data-layout-align="center">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> region, <span class="at">fill =</span> opinion)) <span class="sc">+</span></span>
-<span id="cb24-2"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="W03_files/figure-revealjs/unnamed-chunk-16-1.png" class="quarto-figure quarto-figure-center" width="480"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-10-4">
-<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> region, <span class="at">fill =</span> opinion))<span class="er">)</span> <span class="sc">+</span></span>
-<span id="cb25-2"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
+</div></div>
 <div class="fragment">
-<p>They are both hard to read.</p>
+<p>Sensible would be percentages within each region.</p>
 </div>
 </section>
-<section id="use-facets" class="slide level2">
-<h2>Use facets</h2>
-<div class="panel-tabset">
-<ul id="tabset-11" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-11-1">Plot</a></li><li><a href="#tabset-11-2">Code</a></li></ul>
-<div class="tab-content">
-<div id="tabset-11-1">
-<div class="cell" data-layout-align="center">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion, <span class="at">fill =</span> region)) <span class="sc">+</span></span>
-<span id="cb26-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span> </span>
-<span id="cb26-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="st">"region"</span>, <span class="at">nrow =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="W03_files/figure-revealjs/unnamed-chunk-17-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-11-2">
-<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion, <span class="at">fill =</span> region)) <span class="sc">+</span></span>
-<span id="cb27-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span> </span>
-<span id="cb27-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="st">"region"</span>, <span class="at">nrow =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="compute-percentages-within-regions" class="slide level2">
+<h2>Compute percentages within regions</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>brexit <span class="sc">|&gt;</span></span>
+<span id="cb36-2"><a></a>  <span class="fu">count</span>(region, opinion) <span class="sc">|&gt;</span></span>
+<span id="cb36-3"><a></a>  <span class="fu">mutate</span>(<span class="at">pct =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n) <span class="sc">*</span> <span class="dv">100</span>, <span class="at">.by =</span> region)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 15 × 4
+   region           opinion        n   pct
+   &lt;fct&gt;            &lt;chr&gt;      &lt;int&gt; &lt;dbl&gt;
+ 1 London           Don't know    24 12.2 
+ 2 London           Right         63 32.0 
+ 3 London           Wrong        110 55.8 
+ 4 Rest of South    Don't know    49  8.96
+ 5 Rest of South    Right        241 44.1 
+ 6 Rest of South    Wrong        257 47.0 
+ 7 Midlands / Wales Don't know    57 16.1 
+ 8 Midlands / Wales Right        145 41.0 
+ 9 Midlands / Wales Wrong        152 42.9 
+10 North            Don't know    48 12   
+11 North            Right        176 44   
+12 North            Wrong        176 44   
+13 Scotland         Don't know    10  7.09
+14 Scotland         Right         39 27.7 
+15 Scotland         Wrong         92 65.2 </code></pre>
 </div>
 </div>
 </section>
-<section id="avoid-redundancy" class="slide level2">
-<h2>Avoid redundancy?</h2>
-<p>Redundancy can help to tell a story.</p>
-<div class="panel-tabset">
-<ul id="tabset-12" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-12-1">Plot 1</a></li><li><a href="#tabset-12-2">Plot 2</a></li><li><a href="#tabset-12-3">Code</a></li></ul>
-<div class="tab-content">
-<div id="tabset-12-1">
-<div class="cell" data-layout-align="center">
+<section id="stacked-bar-plot-with-percentages" class="slide level2">
+<h2>Stacked bar plot with percentages</h2>
+<div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion)) <span class="sc">+</span></span>
-<span id="cb28-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span> </span>
-<span id="cb28-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="st">"region"</span>, <span class="at">nrow =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="W03_files/figure-revealjs/unnamed-chunk-18-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-12-2">
-<div class="cell" data-layout-align="center">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion, <span class="at">fill =</span> opinion)) <span class="sc">+</span></span>
-<span id="cb29-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span> </span>
-<span id="cb29-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="st">"region"</span>, <span class="at">nrow =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="W03_files/figure-revealjs/unnamed-chunk-19-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-12-3">
-<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion, <span class="at">fill =</span> opinion)) <span class="sc">+</span></span>
-<span id="cb30-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span> </span>
-<span id="cb30-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="st">"region"</span>, <span class="at">nrow =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="be-selective-with-redundancy" class="slide level2">
-<h2>Be selective with redundancy</h2>
-<div class="panel-tabset">
-<ul id="tabset-13" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-13-1">Plot</a></li><li><a href="#tabset-13-2">Code</a></li></ul>
-<div class="tab-content">
-<div id="tabset-13-1">
-<div class="cell" data-layout-align="center">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion, <span class="at">fill =</span> opinion)) <span class="sc">+</span></span>
-<span id="cb31-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span> </span>
-<span id="cb31-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="st">"region"</span>, <span class="at">nrow =</span> <span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb31-4"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="W03_files/figure-revealjs/unnamed-chunk-20-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-13-2">
-<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion, <span class="at">fill =</span> opinion)) <span class="sc">+</span></span>
-<span id="cb32-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span> </span>
-<span id="cb32-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="st">"region"</span>, <span class="at">nrow =</span> <span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb32-4"><a></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="use-informative-labels" class="slide level2">
-<h2>Use informative labels</h2>
-<div class="panel-tabset">
-<ul id="tabset-14" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-14-1">Plot 1</a></li><li><a href="#tabset-14-2">Code</a></li></ul>
-<div class="tab-content">
-<div id="tabset-14-1">
-<div class="cell" data-layout-align="center">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion, <span class="at">fill =</span> opinion)) <span class="sc">+</span></span>
-<span id="cb33-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span> </span>
-<span id="cb33-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="st">"region"</span>, <span class="at">nrow =</span> <span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb33-4"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb33-5"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb33-6"><a></a>    <span class="at">title =</span> <span class="st">"Was Britain right/wrong to vote to leave EU?"</span>,</span>
-<span id="cb33-7"><a></a>    <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span></span>
-<span id="cb33-8"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="W03_files/figure-revealjs/unnamed-chunk-21-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-14-2">
-<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion, <span class="at">fill =</span> opinion)) <span class="sc">+</span></span>
-<span id="cb34-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span> </span>
-<span id="cb34-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="st">"region"</span>, <span class="at">nrow =</span> <span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb34-4"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb34-5"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb34-6"><a></a>    <span class="at">title =</span> <span class="st">"Was Britain right/wrong to vote to leave EU?"</span>,</span>
-<span id="cb34-7"><a></a>    <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span></span>
-<span id="cb34-8"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="more-information-survey-and-source" class="slide level2">
-<h2>More information (Survey and Source)</h2>
-<div class="panel-tabset">
-<ul id="tabset-15" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-15-1">Plot 1</a></li><li><a href="#tabset-15-2">Plot 2</a></li><li><a href="#tabset-15-3">Code</a></li></ul>
-<div class="tab-content">
-<div id="tabset-15-1">
-<div class="cell" data-layout-align="center">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion, <span class="at">fill =</span> opinion)) <span class="sc">+</span></span>
-<span id="cb35-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span> </span>
-<span id="cb35-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="st">"region"</span>, <span class="at">nrow =</span> <span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb35-4"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb35-5"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb35-6"><a></a>    <span class="at">title =</span> <span class="st">"Was Britain right/wrong to vote to leave EU?"</span>,</span>
-<span id="cb35-7"><a></a>    <span class="at">subtitle =</span> <span class="st">"YouGov Survey Results, 2-3 September 2019"</span>,</span>
-<span id="cb35-8"><a></a>    <span class="at">caption =</span> <span class="st">"Source: https://d25d2506sfb94s.cloudfront.net/cumulus_uploads/document/x0msmggx08/YouGov%20-%20Brexit%20and%202019%20election.pdf"</span>,</span>
-<span id="cb35-9"><a></a>    <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span></span>
-<span id="cb35-10"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="W03_files/figure-revealjs/unnamed-chunk-22-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-15-2">
-<div class="cell" data-layout-align="center">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion, <span class="at">fill =</span> opinion)) <span class="sc">+</span></span>
-<span id="cb36-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span> </span>
-<span id="cb36-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="st">"region"</span>, <span class="at">nrow =</span> <span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb36-4"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb36-5"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb36-6"><a></a>    <span class="at">title =</span> <span class="st">"Was Britain right/wrong to vote to leave EU?"</span>,</span>
-<span id="cb36-7"><a></a>    <span class="at">subtitle =</span> <span class="st">"YouGov Survey Results, 2-3 September 2019"</span>,</span>
-<span id="cb36-8"><a></a>    <span class="at">caption =</span> <span class="st">"Source document from YouGov: bit.ly/2lCJZVg"</span>,</span>
-<span id="cb36-9"><a></a>    <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span></span>
-<span id="cb36-10"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="W03_files/figure-revealjs/unnamed-chunk-23-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-15-3">
-<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion, <span class="at">fill =</span> opinion)) <span class="sc">+</span></span>
-<span id="cb37-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span> </span>
-<span id="cb37-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="st">"region"</span>, <span class="at">nrow =</span> <span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb37-4"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb37-5"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb37-6"><a></a>    <span class="at">title =</span> <span class="st">"Was Britain right/wrong to vote to leave EU?"</span>,</span>
-<span id="cb37-7"><a></a>    <span class="at">subtitle =</span> <span class="st">"YouGov Survey Results, 2-3 September 2019"</span>,</span>
-<span id="cb37-8"><a></a>    <span class="at">caption =</span> <span class="st">"Source document from YouGov: bit.ly/2lCJZVg"</span>,</span>
-<span id="cb37-9"><a></a>    <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span></span>
-<span id="cb37-10"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="select-meaningful-colors" class="slide level2">
-<h2>Select meaningful colors</h2>
-<p>Are the default rainbow colors meaningful?</p>
-<div class="cell" data-layout-align="center">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion, <span class="at">fill =</span> opinion)) <span class="sc">+</span></span>
-<span id="cb38-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span> </span>
-<span id="cb38-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="st">"region"</span>, <span class="at">nrow =</span> <span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb38-4"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb38-5"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb38-6"><a></a>    <span class="at">title =</span> <span class="st">"Was Britain right/wrong to vote to leave EU?"</span>,</span>
-<span id="cb38-7"><a></a>    <span class="at">subtitle =</span> <span class="st">"YouGov Survey Results, 2-3 September 2019"</span>,</span>
-<span id="cb38-8"><a></a>    <span class="at">caption =</span> <span class="st">"Source document from YouGov: bit.ly/2lCJZVg"</span>,</span>
-<span id="cb38-9"><a></a>    <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span></span>
-<span id="cb38-10"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>brexit <span class="sc">|&gt;</span></span>
+<span id="cb38-2"><a></a>  <span class="fu">count</span>(region, opinion) <span class="sc">|&gt;</span></span>
+<span id="cb38-3"><a></a>  <span class="fu">mutate</span>(<span class="at">pct =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n) <span class="sc">*</span> <span class="dv">100</span>, <span class="at">.by =</span> region) <span class="sc">|&gt;</span></span>
+<span id="cb38-4"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">fct_rev</span>(region), <span class="at">x =</span> pct, <span class="at">fill =</span> opinion)) <span class="sc">+</span></span>
+<span id="cb38-5"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb38-6"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb38-7"><a></a>    <span class="at">title =</span> <span class="st">"Was Britain right/wrong to vote to leave EU?"</span>,</span>
+<span id="cb38-8"><a></a>    <span class="at">subtitle =</span> <span class="st">"YouGov Survey Results, 2-3 September 2019"</span>,</span>
+<span id="cb38-9"><a></a>    <span class="at">x =</span> <span class="st">"Percentage"</span>,</span>
+<span id="cb38-10"><a></a>    <span class="at">y =</span> <span class="cn">NULL</span></span>
+<span id="cb38-11"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb38-12"><a></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb38-13"><a></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
+<span id="cb38-14"><a></a>      <span class="st">"Wrong"</span> <span class="ot">=</span> <span class="st">"#ef8a62"</span>,</span>
+<span id="cb38-15"><a></a>      <span class="st">"Right"</span> <span class="ot">=</span> <span class="st">"#67a9cf"</span>,</span>
+<span id="cb38-16"><a></a>      <span class="st">"Don't know"</span> <span class="ot">=</span> <span class="st">"gray"</span></span>
+<span id="cb38-17"><a></a>    )</span>
+<span id="cb38-18"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb38-19"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
-<img data-src="W03_files/figure-revealjs/unnamed-chunk-24-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
-<section id="pick-colors-manually" class="slide level2">
-<h2>Pick colors manually</h2>
-<div class="panel-tabset">
-<ul id="tabset-16" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-16-1">Plot</a></li><li><a href="#tabset-16-2">Code</a></li></ul>
-<div class="tab-content">
-<div id="tabset-16-1">
-<div class="cell" data-layout-align="center">
+<img data-src="W03_files/figure-revealjs/unnamed-chunk-32-1.png" width="768" class="r-stretch"><p>Is the order of Wrong/Right/Don’t know good here?</p>
+</section>
+<section id="stacked-bar-plot-with-percentages-1" class="slide level2">
+<h2>Stacked bar plot with percentages</h2>
+<div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion, <span class="at">fill =</span> opinion)) <span class="sc">+</span></span>
-<span id="cb39-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span> </span>
-<span id="cb39-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="st">"region"</span>, <span class="at">nrow =</span> <span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb39-4"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb39-5"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb39-6"><a></a>    <span class="at">title =</span> <span class="st">"Was Britain right/wrong to vote to leave EU?"</span>,</span>
-<span id="cb39-7"><a></a>    <span class="at">subtitle =</span> <span class="st">"YouGov Survey Results, 2-3 September 2019"</span>,</span>
-<span id="cb39-8"><a></a>    <span class="at">caption =</span> <span class="st">"Source document from YouGov: bit.ly/2lCJZVg"</span>,</span>
-<span id="cb39-9"><a></a>    <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span></span>
-<span id="cb39-10"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb39-11"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(</span>
-<span id="cb39-12"><a></a>    <span class="st">"Wrong"</span> <span class="ot">=</span> <span class="st">"red"</span>,</span>
-<span id="cb39-13"><a></a>    <span class="st">"Right"</span> <span class="ot">=</span> <span class="st">"green"</span>,</span>
-<span id="cb39-14"><a></a>    <span class="st">"Don't know"</span> <span class="ot">=</span> <span class="st">"gray"</span></span>
-<span id="cb39-15"><a></a>  ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a>brexit <span class="sc">|&gt;</span></span>
+<span id="cb39-2"><a></a>  <span class="fu">count</span>(region, opinion) <span class="sc">|&gt;</span></span>
+<span id="cb39-3"><a></a>  <span class="fu">mutate</span>(<span class="at">opinion =</span> <span class="fu">fct_relevel</span>(opinion, <span class="st">"Right"</span>, <span class="st">"Don't know"</span>, <span class="st">"Wrong"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb39-4"><a></a>  <span class="fu">mutate</span>(<span class="at">pct =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n) <span class="sc">*</span> <span class="dv">100</span>, <span class="at">.by =</span> region) <span class="sc">|&gt;</span></span>
+<span id="cb39-5"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">fct_rev</span>(region), <span class="at">x =</span> pct, <span class="at">fill =</span> opinion)) <span class="sc">+</span></span>
+<span id="cb39-6"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb39-7"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb39-8"><a></a>    <span class="at">title =</span> <span class="st">"Was Britain right/wrong to vote to leave EU?"</span>,</span>
+<span id="cb39-9"><a></a>    <span class="at">subtitle =</span> <span class="st">"YouGov Survey Results, 2-3 September 2019"</span>,</span>
+<span id="cb39-10"><a></a>    <span class="at">x =</span> <span class="st">"Percentage"</span>,</span>
+<span id="cb39-11"><a></a>    <span class="at">y =</span> <span class="cn">NULL</span></span>
+<span id="cb39-12"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb39-13"><a></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb39-14"><a></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
+<span id="cb39-15"><a></a>      <span class="st">"Wrong"</span> <span class="ot">=</span> <span class="st">"#ef8a62"</span>,</span>
+<span id="cb39-16"><a></a>      <span class="st">"Right"</span> <span class="ot">=</span> <span class="st">"#67a9cf"</span>,</span>
+<span id="cb39-17"><a></a>      <span class="st">"Don't know"</span> <span class="ot">=</span> <span class="st">"gray"</span></span>
+<span id="cb39-18"><a></a>    )</span>
+<span id="cb39-19"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb39-20"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb39-21"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="W03_files/figure-revealjs/unnamed-chunk-25-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-16-2">
-<div class="sourceCode" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion, <span class="at">fill =</span> opinion)) <span class="sc">+</span></span>
-<span id="cb40-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span> </span>
-<span id="cb40-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="st">"region"</span>, <span class="at">nrow =</span> <span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb40-4"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb40-5"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb40-6"><a></a>    <span class="at">title =</span> <span class="st">"Was Britain right/wrong to vote to leave EU?"</span>,</span>
-<span id="cb40-7"><a></a>    <span class="at">subtitle =</span> <span class="st">"YouGov Survey Results, 2-3 September 2019"</span>,</span>
-<span id="cb40-8"><a></a>    <span class="at">caption =</span> <span class="st">"Source document from YouGov: bit.ly/2lCJZVg"</span>,</span>
-<span id="cb40-9"><a></a>    <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span></span>
-<span id="cb40-10"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb40-11"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(</span>
-<span id="cb40-12"><a></a>    <span class="st">"Wrong"</span> <span class="ot">=</span> <span class="st">"red"</span>,</span>
-<span id="cb40-13"><a></a>    <span class="st">"Right"</span> <span class="ot">=</span> <span class="st">"green"</span>,</span>
-<span id="cb40-14"><a></a>    <span class="st">"Don't know"</span> <span class="ot">=</span> <span class="st">"gray"</span></span>
-<span id="cb40-15"><a></a>  ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="choose-better-colors" class="slide level2">
-<h2>Choose better colors</h2>
-<p><a href="https://colorbrewer2.org" data-preview-link="true">colorbrewer2.org</a></p>
-</section>
-<section id="use-better-colors" class="slide level2">
-<h2>Use better colors</h2>
-<div class="panel-tabset">
-<ul id="tabset-17" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-17-1">Plot</a></li><li><a href="#tabset-17-2">Code</a></li></ul>
-<div class="tab-content">
-<div id="tabset-17-1">
-<div class="cell" data-layout-align="center">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion, <span class="at">fill =</span> opinion)) <span class="sc">+</span></span>
-<span id="cb41-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span> </span>
-<span id="cb41-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="st">"region"</span>, <span class="at">nrow =</span> <span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb41-4"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb41-5"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb41-6"><a></a>    <span class="at">title =</span> <span class="st">"Was Britain right/wrong to vote to leave EU?"</span>,</span>
-<span id="cb41-7"><a></a>    <span class="at">subtitle =</span> <span class="st">"YouGov Survey Results, 2-3 September 2019"</span>,</span>
-<span id="cb41-8"><a></a>    <span class="at">caption =</span> <span class="st">"Source document from YouGov: bit.ly/2lCJZVg"</span>,</span>
-<span id="cb41-9"><a></a>    <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span></span>
-<span id="cb41-10"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb41-11"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(</span>
-<span id="cb41-12"><a></a>    <span class="st">"Wrong"</span> <span class="ot">=</span> <span class="st">"#ef8a62"</span>,</span>
-<span id="cb41-13"><a></a>    <span class="st">"Right"</span> <span class="ot">=</span> <span class="st">"#67a9cf"</span>,</span>
-<span id="cb41-14"><a></a>    <span class="st">"Don't know"</span> <span class="ot">=</span> <span class="st">"gray"</span></span>
-<span id="cb41-15"><a></a>  ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="W03_files/figure-revealjs/unnamed-chunk-26-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-17-2">
-<div class="sourceCode" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion, <span class="at">fill =</span> opinion)) <span class="sc">+</span></span>
-<span id="cb42-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span> </span>
-<span id="cb42-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="st">"region"</span>, <span class="at">nrow =</span> <span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb42-4"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb42-5"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb42-6"><a></a>    <span class="at">title =</span> <span class="st">"Was Britain right/wrong to vote to leave EU?"</span>,</span>
-<span id="cb42-7"><a></a>    <span class="at">subtitle =</span> <span class="st">"YouGov Survey Results, 2-3 September 2019"</span>,</span>
-<span id="cb42-8"><a></a>    <span class="at">caption =</span> <span class="st">"Source document from YouGov: bit.ly/2lCJZVg"</span>,</span>
-<span id="cb42-9"><a></a>    <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span></span>
-<span id="cb42-10"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb42-11"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(</span>
-<span id="cb42-12"><a></a>    <span class="st">"Wrong"</span> <span class="ot">=</span> <span class="st">"#ef8a62"</span>,</span>
-<span id="cb42-13"><a></a>    <span class="st">"Right"</span> <span class="ot">=</span> <span class="st">"#67a9cf"</span>,</span>
-<span id="cb42-14"><a></a>    <span class="st">"Don't know"</span> <span class="ot">=</span> <span class="st">"gray"</span></span>
-<span id="cb42-15"><a></a>  ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="choose-a-theme" class="slide level2">
-<h2>Choose a theme</h2>
-<div class="panel-tabset">
-<ul id="tabset-18" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-18-1">Plot</a></li><li><a href="#tabset-18-2">Code</a></li></ul>
-<div class="tab-content">
-<div id="tabset-18-1">
-<div class="cell" data-layout-align="center">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion, <span class="at">fill =</span> opinion)) <span class="sc">+</span></span>
-<span id="cb43-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span> </span>
-<span id="cb43-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="st">"region"</span>, <span class="at">nrow =</span> <span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb43-4"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb43-5"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb43-6"><a></a>    <span class="at">title =</span> <span class="st">"Was Britain right/wrong to vote to leave EU?"</span>,</span>
-<span id="cb43-7"><a></a>    <span class="at">subtitle =</span> <span class="st">"YouGov Survey Results, 2-3 September 2019"</span>,</span>
-<span id="cb43-8"><a></a>    <span class="at">caption =</span> <span class="st">"Source document from YouGov: bit.ly/2lCJZVg"</span>,</span>
-<span id="cb43-9"><a></a>    <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span></span>
-<span id="cb43-10"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb43-11"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(</span>
-<span id="cb43-12"><a></a>    <span class="st">"Wrong"</span> <span class="ot">=</span> <span class="st">"#ef8a62"</span>,</span>
-<span id="cb43-13"><a></a>    <span class="st">"Right"</span> <span class="ot">=</span> <span class="st">"#67a9cf"</span>,</span>
-<span id="cb43-14"><a></a>    <span class="st">"Don't know"</span> <span class="ot">=</span> <span class="st">"gray"</span></span>
-<span id="cb43-15"><a></a>  )) <span class="sc">+</span></span>
-<span id="cb43-16"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="W03_files/figure-revealjs/unnamed-chunk-27-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-18-2">
-<div class="sourceCode" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion, <span class="at">fill =</span> opinion)) <span class="sc">+</span></span>
-<span id="cb44-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span> </span>
-<span id="cb44-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="st">"region"</span>, <span class="at">nrow =</span> <span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb44-4"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb44-5"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb44-6"><a></a>    <span class="at">title =</span> <span class="st">"Was Britain right/wrong to vote to leave EU?"</span>,</span>
-<span id="cb44-7"><a></a>    <span class="at">subtitle =</span> <span class="st">"YouGov Survey Results, 2-3 September 2019"</span>,</span>
-<span id="cb44-8"><a></a>    <span class="at">caption =</span> <span class="st">"Source document from YouGov: bit.ly/2lCJZVg"</span>,</span>
-<span id="cb44-9"><a></a>    <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span></span>
-<span id="cb44-10"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb44-11"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(</span>
-<span id="cb44-12"><a></a>    <span class="st">"Wrong"</span> <span class="ot">=</span> <span class="st">"#ef8a62"</span>,</span>
-<span id="cb44-13"><a></a>    <span class="st">"Right"</span> <span class="ot">=</span> <span class="st">"#67a9cf"</span>,</span>
-<span id="cb44-14"><a></a>    <span class="st">"Don't know"</span> <span class="ot">=</span> <span class="st">"#f7f7f7"</span></span>
-<span id="cb44-15"><a></a>  )) <span class="sc">+</span></span>
-<span id="cb44-16"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="adjust-the-general-text-size" class="slide level2">
-<h2>Adjust the general text size</h2>
-<div class="panel-tabset">
-<ul id="tabset-19" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-19-1">Plot</a></li><li><a href="#tabset-19-2">Code</a></li></ul>
-<div class="tab-content">
-<div id="tabset-19-1">
-<div class="cell" data-layout-align="center">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion, <span class="at">fill =</span> opinion)) <span class="sc">+</span></span>
-<span id="cb45-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span> </span>
-<span id="cb45-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="st">"region"</span>, <span class="at">nrow =</span> <span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb45-4"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb45-5"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb45-6"><a></a>    <span class="at">title =</span> <span class="st">"Was Britain right/wrong to vote to leave EU?"</span>,</span>
-<span id="cb45-7"><a></a>    <span class="at">subtitle =</span> <span class="st">"YouGov Survey Results, 2-3 September 2019"</span>,</span>
-<span id="cb45-8"><a></a>    <span class="at">caption =</span> <span class="st">"Source document from YouGov: bit.ly/2lCJZVg"</span>,</span>
-<span id="cb45-9"><a></a>    <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span></span>
-<span id="cb45-10"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb45-11"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(</span>
-<span id="cb45-12"><a></a>    <span class="st">"Wrong"</span> <span class="ot">=</span> <span class="st">"#ef8a62"</span>,</span>
-<span id="cb45-13"><a></a>    <span class="st">"Right"</span> <span class="ot">=</span> <span class="st">"#67a9cf"</span>,</span>
-<span id="cb45-14"><a></a>    <span class="st">"Don't know"</span> <span class="ot">=</span> <span class="st">"gray"</span></span>
-<span id="cb45-15"><a></a>  )) <span class="sc">+</span></span>
-<span id="cb45-16"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="W03_files/figure-revealjs/unnamed-chunk-28-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-19-2">
-<div class="sourceCode" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a><span class="fu">ggplot</span>(brexit, <span class="fu">aes</span>(<span class="at">y =</span> opinion, <span class="at">fill =</span> opinion)) <span class="sc">+</span></span>
-<span id="cb46-2"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span> </span>
-<span id="cb46-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="st">"region"</span>, <span class="at">nrow =</span> <span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb46-4"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb46-5"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb46-6"><a></a>    <span class="at">title =</span> <span class="st">"Was Britain right/wrong to vote to leave EU?"</span>,</span>
-<span id="cb46-7"><a></a>    <span class="at">subtitle =</span> <span class="st">"YouGov Survey Results, 2-3 September 2019"</span>,</span>
-<span id="cb46-8"><a></a>    <span class="at">caption =</span> <span class="st">"Source document from YouGov: bit.ly/2lCJZVg"</span>,</span>
-<span id="cb46-9"><a></a>    <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span></span>
-<span id="cb46-10"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb46-11"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(</span>
-<span id="cb46-12"><a></a>    <span class="st">"Wrong"</span> <span class="ot">=</span> <span class="st">"#ef8a62"</span>,</span>
-<span id="cb46-13"><a></a>    <span class="st">"Right"</span> <span class="ot">=</span> <span class="st">"#67a9cf"</span>,</span>
-<span id="cb46-14"><a></a>    <span class="st">"Don't know"</span> <span class="ot">=</span> <span class="st">"gray"</span></span>
-<span id="cb46-15"><a></a>  )) <span class="sc">+</span></span>
-<span id="cb46-16"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</section>
-<section>
-<section id="amounts" class="title-slide slide level1 center">
-<h1>Amounts</h1>
 
-</section>
-<section id="bar-plots" class="slide level2">
-<h2>Bar plots</h2>
-<p>McClelland</p>
-</section>
+</div>
+<img data-src="W03_files/figure-revealjs/unnamed-chunk-33-1.png" width="768" class="r-stretch"></section>
+<section id="more-elegant-percentages-with-scales" class="slide level2">
+<h2>More elegant percentages with <code>scales</code></h2>
+<p>Also make bars a bit thinner.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a><span class="fu">library</span>(scales)</span>
+<span id="cb40-2"><a></a>brexit <span class="sc">|&gt;</span></span>
+<span id="cb40-3"><a></a>  <span class="fu">count</span>(region, opinion) <span class="sc">|&gt;</span></span>
+<span id="cb40-4"><a></a>  <span class="fu">mutate</span>(<span class="at">opinion =</span> <span class="fu">fct_relevel</span>(opinion, <span class="st">"Right"</span>, <span class="st">"Don't know"</span>, <span class="st">"Wrong"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb40-5"><a></a>  <span class="fu">mutate</span>(<span class="at">pct =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n), <span class="at">.by =</span> region) <span class="sc">|&gt;</span></span>
+<span id="cb40-6"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">fct_rev</span>(region), <span class="at">x =</span> pct, <span class="at">fill =</span> opinion)) <span class="sc">+</span></span>
+<span id="cb40-7"><a></a>  <span class="fu">geom_col</span>(<span class="at">width =</span> <span class="fl">0.75</span>) <span class="sc">+</span></span>
+<span id="cb40-8"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> <span class="fu">label_percent</span>(<span class="at">accuracy =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb40-9"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb40-10"><a></a>    <span class="at">title =</span> <span class="st">"Was Britain right/wrong to vote to leave EU?"</span>,</span>
+<span id="cb40-11"><a></a>    <span class="at">subtitle =</span> <span class="st">"YouGov Survey Results, 2-3 September 2019"</span>,</span>
+<span id="cb40-12"><a></a>    <span class="at">x =</span> <span class="st">""</span>,</span>
+<span id="cb40-13"><a></a>    <span class="at">y =</span> <span class="cn">NULL</span></span>
+<span id="cb40-14"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb40-15"><a></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb40-16"><a></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
+<span id="cb40-17"><a></a>      <span class="st">"Wrong"</span> <span class="ot">=</span> <span class="st">"#ef8a62"</span>,</span>
+<span id="cb40-18"><a></a>      <span class="st">"Right"</span> <span class="ot">=</span> <span class="st">"#67a9cf"</span>,</span>
+<span id="cb40-19"><a></a>      <span class="st">"Don't know"</span> <span class="ot">=</span> <span class="st">"gray"</span></span>
+<span id="cb40-20"><a></a>    )</span>
+<span id="cb40-21"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb40-22"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb40-23"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="W03_files/figure-revealjs/unnamed-chunk-34-1.png" width="768" class="r-stretch"></section>
 <section id="bar-plots-vs.-pie-charts" class="slide level2">
 <h2>Bar plots vs.&nbsp;Pie Charts</h2>
+<div class="columns">
+<div class="column">
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a>brexit <span class="sc">|&gt;</span></span>
+<span id="cb41-2"><a></a>  <span class="fu">count</span>(opinion) <span class="sc">|&gt;</span></span>
+<span id="cb41-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> n, <span class="at">fill =</span> <span class="fu">fct_rev</span>(opinion))) <span class="sc">+</span></span>
+<span id="cb41-4"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb41-5"><a></a>  <span class="fu">coord_polar</span>(<span class="at">theta =</span> <span class="st">"y"</span>) <span class="sc">+</span></span>
+<span id="cb41-6"><a></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb41-7"><a></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
+<span id="cb41-8"><a></a>      <span class="st">"Wrong"</span> <span class="ot">=</span> <span class="st">"#ef8a62"</span>,</span>
+<span id="cb41-9"><a></a>      <span class="st">"Right"</span> <span class="ot">=</span> <span class="st">"#67a9cf"</span>,</span>
+<span id="cb41-10"><a></a>      <span class="st">"Don't know"</span> <span class="ot">=</span> <span class="st">"gray"</span></span>
+<span id="cb41-11"><a></a>    )</span>
+<span id="cb41-12"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb41-13"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb41-14"><a></a>    <span class="at">title =</span> <span class="st">"Was Britain right/wrong to vote to leave EU?"</span>,</span>
+<span id="cb41-15"><a></a>    <span class="at">subtitle =</span> <span class="st">"YouGov Survey Results, 2-3 September 2019"</span>,</span>
+<span id="cb41-16"><a></a>    <span class="at">x =</span> <span class="cn">NULL</span>,</span>
+<span id="cb41-17"><a></a>    <span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb41-18"><a></a>    <span class="at">fill =</span> <span class="st">"Opinion"</span></span>
+<span id="cb41-19"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb41-20"><a></a>  <span class="fu">theme_void</span>(<span class="at">base_size =</span> <span class="dv">14</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="W03_files/figure-revealjs/unnamed-chunk-35-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column">
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a>brexit <span class="sc">|&gt;</span></span>
+<span id="cb42-2"><a></a>  <span class="fu">count</span>(opinion) <span class="sc">|&gt;</span></span>
+<span id="cb42-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_rev</span>(opinion), <span class="at">y =</span> n, <span class="at">fill =</span> <span class="fu">fct_rev</span>(opinion))) <span class="sc">+</span></span>
+<span id="cb42-4"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb42-5"><a></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb42-6"><a></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
+<span id="cb42-7"><a></a>      <span class="st">"Wrong"</span> <span class="ot">=</span> <span class="st">"#ef8a62"</span>,</span>
+<span id="cb42-8"><a></a>      <span class="st">"Right"</span> <span class="ot">=</span> <span class="st">"#67a9cf"</span>,</span>
+<span id="cb42-9"><a></a>      <span class="st">"Don't know"</span> <span class="ot">=</span> <span class="st">"gray"</span></span>
+<span id="cb42-10"><a></a>    )</span>
+<span id="cb42-11"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb42-12"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb42-13"><a></a>    <span class="at">title =</span> <span class="st">"Was Britain right/wrong to vote to leave EU?"</span>,</span>
+<span id="cb42-14"><a></a>    <span class="at">subtitle =</span> <span class="st">"YouGov Survey Results, 2-3 September 2019"</span>,</span>
+<span id="cb42-15"><a></a>    <span class="at">x =</span> <span class="cn">NULL</span>,</span>
+<span id="cb42-16"><a></a>    <span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb42-17"><a></a>    <span class="at">fill =</span> <span class="st">"Opinion"</span></span>
+<span id="cb42-18"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb42-19"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="W03_files/figure-revealjs/unnamed-chunk-36-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
 </section>
 <section id="bad-bar-charts" class="slide level2">
 <h2>Bad bar charts</h2>
