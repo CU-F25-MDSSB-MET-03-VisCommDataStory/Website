@@ -680,21 +680,60 @@
     "href": "tasks/03-week.html",
     "title": "Week 03",
     "section": "",
-    "text": "Slides Direct Link\n\nFind the live recording in the Course’s Team’s Recording Folder.\n\n\n\nRead Chapter 3 in Dykes (2019), consult the Reading Remarks for the Chapter.\n\nComplete the corresponding reading assignment on Teams: Click the Assignments Tab and write your engagement comments in your personal class notebook there.\n\n\nMake one visual based on the data you find in the VisCom_Playground in the CU-F25-MDSSB-MET-03-VisCommDataStory Repositories\n\nComplete the corresponding assignment on Teams\n\nSearch the internet for a visual you find great. It can be anything which shows some insight through data visualization. Hopefully we receive a lot of different graphs to discuss what is great about them!\n\nComplete the corresponding assignment on Teams (same as above). Have it ready to be shared and discussed in class."
+    "text": "Slides Direct Link\n\nSlides Direct Link\n\nFind the live recording in the Course’s Team’s Recording Folder.",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 03"
+    ]
   },
   {
     "objectID": "tasks/03-week.html#material",
     "href": "tasks/03-week.html#material",
     "title": "Week 03",
     "section": "",
-    "text": "Slides Direct Link\n\nFind the live recording in the Course’s Team’s Recording Folder.\n\n\n\nRead Chapter 3 in Dykes (2019), consult the Reading Remarks for the Chapter.\n\nComplete the corresponding reading assignment on Teams: Click the Assignments Tab and write your engagement comments in your personal class notebook there.\n\n\nMake one visual based on the data you find in the VisCom_Playground in the CU-F25-MDSSB-MET-03-VisCommDataStory Repositories\n\nComplete the corresponding assignment on Teams\n\nSearch the internet for a visual you find great. It can be anything which shows some insight through data visualization. Hopefully we receive a lot of different graphs to discuss what is great about them!\n\nComplete the corresponding assignment on Teams (same as above). Have it ready to be shared and discussed in class."
+    "text": "Slides Direct Link\n\nSlides Direct Link\n\nFind the live recording in the Course’s Team’s Recording Folder.",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 03"
+    ]
+  },
+  {
+    "objectID": "tasks/03-week.html#assigments-readings",
+    "href": "tasks/03-week.html#assigments-readings",
+    "title": "Week 03",
+    "section": "Assigments / Readings",
+    "text": "Assigments / Readings\n\nRead Chapter 3 in Dykes (2019), consult the Reading Remarks for the Chapter.\n\nComplete the corresponding reading assignment on Teams: Click the Assignments Tab and write your engagement comments in your personal class notebook there.\n\n\nMake one visual based on the data you find in the VisCom_Playground in the CU-F25-MDSSB-MET-03-VisCommDataStory Repositories\n\nComplete the corresponding assignment on Teams\n\nSearch the internet for a visual you find great. It can be anything which shows some insight through data visualization. Hopefully we receive a lot of different graphs to discuss what is great about them!\n\nComplete the corresponding assignment on Teams (same as above). Have it ready to be shared and discussed in class.",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 03"
+    ]
+  },
+  {
+    "objectID": "tasks/03-week.html#additional-readings",
+    "href": "tasks/03-week.html#additional-readings",
+    "title": "Week 03",
+    "section": "Additional readings",
+    "text": "Additional readings\nChapter 6 in Fundamentals of Data Visualization: Visualizing amounts (Wilke 2018) Chapter 7 in Fundamentals of Data Visualization: Visualizing distributions: Histograms and density plots (Wilke 2018) Chapter 10 in Fundamentals of Data Visualization: Visualising proportions (Wilke 2018)",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 03"
+    ]
   },
   {
     "objectID": "tasks/03-week.html#checklist",
     "href": "tasks/03-week.html#checklist",
     "title": "Week 03",
     "section": "Checklist",
-    "text": "Checklist\nCheck the boxes when done, and feel the “done” 🙂.\n\nHave the repository VisCom_Playground cloned to your computer.\n\nCheck the boxes when done. I provide some good feeling of having it done 🙂.\nAdditional readings:\nChapter 6 in Fundamentals of Data Visualization: Visualizing amounts (Wilke 2018) Chapter 7 in Fundamentals of Data Visualization: Visualizing distributions: Histograms and density plots (Wilke 2018) Chapter 10 in Fundamentals of Data Visualization: Visualising proportions (Wilke 2018)"
+    "text": "Checklist\nTo come.",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 03"
+    ]
   },
   {
     "objectID": "tasks/10-week.html",
@@ -1213,7 +1252,7 @@
     "href": "lectures/W03.html#brexit-survey-data",
     "title": "W#03 Amounts Proportions Uncertainty",
     "section": "Brexit Survey Data",
-    "text": "Brexit Survey Data\nIn September 2019, YouGov survey asked 1,639 adults in the UK the following question:\n\nIn hindsight, do you think Britain was right/wrong to vote to leave EU?\n🔲 Right to leave | 🔲 Wrong to leave | 🔲 Don’t know\n\nThe file brexit_opinions.csv in the dataset in the repository VisCom_Playground.\n\n\nLook at the first 10 rows\n\n\nCode\nlibrary(tidyverse)\nbrexit &lt;- read_csv(\"../data/brexit_opinions.csv\")\nbrexit\n\n\n# A tibble: 1,639 × 2\n   opinion region\n   &lt;chr&gt;   &lt;chr&gt; \n 1 Right   london\n 2 Right   london\n 3 Right   london\n 4 Right   london\n 5 Right   london\n 6 Right   london\n 7 Right   london\n 8 Right   london\n 9 Right   london\n10 Right   london\n# ℹ 1,629 more rows\n\n\n\nLook at 10 random rows\n\n\nCode\nbrexit |&gt; slice_sample(n = 10)\n\n\n# A tibble: 10 × 2\n   opinion region        \n   &lt;chr&gt;   &lt;chr&gt;         \n 1 Right   midlands_wales\n 2 Right   north         \n 3 Wrong   rest_of_south \n 4 Right   rest_of_south \n 5 Wrong   midlands_wales\n 6 Wrong   north         \n 7 Wrong   london        \n 8 Wrong   rest_of_south \n 9 Wrong   north         \n10 Right   north"
+    "text": "Brexit Survey Data\nIn September 2019, YouGov survey asked 1,639 adults in the UK the following question:\n\nIn hindsight, do you think Britain was right/wrong to vote to leave EU?\n🔲 Right to leave | 🔲 Wrong to leave | 🔲 Don’t know\n\nThe file brexit_opinions.csv in the dataset in the repository VisCom_Playground.\n\n\nLook at the first 10 rows\n\n\nCode\nlibrary(tidyverse)\nbrexit &lt;- read_csv(\"../data/brexit_opinions.csv\")\nbrexit\n\n\n# A tibble: 1,639 × 2\n   opinion region\n   &lt;chr&gt;   &lt;chr&gt; \n 1 Right   london\n 2 Right   london\n 3 Right   london\n 4 Right   london\n 5 Right   london\n 6 Right   london\n 7 Right   london\n 8 Right   london\n 9 Right   london\n10 Right   london\n# ℹ 1,629 more rows\n\n\n\nLook at 10 random rows\n\n\nCode\nbrexit |&gt; slice_sample(n = 10)\n\n\n# A tibble: 10 × 2\n   opinion    region        \n   &lt;chr&gt;      &lt;chr&gt;         \n 1 Right      rest_of_south \n 2 Right      midlands_wales\n 3 Right      rest_of_south \n 4 Don't know north         \n 5 Right      north         \n 6 Right      rest_of_south \n 7 Right      north         \n 8 Right      rest_of_south \n 9 Right      north         \n10 Wrong      north"
   },
   {
     "objectID": "lectures/W03.html#first-basic-visuals-with-geom_bar",
@@ -1419,81 +1458,88 @@
     "text": "Stacked bar plot with percentages\n\n\nCode\nbrexit |&gt;\n  count(region, opinion) |&gt;\n  mutate(opinion = fct_relevel(opinion, \"Right\", \"Don't know\", \"Wrong\")) |&gt;\n  mutate(pct = n / sum(n) * 100, .by = region) |&gt;\n  ggplot(aes(y = fct_rev(region), x = pct, fill = opinion)) +\n  geom_col() +\n  labs(\n    title = \"Was Britain right/wrong to vote to leave EU?\",\n    subtitle = \"YouGov Survey Results, 2-3 September 2019\",\n    x = \"Percentage\",\n    y = NULL\n  ) +\n  scale_fill_manual(\n    values = c(\n      \"Wrong\" = \"#ef8a62\",\n      \"Right\" = \"#67a9cf\",\n      \"Don't know\" = \"gray\"\n    )\n  ) +\n  guides(fill = \"none\") +\n  theme_minimal(base_size = 14)"
   },
   {
-    "objectID": "lectures/W03.html#more-elegant-percentages-with-scales",
-    "href": "lectures/W03.html#more-elegant-percentages-with-scales",
+    "objectID": "lectures/W03.html#elegant-percentages-with-scales",
+    "href": "lectures/W03.html#elegant-percentages-with-scales",
     "title": "W#03 Amounts Proportions Uncertainty",
-    "section": "More elegant percentages with scales",
-    "text": "More elegant percentages with scales\nAlso make bars a bit thinner.\n\n\nCode\nlibrary(scales)\nbrexit |&gt;\n  count(region, opinion) |&gt;\n  mutate(opinion = fct_relevel(opinion, \"Right\", \"Don't know\", \"Wrong\")) |&gt;\n  mutate(pct = n / sum(n), .by = region) |&gt;\n  ggplot(aes(y = fct_rev(region), x = pct, fill = opinion)) +\n  geom_col(width = 0.75) +\n  scale_x_continuous(labels = label_percent(accuracy = 1)) +\n  labs(\n    title = \"Was Britain right/wrong to vote to leave EU?\",\n    subtitle = \"YouGov Survey Results, 2-3 September 2019\",\n    x = \"\",\n    y = NULL\n  ) +\n  scale_fill_manual(\n    values = c(\n      \"Wrong\" = \"#ef8a62\",\n      \"Right\" = \"#67a9cf\",\n      \"Don't know\" = \"gray\"\n    )\n  ) +\n  guides(fill = \"none\") +\n  theme_minimal(base_size = 14)"
+    "section": "Elegant percentages with scales",
+    "text": "Elegant percentages with scales\nAlso make bars a bit thinner.\n\n\nCode\nlibrary(scales)\nbrexit |&gt;\n  count(region, opinion) |&gt;\n  mutate(opinion = fct_relevel(opinion, \"Right\", \"Don't know\", \"Wrong\")) |&gt;\n  mutate(pct = n / sum(n), .by = region) |&gt;\n  ggplot(aes(y = fct_rev(region), x = pct, fill = opinion)) +\n  geom_col(width = 0.75) +\n  scale_x_continuous(labels = label_percent(accuracy = 1)) +\n  labs(\n    title = \"Was Britain right/wrong to vote to leave EU?\",\n    subtitle = \"YouGov Survey Results, 2-3 September 2019\",\n    x = \"\",\n    y = NULL\n  ) +\n  scale_fill_manual(\n    values = c(\n      \"Wrong\" = \"#ef8a62\",\n      \"Right\" = \"#67a9cf\",\n      \"Don't know\" = \"gray\"\n    )\n  ) +\n  guides(fill = \"none\") +\n  theme_minimal(base_size = 14)"
   },
   {
     "objectID": "lectures/W03.html#bar-plots-vs.-pie-charts",
     "href": "lectures/W03.html#bar-plots-vs.-pie-charts",
     "title": "W#03 Amounts Proportions Uncertainty",
     "section": "Bar plots vs. Pie Charts",
-    "text": "Bar plots vs. Pie Charts\n\n\n\n\nCode\nbrexit |&gt;\n  count(opinion) |&gt;\n  ggplot(aes(x = \"\", y = n, fill = fct_rev(opinion))) +\n  geom_col() +\n  coord_polar(theta = \"y\") +\n  scale_fill_manual(\n    values = c(\n      \"Wrong\" = \"#ef8a62\",\n      \"Right\" = \"#67a9cf\",\n      \"Don't know\" = \"gray\"\n    )\n  ) +\n  labs(\n    title = \"Was Britain right/wrong to vote to leave EU?\",\n    subtitle = \"YouGov Survey Results, 2-3 September 2019\",\n    x = NULL,\n    y = NULL,\n    fill = \"Opinion\"\n  ) +\n  theme_void(base_size = 14)\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nbrexit |&gt;\n  count(opinion) |&gt;\n  ggplot(aes(x = fct_rev(opinion), y = n, fill = fct_rev(opinion))) +\n  geom_col() +\n  scale_fill_manual(\n    values = c(\n      \"Wrong\" = \"#ef8a62\",\n      \"Right\" = \"#67a9cf\",\n      \"Don't know\" = \"gray\"\n    )\n  ) +\n  labs(\n    title = \"Was Britain right/wrong to vote to leave EU?\",\n    subtitle = \"YouGov Survey Results, 2-3 September 2019\",\n    x = NULL,\n    y = NULL,\n    fill = \"Opinion\"\n  ) +\n  theme_minimal(base_size = 14)"
+    "text": "Bar plots vs. Pie Charts\n\n\n\n\nCode\nbrexit |&gt;\n  count(opinion) |&gt;\n  ggplot(aes(x = \"\", y = n, fill = fct_rev(opinion))) +\n  geom_col() +\n  coord_polar(theta = \"y\") +\n  scale_fill_manual(\n    values = c(\n      \"Wrong\" = \"#ef8a62\",\n      \"Right\" = \"#67a9cf\",\n      \"Don't know\" = \"gray\"\n    )\n  ) +\n  labs(\n    title = \"Was Britain right/wrong to vote to leave EU?\",\n    subtitle = \"YouGov Survey Results, 2-3 September 2019\",\n    x = NULL,\n    y = NULL,\n    fill = \"Opinion\"\n  ) +\n  theme_void(base_size = 16)\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nbrexit |&gt;\n  count(opinion) |&gt;\n  ggplot(aes(x = fct_rev(opinion), y = n, fill = fct_rev(opinion))) +\n  geom_col() +\n  scale_fill_manual(\n    values = c(\n      \"Wrong\" = \"#ef8a62\",\n      \"Right\" = \"#67a9cf\",\n      \"Don't know\" = \"gray\"\n    )\n  ) +\n  labs(\n    title = \"Was Britain right/wrong to vote to leave EU?\",\n    subtitle = \"YouGov Survey Results, 2-3 September 2019\",\n    x = NULL,\n    y = NULL,\n    fill = \"Opinion\"\n  ) +\n  theme_minimal(base_size = 16)\n\n\n\n\n\n\n\n\n\n\nWhat is easier to read for what purpose?"
   },
   {
-    "objectID": "lectures/W03.html#bad-bar-charts",
-    "href": "lectures/W03.html#bad-bar-charts",
+    "objectID": "lectures/W03.html#barbarplots",
+    "href": "lectures/W03.html#barbarplots",
     "title": "W#03 Amounts Proportions Uncertainty",
-    "section": "Bad bar charts",
-    "text": "Bad bar charts"
+    "section": "#barbarplots",
+    "text": "#barbarplots\n\n\n\nhttps://barbarplots.github.io/index.html"
   },
   {
-    "objectID": "lectures/W03.html#bar-plots-and-summary-statistics",
-    "href": "lectures/W03.html#bar-plots-and-summary-statistics",
+    "objectID": "lectures/W03.html#visualize-all-data-before-aggreagteing",
+    "href": "lectures/W03.html#visualize-all-data-before-aggreagteing",
     "title": "W#03 Amounts Proportions Uncertainty",
-    "section": "Bar plots and summary statistics",
-    "text": "Bar plots and summary statistics"
+    "section": "Visualize all data before aggreagteing",
+    "text": "Visualize all data before aggreagteing\nLets test the dogs and cats example with self created data.\n\n\nCode\nset.seed(1234)\nanimals &lt;- tibble(\n  animal = c(rep(c(\"Small cat\", \"Big cat\"), each = 250), rep(\"Dog\", 500))\n) |&gt;\n  mutate(\n    weight = case_when(\n      animal == \"Small cat\" ~ rnorm(n(), 20, 5),\n      animal == \"Big cat\" ~ rnorm(n(), 60, 5),\n      animal == \"Dog\" ~ rnorm(n(), 40, 10)\n    )\n  ) |&gt;\n  mutate(animal_type = ifelse(str_detect(animal, \"cat\"), \"Cats\", \"Dogs\"))\n\nanimals_mean &lt;- animals |&gt;\n  group_by(animal_type) |&gt;\n  summarize(avg_weight = mean(weight))\n\nggplot(animals_mean, aes(x = animal_type, y = avg_weight, fill = animal_type)) +\n  geom_col() +\n  labs(x = NULL, y = \"Weight\") +\n  guides(fill = \"none\")"
   },
   {
-    "objectID": "lectures/W03.html#alternatives",
-    "href": "lectures/W03.html#alternatives",
+    "objectID": "lectures/W03.html#show-all-data-with-jitter-plots",
+    "href": "lectures/W03.html#show-all-data-with-jitter-plots",
     "title": "W#03 Amounts Proportions Uncertainty",
-    "section": "Alternatives",
-    "text": "Alternatives"
+    "section": "Show all data with jitter plots",
+    "text": "Show all data with jitter plots\n\n\nCode\nggplot(animals, aes(x = animal_type, y = weight, color = animal_type)) +\n  geom_jitter() +\n  geom_point(\n    data = animals_mean,\n    aes(y = avg_weight),\n    color = \"black\",\n    size = 5\n  ) +\n  labs(x = NULL, y = \"Weight\") +\n  guides(color = \"none\")"
   },
   {
-    "objectID": "lectures/W03.html#pie-charts",
-    "href": "lectures/W03.html#pie-charts",
+    "objectID": "lectures/W03.html#add-the-averages-and-make-points-transparent",
+    "href": "lectures/W03.html#add-the-averages-and-make-points-transparent",
     "title": "W#03 Amounts Proportions Uncertainty",
-    "section": "Pie charts",
-    "text": "Pie charts"
+    "section": "Add the averages and make points transparent",
+    "text": "Add the averages and make points transparent\n\n\nCode\nggplot(animals, aes(x = animal_type, y = weight, color = animal_type)) +\n  geom_jitter(alpha = 0.5) +\n  geom_point(data = animals_mean, aes(y = avg_weight), size = 10) +\n  labs(x = NULL, y = \"Weight\") +\n  guides(color = \"none\")\n\n\n\nNote: We include a different dataset for the averages with data = animals_mean in geom_point()"
   },
   {
-    "objectID": "lectures/W03.html#stacked-bar-charts",
-    "href": "lectures/W03.html#stacked-bar-charts",
+    "objectID": "lectures/W03.html#show-all-data-with-beeswarm-plots",
+    "href": "lectures/W03.html#show-all-data-with-beeswarm-plots",
     "title": "W#03 Amounts Proportions Uncertainty",
-    "section": "Stacked bar charts",
-    "text": "Stacked bar charts"
+    "section": "Show all data with beeswarm plots",
+    "text": "Show all data with beeswarm plots\n\n\nCode\nlibrary(ggbeeswarm)\n\nggplot(animals, aes(x = animal_type, y = weight, color = animal_type)) +\n  geom_beeswarm(size = 1) +\n  # Or try this too:\n  # geom_quasirandom() +\n  labs(x = NULL, y = \"Weight\") +\n  guides(color = \"none\")"
   },
   {
-    "objectID": "lectures/W03.html#parts-of-a-whole",
-    "href": "lectures/W03.html#parts-of-a-whole",
+    "objectID": "lectures/W03.html#combine-boxplots-with-points",
+    "href": "lectures/W03.html#combine-boxplots-with-points",
     "title": "W#03 Amounts Proportions Uncertainty",
-    "section": "Parts of a whole",
-    "text": "Parts of a whole"
+    "section": "Combine boxplots with points",
+    "text": "Combine boxplots with points\n\n\nCode\nggplot(animals, aes(x = animal_type, y = weight, color = animal_type)) +\n  geom_boxplot(width = 0.5) +\n  geom_point(position = position_jitter(height = 0), size = 1, alpha = 0.5) +\n  labs(x = NULL, y = \"Weight\") +\n  guides(color = \"none\")"
   },
   {
-    "objectID": "lectures/W03.html#compute-metrics",
-    "href": "lectures/W03.html#compute-metrics",
+    "objectID": "lectures/W03.html#combine-violins-with-points",
+    "href": "lectures/W03.html#combine-violins-with-points",
     "title": "W#03 Amounts Proportions Uncertainty",
-    "section": "Compute metrics",
-    "text": "Compute metrics"
+    "section": "Combine violins with points",
+    "text": "Combine violins with points\n\n\nCode\nggplot(animals, aes(x = animal_type, y = weight, color = animal_type)) +\n  geom_violin(width = 0.5) +\n  geom_point(position = position_jitter(height = 0), size = 1, alpha = 0.5) +\n  labs(x = NULL, y = \"Weight\") +\n  guides(color = \"none\")"
   },
   {
-    "objectID": "lectures/W03.html#communicating-uncertainty",
-    "href": "lectures/W03.html#communicating-uncertainty",
+    "objectID": "lectures/W03.html#overlapping-ridgeplots",
+    "href": "lectures/W03.html#overlapping-ridgeplots",
     "title": "W#03 Amounts Proportions Uncertainty",
-    "section": "Communicating uncertainty",
-    "text": "Communicating uncertainty"
+    "section": "Overlapping ridgeplots",
+    "text": "Overlapping ridgeplots\n\n\nCode\nlibrary(ggridges)\n\nggplot(animals, aes(x = weight, y = animal_type, fill = animal_type)) +\n  geom_density_ridges() +\n  labs(x = \"Weight\", y = NULL) +\n  guides(fill = \"none\")"
   },
   {
-    "objectID": "lectures/W03.html#visualizing-uncertainty",
-    "href": "lectures/W03.html#visualizing-uncertainty",
+    "objectID": "lectures/W03.html#more-information-is-better",
+    "href": "lectures/W03.html#more-information-is-better",
     "title": "W#03 Amounts Proportions Uncertainty",
-    "section": "Visualizing uncertainty",
-    "text": "Visualizing uncertainty"
+    "section": "More information is better",
+    "text": "More information is better\n\nAvoid ploting single numbers when there is a whole range behind it\n\nOK, you may do it in a longer data story after making clear how the variation looks like"
+  },
+  {
+    "objectID": "lectures/W03.html#practice-distribution-visualization",
+    "href": "lectures/W03.html#practice-distribution-visualization",
+    "title": "W#03 Amounts Proportions Uncertainty",
+    "section": "Practice: Distribution Visualization",
+    "text": "Practice: Distribution Visualization\nDo some of visualizations of distributions using the country dataset in the VisCom_Playground repository.\nCreate a new slidedeck with some trials.\nFor example: Use Life Expectancy and compare the distribution of countries’ value between continents. You can also visualize how a distribution changes over time."
   },
   {
     "objectID": "lectures/W05.html#tell-a-story",
