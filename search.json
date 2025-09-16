@@ -704,7 +704,7 @@
     "href": "tasks/03-week.html#assigments-readings",
     "title": "Week 03",
     "section": "Assigments / Readings",
-    "text": "Assigments / Readings\n\nRead Chapter 3 in Dykes (2019), consult the Reading Remarks for the Chapter.\n\nComplete the corresponding reading assignment on Teams: Click the Assignments Tab and write your engagement comments in your personal class notebook there.\n\n\nMake one visual based on the data you find in the VisCom_Playground in the CU-F25-MDSSB-MET-03-VisCommDataStory Repositories\n\nComplete the corresponding assignment on Teams\n\nSearch the internet for a visual you find great. It can be anything which shows some insight through data visualization. Hopefully we receive a lot of different graphs to discuss what is great about them!\n\nComplete the corresponding assignment on Teams (same as above). Have it ready to be shared and discussed in class.",
+    "text": "Assigments / Readings\n\nRead Chapter 3 in Dykes (2019), consult the Reading Remarks for the Chapter.\n\nComplete the corresponding reading assignment on Teams: Click the Assignments Tab and write your engagement comments in your personal class notebook there.\n\n\nMake one visual where you visualize distributions of a numerical variable over different categories. Use the data you find in the VisCom_Playground in the CU-F25-MDSSB-MET-03-VisCommDataStory Repositories. You can also use data you find yourself. We want to share these in class.",
     "crumbs": [
       "Syllabus",
       "Schedule",
@@ -728,7 +728,7 @@
     "href": "tasks/03-week.html#checklist",
     "title": "Week 03",
     "section": "Checklist",
-    "text": "Checklist\nTo come.",
+    "text": "Checklist\n\nPrepare the visual (see Assignment above) such that you can share it in class.",
     "crumbs": [
       "Syllabus",
       "Schedule",
@@ -1252,7 +1252,7 @@
     "href": "lectures/W03.html#brexit-survey-data",
     "title": "W#03 Amounts Proportions Uncertainty",
     "section": "Brexit Survey Data",
-    "text": "Brexit Survey Data\nIn September 2019, YouGov survey asked 1,639 adults in the UK the following question:\n\nIn hindsight, do you think Britain was right/wrong to vote to leave EU?\n🔲 Right to leave | 🔲 Wrong to leave | 🔲 Don’t know\n\nThe file brexit_opinions.csv in the dataset in the repository VisCom_Playground.\n\n\nLook at the first 10 rows\n\n\nCode\nlibrary(tidyverse)\nbrexit &lt;- read_csv(\"../data/brexit_opinions.csv\")\nbrexit\n\n\n# A tibble: 1,639 × 2\n   opinion region\n   &lt;chr&gt;   &lt;chr&gt; \n 1 Right   london\n 2 Right   london\n 3 Right   london\n 4 Right   london\n 5 Right   london\n 6 Right   london\n 7 Right   london\n 8 Right   london\n 9 Right   london\n10 Right   london\n# ℹ 1,629 more rows\n\n\n\nLook at 10 random rows\n\n\nCode\nbrexit |&gt; slice_sample(n = 10)\n\n\n# A tibble: 10 × 2\n   opinion    region        \n   &lt;chr&gt;      &lt;chr&gt;         \n 1 Right      rest_of_south \n 2 Right      midlands_wales\n 3 Right      rest_of_south \n 4 Don't know north         \n 5 Right      north         \n 6 Right      rest_of_south \n 7 Right      north         \n 8 Right      rest_of_south \n 9 Right      north         \n10 Wrong      north"
+    "text": "Brexit Survey Data\nIn September 2019, YouGov survey asked 1,639 adults in the UK the following question:\n\nIn hindsight, do you think Britain was right/wrong to vote to leave EU?\n🔲 Right to leave | 🔲 Wrong to leave | 🔲 Don’t know\n\nThe file brexit_opinions.csv in the dataset in the repository VisCom_Playground.\n\n\nLook at the first 10 rows\n\n\nCode\nlibrary(tidyverse)\nbrexit &lt;- read_csv(\"../data/brexit_opinions.csv\")\nbrexit\n\n\n# A tibble: 1,639 × 2\n   opinion region\n   &lt;chr&gt;   &lt;chr&gt; \n 1 Right   london\n 2 Right   london\n 3 Right   london\n 4 Right   london\n 5 Right   london\n 6 Right   london\n 7 Right   london\n 8 Right   london\n 9 Right   london\n10 Right   london\n# ℹ 1,629 more rows\n\n\n\nLook at 10 random rows\n\n\nCode\nbrexit |&gt; slice_sample(n = 10)\n\n\n# A tibble: 10 × 2\n   opinion    region        \n   &lt;chr&gt;      &lt;chr&gt;         \n 1 Don't know london        \n 2 Right      rest_of_south \n 3 Don't know midlands_wales\n 4 Right      rest_of_south \n 5 Wrong      rest_of_south \n 6 Wrong      london        \n 7 Wrong      rest_of_south \n 8 Wrong      rest_of_south \n 9 Right      midlands_wales\n10 Right      midlands_wales"
   },
   {
     "objectID": "lectures/W03.html#first-basic-visuals-with-geom_bar",
