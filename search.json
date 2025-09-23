@@ -389,7 +389,7 @@
     "href": "lectures/W03.html#brexit-survey-data",
     "title": "W#03 Amounts Proportions Uncertainty",
     "section": "Brexit Survey Data",
-    "text": "Brexit Survey Data\nIn September 2019, YouGov survey asked 1,639 adults in the UK the following question:\n\nIn hindsight, do you think Britain was right/wrong to vote to leave EU?\n🔲 Right to leave | 🔲 Wrong to leave | 🔲 Don’t know\n\nThe file brexit_opinions.csv in the dataset in the repository VisCom_Playground.\n\n\nLook at the first 10 rows\n\n\nCode\nlibrary(tidyverse)\nbrexit &lt;- read_csv(\"../data/brexit_opinions.csv\")\nbrexit\n\n\n# A tibble: 1,639 × 2\n   opinion region\n   &lt;chr&gt;   &lt;chr&gt; \n 1 Right   london\n 2 Right   london\n 3 Right   london\n 4 Right   london\n 5 Right   london\n 6 Right   london\n 7 Right   london\n 8 Right   london\n 9 Right   london\n10 Right   london\n# ℹ 1,629 more rows\n\n\n\nLook at 10 random rows\n\n\nCode\nbrexit |&gt; slice_sample(n = 10)\n\n\n# A tibble: 10 × 2\n   opinion    region        \n   &lt;chr&gt;      &lt;chr&gt;         \n 1 Don't know north         \n 2 Right      rest_of_south \n 3 Wrong      rest_of_south \n 4 Right      rest_of_south \n 5 Wrong      north         \n 6 Wrong      rest_of_south \n 7 Right      rest_of_south \n 8 Wrong      midlands_wales\n 9 Right      rest_of_south \n10 Wrong      rest_of_south"
+    "text": "Brexit Survey Data\nIn September 2019, YouGov survey asked 1,639 adults in the UK the following question:\n\nIn hindsight, do you think Britain was right/wrong to vote to leave EU?\n🔲 Right to leave | 🔲 Wrong to leave | 🔲 Don’t know\n\nThe file brexit_opinions.csv in the dataset in the repository VisCom_Playground.\n\n\nLook at the first 10 rows\n\n\nCode\nlibrary(tidyverse)\nbrexit &lt;- read_csv(\"../data/brexit_opinions.csv\")\nbrexit\n\n\n# A tibble: 1,639 × 2\n   opinion region\n   &lt;chr&gt;   &lt;chr&gt; \n 1 Right   london\n 2 Right   london\n 3 Right   london\n 4 Right   london\n 5 Right   london\n 6 Right   london\n 7 Right   london\n 8 Right   london\n 9 Right   london\n10 Right   london\n# ℹ 1,629 more rows\n\n\n\nLook at 10 random rows\n\n\nCode\nbrexit |&gt; slice_sample(n = 10)\n\n\n# A tibble: 10 × 2\n   opinion    region        \n   &lt;chr&gt;      &lt;chr&gt;         \n 1 Right      rest_of_south \n 2 Right      rest_of_south \n 3 Don't know midlands_wales\n 4 Right      scot          \n 5 Wrong      rest_of_south \n 6 Right      london        \n 7 Right      rest_of_south \n 8 Right      rest_of_south \n 9 Wrong      london        \n10 Wrong      scot"
   },
   {
     "objectID": "lectures/W03.html#first-basic-visuals-with-geom_bar",
@@ -1095,21 +1095,48 @@
     "href": "tasks/04-week.html",
     "title": "Week 04",
     "section": "",
-    "text": "Slides Direct Link\n\nFind the live recording in the Course’s Team’s Recording Folder.\n\n\n\nCoviD Pandemic and Summerbreaks\nFollow the Direct Link to the slides!\nAnalyse the Data Story\n\nWhat is the main insight?\nWho is the target audience?\nWhat is the story structure?\nWhat are the data sources?\n\n\nList all what is necessary to reproduce the analysis\n\n\nWhat metrics are used?\n\n\nWhat new metrics are computed? Try to list all.\nHow is the raw data transformed mathematically?\n\n\nGot through the slides one by one\n\n\nWhat is the purpose of each slide?\nIs anything missing at the stage of the story? A slide needed before? What could be emphasized or removed?\nDetailed analysis/critique of the visuals? Is there clutter (unnecessary elements)? Is everything labeled? Are the colors used wisely?\nDetails about the text and visual presentation of concepts/ideas/story points (everything which is not strictly a data visualization)?"
+    "text": "Instructor’s trials in VisCom_Playground GitHub Repo\n\n\n\nSlides Direct Link\n\nFind the live recording in the Course’s Team’s Recording Folder.\n\n\n\nCoviD Pandemic and Summerbreaks\nFollow the Direct Link to the slides!\nAnalyse the Data Story\n\nWhat is the main insight?\nWho is the target audience?\nWhat is the story structure?\nWhat are the data sources?\n\n\nList all what is necessary to reproduce the analysis\n\n\nWhat metrics are used?\n\n\nWhat new metrics are computed? Try to list all.\nHow is the raw data transformed mathematically?\n\n\nGot through the slides one by one\n\n\nWhat is the purpose of each slide?\nIs anything missing at the stage of the story? A slide needed before? What could be emphasized or removed?\nDetailed analysis/critique of the visuals? Is there clutter (unnecessary elements)? Is everything labeled? Are the colors used wisely?\nDetails about the text and visual presentation of concepts/ideas/story points (everything which is not strictly a data visualization)?\n\nGroup discussion.",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 04"
+    ]
   },
   {
     "objectID": "tasks/04-week.html#material",
     "href": "tasks/04-week.html#material",
     "title": "Week 04",
     "section": "",
-    "text": "Slides Direct Link\n\nFind the live recording in the Course’s Team’s Recording Folder.\n\n\n\nCoviD Pandemic and Summerbreaks\nFollow the Direct Link to the slides!\nAnalyse the Data Story\n\nWhat is the main insight?\nWho is the target audience?\nWhat is the story structure?\nWhat are the data sources?\n\n\nList all what is necessary to reproduce the analysis\n\n\nWhat metrics are used?\n\n\nWhat new metrics are computed? Try to list all.\nHow is the raw data transformed mathematically?\n\n\nGot through the slides one by one\n\n\nWhat is the purpose of each slide?\nIs anything missing at the stage of the story? A slide needed before? What could be emphasized or removed?\nDetailed analysis/critique of the visuals? Is there clutter (unnecessary elements)? Is everything labeled? Are the colors used wisely?\nDetails about the text and visual presentation of concepts/ideas/story points (everything which is not strictly a data visualization)?"
+    "text": "Instructor’s trials in VisCom_Playground GitHub Repo\n\n\n\nSlides Direct Link\n\nFind the live recording in the Course’s Team’s Recording Folder.\n\n\n\nCoviD Pandemic and Summerbreaks\nFollow the Direct Link to the slides!\nAnalyse the Data Story\n\nWhat is the main insight?\nWho is the target audience?\nWhat is the story structure?\nWhat are the data sources?\n\n\nList all what is necessary to reproduce the analysis\n\n\nWhat metrics are used?\n\n\nWhat new metrics are computed? Try to list all.\nHow is the raw data transformed mathematically?\n\n\nGot through the slides one by one\n\n\nWhat is the purpose of each slide?\nIs anything missing at the stage of the story? A slide needed before? What could be emphasized or removed?\nDetailed analysis/critique of the visuals? Is there clutter (unnecessary elements)? Is everything labeled? Are the colors used wisely?\nDetails about the text and visual presentation of concepts/ideas/story points (everything which is not strictly a data visualization)?\n\nGroup discussion.",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 04"
+    ]
+  },
+  {
+    "objectID": "tasks/04-week.html#readings",
+    "href": "tasks/04-week.html#readings",
+    "title": "Week 04",
+    "section": "Readings",
+    "text": "Readings\nTo come.",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 04"
+    ]
   },
   {
     "objectID": "tasks/04-week.html#assigmments",
     "href": "tasks/04-week.html#assigmments",
     "title": "Week 04",
     "section": "Assigmments",
-    "text": "Assigmments\nTo come."
+    "text": "Assigmments\nTo come.",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 04"
+    ]
   },
   {
     "objectID": "tasks/02-week.html",
