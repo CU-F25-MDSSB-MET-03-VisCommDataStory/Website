@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.7.33">
 
   <meta name="author" content="Jan Lorenz">
-  <title>Visual Communication and Data Storytelling – W#05 Data Stories</title>
+  <title>Visual Communication and Data Storytelling – W#04 Relationships - Spurious Correlations</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -127,8 +127,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">W#05 Data Stories</h1>
-  <p class="subtitle">With inspiration from the Data Visualization Courses of Andrew Heiss and Data Science Box from Mine Cetinkaya-Rundel</p>
+  <h1 class="title">W#04 Relationships - Spurious Correlations</h1>
+  <p class="subtitle">With inspiration from the Data Visualization Courses of Andrew Heiss</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -139,16 +139,67 @@ Jan Lorenz
 </div>
 
 </section>
-<section id="tell-a-story" class="slide level2">
-<h2>Tell a story</h2>
-<p>What is the (main) purpose of the visualization?</p>
-
-<img data-src="img/time-series-story.png" class="r-stretch"><div style="font-size:50%;">
-<p>Credit: Angela Zoss and Eric Monson, Duke DVS</p>
-</div>
-
+<section>
+<section id="relationships---snippet-on-spurious-correlations" class="title-slide slide level1 center">
+<h1>Relationships - Snippet on Spurious Correlations</h1>
 
 </section>
+<section id="stop-eating-margarine" class="slide level2">
+<h2>Stop eating margarine!</h2>
+
+<img data-src="img/spuriouscorrelation_margerine.png" class="r-stretch"><div class="fragment">
+<p>From Tyler Vigen’s famous <a href="https://tylervigen.com/spurious/correlation/7036_popularity-of-the-distracted-boyfriend-meme_correlates-with_the-number-of-statisticians-in-new-jersey">Spurious Correlations</a></p>
+</div>
+<div class="fragment">
+<p>Read: Why this works? On <a href="https://tylervigen.com/spurious-scholar">Spurious Scholar</a></p>
+</div>
+<div class="fragment">
+<p>Recall: What does <span class="math inline">\(p &lt; 0.05\)</span> mean?</p>
+</div>
+<div class="fragment">
+<p>If there was actually real no effect, you would see data this extreme only 5% of the time.</p>
+</div>
+</section>
+<section id="dual-y-axes-give-several-options" class="slide level2">
+<h2>Dual y-axes give several options!</h2>
+<ul>
+<li>You choose where each y-axes starts and stops, which means …<br>
+… you can force the two trends to line up in many different ways.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Only do it if the two axes are really measuring the same thing!</li>
+<li>Or if you can provide a <strong>convincing reason</strong> why the different y-axis should be related in the way you do it</li>
+</ul>
+</div>
+<div class="fragment">
+<p>Alternatives:</p>
+<ul>
+<li>Use facets</li>
+<li>Use other aesthetics (color, shape, size)</li>
+</ul>
+<!-- ## Visualize Correlation
+
+$$
+r_{x, y} = \frac{\operatorname{cov}(x, y)}{\sigma_x \sigma_y}
+$$
+
+Meaning: As the value of X goes up, Y tends to go up (or down)
+.box-1[Says nothing about *how much*<br>Y changes when X changes
+
+
+
+# Comparisons 
+
+
+
+
+
+# Annotations -->
+
+
+</div>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="img/ConstructorUniversity.png" class="slide-logo"></p>
