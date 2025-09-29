@@ -389,7 +389,7 @@
     "href": "lectures/W03.html#brexit-survey-data",
     "title": "W#03 Amounts Proportions Uncertainty",
     "section": "Brexit Survey Data",
-    "text": "Brexit Survey Data\nIn September 2019, YouGov survey asked 1,639 adults in the UK the following question:\n\nIn hindsight, do you think Britain was right/wrong to vote to leave EU?\n🔲 Right to leave | 🔲 Wrong to leave | 🔲 Don’t know\n\nThe file brexit_opinions.csv in the dataset in the repository VisCom_Playground.\n\n\nLook at the first 10 rows\n\n\nCode\nlibrary(tidyverse)\nbrexit &lt;- read_csv(\"../data/brexit_opinions.csv\")\nbrexit\n\n\n# A tibble: 1,639 × 2\n   opinion region\n   &lt;chr&gt;   &lt;chr&gt; \n 1 Right   london\n 2 Right   london\n 3 Right   london\n 4 Right   london\n 5 Right   london\n 6 Right   london\n 7 Right   london\n 8 Right   london\n 9 Right   london\n10 Right   london\n# ℹ 1,629 more rows\n\n\n\nLook at 10 random rows\n\n\nCode\nbrexit |&gt; slice_sample(n = 10)\n\n\n# A tibble: 10 × 2\n   opinion    region        \n   &lt;chr&gt;      &lt;chr&gt;         \n 1 Right      rest_of_south \n 2 Right      rest_of_south \n 3 Don't know midlands_wales\n 4 Right      scot          \n 5 Wrong      rest_of_south \n 6 Right      london        \n 7 Right      rest_of_south \n 8 Right      rest_of_south \n 9 Wrong      london        \n10 Wrong      scot"
+    "text": "Brexit Survey Data\nIn September 2019, YouGov survey asked 1,639 adults in the UK the following question:\n\nIn hindsight, do you think Britain was right/wrong to vote to leave EU?\n🔲 Right to leave | 🔲 Wrong to leave | 🔲 Don’t know\n\nThe file brexit_opinions.csv in the dataset in the repository VisCom_Playground.\n\n\nLook at the first 10 rows\n\n\nCode\nlibrary(tidyverse)\nbrexit &lt;- read_csv(\"../data/brexit_opinions.csv\")\nbrexit\n\n\n# A tibble: 1,639 × 2\n   opinion region\n   &lt;chr&gt;   &lt;chr&gt; \n 1 Right   london\n 2 Right   london\n 3 Right   london\n 4 Right   london\n 5 Right   london\n 6 Right   london\n 7 Right   london\n 8 Right   london\n 9 Right   london\n10 Right   london\n# ℹ 1,629 more rows\n\n\n\nLook at 10 random rows\n\n\nCode\nbrexit |&gt; slice_sample(n = 10)\n\n\n# A tibble: 10 × 2\n   opinion    region        \n   &lt;chr&gt;      &lt;chr&gt;         \n 1 Don't know north         \n 2 Wrong      north         \n 3 Wrong      north         \n 4 Don't know midlands_wales\n 5 Wrong      north         \n 6 Right      north         \n 7 Right      north         \n 8 Don't know midlands_wales\n 9 Wrong      rest_of_south \n10 Wrong      london"
   },
   {
     "objectID": "lectures/W03.html#first-basic-visuals-with-geom_bar",
@@ -1050,8 +1050,8 @@
     "objectID": "milestones.html#m4",
     "href": "milestones.html#m4",
     "title": "Project Milestones",
-    "section": "Milestone: Data story and storyboard 📖",
-    "text": "Milestone: Data story and storyboard 📖\n\nDescribed the audience you want to address\nHave all your story points (e.g. as post its) drafted as a story board on paper (or in a digital tool).\nDraft all slide titles in the presentaton slidedeck.",
+    "section": "Milestone 4: Data story and storyboard 📖",
+    "text": "Milestone 4: Data story and storyboard 📖\n\nDescribed the audience you want to address\nHave all your story points (e.g. as post its) drafted as a story board on paper (or in a digital tool).\nDraft all slide titles in the presentaton slidedeck.",
     "crumbs": [
       "Syllabus",
       "Project Milestones"
@@ -1061,8 +1061,8 @@
     "objectID": "milestones.html#m5",
     "href": "milestones.html#m5",
     "title": "Project Milestones",
-    "section": "Milestone: Presentation 💬",
-    "text": "Milestone: Presentation 💬\n\nFinalized your slidedeck as part of the project delivery. (Additional minor graphical improvements are allowed afterwards.)\nTold your data story with the help of your slidedeck in class!",
+    "section": "Milestone 5: Presentation 💬",
+    "text": "Milestone 5: Presentation 💬\n\nFinalized your slidedeck as part of the project delivery. (Additional minor graphical improvements are allowed afterwards.)\nTold your data story with the help of your slidedeck in class!",
     "crumbs": [
       "Syllabus",
       "Project Milestones"
@@ -1072,8 +1072,8 @@
     "objectID": "milestones.html#m6",
     "href": "milestones.html#m6",
     "title": "Project Milestones",
-    "section": "Milestone: Final report 📄",
-    "text": "Milestone: Final report 📄\n\nFinalized your written report.\nChecked if the rendering works and the html-files opened and a appear as they should in a local browser.\nCleaned repository (removed unnecessary files etc.) and pushed a final commit by the deadline is set in the Academic Calendar.\nDecided if you want to publish your report on the web.",
+    "section": "Milestone 6: Final report 📄",
+    "text": "Milestone 6: Final report 📄\n\nFinalized your written report.\nChecked if the rendering works and the html-files opened and a appear as they should in a local browser.\nCleaned repository (removed unnecessary files etc.) and pushed a final commit by the deadline is set in the Academic Calendar.\nDecided if you want to publish your report on the web.",
     "crumbs": [
       "Syllabus",
       "Project Milestones"
@@ -1115,11 +1115,11 @@
     ]
   },
   {
-    "objectID": "tasks/04-week.html#readings",
-    "href": "tasks/04-week.html#readings",
+    "objectID": "tasks/04-week.html#assigmments-readings",
+    "href": "tasks/04-week.html#assigmments-readings",
     "title": "Week 04",
-    "section": "Readings",
-    "text": "Readings\nTo come.",
+    "section": "Assigmments / Readings",
+    "text": "Assigmments / Readings\n\nRead Chapter 4 in Dykes (2019), consult the Reading Remarks for the Chapter.\nPrepare things to share in class:\n\nPlease find a data story you find interesting and well-crafted on the internet and\n\nBe prepared to share the link on Teams on Tuesday, so that we can look at it in class.\nPrepare to walk us through the data story and explain what it is about and what you find well-crafted.\n\nFind a data source that can build the basis to work out a data story. Be prepared to share it in class, and outline in about 3 sentences what the data story could be about. It can be easy or challenging. We will discuss it briefly. It can be something you want to do, but it can just be an idea. Alternatively, if you do not find data, prepare a topic for a data story. We can then briefly discuss how to find out if data is available for it.",
     "crumbs": [
       "Syllabus",
       "Schedule",
@@ -1127,11 +1127,11 @@
     ]
   },
   {
-    "objectID": "tasks/04-week.html#assigmments",
-    "href": "tasks/04-week.html#assigmments",
+    "objectID": "tasks/04-week.html#additional-readings",
+    "href": "tasks/04-week.html#additional-readings",
     "title": "Week 04",
-    "section": "Assigmments",
-    "text": "Assigmments\nTo come.",
+    "section": "Additional readings",
+    "text": "Additional readings\nChapter 12 in Fundamentals of Data Visualization: Visualizing associations among two or more quantitative variables (Wilke 2018)\nChapter 13 in Fundamentals of Data Visualization: Visualizing time series and other functions of an independent variable (Wilke 2018)\nChapter 14 in Fundamentals of Data Visualization: Visualizing trends (Wilke 2018)",
     "crumbs": [
       "Syllabus",
       "Schedule",
@@ -1177,9 +1177,50 @@
   {
     "objectID": "tasks/05-week.html",
     "href": "tasks/05-week.html",
-    "title": "Task for Week 5: Preparations for Week 6",
+    "title": "Week 05",
     "section": "",
-    "text": "Check the boxes when done. I provide some good feeling of having it done 🙂.\nForm: Project and Teams Check-In"
+    "text": "Slides Direct Link\n\nFind the live recording in the Course’s Team’s Recording Folder.",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 05"
+    ]
+  },
+  {
+    "objectID": "tasks/05-week.html#material",
+    "href": "tasks/05-week.html#material",
+    "title": "Week 05",
+    "section": "",
+    "text": "Slides Direct Link\n\nFind the live recording in the Course’s Team’s Recording Folder.",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 05"
+    ]
+  },
+  {
+    "objectID": "tasks/05-week.html#assigmments-readings",
+    "href": "tasks/05-week.html#assigmments-readings",
+    "title": "Week 05",
+    "section": "Assigmments / Readings",
+    "text": "Assigmments / Readings\n\nRead Chapter 5 in Dykes (2019), consult the Reading Remarks for the Chapter.\nThink about the data story you want to do and fill the Project https://forms.office.com/e/UZb7NFxLZB by Friday, 2025-10-03. Contact fellow students if you want to form a team of two. (In special cases teams of three are possible, please contact me in that case.)",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 05"
+    ]
+  },
+  {
+    "objectID": "tasks/05-week.html#additional-readings",
+    "href": "tasks/05-week.html#additional-readings",
+    "title": "Week 05",
+    "section": "Additional readings",
+    "text": "Additional readings\nChapter 29 in Fundamentals of Data Visualization: Telling a story and making a point",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 05"
+    ]
   },
   {
     "objectID": "tasks/01-week.html",
@@ -1253,7 +1294,7 @@
     "href": "tasks/03-week.html#assignments-readings",
     "title": "Week 03",
     "section": "Assignments / Readings",
-    "text": "Assignments / Readings\n\nRead Chapter 3 in Dykes (2019), consult the Reading Remarks for the Chapter.\n\nComplete the corresponding reading assignment on Teams: Click the Assignments Tab and write your engagement comments in your personal class notebook there.\n\n\nMake one visual where you visualize distributions of a numerical variable over different categories. Use the data you find in the VisCom_Playground in the CU-F25-MDSSB-MET-03-VisCommDataStory Repositories. You can also use data you find yourself. We want to share these in class.",
+    "text": "Assignments / Readings\n\nRead Chapter 3 in Dykes (2019), consult the Reading Remarks for the Chapter.\nMake one visual where you visualize distributions of a numerical variable over different categories. Use the data you find in the VisCom_Playground in the CU-F25-MDSSB-MET-03-VisCommDataStory Repositories. You can also use data you find yourself. We want to share these in class.",
     "crumbs": [
       "Syllabus",
       "Schedule",
@@ -1597,10 +1638,108 @@
     "text": "Dual y-axes give several options!\n\nYou choose where each y-axes starts and stops, which means …\n… you can force the two trends to line up in many different ways.\n\n\n\nOnly do it if the two axes are really measuring the same thing!\nOr if you can provide a convincing reason why the different y-axis should be related in the way you do it\n\n\n\nAlternatives:\n\nUse facets\nUse other aesthetics (color, shape, size)"
   },
   {
-    "objectID": "lectures/W05.html#tell-a-story",
-    "href": "lectures/W05.html#tell-a-story",
+    "objectID": "lectures/W05.html#visual-communication-to-tell-a-story",
+    "href": "lectures/W05.html#visual-communication-to-tell-a-story",
     "title": "W#05 Data Stories",
-    "section": "Tell a story",
-    "text": "Tell a story\nWhat is the (main) purpose of the visualization?\n\n\nCredit: Angela Zoss and Eric Monson, Duke DVS"
+    "section": "Visual Communication \\(\\to\\) Tell a story",
+    "text": "Visual Communication \\(\\to\\) Tell a story\n\n\nCredit: Angela Zoss and Eric Monson, Duke DVS, from Data Science Box from Mine Cetinkaya-Rundel”"
+  },
+  {
+    "objectID": "lectures/W05.html#why-do-we-need-to-tell-a-story",
+    "href": "lectures/W05.html#why-do-we-need-to-tell-a-story",
+    "title": "W#05 Data Stories",
+    "section": "Why do we need to tell a story?",
+    "text": "Why do we need to tell a story?\n\nMost data visualization is done for the purpose of communication.\nWe have insights from data, and we have a potential audience for it.\nTo communicate successfully, we have to present a clear and exciting story.\nThe need for a story may seem disturbing to scientists and engineers, who may equate it with making things up, putting a spin on things, or overselling results.\nThis perspective misses the important role that stories play in reasoning and memory!\nMoreover, any communication creates a story in the audience’s minds. If we don’t provide a clear story ourselves, then our audience will make one up. In the best-case scenario, the story they make up is reasonably close to our own view of the material presented. However, it can be and often is much worse. The made-up story could be “this is boring,” “the author is wrong,” or “the author is incompetent.\n\n\nSo, we have to do it, even we tend to not wanting to do it…\n\n\n\nFrom: Chapter 29 in Fundamentals of Data Visualization: Telling a story and making a point (Wilke 2018)"
+  },
+  {
+    "objectID": "lectures/W05.html#data-visuals-narrative",
+    "href": "lectures/W05.html#data-visuals-narrative",
+    "title": "W#05 Data Stories",
+    "section": "Data, Visuals, Narrative",
+    "text": "Data, Visuals, Narrative\n\n\nThe three essential elements of data stories.\n\n\n\nExplain. Narrative coupled with data.\n\nWhat’s happening in the data?\nWhat is the context?\nGuide through the data structure!\nWhy is a particular insight important?\n\nEnlighten. Visuals applied to data.\n\nSome insights are hard with numbers only.\nShow patterns and outliers otherwise hidden.\n\nEngage. Narrative and visuals merged together.\n\nEngage (or even entertain) an audience.\nVisuals capture interest, only a story holds attention."
+  },
+  {
+    "objectID": "lectures/W05.html#aristotles-rhetoric-perspectives-for-a-storyteller",
+    "href": "lectures/W05.html#aristotles-rhetoric-perspectives-for-a-storyteller",
+    "title": "W#05 Data Stories",
+    "section": "Aristotle’s rhetoric perspectives for a Storyteller",
+    "text": "Aristotle’s rhetoric perspectives for a Storyteller\n\n\n\n\n\nEthos an appeal to credibility\nLogos an appeal to logic or reason\nPathos an appeal to emotion\nTelos an appeal to purpose\nKairos an appeal to timeliness (opportune moment)"
+  },
+  {
+    "objectID": "lectures/W05.html#data-story-continuum",
+    "href": "lectures/W05.html#data-story-continuum",
+    "title": "W#05 Data Stories",
+    "section": "Data Story Continuum",
+    "text": "Data Story Continuum\n\nWith Data Storytelling you typically tend towards the right hand side."
+  },
+  {
+    "objectID": "lectures/W05.html#storyframing",
+    "href": "lectures/W05.html#storyframing",
+    "title": "W#05 Data Stories",
+    "section": "Storyframing",
+    "text": "Storyframing\n\nBefore you communicate insight, you must find one!\nFocus on key dimensions and find key metrics"
+  },
+  {
+    "objectID": "lectures/W05.html#anatomy-of-a-data-story",
+    "href": "lectures/W05.html#anatomy-of-a-data-story",
+    "title": "W#05 Data Stories",
+    "section": "Anatomy of a Data Story",
+    "text": "Anatomy of a Data Story"
+  },
+  {
+    "objectID": "lectures/W05.html#your-storytelling-project",
+    "href": "lectures/W05.html#your-storytelling-project",
+    "title": "W#05 Data Stories",
+    "section": "Your Storytelling Project",
+    "text": "Your Storytelling Project\nYou will tell the story in both formats with a focus on the Narrative Structure.\n\n\nYour report will have two parts:\n\nSlide deck and presentation: Narrative structure\nClassical Report as classical HTML page: Inverted pyramid structure"
+  },
+  {
+    "objectID": "lectures/W05.html#six-essential-elements-of-data-stories",
+    "href": "lectures/W05.html#six-essential-elements-of-data-stories",
+    "title": "W#05 Data Stories",
+    "section": "Six essential elements of data stories",
+    "text": "Six essential elements of data stories\n\n\nYour project slide deck and presentation matches a Data Presentation\nYour project report matches a Curated Report (and Dashboard)"
+  },
+  {
+    "objectID": "lectures/W05.html#differences-in-communication",
+    "href": "lectures/W05.html#differences-in-communication",
+    "title": "W#05 Data Stories",
+    "section": "Differences in Communication",
+    "text": "Differences in Communication\n\n\nYour project slide deck and presentation is direct communication\nYour project report is indirect communication"
+  },
+  {
+    "objectID": "lectures/W05.html#data-storytelling-arc",
+    "href": "lectures/W05.html#data-storytelling-arc",
+    "title": "W#05 Data Stories",
+    "section": "Data Storytelling Arc",
+    "text": "Data Storytelling Arc"
+  },
+  {
+    "objectID": "lectures/W05.html#compared-to-other-communication-models",
+    "href": "lectures/W05.html#compared-to-other-communication-models",
+    "title": "W#05 Data Stories",
+    "section": "Compared to other communication models",
+    "text": "Compared to other communication models"
+  },
+  {
+    "objectID": "lectures/W05.html#examples-of-story-points",
+    "href": "lectures/W05.html#examples-of-story-points",
+    "title": "W#05 Data Stories",
+    "section": "Examples of story points",
+    "text": "Examples of story points"
+  },
+  {
+    "objectID": "lectures/W05.html#storyboarding",
+    "href": "lectures/W05.html#storyboarding",
+    "title": "W#05 Data Stories",
+    "section": "Storyboarding",
+    "text": "Storyboarding\n\nDefinition: A story is an account of causally related or connected series of events.\nA narrative always has a one-dimensional linear sequence, but we can decide\n\nwhat is in and\nin which order.\n\nStoryboarding is a technique from the movie industry (invented at Disney’s in the 30’s, now part of pre-visualization) which can also be used for data presentations.\nMain purpose: Build the story, not the exact visualizations (rough ideas are enough)!\n\nA storyboard is Milestone 4"
+  },
+  {
+    "objectID": "lectures/W05.html#example-storyboard",
+    "href": "lectures/W05.html#example-storyboard",
+    "title": "W#05 Data Stories",
+    "section": "Example Storyboard",
+    "text": "Example Storyboard\n\nBefore you have to achieve milestones 0, 1, 2, and 3 …"
   }
 ]

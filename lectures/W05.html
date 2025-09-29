@@ -128,7 +128,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">W#05 Data Stories</h1>
-  <p class="subtitle">With inspiration from the Data Visualization Courses of Andrew Heiss and Data Science Box from Mine Cetinkaya-Rundel</p>
+  <p class="subtitle">Many material from Dykes (2019)</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -139,13 +139,148 @@ Jan Lorenz
 </div>
 
 </section>
-<section id="tell-a-story" class="slide level2">
-<h2>Tell a story</h2>
-<p>What is the (main) purpose of the visualization?</p>
+<section id="visual-communication-to-tell-a-story" class="slide level2">
+<h2>Visual Communication <span class="math inline">\(\to\)</span> Tell a story</h2>
 
 <img data-src="img/time-series-story.png" class="r-stretch"><div style="font-size:50%;">
-<p>Credit: Angela Zoss and Eric Monson, Duke DVS</p>
+<p>Credit: Angela Zoss and Eric Monson, Duke DVS, from Data Science Box from Mine Cetinkaya-Rundel”</p>
 </div>
+</section>
+<section id="why-do-we-need-to-tell-a-story" class="slide level2">
+<h2>Why do we need to tell a story?</h2>
+<ul>
+<li class="fragment">Most data visualization is done for the purpose of communication.</li>
+<li class="fragment">We have insights from data, and we have a potential audience for it.</li>
+<li class="fragment">To communicate successfully, we have to present a clear and exciting story.</li>
+<li class="fragment"><span style="color:blue;">The need for a story may seem disturbing to scientists and engineers, who may equate it with making things up, putting a spin on things, or overselling results.</span></li>
+<li class="fragment">This perspective misses the important role that stories play in reasoning and memory!</li>
+<li class="fragment">Moreover, any communication creates a story in the audience’s minds. If we don’t provide a clear story ourselves, then our audience will make one up. In the best-case scenario, the story they make up is reasonably close to our own view of the material presented. However, it can be and often is much worse. The made-up story could be “this is boring,” “the author is wrong,” or “the author is incompetent.</li>
+</ul>
+<div class="fragment">
+<p>So, we have to do it, even we tend to not wanting to do it…</p>
+
+</div>
+<aside><div>
+<p>From: <a href="https://clauswilke.com/dataviz/telling-a-story.html">Chapter 29 in Fundamentals of Data Visualization: Telling a story and making a point</a> (Wilke 2018)</p>
+</div></aside></section>
+<section id="data-visuals-narrative" class="slide level2 smaller">
+<h2>Data, Visuals, <span style="color:blue;">Narrative</span></h2>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p>The three essential elements of data stories.</p>
+<p><img data-src="img/dykes/datanarrativesvisuals.png"></p>
+</div><div class="column" style="width:65%;">
+<ul>
+<li><span style="color:blue;"><strong>Explain.</strong></span> Narrative coupled with data.
+<ul>
+<li>What’s happening in the data?</li>
+<li>What is the context?</li>
+<li>Guide through the data structure!</li>
+<li>Why is a particular insight important?</li>
+</ul></li>
+<li><strong>Enlighten.</strong> Visuals applied to data.
+<ul>
+<li>Some insights are hard with numbers only.</li>
+<li>Show patterns and outliers otherwise hidden.</li>
+</ul></li>
+<li><span style="color:blue;"><strong>Engage.</strong></span> Narrative and visuals merged together.
+<ul>
+<li>Engage (or even entertain) an audience.</li>
+<li>Visuals capture interest, only a story holds attention.</li>
+</ul></li>
+</ul>
+</div></div>
+</section>
+<section id="aristotles-rhetoric-perspectives-for-a-storyteller" class="slide level2 smaller">
+<h2>Aristotle’s rhetoric perspectives for a Storyteller</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/dykes/aristotle_rhetoric.png"></p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><strong>Ethos</strong> an appeal to credibility</li>
+<li><strong>Logos</strong> an appeal to logic or reason</li>
+<li><strong>Pathos</strong> an appeal to emotion</li>
+<li><em>Telos</em> an appeal to purpose</li>
+<li><em>Kairos</em> an appeal to timeliness (opportune moment)</li>
+</ul>
+</div></div>
+</section>
+<section id="data-story-continuum" class="slide level2 smaller">
+<h2>Data Story Continuum</h2>
+
+<img data-src="img/dykes/datastorycontinuum.png" class="r-stretch"><p><span style="color:red;">With Data Storytelling you typically tend towards the <em>right hand</em> side.</span></p>
+</section>
+<section id="storyframing" class="slide level2 smaller">
+<h2>Storyframing</h2>
+<ul>
+<li>Before you communicate insight, you must find one!</li>
+<li>Focus on key dimensions and find key metrics</li>
+</ul>
+
+<img data-src="img/dykes/storyframing_vs_storytelling.png" class="r-stretch"></section>
+<section id="anatomy-of-a-data-story" class="slide level2 smaller">
+<h2>Anatomy of a Data Story</h2>
+
+<img data-src="img/dykes/storyformat.png" class="r-stretch"></section>
+<section id="your-storytelling-project" class="slide level2 smaller">
+<h2>Your Storytelling Project</h2>
+<p>You will tell the story in both formats with a focus on the <em>Narrative Structure</em>.</p>
+
+<img data-src="img/dykes/storyformat.png" style="width:40.0%" class="r-stretch"><div class="fragment">
+<p>Your report will have two parts:</p>
+<ol type="1">
+<li><span style="color:blue;"><strong>Slide deck and presentation</strong></span>: Narrative structure</li>
+<li><span style="color:blue;">Classical <strong>Report</strong> as classical HTML page</span>: Inverted pyramid structure</li>
+</ol>
+</div>
+</section>
+<section id="six-essential-elements-of-data-stories" class="slide level2 smaller">
+<h2>Six essential elements of data stories</h2>
+
+<img data-src="img/dykes/datastories_six_elements.png" class="r-stretch"><ul>
+<li><span style="color:blue;">Your <strong>project slide deck and presentation</strong> matches a <strong>Data Presentation</strong></span></li>
+<li><span style="color:blue;">Your <strong>project report</strong> matches a <strong>Curated Report (and Dashboard)</strong></span></li>
+</ul>
+</section>
+<section id="differences-in-communication" class="slide level2 smaller">
+<h2>Differences in Communication</h2>
+
+<img data-src="img/dykes/direct_vs_indirect_comm.png" class="r-stretch"><ul>
+<li><span style="color:blue;">Your <strong>project slide deck and presentation</strong> is direct communication</span></li>
+<li><span style="color:blue;">Your <strong>project report</strong> is indirect communication</span></li>
+</ul>
+</section>
+<section id="data-storytelling-arc" class="slide level2">
+<h2>Data Storytelling Arc</h2>
+
+<img data-src="img/dykes/datastorytelling_arc.png" class="r-stretch"></section>
+<section id="compared-to-other-communication-models" class="slide level2">
+<h2>Compared to other communication models</h2>
+
+<img data-src="img/dykes/narrative_comm_models.png" class="r-stretch"></section>
+<section id="examples-of-story-points" class="slide level2 smaller">
+<h2>Examples of story points</h2>
+
+<img data-src="img/dykes/storypoints_9.png" class="r-stretch"></section>
+<section id="storyboarding" class="slide level2 smaller">
+<h2>Storyboarding</h2>
+<ul>
+<li>Definition: A <strong>story</strong> is an account of causally related or connected series of events.</li>
+<li>A narrative always has a one-dimensional <strong>linear sequence</strong>, but we can decide
+<ul>
+<li>what is in and</li>
+<li>in which order.</li>
+</ul></li>
+<li><strong>Storyboarding</strong> is a technique from the movie industry (invented at Disney’s in the 30’s, now part of pre-visualization) which can also be used for data presentations.</li>
+<li>Main purpose: <span style="color:blue;"><strong>Build the story, not the exact visualizations (rough ideas are enough)!</strong></span></li>
+</ul>
+<p><strong>A storyboard is Milestone 4</strong></p>
+</section>
+<section id="example-storyboard" class="slide level2">
+<h2>Example Storyboard</h2>
+
+<img data-src="img/storyboardexample.jpg" class="r-stretch"><p>Before you have to achieve milestones 0, 1, 2, and 3 …</p>
 
 
 </section>
