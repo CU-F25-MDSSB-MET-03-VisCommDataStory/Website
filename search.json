@@ -389,7 +389,7 @@
     "href": "lectures/W03.html#brexit-survey-data",
     "title": "W#03 Amounts Proportions Uncertainty",
     "section": "Brexit Survey Data",
-    "text": "Brexit Survey Data\nIn September 2019, YouGov survey asked 1,639 adults in the UK the following question:\n\nIn hindsight, do you think Britain was right/wrong to vote to leave EU?\n🔲 Right to leave | 🔲 Wrong to leave | 🔲 Don’t know\n\nThe file brexit_opinions.csv in the dataset in the repository VisCom_Playground.\n\n\nLook at the first 10 rows\n\n\nCode\nlibrary(tidyverse)\nbrexit &lt;- read_csv(\"../data/brexit_opinions.csv\")\nbrexit\n\n\n# A tibble: 1,639 × 2\n   opinion region\n   &lt;chr&gt;   &lt;chr&gt; \n 1 Right   london\n 2 Right   london\n 3 Right   london\n 4 Right   london\n 5 Right   london\n 6 Right   london\n 7 Right   london\n 8 Right   london\n 9 Right   london\n10 Right   london\n# ℹ 1,629 more rows\n\n\n\nLook at 10 random rows\n\n\nCode\nbrexit |&gt; slice_sample(n = 10)\n\n\n# A tibble: 10 × 2\n   opinion region        \n   &lt;chr&gt;   &lt;chr&gt;         \n 1 Wrong   north         \n 2 Right   north         \n 3 Wrong   midlands_wales\n 4 Right   north         \n 5 Wrong   rest_of_south \n 6 Wrong   rest_of_south \n 7 Right   midlands_wales\n 8 Wrong   rest_of_south \n 9 Right   midlands_wales\n10 Right   midlands_wales"
+    "text": "Brexit Survey Data\nIn September 2019, YouGov survey asked 1,639 adults in the UK the following question:\n\nIn hindsight, do you think Britain was right/wrong to vote to leave EU?\n🔲 Right to leave | 🔲 Wrong to leave | 🔲 Don’t know\n\nThe file brexit_opinions.csv in the dataset in the repository VisCom_Playground.\n\n\nLook at the first 10 rows\n\n\nCode\nlibrary(tidyverse)\nbrexit &lt;- read_csv(\"../data/brexit_opinions.csv\")\nbrexit\n\n\n# A tibble: 1,639 × 2\n   opinion region\n   &lt;chr&gt;   &lt;chr&gt; \n 1 Right   london\n 2 Right   london\n 3 Right   london\n 4 Right   london\n 5 Right   london\n 6 Right   london\n 7 Right   london\n 8 Right   london\n 9 Right   london\n10 Right   london\n# ℹ 1,629 more rows\n\n\n\nLook at 10 random rows\n\n\nCode\nbrexit |&gt; slice_sample(n = 10)\n\n\n# A tibble: 10 × 2\n   opinion region        \n   &lt;chr&gt;   &lt;chr&gt;         \n 1 Right   rest_of_south \n 2 Right   midlands_wales\n 3 Wrong   rest_of_south \n 4 Wrong   north         \n 5 Wrong   north         \n 6 Right   north         \n 7 Wrong   rest_of_south \n 8 Right   rest_of_south \n 9 Wrong   rest_of_south \n10 Right   north"
   },
   {
     "objectID": "lectures/W03.html#first-basic-visuals-with-geom_bar",
@@ -1018,7 +1018,7 @@
     "href": "milestones.html#m1",
     "title": "Project Milestones",
     "section": "Milestone 1: Project pitch",
-    "text": "Milestone 1: Project pitch\nFor each project: ~5 min presentation answering:\n\n🗃️ What is the data?\n💬 At least one story points/insights (max. 3 story points)\n📊 At least one visual created with the data (max. 2 visuals)\n\nFormat: Use the quarto/revealjs slide deck in your sandbox\nPresentation over MS Teams in class.\nTarget Achievements:\n\nData and topic chosen\nTeams formed\nProject repository cloned, rendering of report and presentation tested\nProject pitch done",
+    "text": "Milestone 1: Project pitch\nFor each project: ~5 min presentation answering:\n\n🗃️ What is the data?\n💬 At least one story points/insights (max. 3 story points)\n📊 At least one visual created with the data (max. 2 visuals)\n\nFormat: Use the quarto/revealjs slide deck Template.\nPresentation over MS Teams in class.\nTarget Achievements:\n\nData and topic chosen\nTeams formed\nProject repository cloned, rendering of report and presentation tested\nProject pitch done",
     "crumbs": [
       "Syllabus",
       "Project Milestones"
@@ -1040,7 +1040,7 @@
     "href": "milestones.html#m3",
     "title": "Project Milestones",
     "section": "Milestone 3: Visual Drafts 📊📈📉️",
-    "text": "Milestone 3: Visual Drafts 📊📈📉️\nTarget Achievements:\n\nFor each insight\n\na visuals drafted in the report or the presentation (a draft can be a first coded visual, or even photo of a sketch on paper)\nnotes and ideas for the final version",
+    "text": "Milestone 3: Visual Drafts 📊📈📉️\nTarget Achievements:\n\nFor each insight\n\na visual drafted in the report or the presentation (a draft can be a first coded visual, or even photo of a sketch on paper)\nnotes and ideas for the final version",
     "crumbs": [
       "Syllabus",
       "Project Milestones"
@@ -1051,7 +1051,7 @@
     "href": "milestones.html#m4",
     "title": "Project Milestones",
     "section": "Milestone 4: Data story and storyboard 📖",
-    "text": "Milestone 4: Data story and storyboard 📖\n\nDescribed the audience you want to address\nHave all your story points (e.g. as post its) drafted as a story board on paper (or in a digital tool).\nDraft all slide titles in the presentaton slidedeck.",
+    "text": "Milestone 4: Data story and storyboard 📖\nTarget Achievements:\n\nHave all your story points (e.g. as post its) drafted as a story board on paper (or in a digital tool).\nDraft slide titles in the presentaton slidedeck.",
     "crumbs": [
       "Syllabus",
       "Project Milestones"
@@ -1062,7 +1062,7 @@
     "href": "milestones.html#m5",
     "title": "Project Milestones",
     "section": "Milestone 5: Presentation 💬",
-    "text": "Milestone 5: Presentation 💬\n\nFinalized your slidedeck as part of the project delivery. (Additional minor graphical improvements are allowed afterwards.)\nTold your data story with the help of your slidedeck in class!",
+    "text": "Milestone 5: Presentation 💬\nTarget Achievements:\n\nFinalized your slidedeck as part of the project delivery. (Additional minor graphical improvements are allowed afterwards.)\nTold your data story with the help of your slidedeck in class!",
     "crumbs": [
       "Syllabus",
       "Project Milestones"
@@ -1073,7 +1073,7 @@
     "href": "milestones.html#m6",
     "title": "Project Milestones",
     "section": "Milestone 6: Final report 📄",
-    "text": "Milestone 6: Final report 📄\n\nFinalized your written report.\nChecked if the rendering works and the html-files opened and a appear as they should in a local browser.\nCleaned repository (removed unnecessary files etc.) and pushed a final commit by the deadline is set in the Academic Calendar.\nDecided if you want to publish your report on the web.",
+    "text": "Milestone 6: Final report 📄\nTarget Achievements:\n\nFinalized your written report.\nChecked if the rendering works and the html-files opened and a appear as they should in a local browser.\nCleaned repository (removed unnecessary files etc.) and pushed a final commit by the deadline is set in the Academic Calendar.\nDecided if you want to publish your report on the web.",
     "crumbs": [
       "Syllabus",
       "Project Milestones"
@@ -1259,6 +1259,114 @@
     ]
   },
   {
+    "objectID": "tasks/09-week.html",
+    "href": "tasks/09-week.html",
+    "title": "Week 09",
+    "section": "",
+    "text": "9:45 - 11:00\nTo Come\n\n\n\nA special event! A talk by a leading data visualization expert.\n11:15 - 12:30 Room RLH 274 (as part of Current Topics Seminars)\nSpeaker: Moritz Stefaner\nTitle: The Art and Beauty of Data Visualization\nAbstract: As an independent Truth & Beauty Operator, Moritz Stefaner is constantly chasing the perfect shape for information — how can we create expressive, intriguing, and elegant data experiences? Drawing on high-profile projects for the German government, WHO, and OECD, as well as innovative creative explorations, he demonstrates how effective data visualization can achieve much more than simply making charts look nicer.\n\n\nShort Bio: With a background in Cognitive Science and Interface Design, his work beautifully balances analytical and aesthetic aspects in mapping complex phenomena to support data–driven decision making. Moritz has helped clients like the OECD, Google News Initiative, Salesforce, the World Economic Forum, Deutsche Bahn and the Max Planck Research Society to find insights and beauty in large and complex data sets. He is the record winner of the Kantar Information is Beautiful awards and his work has been exhibited at Venice Biennale of Architecture, SIGGRAPH, Max Planck Science Gallery, Fondation EDF, and Ars Electronica. As a writer, co-host of the Data Stories podcast, and sought-after keynote speaker and workshop facilitator, Moritz Stefaner continues to excite more and more people about the magic that can emerge when art and science connect deeply.",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 09"
+    ]
+  },
+  {
+    "objectID": "tasks/09-week.html#material",
+    "href": "tasks/09-week.html#material",
+    "title": "Week 09",
+    "section": "",
+    "text": "9:45 - 11:00\nTo Come\n\n\n\nA special event! A talk by a leading data visualization expert.\n11:15 - 12:30 Room RLH 274 (as part of Current Topics Seminars)\nSpeaker: Moritz Stefaner\nTitle: The Art and Beauty of Data Visualization\nAbstract: As an independent Truth & Beauty Operator, Moritz Stefaner is constantly chasing the perfect shape for information — how can we create expressive, intriguing, and elegant data experiences? Drawing on high-profile projects for the German government, WHO, and OECD, as well as innovative creative explorations, he demonstrates how effective data visualization can achieve much more than simply making charts look nicer.\n\n\nShort Bio: With a background in Cognitive Science and Interface Design, his work beautifully balances analytical and aesthetic aspects in mapping complex phenomena to support data–driven decision making. Moritz has helped clients like the OECD, Google News Initiative, Salesforce, the World Economic Forum, Deutsche Bahn and the Max Planck Research Society to find insights and beauty in large and complex data sets. He is the record winner of the Kantar Information is Beautiful awards and his work has been exhibited at Venice Biennale of Architecture, SIGGRAPH, Max Planck Science Gallery, Fondation EDF, and Ars Electronica. As a writer, co-host of the Data Stories podcast, and sought-after keynote speaker and workshop facilitator, Moritz Stefaner continues to excite more and more people about the magic that can emerge when art and science connect deeply.",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 09"
+    ]
+  },
+  {
+    "objectID": "tasks/09-week.html#assigmments-readings",
+    "href": "tasks/09-week.html#assigmments-readings",
+    "title": "Week 09",
+    "section": "Assigmments / Readings",
+    "text": "Assigmments / Readings\nMaybe not complete check back in the week 09.\n\nCheck your project work against Milestone 3 and bring it to that level.",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 09"
+    ]
+  },
+  {
+    "objectID": "tasks/08-week.html",
+    "href": "tasks/08-week.html",
+    "title": "Week 08",
+    "section": "",
+    "text": "To Come",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 08"
+    ]
+  },
+  {
+    "objectID": "tasks/08-week.html#material",
+    "href": "tasks/08-week.html#material",
+    "title": "Week 08",
+    "section": "",
+    "text": "To Come",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 08"
+    ]
+  },
+  {
+    "objectID": "tasks/08-week.html#assigmments-readings",
+    "href": "tasks/08-week.html#assigmments-readings",
+    "title": "Week 08",
+    "section": "Assigmments / Readings",
+    "text": "Assigmments / Readings\nMaybe not complete check back in the week 08.\n\nCheck your project work against Milestone 2 and bring it to that level.",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 08"
+    ]
+  },
+  {
+    "objectID": "tasks/07-week.html",
+    "href": "tasks/07-week.html",
+    "title": "Week 07",
+    "section": "",
+    "text": "To Come",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 07"
+    ]
+  },
+  {
+    "objectID": "tasks/07-week.html#material",
+    "href": "tasks/07-week.html#material",
+    "title": "Week 07",
+    "section": "",
+    "text": "To Come",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 07"
+    ]
+  },
+  {
+    "objectID": "tasks/07-week.html#assigmments-readings",
+    "href": "tasks/07-week.html#assigmments-readings",
+    "title": "Week 07",
+    "section": "Assigmments / Readings",
+    "text": "Assigmments / Readings\nMaybe not complete check back in the week 07.\n\nCheck your project work against Milestone 1 and bring it to that level.",
+    "crumbs": [
+      "Syllabus",
+      "Schedule",
+      "Week 07"
+    ]
+  },
+  {
     "objectID": "tasks/01-week.html",
     "href": "tasks/01-week.html",
     "title": "Week 01",
@@ -1342,7 +1450,7 @@
     "href": "tasks/03-week.html#additional-readings",
     "title": "Week 03",
     "section": "Additional readings",
-    "text": "Additional readings\nChapter 6 in Fundamentals of Data Visualization: Visualizing amounts (Wilke 2018) Chapter 7 in Fundamentals of Data Visualization: Visualizing distributions: Histograms and density plots (Wilke 2018) Chapter 10 in Fundamentals of Data Visualization: Visualising proportions (Wilke 2018)",
+    "text": "Additional readings\nChapter 6 in Fundamentals of Data Visualization: Visualizing amounts (Wilke 2018)\nChapter 7 in Fundamentals of Data Visualization: Visualizing distributions: Histograms and density plots (Wilke 2018)\nChapter 10 in Fundamentals of Data Visualization: Visualising proportions (Wilke 2018)",
     "crumbs": [
       "Syllabus",
       "Schedule",
@@ -1450,7 +1558,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Student projects and student schedules: Course-Organization-Resources Repo\nClass = whole class meets together\nTeam = team sessions with the instructor in the same time (no class meeting)\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDates\nHow\nTopic\nReadings\nMilestones\n\n\n\n\n1\nSep 02\nClass\nWhat is Visual Communication? What is Data Storytelling?\nCh 1\n\n\n\n2\nSep 09\nClass\nData Visualization: Grammar of Graphics\nCh 2\n\n\n\n3\nSep 16\nClass\nAmounts Proportions Uncertainty\nCh 3\n\n\n\n4\nSep 23\nClass\nRelationships Comparisons Annotations\nCh 4\n\n\n\n5\nSep 30\nClass\nData Stories\nCh 5\n\n\n\n6\nOct 07\nTeam\nIndividual Coaching: Projects Work Start!\nCh 6\n0\n\n\n7\nOct 14\nClass\nStudent Project Pitches\nCh 7\n1\n\n\n8\nOct 21\nClass\nMain Insight\nCh 8\n2\n\n\n9\nOct 28\nClass\nDrafting your Visuals!\n\n3\n\n\n10\nNov 04\nClass\nStory boarding!\n\n4\n\n\n11\nNov 11\nTeam\nIndividual Coaching\n\n\n\n\n12\nNov 18\nClass\nPolishing your Visuals\n\n\n\n\n13\nNov 25\nClass\nStudent Presentations\n\n5\n\n\n14\nDec 02\nno class\nInstructor is unavailable\n\n\n\n\nDec\nMeet\nTeam\nFeedback on presentation / Advice for Finalization\n\n\n\n\n \nEnd of Term\nSubmission\nFinal report and slidedeck\n\n6",
+    "text": "Student projects and student schedules: Course-Organization-Resources Repo\nClass = whole class meets together\nTeam = team sessions with the instructor in the same time (no class meeting)\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDates\nHow\nTopic\nReadings\nMilestones\n\n\n\n\n1\nSep 02\nClass\nWhat is Visual Communication? What is Data Storytelling?\nCh 1\n\n\n\n2\nSep 09\nClass\nData Visualization: Grammar of Graphics\nCh 2\n\n\n\n3\nSep 16\nClass\nAmounts Proportions Uncertainty\nCh 3\n\n\n\n4\nSep 23\nClass\nRelationships Comparisons Annotations\nCh 4\n\n\n\n5\nSep 30\nClass\nData Stories\nCh 5\n\n\n\n6\nOct 07\nTeam\nIndividual Coaching: Projects Work Start!\nCh 6\n0\n\n\n7\nOct 14\nClass\nStudent Project Pitches\nCh 7\n1\n\n\n8\nOct 21\nClass\nMain Insight\nCh 8\n2\n\n\n9\nOct 28\nClass\nSession 1: Drafting your Visuals! (only 9:45-11:00)  11:15 - 12:30 Session 2: The Art and Science of Data Visualization Talk by a leading Data Visualization Expert (Room RLH 274)\n\n3\n\n\n10\nNov 04\nClass\nStory boarding!\n\n4\n\n\n11\nNov 11\nTeam\nIndividual Coaching\n\n\n\n\n12\nNov 18\nClass\nPolishing your Visuals\n\n\n\n\n13\nNov 25\nClass\nStudent Presentations\n\n5\n\n\n14\nDec 02\nno class\nInstructor is unavailable\n\n\n\n\nDec\nMeet\nTeam\nFeedback on presentation / Advice for Finalization\n\n\n\n\n \nEnd of Term\nSubmission\nFinal report and slidedeck\n\n6",
     "crumbs": [
       "Syllabus",
       "Schedule"
