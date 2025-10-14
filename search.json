@@ -389,7 +389,7 @@
     "href": "lectures/W03.html#brexit-survey-data",
     "title": "W#03 Amounts Proportions Uncertainty",
     "section": "Brexit Survey Data",
-    "text": "Brexit Survey Data\nIn September 2019, YouGov survey asked 1,639 adults in the UK the following question:\n\nIn hindsight, do you think Britain was right/wrong to vote to leave EU?\n🔲 Right to leave | 🔲 Wrong to leave | 🔲 Don’t know\n\nThe file brexit_opinions.csv in the dataset in the repository VisCom_Playground.\n\n\nLook at the first 10 rows\n\n\nCode\nlibrary(tidyverse)\nbrexit &lt;- read_csv(\"../data/brexit_opinions.csv\")\nbrexit\n\n\n# A tibble: 1,639 × 2\n   opinion region\n   &lt;chr&gt;   &lt;chr&gt; \n 1 Right   london\n 2 Right   london\n 3 Right   london\n 4 Right   london\n 5 Right   london\n 6 Right   london\n 7 Right   london\n 8 Right   london\n 9 Right   london\n10 Right   london\n# ℹ 1,629 more rows\n\n\n\nLook at 10 random rows\n\n\nCode\nbrexit |&gt; slice_sample(n = 10)\n\n\n# A tibble: 10 × 2\n   opinion region       \n   &lt;chr&gt;   &lt;chr&gt;        \n 1 Wrong   london       \n 2 Wrong   north        \n 3 Wrong   london       \n 4 Right   north        \n 5 Wrong   north        \n 6 Right   north        \n 7 Wrong   london       \n 8 Right   rest_of_south\n 9 Right   rest_of_south\n10 Wrong   rest_of_south"
+    "text": "Brexit Survey Data\nIn September 2019, YouGov survey asked 1,639 adults in the UK the following question:\n\nIn hindsight, do you think Britain was right/wrong to vote to leave EU?\n🔲 Right to leave | 🔲 Wrong to leave | 🔲 Don’t know\n\nThe file brexit_opinions.csv in the dataset in the repository VisCom_Playground.\n\n\nLook at the first 10 rows\n\n\nCode\nlibrary(tidyverse)\nbrexit &lt;- read_csv(\"../data/brexit_opinions.csv\")\nbrexit\n\n\n# A tibble: 1,639 × 2\n   opinion region\n   &lt;chr&gt;   &lt;chr&gt; \n 1 Right   london\n 2 Right   london\n 3 Right   london\n 4 Right   london\n 5 Right   london\n 6 Right   london\n 7 Right   london\n 8 Right   london\n 9 Right   london\n10 Right   london\n# ℹ 1,629 more rows\n\n\n\nLook at 10 random rows\n\n\nCode\nbrexit |&gt; slice_sample(n = 10)\n\n\n# A tibble: 10 × 2\n   opinion    region       \n   &lt;chr&gt;      &lt;chr&gt;        \n 1 Right      rest_of_south\n 2 Right      scot         \n 3 Wrong      london       \n 4 Don't know london       \n 5 Right      rest_of_south\n 6 Right      north        \n 7 Right      north        \n 8 Wrong      north        \n 9 Right      north        \n10 Wrong      rest_of_south"
   },
   {
     "objectID": "lectures/W03.html#first-basic-visuals-with-geom_bar",
@@ -1199,11 +1199,11 @@
     ]
   },
   {
-    "objectID": "tasks/06-week.html#assigmments-readings",
-    "href": "tasks/06-week.html#assigmments-readings",
+    "objectID": "tasks/06-week.html#assignments-readings",
+    "href": "tasks/06-week.html#assignments-readings",
     "title": "Week 06",
-    "section": "Assigmments / Readings",
-    "text": "Assigmments / Readings\n\nRead Chapter 6 in Dykes (2019), consult the Reading Remarks for the Chapter.\nPrepare your project pitch for Week #07.\n\nPrepare it in your project repository. You can crete it from the DataStory_Template.\nHave all essential parts outlined at Milestone 1: Project Pitch.\nPerfection in visualization is not the goal at this stage, but having something to show and discuss.\nThis is an example project pitch presentation for the Data Story: CoviD Pandemic and Summerbreaks",
+    "section": "Assignments / Readings",
+    "text": "Assignments / Readings\n\nRead Chapter 6 in Dykes (2019), consult the Reading Remarks for the Chapter.\nPrepare your project pitch for Week #07.\n\nPrepare it in your project repository. You can create it from the DataStory_Template.\nHave all essential parts outlined at Milestone 1: Project Pitch.\nPerfection in visualization is not the goal at this stage, but having something to show and discuss.\nThis is an example project pitch presentation for the Data Story: CoviD Pandemic and Summerbreaks",
     "crumbs": [
       "Syllabus",
       "Schedule",
@@ -1319,11 +1319,11 @@
     ]
   },
   {
-    "objectID": "tasks/08-week.html#assigmments-readings",
-    "href": "tasks/08-week.html#assigmments-readings",
+    "objectID": "tasks/08-week.html#assignments-readings",
+    "href": "tasks/08-week.html#assignments-readings",
     "title": "Week 08",
-    "section": "Assigmments / Readings",
-    "text": "Assigmments / Readings\nMaybe not complete check back in the week 08.\n\nCheck your project work against Milestone 2 and bring it to that level.",
+    "section": "Assignments / Readings",
+    "text": "Assignments / Readings\nMaybe not complete check back in the week 08.\n\nCheck your project work against Milestone 2 and bring it to that level.",
     "crumbs": [
       "Syllabus",
       "Schedule",
@@ -1355,11 +1355,11 @@
     ]
   },
   {
-    "objectID": "tasks/07-week.html#assigmments-readings",
-    "href": "tasks/07-week.html#assigmments-readings",
+    "objectID": "tasks/07-week.html#assignments-readings",
+    "href": "tasks/07-week.html#assignments-readings",
     "title": "Week 07",
-    "section": "Assigmments / Readings",
-    "text": "Assigmments / Readings\n\nRead Chapter 7 in Dykes (2019), consult the Reading Remarks for the Chapter.\nCheck your project work against Milestone 1 and bring it to that level.\nPrepare for the classroom activities in Week 08\n\nDraft at least 3 visuals as potential story points.\nA story point is a SLIDE in your presentation. Drafting a story point can mean a non polished visual made with the real data, a visual sketch you did on paper and photograph to have it in the slides, or notes describing the visual to make\nWrite three short narrative texts for example in your repo’s report/index file\n\nWhat is the audience of your report? The audience are the people you imagine to view your presentation or read your report. Describe three different potential individuals in your audience. You are allowed to imagine a broader audience than our class. Answer for example: Who are they? Why are they interested? What is their connection to the topic?\nWrite a short version of your story in the format of an abstract (6-7 sentences, 150-200 words)\nWrite a one-sentence version of the abstract which contains the main insight of your report.\nExample for the Data Story [CoViD Pandemic and Summerbreaks](https://janlorenz.github.io/summerbreakcovid/: “School holidays and summer vacation contributed made the spread of CoViD19 faster/slower (to find out!). So, probably prevention measures at school and in the work place worked better/worse (to find out!) than those for leisure activites and those taken with relatives and friends.”",
+    "section": "Assignments / Readings",
+    "text": "Assignments / Readings\n\nRead Chapter 7 in Dykes (2019), consult the Reading Remarks for the Chapter.\nCheck your project work against Milestone 1 and bring it to that level.\nPrepare for the classroom activities in Week 08\n\nDraft at least 3 visuals as potential story points.\nA story point is a SLIDE in your presentation. Drafting a story point can mean a non polished visual made with the real data, a visual sketch you did on paper and photograph to have it in the slides, or notes describing the visual to make\nWrite three short narrative texts for example in your repo’s report/index file\n\nWhat is the audience of your report? The audience are the people you imagine to view your presentation or read your report. Describe three different potential individuals in your audience. You are allowed to imagine a broader audience than our class. Answer for example: Who are they? Why are they interested? What is their connection to the topic?\nWrite a short version of your story in the format of an abstract (6-7 sentences, 150-200 words)\nWrite a one-sentence version of the abstract which contains the main insight of your report.\nExample for the Data Story [CoViD Pandemic and Summerbreaks](https://janlorenz.github.io/summerbreakcovid/: “School holidays and summer vacation contributed made the spread of CoViD19 faster/slower (to find out!). So, probably prevention measures at school and in the work place worked better/worse (to find out!) than those for leisure activites and those taken with relatives and friends.”",
     "crumbs": [
       "Syllabus",
       "Schedule",
