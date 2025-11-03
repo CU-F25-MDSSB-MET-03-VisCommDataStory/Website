@@ -69,7 +69,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../styles/styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light">
@@ -99,7 +99,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../milestones.html"> 
-<span class="menu-text">Projects</span></a>
+<span class="menu-text">Project Milestones</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../readings.html"> 
@@ -212,6 +212,30 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Week 09</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tasks/10-week.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 10</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tasks/11-week.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 11</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tasks/12-week.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 12</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tasks/13-week.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 13</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -224,6 +248,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../milestones.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project Milestones</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Delivery: Quarto Advice</span></a>
   </div>
 </li>
     </ul>
@@ -274,7 +304,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="assignments-readings">Assignments / Readings</h2>
 <ul>
 <li><p><strong>Read Chapter 8 in <a href="https://ebookcentral.proquest.com/lib/constructor-university/detail.action?docID=5993965">Dykes (2019)</a></strong>, consult the <a href="../readings.html">Reading Remarks</a> for the Chapter.</p></li>
-<li><p>Check your project work against <a href="../milestones.html#m2">Milestone 2</a> and bring it to that level.</p></li>
+<li><p>Check your project work against <a href="../milestones.html#m2">Milestone 2: Main insight 💡</a> and bring it to that level.</p></li>
 <li><p><strong>Prepare for the classroom activities in Week 09</strong></p>
 <ul>
 <li>Make one visual for your story with your actual data.</li>
@@ -649,43 +679,6 @@ ul.task-list li input[type="checkbox"] {
             }
           });
         }
-    const findCites = (el) => {
-      const parentEl = el.parentElement;
-      if (parentEl) {
-        const cites = parentEl.dataset.cites;
-        if (cites) {
-          return {
-            el,
-            cites: cites.split(' ')
-          };
-        } else {
-          return findCites(el.parentElement)
-        }
-      } else {
-        return undefined;
-      }
-    };
-    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-    for (var i=0; i<bibliorefs.length; i++) {
-      const ref = bibliorefs[i];
-      const citeInfo = findCites(ref);
-      if (citeInfo) {
-        tippyHover(citeInfo.el, function() {
-          var popup = window.document.createElement('div');
-          citeInfo.cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
-            }
-            popup.appendChild(citeDiv);
-          });
-          return popup.innerHTML;
-        });
-      }
-    }
   });
   </script>
 </div> <!-- /content -->

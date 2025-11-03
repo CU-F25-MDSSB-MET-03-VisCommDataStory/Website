@@ -267,16 +267,16 @@ Jan Lorenz
 <pre><code># A tibble: 10 × 2
    opinion    region        
    &lt;chr&gt;      &lt;chr&gt;         
- 1 Wrong      rest_of_south 
- 2 Wrong      scot          
- 3 Wrong      scot          
- 4 Wrong      rest_of_south 
- 5 Right      midlands_wales
+ 1 Right      rest_of_south 
+ 2 Right      rest_of_south 
+ 3 Wrong      north         
+ 4 Don't know midlands_wales
+ 5 Wrong      london        
  6 Wrong      rest_of_south 
- 7 Don't know london        
- 8 Wrong      rest_of_south 
- 9 Don't know rest_of_south 
-10 Right      north         </code></pre>
+ 7 Right      rest_of_south 
+ 8 Right      rest_of_south 
+ 9 Right      midlands_wales
+10 Wrong      rest_of_south </code></pre>
 </div>
 </div>
 </div></div>
@@ -1545,43 +1545,6 @@ Jan Lorenz
               return "";
             }
           });
-        }
-        const findCites = (el) => {
-          const parentEl = el.parentElement;
-          if (parentEl) {
-            const cites = parentEl.dataset.cites;
-            if (cites) {
-              return {
-                el,
-                cites: cites.split(' ')
-              };
-            } else {
-              return findCites(el.parentElement)
-            }
-          } else {
-            return undefined;
-          }
-        };
-        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-        for (var i=0; i<bibliorefs.length; i++) {
-          const ref = bibliorefs[i];
-          const citeInfo = findCites(ref);
-          if (citeInfo) {
-            tippyHover(citeInfo.el, function() {
-              var popup = window.document.createElement('div');
-              citeInfo.cites.forEach(function(cite) {
-                var citeDiv = window.document.createElement('div');
-                citeDiv.classList.add('hanging-indent');
-                citeDiv.classList.add('csl-entry');
-                var biblioDiv = window.document.getElementById('ref-' + cite);
-                if (biblioDiv) {
-                  citeDiv.innerHTML = biblioDiv.innerHTML;
-                }
-                popup.appendChild(citeDiv);
-              });
-              return popup.innerHTML;
-            });
-          }
         }
       });
       </script>

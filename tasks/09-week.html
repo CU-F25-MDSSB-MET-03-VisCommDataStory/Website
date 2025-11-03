@@ -69,7 +69,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../styles/styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light">
@@ -99,7 +99,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../milestones.html"> 
-<span class="menu-text">Projects</span></a>
+<span class="menu-text">Project Milestones</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../readings.html"> 
@@ -212,6 +212,30 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Week 09</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tasks/10-week.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 10</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tasks/11-week.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 11</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tasks/12-week.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 12</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tasks/13-week.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 13</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -224,6 +248,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../milestones.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project Milestones</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Delivery: Quarto Advice</span></a>
   </div>
 </li>
     </ul>
@@ -241,7 +271,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#session-1-drafting-your-visuals" id="toc-session-1-drafting-your-visuals" class="nav-link" data-scroll-target="#session-1-drafting-your-visuals">Session 1: Drafting your Visuals!</a></li>
   <li><a href="#session-2-the-art-and-beauty-of-data-visualization-with-moritz-stefaner" id="toc-session-2-the-art-and-beauty-of-data-visualization-with-moritz-stefaner" class="nav-link" data-scroll-target="#session-2-the-art-and-beauty-of-data-visualization-with-moritz-stefaner">Session 2: <em>The Art and Beauty of Data Visualization</em> with Moritz Stefaner</a></li>
   </ul></li>
-  <li><a href="#assignments-readings" id="toc-assignments-readings" class="nav-link" data-scroll-target="#assignments-readings">Assignments / Readings</a></li>
+  <li><a href="#assignments" id="toc-assignments" class="nav-link" data-scroll-target="#assignments">Assignments</a></li>
   </ul>
 </nav>
     </div>
@@ -295,11 +325,12 @@ ul.task-list li input[type="checkbox"] {
 <p>Find the live recording in the <a href="https://constructoruniversity.sharepoint.com/:f:/s/f25_mdssbmet03_visualcommunicationanddatastorytelling_8921/ErtcAVUpQFxOgUSQI5iyJ4sBaz5gDX2U3Twkq510ha64xw?e=LEzfVj">Course’s Team’s Recording Folder</a>.</p>
 </section>
 </section>
-<section id="assignments-readings" class="level2">
-<h2 class="anchored" data-anchor-id="assignments-readings">Assignments / Readings</h2>
+<section id="assignments" class="level2">
+<h2 class="anchored" data-anchor-id="assignments">Assignments</h2>
 <ul>
-<li>Check your project work against <a href="../milestones.html#m3">Milestone 3</a> and bring it to that level.</li>
-<li>Have a list of story points and visual drafts ready for <a href="../milestones.html#m4"><strong>Milestone 4: Story Boarding</strong></a> next week.</li>
+<li>Check your project work against <a href="../milestones.html#m3">Milestone 3: Visual Drafts 📊📈📉️</a> and bring it to that level.</li>
+<li>Have a list of story points and visual drafts ready for <a href="../milestones.html#m4"><strong>Milestone 4: Data story and storyboard 📖</strong></a> next week.</li>
+<li><em>If you need to follow next week’s Storyboarding online</em>: Prepare a pile of 10-20 sheets of paper in small format (A6 or A7 = Postcard or half a postcard, also Post-its can work if not very small) and pens in 2-4 colors. You also need space on a table where you can order and shift around these sheets. My experience is that this is better than using online whiteboards. When your team colleagues are also remote, I suggest you both storyboard independently and exchange either in class occasionally or afterward.</li>
 </ul>
 
 
@@ -666,43 +697,6 @@ ul.task-list li input[type="checkbox"] {
             }
           });
         }
-    const findCites = (el) => {
-      const parentEl = el.parentElement;
-      if (parentEl) {
-        const cites = parentEl.dataset.cites;
-        if (cites) {
-          return {
-            el,
-            cites: cites.split(' ')
-          };
-        } else {
-          return findCites(el.parentElement)
-        }
-      } else {
-        return undefined;
-      }
-    };
-    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-    for (var i=0; i<bibliorefs.length; i++) {
-      const ref = bibliorefs[i];
-      const citeInfo = findCites(ref);
-      if (citeInfo) {
-        tippyHover(citeInfo.el, function() {
-          var popup = window.document.createElement('div');
-          citeInfo.cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
-            }
-            popup.appendChild(citeDiv);
-          });
-          return popup.innerHTML;
-        });
-      }
-    }
   });
   </script>
 </div> <!-- /content -->
