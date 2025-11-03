@@ -2,17 +2,11 @@
 title: "Visual Communication and Data Story-telling"
 ---
 
-:::{.callout-important collapse=false appearance='default' icon=true}
-## Developing Syllabus
-This syllabus may change during the course of the semester with some additions and clarifications.   
-All substantial changes will marked here with date. 
-:::
-
 ## Module Names
 
 - MDSSSB-MET-03 Visual Communication and Data Story-telling (Methods area, 5 credits)
 
-Offered in the [Master program: Data Science for Society and Business (DSSB)](https://constructor.university/programs/graduate-education/data-science-for-society-business). See the module description in the [DSSB Handbook](https://constructor.university/sites/default/files/2023-09/DSSB_MSc_Handbook_16-08-2023_Track%20changes%20.pdf). 
+Offered in the [Master program: Data Science for Society and Business (DSSB)](https://constructor.university/programs/graduate-education/data-science-for-society-business). See the module description in the [DSSB Handbook](). 
 
 
 ## Module Components
@@ -23,9 +17,11 @@ Requirements: **Data Science Concepts** and **Data Science Tools**
 
 ## Class Meeting Information
 
-Tuesday **09:45-11:00** and **11:15-12:30**    
-Location: **East Hall Room 6** in-person  
-Video streaming in Teams may be provided but does not work for all class activity: Team **F24_MDSSB-MET-03_Visual Communication and Data Story-telling**, General Channel
+Classes are on **Tuesdays**  
+Session 1 **{{< var session1 >}}**   
+Session 2 **{{< var session1 >}}**    
+Location: **{{< var room >}}** in-person  
+Video streaming and recording in Teams will be provided, it does not work for all class activities perfectly: Team **F25_MDSSB-MET-03_Visual Communication and Data Story-telling**, General Channel
 
 ## Instructors
 
@@ -130,9 +126,11 @@ The [**Schedule**](schedule.qmd) is on an extra page and will be updated continu
 
 ## Literature
 
-During the course we will work on the side through this book: 
+During the course we will work through this book: 
 
 *Dykes, B. (2019). Effective Data Storytelling: How to Drive Change with Data, Narrative and Visuals. John Wiley & Sons.*
+
+See [Readings](readings.qmd).
 
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Project Reports: Milestones"
+title: "Project Milestones"
 format:
   html: 
     number-sections: false
@@ -14,14 +14,14 @@ This list of milestones guides through the preparation, presentation and deliver
 Go through the checklists of the Milestones repeatedly. 
 Of course, you can also go back to earlier Milestones past the planned week and improve your report material.
 
-## Milestone 0, Week 4: Project teams and project topic fixed {#m0}
+## Milestone 0: Project teams and project topic fixed {#m0}
 
 - Teams can be one 🙎 or more persons 🙎‍♂️🙍‍♀️🙎. Teams with more members should have more story points and at the final presentation each member should present at least one story point. 
-- [Form: Student survey](https://forms.office.com/e/UZb7NFxLZB) for project ideas filled. 
+- [Form: Project and Team Check-in](https://forms.office.com/e/UZb7NFxLZB) for project ideas filled. 
 - Project discussed in individual meeting with instructor.
 
 
-## Milestone 1, Week 6: **Project pitch** {#m1}
+## Milestone 1: **Project pitch** {#m1}
 
 **For each project:** ~5 min presentation answering: 
 
@@ -29,7 +29,7 @@ Of course, you can also go back to earlier Milestones past the planned week and 
 - 💬 At least one story points/insights (max. 3 story points)
 - 📊 At least one visual created with the data (max. 2 visuals)
 
-Format: Use the quarto/revealjs slide deck in your sandbox  
+Format: Use the quarto/revealjs slide deck Template.  
 Presentation over MS Teams in class. 
 
 **Target Achievements:** 
@@ -40,7 +40,7 @@ Presentation over MS Teams in class.
 -   Project pitch done
 
 
-## Milestone 2, Week 7: **Main insight** 💡 {#m2}
+## Milestone 2: **Main insight** 💡 {#m2}
 
 **Target Achievements:** 
 
@@ -48,30 +48,35 @@ Presentation over MS Teams in class.
 -   List of main insights in your report drafted (about 3-6 or more when the team is large)
 -   Prioritized what will be the main insights
 
-## Milestone 3, Week 8: **Visual Drafts** 📊📈📉️{#m3}
+## Milestone 3: **Visual Drafts** 📊📈📉️{#m3}
 
 **Target Achievements:** 
 
 -   For each insight
-    -   a visuals drafted in the report or the presentation (a draft can be a first coded visual, or even photo of a sketch on paper)
+    -   a visual drafted in the report or the presentation (a draft can be a first coded visual, or even photo of a sketch on paper)
     -   notes and ideas for the final version
 
-## Milestone 4, Week 9: **Data story and storyboard** 📖  {#m4}
+## Milestone 4: **Data story and storyboard** 📖  {#m4}
 
--   Described the audience you want to address
+**Target Achievements:** 
+
 -   Have all your story points (e.g. as post its) drafted as a story board on paper (or in a digital tool).
--   Draft all slide titles in the presentaton slidedeck. 
+-   Draft slide titles in the presentaton slidedeck. 
 
-## Milestone 5, Week 13-14: **Presentation** 💬  {#m5}
+## Milestone 5: **Presentation** 💬  {#m5}
+
+**Target Achievements:** 
 
 -   Finalized your slidedeck as part of the project delivery. (Additional minor graphical improvements are allowed afterwards.)
 -   [Told your data story with the help of your slidedeck in class!]{style="color:red;"}
 
-## Milestone 6, Dec 22: **Final report** 📄  {#m6}
+## Milestone 6: **Final report** 📄  {#m6}
+
+**Target Achievements:** 
 
 -   Finalized your written report.
 -   Checked if the rendering works and the html-files opened and a appear as they should in a local browser.
--   Cleaned repository (removed unnecessary files etc.) and [pushed a final commit by Dec 22, 2023]{style="color:red;"} as the deadline is set in the [Academic Calendar](https://constructor.university/student-life/academic-calendar/academic-calendar-2024).
+-   Cleaned repository (removed unnecessary files etc.) and [pushed a final commit by]{style="color:red;"} the deadline is set in the [Academic Calendar]({{< var link.academic_calendar >}}).
 -   Decided if you want to publish your report on the web.
 
 ## Delivery

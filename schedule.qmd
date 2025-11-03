@@ -7,62 +7,26 @@ format:
  
 Student projects and student schedules: [Course-Organization-Resources Repo](https://github.com/{{< var org.name >}}/Course-Organization-Resources)
 
-Week | Dates        | Topic                  | Milestones                                | Reading |
------|--------------|------------------------|-------------------------------------------|---------|
-1    | 09-03 | [*Class*]{style='color:darkred;'} What is Visual Communication? What is Data Storytelling? [Slides Week 1](https://docs.google.com/presentation/d/1YwFq3PRCBwH5cyRJH7IR1xfTT272VRF81o0CE2FhhpI/pub?start=false&loop=false&delayms=3000) |  |
-2    | 09-10 | [*Class*]{style='color:darkred;'} Visual Communication. Viewing and Playing. [Slides Week 2](https://docs.google.com/presentation/d/1jBs0VpLjKVgmFoZsqPFw2BAbUfUpHZKZCA0C0tGEVHI/pub?start=false&loop=false&delayms=3000)| | [Dykes Ch 1](#r)
-3    | 09-17 | [*Class*]{style='color:darkred;'} Data Storytelling. Project Ideas. <br> [Slides Week 3](https://docs.google.com/presentation/d/1ZXj4zD4au02QtAlroFVlyT2asFtoMnvT-QQvscLnbNE/pub?start=false&loop=false&delayms=3000) |  | [Dykes Ch 2](#r) |
-4    | 09-24 | [Form: Student survey, fill by Fri, Sep 20](https://forms.office.com/e/UZb7NFxLZB) <br> [*Individual meetings*]{style='color:darkgreen;'} Project topics  | [0](milestones.qmd#m0) |  [Dykes Ch 3](#r) |
-5    | 10-01 | [*Class*]{style='color:darkred;'} Project pitches   | | [Dykes Ch 4](#r) |
-6    | 10-08 | [*Class*]{style='color:darkred;'} Project pitches (continued) / Class room activity: Wrap up Readings and Operationalize for your Project [Slides](Slides_Ch1-5.qmd)  | [1](milestones.qmd#m1) | [Dykes Ch 5](#r) |
-7    | 10-15 | [*Individual meetings*]{style='color:darkgreen;'} Main insights, Data audit | [2](milestones.qmd#m2) | [Dykes Ch 6](#r) |
-8    | 10-22 | [*Class*]{style='color:darkred;'} room activity: [Drafting your Visuals](Slides_drafting_visuals.qmd) | [3](milestones.qmd#m3) | [Dykes Ch 7](#r) |
-9    | 10-29 | [*Class*]{style='color:darkred;'} room activity: [Storyboarding!](datastorytelling.qmd)   | [4](milestones.qmd#m4) |  [Dykes Ch 8](#r) |
-10   | 11-05 | [*Individual meetings*]{style='color:darkgreen;'}  |  |  |
-11   | 11-12 | [*Class*]{style='color:darkred;'} room activity: [Polishing your Visuals](Slides_polishing_visuals.qmd)  |   |  |
-12   | 11-19 | [*Individual meetings*]{style='color:darkgreen;'} Finalizing your presentation [Short guide to go through and check before the meeting](finalize_presentation.qmd) |  | |
-13   | 11-26 | [*Class*]{style='color:darkred;'} Student Presentations - [Schedule](https://github.com/{{< var org.name >}}/Course-Organization-Resources/blob/main/STUDENTS.md) |  | |
-14   | 12-03 | [*Class*]{style='color:darkred;'} Student Presentations - [Schedule](https://github.com/{{< var org.name >}}/Course-Organization-Resources/blob/main/STUDENTS.md)| [5](milestones.qmd#m5) | |
-Dec  | End of Term | Submission of final report and slidedeck | [6](milestones.qmd#m6) | | 
+[*Class*]{.red} = whole class meets together  
+[*Team*]{.green} = team sessions with the instructor in the same time (no class meeting)
 
-: {tbl-colwidths="[5, 10, 50, 20, ]"}
+Week | Dates  | How | Topic                  | Readings | Milestones |
+-----|--------|:---:|------------------------|---------:|:---:|
+1    | Sep 02 | [*Class*]{.red} | [What is Visual Communication? What is Data Storytelling?](tasks/01-week.qmd)  |  [Ch 1](readings.qmd#r) | |
+2    | Sep 09 | [*Class*]{.red} | [Data Visualization: Grammar of Graphics](tasks/02-week.qmd)  |  [Ch 2](#r) | |
+3    | Sep 16 | [*Class*]{.red} | [Amounts Proportions Uncertainty](tasks/03-week.qmd)          | [Ch 3](readings.qmd#r) | | 
+4    | Sep 23 | [*Class*]{.red} | [Relationships Comparisons Annotations](tasks/04-week.qmd)    | [Ch 4](readings.qmd#r) |  |   |
+5    | Sep 30 | [*Class*]{.red} | [Data Stories](tasks/05-week.qmd)                             | [Ch 5](readings.qmd#r) |
+6    | Oct 07 | [*Team*]{.green} | [Individual Coaching: Projects Work Start!](tasks/06-week.qmd) | [Ch 6](readings.qmd#r) | [0](milestones.qmd#m0) |
+7    | Oct 14 | [*Class*]{.red} | [Project Pitches](tasks/07-week.qmd)    | [Ch 7](readings.qmd#r) | [1](milestones.qmd#m1) |
+8    | Oct 21 | [*Class*]{.red} | [Main Insight](tasks/08-week.qmd)       | [Ch 8](readings.qmd#r) | [2](milestones.qmd#m2)|
+9    | Oct 28 | [*Class*]{.red} | Session 1: [Making your Visuals!](tasks/09-week.qmd) (only 9:45-11:00) <br> 11:15 - 12:30 **Session 2: [*The Art and Science of Data Visualization*](tasks/09-week.qmd#session-2-the-art-and-beauty-of-data-visualization-with-moritz-stefaner) Talk by a leading Data Visualization Expert** (Room RLH 274)   |                        | [3](milestones.qmd#m3)  |
+10   | Nov 04 | [*Class*]{.red} | [Story boarding!](tasks/10-week.qmd)  |                    | [4](milestones.qmd#m4) |
+11   | Nov 11 | [*Team*]{.green} | Individual Coaching                     | | |
+12   | Nov 18 | [*Class*]{.red} | Polishing your Visuals                | | |
+13   | Nov 25 | [*Class*]{.red} | *Student Presentations*                       | | [5](milestones.qmd#m5) |
+14   | Dec 02 | **no class** | Instructor is unavailable                         | |   |
+Dec  | Meet   | [*Team*]{.green} |   Feedback on presentation / Advice for Finalization    | |   |
+&nbsp;    | End of Tm | *Submission* | Final report and slidedeck                 |  | [6](milestones.qmd#m6) | 
 
-## Reading Remarks on Dykes {#r}
-
-The purpose of reading is to apply the knowledge for doing your Data Story Project. To that end, some parts require closer reading than others. 
-
-- **Chapter 1**: *Introduction to Driving Change through Insight*  
-All
-- **Chapter 2**: *Why Tell Stories with Data?*  
-All
-- **Chapter 3**: *The Psychology of Data Storytelling*    
-   This Chapter is *optional*. Read it if you are interested in the psychology of human perception of facts. Consult the summary in Table 3.1.
-- **Chapter 4**: *The Anatomy of a Data Story* (21 pages intensive reading) 
-   Do an intensive reading of the Sections
-    - The Chapter Introduction including Figure 4.2 *The Analysis Journey: From Storyframing to Storytelling* (pp. 105-110)
-    - *The Six Essential Elements of a Data Story* (pp. 110-118)
-    - *Data Stories Come in All Shapes and Sizes* (pp. 118-121)
-    - *When It Makes Sense to Craft Data Stories and When It Doesn’t* (pp. 139-143)
-      
-    You can skim *Every Story Needs a Storyteller* and *Know Your Audience Before Telling Your
-Story*
-- **Chapter 5**: *Data, The Foundation of Your Data Story* (20 pages intensive reading)   
-  Do an intensive reading of the Sections
-    - The Chapter Introduction (pp. 146-148)
-    - *The Analysis Process: Exploration to Explanation* (pp. 161-168)
-    - *Analyzing and Communicating Data Demands Discipline* (pp. 168-176)
-
-    You can skim *Examine the Building Blocks of Your Data Stories*, *Every Data Story Needs a Central Insight*, *Do You Have an Actionable Insight?*, and *When Too Much of a Good Thing Is Bad*
- - **Chapter 6**: *Narrative, The Structure of Your Data Story* (14 pages intensive reading) 
-   Do an intensive reading of the Sections
-    - *Defining a Narrative Model for Data Stories* (pp. 186-195)
-    - *Fleshing Out Your Narrative with Story Points* (pp. 195-199)
-   
-    The content of *Storyboarding Your Data Story* will be the basis for the classroom story boarding activity.   
-    You can skim faster through *When They Want Just the Facts*, *Uncovering the Heroes in Your Data Story*, and *Make Your Ideas More Digestible with Analogies*.
- - **Chapter 7**: *Visuals (Part 1): Setting the Scenes of Your Data Story*  
- All
- - **Chapter 8**: *Visuals (Part 2): Polishing the Scenes of Your Data Story*  
- All
- - **Chapter 9**: *Crafting Your Own Data Story*  
- Optional
+: {tbl-colwidths="[5, 7, 8, 50, 10, 10]"}
