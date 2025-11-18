@@ -95,7 +95,7 @@
     "href": "lectures/W12.html#right-visual-pie-vs.-bars",
     "title": "W#12: Polishing Visuals",
     "section": "2. Right Visual: Pie vs. Bars",
-    "text": "2. Right Visual: Pie vs. Bars"
+    "text": "2. Right Visual: Pie vs. Bars\n\nWhat is easy to grasp, what not?\n\nIf you use a Pie chart, thingk about if the total sum is some sensible total!\n\nExample: If it is about market share do your item represent the whole market?\nExample: It is is about world population, do you cover (almost) all countries?\n\nIf you use a Pie chart of percentages make sure things add up to 100%!"
   },
   {
     "objectID": "lectures/W12.html#calibrate-visuals-to-message",
@@ -158,7 +158,7 @@
     "href": "lectures/W12.html#instill-trust-in-numbers",
     "title": "W#12: Polishing Visuals",
     "section": "7. Instill trust in numbers",
-    "text": "7. Instill trust in numbers\nDeceptive Practices to Avoid. Be careful with:\n\nTruncated y-axis\nInconsistent date intervals\nInconsistent binning\n…\n\nYou may do them unconsciously!.\nProvide source information."
+    "text": "7. Instill trust in numbers\n\nAvoid practices which maybe considered as deceptive. Be careful with or explain well:\n\nTruncated y-axis\nInconsistent date intervals\nInconsistent binning\n…\n\nYou may such things unconsciously! Even if not intended, it may look deceptive to your audience.\nAnother way to instill trust is providing source information in figure captions or slide bottom notes.\n\nHere smaller fonts are fine to make clear that this is not the main point but context information."
   },
   {
     "objectID": "lectures/W02.html#truth-beauty-facts-and-data",
@@ -487,7 +487,7 @@
     "href": "lectures/W03.html#brexit-survey-data",
     "title": "W#03 Amounts Proportions Uncertainty",
     "section": "Brexit Survey Data",
-    "text": "Brexit Survey Data\nIn September 2019, YouGov survey asked 1,639 adults in the UK the following question:\n\nIn hindsight, do you think Britain was right/wrong to vote to leave EU?\n🔲 Right to leave | 🔲 Wrong to leave | 🔲 Don’t know\n\nThe file brexit_opinions.csv in the dataset in the repository VisCom_Playground.\n\n\nLook at the first 10 rows\n\n\nCode\nlibrary(tidyverse)\nbrexit &lt;- read_csv(\"../data/brexit_opinions.csv\")\nbrexit\n\n\n# A tibble: 1,639 × 2\n   opinion region\n   &lt;chr&gt;   &lt;chr&gt; \n 1 Right   london\n 2 Right   london\n 3 Right   london\n 4 Right   london\n 5 Right   london\n 6 Right   london\n 7 Right   london\n 8 Right   london\n 9 Right   london\n10 Right   london\n# ℹ 1,629 more rows\n\n\n\nLook at 10 random rows\n\n\nCode\nbrexit |&gt; slice_sample(n = 10)\n\n\n# A tibble: 10 × 2\n   opinion    region        \n   &lt;chr&gt;      &lt;chr&gt;         \n 1 Wrong      midlands_wales\n 2 Right      london        \n 3 Don't know north         \n 4 Right      north         \n 5 Wrong      midlands_wales\n 6 Wrong      london        \n 7 Wrong      london        \n 8 Wrong      midlands_wales\n 9 Wrong      north         \n10 Right      rest_of_south"
+    "text": "Brexit Survey Data\nIn September 2019, YouGov survey asked 1,639 adults in the UK the following question:\n\nIn hindsight, do you think Britain was right/wrong to vote to leave EU?\n🔲 Right to leave | 🔲 Wrong to leave | 🔲 Don’t know\n\nThe file brexit_opinions.csv in the dataset in the repository VisCom_Playground.\n\n\nLook at the first 10 rows\n\n\nCode\nlibrary(tidyverse)\nbrexit &lt;- read_csv(\"../data/brexit_opinions.csv\")\nbrexit\n\n\n# A tibble: 1,639 × 2\n   opinion region\n   &lt;chr&gt;   &lt;chr&gt; \n 1 Right   london\n 2 Right   london\n 3 Right   london\n 4 Right   london\n 5 Right   london\n 6 Right   london\n 7 Right   london\n 8 Right   london\n 9 Right   london\n10 Right   london\n# ℹ 1,629 more rows\n\n\n\nLook at 10 random rows\n\n\nCode\nbrexit |&gt; slice_sample(n = 10)\n\n\n# A tibble: 10 × 2\n   opinion    region        \n   &lt;chr&gt;      &lt;chr&gt;         \n 1 Right      scot          \n 2 Wrong      scot          \n 3 Wrong      north         \n 4 Wrong      north         \n 5 Wrong      rest_of_south \n 6 Wrong      rest_of_south \n 7 Wrong      midlands_wales\n 8 Wrong      scot          \n 9 Don't know london        \n10 Right      midlands_wales"
   },
   {
     "objectID": "lectures/W03.html#first-basic-visuals-with-geom_bar",
